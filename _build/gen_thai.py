@@ -62,7 +62,6 @@ T = {
 'Koh Phangan · Koh Samui · Phuket — Thailand':'เกาะพะงัน · เกาะสมุย · ภูเก็ต — ประเทศไทย',
 
 # ---- HOME --------------------------------------------------------------
-'Digital Land Intelligence — Thailand':'ข้อมูลที่ดินอัจฉริยะแบบดิจิทัล — ประเทศไทย',
 'See your land.':'มองเห็นที่ดินของคุณ',
 'Use it right.':'ใช้มันอย่างถูกต้อง',
 'Your digital partner in land analysis and development insight.':
