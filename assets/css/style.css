@@ -225,7 +225,7 @@ body.nav-open .mobile-nav{transform:none}
 .hero__media::before{content:"";position:absolute;inset:0;z-index:1;background:var(--scrim-top)}
 .hero__inner{position:relative;width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .hero__eyebrow{
-  font-family:var(--font-information);font-size:var(--type-label-sm);letter-spacing:var(--tracking-label);
+  font-family:var(--font-information);font-size:calc(var(--type-label-sm) * 2);letter-spacing:var(--tracking-label);
   text-transform:uppercase;color:var(--fg-secondary);margin:0 0 var(--space-5);
 }
 .hero__title{
