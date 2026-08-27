@@ -214,20 +214,16 @@ body.nav-open .mobile-nav{transform:none}
    ============================================================ */
 .hero{
   position:relative;min-height:100svh;
-  display:flex;align-items:center;justify-content:center;
+  display:flex;align-items:flex-end;
   padding-top:calc(72px + var(--space-7));
   padding-bottom:var(--section-explanation);
   overflow:hidden;
-  text-align:center;
 }
 .hero__media{position:absolute;inset:0;z-index:-2}
 .hero__media img{width:100%;height:100%;object-fit:cover}
 .hero__media::after{content:"";position:absolute;inset:0;background:var(--scrim-bottom)}
 .hero__media::before{content:"";position:absolute;inset:0;z-index:1;background:var(--scrim-top)}
-.hero__inner{
-  position:relative;width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);
-  display:flex;flex-direction:column;align-items:center;
-}
+.hero__inner{position:relative;width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .hero__eyebrow{
   font-family:var(--font-information);font-size:var(--type-label-sm);letter-spacing:var(--tracking-label);
   text-transform:uppercase;color:var(--fg-secondary);margin:0 0 var(--space-5);
@@ -235,18 +231,18 @@ body.nav-open .mobile-nav{transform:none}
 .hero__title{
   font-family:var(--font-identity);font-size:var(--type-identity-l);
   letter-spacing:var(--tracking-identity);text-transform:uppercase;line-height:var(--leading-tight);
-  max-width:18ch;margin:0;
+  max-width:16ch;margin:0;
 }
 .hero__title .accent{color:var(--accent-coral)}
 .hero__lead{
-  margin:var(--space-6) auto 0;max-width:var(--measure-lead);
+  margin:var(--space-6) 0 0;max-width:var(--measure-lead);
   font-family:var(--font-information);font-size:var(--type-body-l);color:var(--fg-secondary);
   line-height:var(--leading-body);
   padding-top:var(--space-4);border-top:1px solid var(--border-hairline);
 }
-.hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7);justify-content:center}
+.hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
 .hero__scroll{
-  position:absolute;left:50%;transform:translateX(-50%);bottom:20px;flex-direction:column;
+  position:absolute;left:var(--gutter);bottom:20px;
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
   color:var(--fg-faint);text-transform:uppercase;display:flex;align-items:center;gap:10px;
 }
