@@ -214,7 +214,7 @@ body.nav-open .mobile-nav{transform:none}
    ============================================================ */
 .hero{
   position:relative;min-height:100svh;
-  display:flex;align-items:flex-end;
+  display:flex;align-items:center;
   padding-top:calc(72px + var(--space-7));
   padding-bottom:var(--section-explanation);
   overflow:hidden;
