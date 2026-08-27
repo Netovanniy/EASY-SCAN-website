@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>การสร้างแบบจำลองภูมิประเทศ 3 มิติด้วย Gaussian Splatting | EASY SCAN ประเทศไทย</title>
+<meta name="description" content="EASY SCAN สร้างสถานที่จริงขึ้นใหม่ด้วย Gaussian Splatting — ฉาก 3 มิติเสมือนจริงที่สำรวจได้โดยตรงในเว็บเบราว์เซอร์">
+<link rel="icon" href="../assets/img/logo-mark-white.png">
+<script>document.documentElement.classชื่อ+=" js";</script>
+<link rel="stylesheet" href="../design-system/styles.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="EASY SCAN — หน้าแรก"><img class="brand__img" src="../assets/img/logo.png" alt="EASY SCAN" width="720" height="377"></a>
+    <nav class="nav" aria-label="เมนูหลัก">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="about.html">เกี่ยวกับเรา</a></li>
+        <li class="nav__item--has-sub">
+          <a class="nav__link" href="index.html#services" aria-haspopup="true">บริการ</a>
+          <div class="nav__sub">
+            <a href="gaussian.html">Gaussian Splatting</a>
+            <a href="twin.html">ดิจิทัลทวิน</a>
+            <a href="concepting.html">ทดสอบแนวคิด</a>
+            <a href="monitoring.html">ติดตามงานก่อสร้าง</a>
+            <a href="museum.html">พิพิธภัณฑ์ดิจิทัล</a>
+            <a href="education.html">การอบรม</a>
+          </div>
+        </li>
+        <li><a class="nav__link" href="contact.html">ติดต่อ</a></li>
+      </ul>
+      <span class="lang" aria-label="ภาษา"><a href="../gaussian.html">EN</a><span>/</span><a href="#" aria-current="true">ไทย</a></span>
+      <button class="nav-toggle" type="button" aria-label="เมนู" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobileNav" aria-label="มือถือ">
+  <a href="index.html">หน้าแรก</a>
+  <a href="about.html">เกี่ยวกับเรา</a>
+  <a href="contact.html">ติดต่อ</a>
+  <p class="m-group-label">บริการ</p>
+  <div class="m-sub">
+    <a href="gaussian.html">Gaussian Splatting</a>
+    <a href="twin.html">ดิจิทัลทวิน</a>
+    <a href="concepting.html">ทดสอบแนวคิด</a>
+    <a href="monitoring.html">ติดตามงานก่อสร้าง</a>
+    <a href="museum.html">พิพิธภัณฑ์ดิจิทัล</a>
+    <a href="education.html">การอบรม</a>
+  </div>
+</nav>
+<main id="main">
+  <section class="page-hero">
+    <div class="page-hero__media"><img src="../assets/img/gaussian-scene.jpg" alt="การสร้างใหม่แบบ Gaussian Splatting เสมือนจริงของพื้นที่ริมชายฝั่ง"></div>
+    <div class="wrap wrap--wide">
+      <p class="breadcrumb"><a href="index.html">หน้าแรก</a><span>/</span> บริการ <span>/</span> Gaussian Splatting</p>
+      <h1 class="page-hero__title">Gaussian Splatting</h1>
+      <p class="page-hero__lead">ภาพแทนดิจิทัลของสถานที่ที่สมจริงอย่างยิ่ง สร้างจากภาพถ่ายนับพันภาพและสำรวจได้โดยตรงในเบราว์เซอร์ของคุณ</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="split reveal">
+        <div class="split__media">
+          <span class="split__tag">การเก็บภาพเสมือนจริง</span>
+          <img src="../assets/img/p-tropical-viz.jpg" alt="ฉาก 3 มิติเสมือนจริงแบบโต้ตอบของภูมิทัศน์เขตร้อน">
+        </div>
+        <div class="split__body">
+          <p class="eyebrow">มันคืออะไร</p>
+          <h3 class="h3">ความสมจริงของภาพแทนเมชธรรมดา</h3>
+          <p>Gaussian Splatting สร้างฉากขึ้นใหม่ด้วยความสมจริงของภาพที่โดดเด่น — รักษาแสงธรรมชาติ พื้นผิว และรายละเอียดเล็ก ๆ ไว้ แทนที่จะใช้เมช 3 มิติแบบดั้งเดิม สถานที่ถูกสร้างขึ้นใหม่จากภาพถ่ายเอง</p>
+          <p>ผลลัพธ์คือประสบการณ์โต้ตอบที่ทำงานในเว็บเบราว์เซอร์โดยตรง เดินสำรวจพื้นที่ได้จากทุกที่ ทบทวนสภาพปัจจุบันร่วมกับทีม และแบ่งปันสถานที่กับลูกค้าและพันธมิตรได้โดยไม่ต้องติดตั้งโปรแกรมเพิ่ม</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">ช่วยได้ตรงไหน</p>
+        <h2 class="h2">สร้างมาเพื่อความรู้สึกอยู่ในพื้นที่จริง</h2>
+      </div>
+      <ul class="features features--4 reveal">
+        <li class="feature"><span class="feature__idx">01</span><h3 class="feature__title">นำเสนอพื้นที่จากระยะไกล</h3><p class="feature__text">แสดงสถานที่ให้ลูกค้าและพันธมิตรจากที่ใดก็ได้ โดยไม่ต้องติดตั้งโปรแกรม</p></li>
+        <li class="feature"><span class="feature__idx">02</span><h3 class="feature__title">บันทึกสภาพปัจจุบัน</h3><p class="feature__text">บันทึกที่ระบุวันที่และสำรวจได้ ว่าพื้นที่มีสภาพอย่างไรก่อนเริ่มงาน</p></li>
+        <li class="feature"><span class="feature__idx">03</span><h3 class="feature__title">การสร้างภาพแบบสมจริง</h3><p class="feature__text">แสงธรรมชาติและพื้นผิวจริงทำให้รู้สึกเหมือนอยู่ที่นั่น</p></li>
+        <li class="feature"><span class="feature__idx">04</span><h3 class="feature__title">ทีมงาน review</h3><p class="feature__text">ทุกคนทบทวนสถานที่เดียวกันผ่านลิงก์เบราว์เซอร์ที่แชร์ร่วมกัน</p></li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">ฉากที่คัดสรร</p>
+        <h2 class="h2">สแกนที่แนะนำ</h2>
+      </div>
+      <ul class="features reveal">
+        <li class="feature"><span class="feature__idx">Koh Phangan</span><h3 class="feature__title">The Bay</h3><p class="feature__text">พื้นที่พัฒนาริมชายฝั่งที่เก็บภาพเป็นฉากซึ่งสำรวจได้</p></li>
+        <li class="feature"><span class="feature__idx">Koh Phangan</span><h3 class="feature__title">The Hill</h3><p class="feature__text">ภูมิประเทศไหล่เขาลาดชันที่สร้างขึ้นใหม่เพื่อการทบทวนการวางแผน</p></li>
+        <li class="feature"><span class="feature__idx">Koh Samui</span><h3 class="feature__title">Ameno</h3><p class="feature__text">พื้นที่โครงการที่บันทึกไว้ในแบบ 3 มิติเสมือนจริง</p></li>
+        <li class="feature"><span class="feature__idx">Koh Phangan</span><h3 class="feature__title">Akasha</h3><p class="feature__text">สภาพแวดล้อมรีทรีตที่เก็บรักษาเป็นบันทึกดิจิทัลซึ่งแบ่งปันได้</p></li>
+      </ul>
+    </div>
+  </section>
+  <p class="text-center muted" style="max-width:60ch;margin:0 auto;padding:0 24px 8px;font-size:.9rem">Gaussian Splatting มีค่าสำหรับการแสดงภาพเชิงพื้นที่ที่สมจริง แต่ไม่ใช่สิ่งทดแทนการสำรวจเชิงเรขาคณิตที่แม่นยำหรือการสำรวจที่รับรองแล้ว</p>
+  <section class="section section--tight">
+    <div class="wrap wrap--wide">
+      <div class="cta reveal">
+        <div class="cta__grid" aria-hidden="true"></div>
+        <p class="eyebrow">เริ่มต้น</p>
+        <h2 class="h2">เห็นพื้นที่ของคุณเป็นฉากที่เดินเข้าไปได้</h2>
+        <p>ส่งที่ตั้งและขนาดของที่ดินของคุณ — เราจะบอกว่า Gaussian Splatting, LiDAR หรือทั้งสองอย่างเหมาะกับโครงการของคุณ</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="contact.html">ติดต่อ EASY SCAN
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--ghost" href="index.html#services">ดูบริการทั้งหมด</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap wrap--wide">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="EASY SCAN — หน้าแรก"><img class="brand__img" src="../assets/img/logo.png" alt="EASY SCAN" width="720" height="377"></a>
+        <p>ข้อมูลที่ดินอัจฉริยะแบบดิจิทัลเพื่อการพัฒนาที่ชาญฉลาดขึ้น เราแปลงที่ดินจริงให้เป็นสภาพแวดล้อม 3 มิติที่แม่นยำและโต้ตอบได้ เพื่อให้คุณตัดสินใจได้ก่อนลงมือก่อสร้าง</p>
+      </div>
+      <div class="footer-col"><h4>บริษัท</h4><ul>
+        <li><a href="about.html">เกี่ยวกับเรา</a></li><li><a href="contact.html">ติดต่อ</a></li>
+        <li><a href="education.html">การอบรม</a></li><li><a href="museum.html">พิพิธภัณฑ์ดิจิทัล</a></li></ul></div>
+      <div class="footer-col"><h4>บริการ</h4><ul>
+        <li><a href="gaussian.html">Gaussian Splatting</a></li><li><a href="twin.html">ดิจิทัลทวิน</a></li>
+        <li><a href="concepting.html">ทดสอบแนวคิด</a></li><li><a href="monitoring.html">ติดตามงานก่อสร้าง</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> EASY SCAN บริษัท Limited</span>
+      <span>เกาะพะงัน · เกาะสมุย · ภูเก็ต — ประเทศไทย</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

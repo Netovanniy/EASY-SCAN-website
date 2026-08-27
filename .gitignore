@@ -1,0 +1,10 @@
+.DS_Store
+**/.DS_Store
+
+# Raw source drops — not used by the site (optimised copies live in assets/)
+/FONTS/
+/LOGO/
+/IMAGES : VISUALS /
+
+# Design-system source archive — extracted copy is committed under design-system/
+/EASY SCAN Design System.zip

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Technical report" description="Light-mode, print-ready terrain analysis report — site map, project data, measurement table, analysis and confidence." -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:#DCDEDF;padding:32px 0}</style></helmet>
+<div class="es-light" style="background:#fff;color:#0D1011;width:1000px;margin:0 auto;padding:56px 64px 72px;box-shadow:0 14px 40px -12px rgba(0,0,0,.35);font-family:'Andale Mono ES',ui-monospace,monospace">
+
+<header style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:24px;border-bottom:1.5px solid #0D1011">
+<div style="display:flex;flex-direction:column;gap:16px">
+<img src="../../assets/logo-es-black.png" alt="EASY SCAN" style="width:120px;display:block">
+<div>
+<div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6C7376">Terrain analysis report · ES-2025-0312-HILL</div>
+<h1 style="margin:6px 0 0;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:40px;text-transform:uppercase;letter-spacing:.02em">The Hill — Koh Phangan</h1>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;text-align:right">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatusPill" status="ready" label="Ready · 2025-03-19" hint-size="150px,24px"></x-import>
+<span style="font-size:13px;color:#A97C10;border:1px solid #A97C10;padding:3px 8px;letter-spacing:.14em;text-transform:uppercase">Demo data</span>
+<span style="font-size:13px;color:#6C7376">Page 1 of 12</span>
+</div>
+</header>
+
+<section style="margin-top:40px">
+<div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6C7376">Section 01</div>
+<h2 style="margin:6px 0 16px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:24px;text-transform:uppercase;letter-spacing:.03em">Site map</h2>
+<div style="display:grid;grid-template-columns:7fr 5fr;gap:32px;align-items:start">
+<figure style="margin:0">
+<div style="position:relative;aspect-ratio:4 / 3;background:#F2F1EE;border:1px solid rgba(13,16,17,.16);overflow:hidden">
+<svg viewBox="0 0 400 300" style="position:absolute;inset:0;width:100%;height:100%" aria-label="Contour plan with boundaries">
+<g stroke="rgba(13,16,17,.24)" stroke-width="0.75" fill="none">
+<ellipse cx="205" cy="150" rx="34" ry="22"></ellipse><ellipse cx="205" cy="150" rx="58" ry="38"></ellipse><ellipse cx="204" cy="151" rx="82" ry="54"></ellipse><ellipse cx="203" cy="152" rx="106" ry="70"></ellipse><ellipse cx="202" cy="153" rx="130" ry="86"></ellipse><ellipse cx="201" cy="154" rx="154" ry="102"></ellipse>
+</g>
+<g stroke="rgba(13,16,17,.62)" stroke-width="1.5" fill="none">
+<ellipse cx="205" cy="150" rx="70" ry="46"></ellipse><ellipse cx="202" cy="153" rx="142" ry="94"></ellipse>
+</g>
+<polygon points="52,58 322,42 340,214 96,254" fill="none" stroke="#0D1011" stroke-width="1.5"></polygon>
+<polygon points="120,96 268,86 276,178 138,196" fill="rgba(255,133,98,.18)" stroke="#C9613F" stroke-width="1.5" stroke-dasharray="2 5"></polygon>
+<polyline points="52,58 322,42" fill="none" stroke="#C9A227" stroke-width="2.5"></polyline>
+</svg>
+<span style="position:absolute;left:14px;bottom:14px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ScaleBar" length="{{ scaleLength }}" unit="m" pixels="{{ scalePixels }}" tone="dark" hint-size="120px,30px"></x-import></span>
+<span style="position:absolute;right:14px;top:14px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.NorthIndicator" rotation="{{ northRotation }}" tone="dark" hint-size="34px,50px"></x-import></span>
+<span style="position:absolute;left:14px;top:14px;font-size:13px;color:#0D1011">1 : 1 000 · 1 m contour interval</span>
+</div>
+<figcaption style="margin-top:12px;font-size:13px;color:#6C7376">Fig. 01 — Contour plan with boundaries. Coral hatch marks the conceptual development area, not an approved footprint.</figcaption>
+</figure>
+<div style="display:flex;flex-direction:column;gap:32px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.BoundaryLegend" types="{{ boundaryTypes }}" hint-size="100%,140px"></x-import>
+<span style="height:1px;background:rgba(13,16,17,.16)"></span>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ElevationLegend" min="{{ elevMin }}" max="{{ elevMax }}" interval="{{ elevInterval }}" hint-size="100%,110px"></x-import>
+</div>
+</div>
+</section>
+
+<section style="margin-top:56px">
+<div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6C7376">Section 02</div>
+<h2 style="margin:6px 0 16px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:24px;text-transform:uppercase;letter-spacing:.03em">Project data</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProjectMetadata" layout="list" project="The Hill" location="Koh Phangan, Surat Thani, Thailand" area="8.1 ha" captureDate="2025-03-12" accuracy="±25 mm vertical (instrument spec)" coordinateSystem="WGS 84 / UTM 47N" technology="{{ tech }}" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SpecList" items="{{ specs }}" hint-size="100%,300px"></x-import>
+</div>
+</section>
+
+<section style="margin-top:56px">
+<div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6C7376">Section 03</div>
+<h2 style="margin:6px 0 16px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:24px;text-transform:uppercase;letter-spacing:.03em">Measurements</h2>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.DataTable" caption="Table 01 — Zone summary (demo data)" columns="{{ zoneCols }}" rows="{{ zoneRows }}" hint-size="100%,220px"></x-import>
+<p style="margin-top:16px;font-size:13px;line-height:1.62;color:#4A5155;max-width:66ch">Areas are planimetric. Slope values are means derived from the digital terrain model and are not directly measured quantities.</p>
+</section>
+
+<section style="margin-top:56px">
+<div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6C7376">Section 04</div>
+<h2 style="margin:6px 0 16px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:24px;text-transform:uppercase;letter-spacing:.03em">Analysis result</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.AnalysisCard" analysis="Buildable area" result="4.8" unit="ha below 25°" ramp="var(--slope-ramp)" rampLabels="{{ slopeTicks }}" interpretation="59% of the site sits below the 25° threshold, concentrated on the north shoulder and coastal terrace." level="calculated" source="Derived from DTM · demo data" hint-size="100%,260px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.AnalysisCard" analysis="Cut &amp; fill balance" result="+2,140" unit="m³ net cut" interpretation="A platform at +42 m balances close to zero if the access road is re-routed east of the ridge." level="calculated" source="Volume from DTM · demo data" hint-size="100%,260px"></x-import>
+</div>
+</section>
+
+<section style="margin-top:56px">
+<div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6C7376">Section 05</div>
+<h2 style="margin:6px 0 16px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:24px;text-transform:uppercase;letter-spacing:.03em">Accuracy and confidence</h2>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.DataTable" dense="{{ true }}" columns="{{ accCols }}" rows="{{ accRows }}" hint-size="100%,220px"></x-import>
+<p style="margin-top:24px;padding:16px;border:1px solid #A97C10;font-size:13px;line-height:1.62;color:#4A5155;max-width:none"><strong style="color:#0D1011">Boundary notice.</strong> Only the line marked as official is registered. The approximate boundary is shown for orientation and must not be relied on for legal, transactional or construction purposes.</p>
+</section>
+
+<footer style="margin-top:56px;padding-top:16px;border-top:1px solid rgba(13,16,17,.16);display:flex;justify-content:space-between;font-size:13px;color:#6C7376">
+<span>EASY SCAN · Digital Land Intelligence · Thailand</span>
+<span>ES-2025-0312-HILL · Issued 2025-03-19 · Demo data</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  conf(level, source) {
+    const NS = window.EASYSCANDesignSystem_1b72cd;
+    return React.createElement(NS.ConfidenceTag, { level: level, source: source });
+  }
+  renderVals() {
+    return {
+      boundaryTypes: ['cadastral', 'surveyed', 'conceptual'],
+      elevMin: 0, elevMax: 112, elevInterval: 1,
+      scaleLength: 50, scalePixels: 120, northRotation: -12,
+      tech: ['UAV LiDAR', 'Photogrammetry'],
+      slopeTicks: ['0°', '15°', '25°', '35°', '45°+'],
+      specs: [
+        { label: 'Flight height', value: '85', unit: 'm AGL' },
+        { label: 'Point density', value: '480', unit: 'pts/m²' },
+        { label: 'Ground control', value: '6 checked points' },
+        { label: 'Contour interval', value: '1', unit: 'm' },
+        { label: 'Vertical datum', value: 'MSL' },
+        { label: 'Deliverables', value: 'DXF · PDF · OBJ · Viewer' }
+      ],
+      zoneCols: [
+        { key: 'zone', label: 'Zone' },
+        { key: 'area', label: 'Area', unit: 'm²', align: 'right' },
+        { key: 'min', label: 'Min elev.', unit: 'm', align: 'right' },
+        { key: 'max', label: 'Max elev.', unit: 'm', align: 'right' },
+        { key: 'slope', label: 'Mean slope', unit: '°', align: 'right' },
+        { key: 'conf', label: 'Source' }
+      ],
+      zoneRows: [
+        { zone: 'Coastal terrace', area: '12 480', min: '2.4', max: '18.4', slope: '8.2', conf: this.conf('measured') },
+        { zone: 'North shoulder', area: '26 140', min: '18.4', max: '46.2', slope: '12.8', conf: this.conf('measured') },
+        { zone: 'Central ridge', area: '21 900', min: '46.2', max: '92.0', slope: '24.1', conf: this.conf('measured') },
+        { zone: 'South slope', area: '20 580', min: '8.1', max: '38.6', slope: '31.4', conf: this.conf('calculated') }
+      ],
+      accCols: [
+        { key: 'item', label: 'Item' },
+        { key: 'value', label: 'Value' },
+        { key: 'method', label: 'Method' },
+        { key: 'level', label: 'Confidence' }
+      ],
+      accRows: [
+        { item: 'Vertical accuracy', value: '±25 mm', method: 'Instrument specification', level: this.conf('verified', 'Manufacturer') },
+        { item: 'Horizontal accuracy', value: '±30 mm', method: 'GCP check, 6 points', level: this.conf('measured') },
+        { item: 'Cadastral boundary', value: 'Title deed line', method: 'Land office document', level: this.conf('verified', 'Chanote') },
+        { item: 'Southern boundary', value: 'Approximate', method: 'Not re-surveyed on site', level: this.conf('approximate') },
+        { item: 'Conceptual footprint', value: 'Illustrative', method: 'Client sketch overlay', level: this.conf('conceptual') }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Geospatial" subtitle="Coordinates, legends, layers, scale, north, project metadata" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:20px;background:var(--bg-page)}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { CoordinateLabel, ElevationLegend, BoundaryLegend, TerrainLegend, LayerControl, ScaleBar, NorthIndicator, ProjectMetadata } = window.EASYSCANDesignSystem_1b72cd;
+
+function Demo(){const [active,setActive]=React.useState({imagery:true,contours:true,boundaries:true});
+return(<div style={{display:'grid',gridTemplateColumns:'1fr 300px',gap:28}}>
+<div style={{display:'flex',flexDirection:'column',gap:24}}>
+<div style={{display:'flex',gap:28,alignItems:'flex-end'}}>
+<CoordinateLabel lat={9.73824} lon={100.01362} elevation={38.2} system="WGS 84 / UTM 47N"/>
+<ScaleBar length={50} unit="m" pixels={130}/><NorthIndicator rotation={-12}/></div>
+<ElevationLegend min={0} max={112} interval={2}/>
+<BoundaryLegend/>
+<TerrainLegend columns={2} layers={['contours','slope','water','vegetation','buildings','proposed']}/>
+<ProjectMetadata layout="grid" status="ready" demo project="The Hill" location="Koh Phangan, Thailand" area="8.1 ha" captureDate="2025-03-12" technology={['UAV LiDAR','Photogrammetry']} accuracy="±25 mm vertical" coordinateSystem="WGS 84 / UTM 47N"/>
+</div>
+<div style={{border:'1px solid var(--border-faint)',padding:16,background:'var(--bg-surface)'}}>
+<LayerControl active={active} onToggle={k=>setActive(a=>({...a,[k]:!a[k]}))} groups={[
+{title:'Reality',layers:[{key:'imagery',label:'Aerial imagery',hint:'What the site looks like'},{key:'pointcloud',label:'Point cloud',hint:'Raw scan points',color:'var(--data-pointcloud)'}]},
+{title:'Measured',layers:[{key:'contours',label:'Contours',hint:'Height lines every 1 m',meta:'1 m',color:'var(--contour-major)'},{key:'boundaries',label:'Boundaries',hint:'Land limits',color:'var(--boundary-surveyed)'}]},
+{title:'Proposed',layers:[{key:'proposed',label:'Architecture',hint:'Concept, not built',color:'var(--data-proposed)'}]}]}/>
+</div></div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

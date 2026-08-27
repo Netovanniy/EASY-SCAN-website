@@ -1,0 +1,54 @@
+:root{
+  /* families */
+  --font-identity:"ABNES","Tactic Sans",sans-serif;
+  --font-structure:"Tactic Sans","Helvetica Neue",Arial,sans-serif;
+  --font-information:"Andale Mono ES",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+  /* weights actually available — do not invent others */
+  --weight-light:300; /* @kind other */
+  --weight-regular:400; /* @kind other */
+  --weight-medium:500; /* @kind other */
+
+  /* display / identity scale (ABNES, short text only) */
+  --type-identity-xl:clamp(3.5rem,9vw,8.5rem);
+  --type-identity-l:clamp(2.5rem,6vw,5rem);
+  --type-identity-m:2.25rem;
+
+  /* structural scale (TacticSans) */
+  --type-h1:clamp(2.25rem,4.4vw,3.75rem);
+  --type-h2:clamp(1.75rem,2.8vw,2.5rem);
+  --type-h3:1.5rem;
+  --type-h4:1.125rem;
+  --type-label:0.8125rem;   /* 13px — nav, buttons, eyebrows */
+  --type-label-sm:0.6875rem;/* 11px — tags, chips */
+
+  /* information scale (Andale Mono) — never below 11px on screen */
+  --type-body-l:1.0625rem;  /* 17px */
+  --type-body:0.9375rem;    /* 15px */
+  --type-body-sm:0.8125rem; /* 13px */
+  --type-data:0.8125rem;
+  --type-data-sm:0.6875rem;
+  --type-data-xl:2rem;      /* stat blocks, measurement readouts */
+
+  /* line heights */
+  --leading-tight:1.02; /* @kind other */
+  --leading-heading:1.12; /* @kind other */
+  --leading-body:1.62; /* @kind other */
+  --leading-data:1.4; /* @kind other */
+
+  /* tracking */
+  --tracking-identity:0.06em; /* @kind other */
+  --tracking-heading:0.01em; /* @kind other */
+  --tracking-label:0.14em; /* @kind other */
+  --tracking-data:0.02em; /* @kind other */
+  --tracking-body:0; /* @kind other */
+
+  /* semantic roles */
+  --text-display:var(--font-identity);
+  --text-heading:var(--font-structure);
+  --text-ui:var(--font-structure);
+  --text-body-font:var(--font-information);
+  --text-data-font:var(--font-information);
+  --measure-body:66ch; /* @kind spacing */
+  --measure-lead:46ch; /* @kind spacing */
+}

@@ -1,0 +1,23 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Statement slide" subtitle="One idea, TacticSans, dark ground" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html,body{margin:0;background:#000}.slide{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--bg-page);color:var(--fg-primary)}.pad{padding:72px}.foot{position:absolute;left:72px;right:72px;bottom:34px;display:flex;justify-content:space-between;font-family:var(--font-information);font-size:13px;color:var(--fg-faint);letter-spacing:.02em}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { Eyebrow } = window.EASYSCANDesignSystem_1b72cd;
+const HERO='../../assets/hero-terrain-scan.png';
+
+function Slide(){return(<div className="slide pad" style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
+  <span style={{position:'absolute',inset:0,background:'var(--texture-grid)',opacity:.7}}/>
+  <div style={{position:'relative',display:'flex',flexDirection:'column',gap:34,maxWidth:'22ch'}}>
+    <Eyebrow rule>The problem</Eyebrow>
+    <h1 style={{margin:0,fontFamily:'var(--font-structure)',fontWeight:500,fontSize:72,lineHeight:1.04,textTransform:'uppercase',letterSpacing:'.01em'}}>Terrain is often misunderstood</h1>
+    <p style={{margin:0,fontSize:20,lineHeight:1.6,color:'var(--fg-secondary)',maxWidth:'44ch'}}>People lose money before construction even starts. A slope read wrong, drainage missed, a boundary assumed — each becomes an expensive change on site.</p>
+  </div>
+  <div className="foot"><span>EASY SCAN</span><span>02</span></div>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Slide/>);
+</script></body></html>

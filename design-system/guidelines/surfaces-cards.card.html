@@ -1,0 +1,10 @@
+<!-- @dsCard group="Spacing" viewport="700x210" name="Surfaces & cards" subtitle="Flat, hairline, 2px radius — no shadow unless over terrain" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;padding:20px;background:var(--bg-page);color:var(--fg-primary)}.lbl{font-family:var(--font-information);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-faint)}.row{display:flex;gap:16px}</style></head><body>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+<div style="border:1px solid var(--border-hairline);border-radius:2px;background:var(--bg-surface);padding:16px"><div class="lbl">Panel</div><div style="font-family:var(--font-information);font-size:12px;color:var(--fg-secondary);margin-top:8px;line-height:1.6">Flat fill, hairline border, no elevation. The default.</div></div>
+<div style="border:1px solid var(--border-faint);border-radius:2px;background:var(--bg-inset);padding:16px"><div class="lbl">Inset</div><div style="font-family:var(--font-information);font-size:12px;color:var(--fg-secondary);margin-top:8px;line-height:1.6">Recessed area for data and tables.</div></div>
+<div style="position:relative;border-radius:2px;overflow:hidden"><img src="../assets/hero-terrain-scan.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div style="position:relative;margin:14px;padding:14px;background:var(--panel-over-terrain);backdrop-filter:var(--blur-panel);border:1px solid var(--border-hairline);box-shadow:var(--shadow-float)"><div class="lbl">Over terrain</div><div style="font-family:var(--font-information);font-size:11px;color:var(--fg-secondary);margin-top:6px">The only place blur and shadow are allowed.</div></div></div>
+</div>
+</body></html>

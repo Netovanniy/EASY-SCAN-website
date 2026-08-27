@@ -1,0 +1,95 @@
+/* DATA COLOUR ≠ BRAND COLOUR.
+   Every value below carries analytical meaning and must keep that meaning
+   across website, report, presentation, map and 3D viewer. Never use these as
+   decoration, and never let a data colour be the only carrier of meaning —
+   pair with line style, label or symbol. */
+:root{
+  /* reality vs reconstruction vs analysis vs proposal */
+  --data-terrain:#9C948A;          /* existing terrain, neutral warm */
+  --data-terrain-shade:#6E6862;
+  --data-existing-structure:#C9CDD1;
+  --data-proposed:var(--accent-coral);   /* proposed / conceptual architecture */
+  --data-proposed-fill:rgba(255,133,98,.18);
+  --data-road:#D9D2C4;
+  --data-vegetation:#6E9A5E;
+  --data-water:#4FA8D8;
+  --data-drainage:#4FA8D8;
+
+  /* measurement + scan */
+  --data-measure:#3DE3A6;
+  --data-measure-ink:#0D1011;
+  --data-scan-coverage:rgba(61,227,166,.16);
+  --data-scan-grid:rgba(61,227,166,.55);
+  --data-pointcloud:#E8EDF0;
+  --data-selected:#FFFFFF;
+  --data-selected-halo:rgba(61,227,166,.45);
+
+  /* contours — hierarchy is opacity + weight, never hue */
+  --contour-major:rgba(255,255,255,.62);
+  --contour-minor:rgba(255,255,255,.26);
+  --contour-major-over-photo:rgba(61,227,166,.85);
+  --contour-minor-over-photo:rgba(61,227,166,.38);
+  --contour-major-light:rgba(13,16,17,.62);
+  --contour-minor-light:rgba(13,16,17,.24);
+  --contour-weight-major:1.5px; /* @kind spacing */
+  --contour-weight-minor:0.75px; /* @kind spacing */
+  --contour-interval-default:"1 m"; /* @kind other */
+
+  /* boundaries — colour AND line style AND label, always */
+  --boundary-cadastral:#FFD166;    /* official / title deed — solid */
+  --boundary-surveyed:#FFFFFF;     /* surveyed on site — solid */
+  --boundary-approximate:#FFFFFF;  /* dashed, 60% opacity */
+  --boundary-conceptual:#9AA7B2;   /* dotted */
+  --boundary-dash-approximate:8 6; /* @kind other */
+  --boundary-dash-conceptual:2 5; /* @kind other */
+
+  /* confidence */
+  --status-verified:#3DE3A6;
+  --status-measured:#3DE3A6;
+  --status-calculated:#8FD3E8;
+  --status-estimated:#FFD166;
+  --status-approximate:#FFD166;
+  --status-conceptual:#9AA7B2;
+  --status-warning:#FF4D3D;
+  --status-unavailable:#6B7075;
+
+  /* scan lifecycle */
+  --scan-scheduled:#9AA7B2;
+  --scan-captured:#8FD3E8;
+  --scan-processing:#FFD166;
+  --scan-ready:#3DE3A6;
+  --scan-updated:#FFFFFF;
+
+  /* elevation — hypsometric, analytical, legible dark and light.
+     Low = deep teal (sea reference) → high = pale granite. Not a rainbow. */
+  --elev-0:#0B3A4A;
+  --elev-1:#125F6B;
+  --elev-2:#1B8069;
+  --elev-3:#3E9A5C;
+  --elev-4:#7FAF52;
+  --elev-5:#C3A853;
+  --elev-6:#D98A4A;
+  --elev-7:#E6D6C6;
+  --elev-ramp:linear-gradient(90deg,#0B3A4A,#125F6B,#1B8069,#3E9A5C,#7FAF52,#C3A853,#D98A4A,#E6D6C6); /* @kind other */
+
+  /* slope — safety reading: walkable → buildable-with-work → steep */
+  --slope-0:#3DE3A6;
+  --slope-1:#A9DE6A;
+  --slope-2:#FFD166;
+  --slope-3:#FF9A4D;
+  --slope-4:#FF4D3D;
+  --slope-ramp:linear-gradient(90deg,#3DE3A6,#A9DE6A,#FFD166,#FF9A4D,#FF4D3D); /* @kind other */
+}
+
+/* print / light-mode data adjustments: overlays over white terrain plans */
+.es-light{
+  --data-pointcloud:#2A3033;
+  --data-selected:#0D1011;
+  --boundary-surveyed:#0D1011;
+  --boundary-approximate:#0D1011;
+  --data-measure:#0E7F5C;
+  --status-verified:#0E7F5C;
+  --status-measured:#0E7F5C;
+  --status-estimated:#A97C10;
+  --status-warning:#C0261A;
+}

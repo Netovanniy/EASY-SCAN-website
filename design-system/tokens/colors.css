@@ -1,0 +1,70 @@
+:root{
+  /* neutral scale — dark end. #000 is the site's real background (CONFIRMED),
+     but interfaces layer on near-blacks so hairlines stay visible. */
+  --n-000:#000000;
+  --n-050:#07090A;
+  --n-100:#0D1011;
+  --n-150:#14181A;
+  --n-200:#1C2124;
+  --n-300:#2A3033;
+  --n-400:#3D4448;
+  --n-500:#5C6367;
+  --n-600:#82898D;
+  --n-700:#AAB0B3;
+  --n-800:#D2D6D8;
+  --n-900:#EDEFF0;
+  --n-950:#F7F8F8;
+  --n-white:#FFFFFF;
+
+  /* accents */
+  --accent-coral:#FF7A3D;      /* CONFIRMED — lidareasyscan.com nav + section accents, tuned orange not pink */
+  --accent-coral-dim:#C25A24;
+  --accent-coral-tint:rgba(255,122,61,.12);
+  --accent-scan:#3DE3A6;       /* DERIVED — scan grid / contour overlay in hero imagery */
+  --accent-scan-dim:#1E9E71;
+  --accent-scan-tint:rgba(61,227,166,.12);
+
+  /* dark environment (default) */
+  --bg-page:var(--n-000);
+  --bg-surface:var(--n-100);
+  --bg-surface-raised:var(--n-150);
+  --bg-inset:var(--n-050);
+  --bg-overlay:rgba(7,9,10,.78);
+  --fg-primary:var(--n-white);
+  --fg-secondary:var(--n-700);
+  --fg-muted:var(--n-600);
+  --fg-faint:var(--n-500);
+  --fg-inverse:var(--n-000);
+  --border-hairline:rgba(255,255,255,.14);
+  --border-strong:rgba(255,255,255,.30);
+  --border-faint:rgba(255,255,255,.07);
+  --link-color:var(--accent-coral);
+  --link-hover:var(--n-white);
+  --focus-ring:var(--accent-scan);
+
+  /* protection: terrain imagery always gets a gradient scrim, never a blur panel */
+  --scrim-bottom:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 38%,rgba(0,0,0,0) 78%); /* @kind other */
+  --scrim-top:linear-gradient(to bottom,rgba(0,0,0,.72) 0%,rgba(0,0,0,0) 60%); /* @kind other */
+  --scrim-flat:rgba(0,0,0,.42);
+}
+
+/* light environment — reports, proposals, print. Same type, grid and data
+   language; only the neutrals invert. */
+.es-light{
+  --bg-page:var(--n-950);
+  --bg-surface:var(--n-white);
+  --bg-surface-raised:var(--n-white);
+  --bg-inset:#EFF1F1;
+  --bg-overlay:rgba(255,255,255,.86);
+  --fg-primary:#0D1011;
+  --fg-secondary:#4A5155;
+  --fg-muted:#6C7376;
+  --fg-faint:#8E9498;
+  --fg-inverse:var(--n-white);
+  --border-hairline:rgba(13,16,17,.16);
+  --border-strong:rgba(13,16,17,.42);
+  --border-faint:rgba(13,16,17,.08);
+  --link-color:#C25A24;
+  --link-hover:#0D1011;
+  --scrim-flat:rgba(255,255,255,.55);
+}

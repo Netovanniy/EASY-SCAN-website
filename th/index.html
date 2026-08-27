@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EASY SCAN — สแกนที่ดินด้วย LiDAR และโดรนในประเทศไทย | เกาะพะงัน เกาะสมุย ภูเก็ต</title>
+<meta name="description" content="ข้อมูลที่ดินอัจฉริยะแบบดิจิทัลเพื่อการพัฒนาที่ชาญฉลาดขึ้น EASY SCAN ใช้ LiDAR และการทำแผนที่ด้วยโดรน เพื่อมอบแบบจำลองภูมิประเทศ 3 มิติที่แม่นยำแก่สถาปนิก นักพัฒนา และเจ้าของที่ดินในประเทศไทยก่อนเริ่มก่อสร้าง">
+<link rel="icon" href="../assets/img/logo-mark-white.png">
+<script>document.documentElement.classชื่อ+=" js";</script>
+<link rel="stylesheet" href="../design-system/styles.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="EASY SCAN — หน้าแรก"><img class="brand__img" src="../assets/img/logo.png" alt="EASY SCAN" width="720" height="377"></a>
+
+    <nav class="nav" aria-label="เมนูหลัก">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="about.html">เกี่ยวกับเรา</a></li>
+        <li class="nav__item--has-sub">
+          <a class="nav__link" href="#services" aria-haspopup="true">บริการ</a>
+          <div class="nav__sub">
+            <a href="gaussian.html">Gaussian Splatting</a>
+            <a href="twin.html">ดิจิทัลทวิน</a>
+            <a href="concepting.html">ทดสอบแนวคิด</a>
+            <a href="monitoring.html">ติดตามงานก่อสร้าง</a>
+            <a href="museum.html">พิพิธภัณฑ์ดิจิทัล</a>
+            <a href="education.html">การอบรม</a>
+          </div>
+        </li>
+        <li><a class="nav__link" href="contact.html">ติดต่อ</a></li>
+      </ul>
+      <span class="lang" aria-label="ภาษา"><a href="../index.html">EN</a><span>/</span><a href="#" aria-current="true">ไทย</a></span>
+      <button class="nav-toggle" type="button" aria-label="เมนู" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="มือถือ">
+  <a href="index.html">หน้าแรก</a>
+  <a href="about.html">เกี่ยวกับเรา</a>
+  <a href="contact.html">ติดต่อ</a>
+  <p class="m-group-label">บริการ</p>
+  <div class="m-sub">
+    <a href="gaussian.html">Gaussian Splatting</a>
+    <a href="twin.html">ดิจิทัลทวิน</a>
+    <a href="concepting.html">ทดสอบแนวคิด</a>
+    <a href="monitoring.html">ติดตามงานก่อสร้าง</a>
+    <a href="museum.html">พิพิธภัณฑ์ดิจิทัล</a>
+    <a href="education.html">การอบรม</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="../assets/img/hero-terrain.jpg" alt="ภาพมุมสูงของโครงการบนไหล่เขาเขตร้อน ซ้อนด้วยการสแกนเส้นชั้นความสูง 3 มิติที่เรืองแสง">
+    </div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">ข้อมูลที่ดินอัจฉริยะแบบดิจิทัล — ประเทศไทย</p>
+      <h1 class="hero__title">มองเห็นที่ดินของคุณ<br><span class="accent">ใช้มันอย่างถูกต้อง</span></h1>
+      <p class="hero__lead">พันธมิตรดิจิทัลของคุณในการวิเคราะห์ที่ดินและวางแผนการพัฒนา</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="contact.html">ขอใบเสนอราคาสแกน
+          <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#services">ดูบริการทั้งหมด</a>
+      </div>
+    </div>
+    <span class="hero__scroll">เลื่อนลง</span>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section section--alt" id="services">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">ขั้นตอนการทำงาน</p>
+        <h2 class="h2">โซลูชันครบวงจรสำหรับการเปลี่ยนแปลงที่ดิน</h2>
+        <p class="lead">แต่ละบริการดูแลแต่ละช่วงของโครงการ เมื่อรวมกันจึงเป็นระบบที่สมบูรณ์สำหรับการทำความเข้าใจและพัฒนาที่ดิน</p>
+      </div>
+
+      <ol class="process reveal">
+        <li class="process__item">
+          <span class="process__num">ขั้นที่ 01</span>
+          <h3 class="process__title">สแกนสภาพแวดล้อม</h3>
+          <p class="process__text">ระบบ LiDAR และโดรนบันทึกทุกระดับความสูงและเส้นชั้นความสูงของพื้นที่อย่างแม่นยำ</p>
+        </li>
+        <li class="process__item">
+          <span class="process__num">ขั้นที่ 02</span>
+          <h3 class="process__title">แบบจำลองภูมิประเทศ 3 มิติ</h3>
+          <p class="process__text">ข้อมูลดิบกลายเป็นแบบจำลองภูมิประเทศดิจิทัล วัดความลาดชัน การระบายน้ำ และงานดินได้</p>
+        </li>
+        <li class="process__item">
+          <span class="process__num">ขั้นที่ 03</span>
+          <h3 class="process__title">ดิจิทัลทวิน</h3>
+          <p class="process__text">สถาปนิกวางอาคารลงบนที่ดินที่สแกนไว้ ดิจิทัลทวินแสดงความจริง ไม่ใช่การคาดเดา</p>
+        </li>
+        <li class="process__item">
+          <span class="process__num">ขั้นที่ 04</span>
+          <h3 class="process__title">ติดตามความคืบหน้า</h3>
+          <p class="process__text">การสแกนซ้ำติดตามแต่ละช่วงของการก่อสร้างและสร้างบันทึกความคืบหน้าแบบ 3 มิติ</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ STORY: PROBLEM → SOLUTION ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">ทำไมจึงสำคัญ</p>
+        <h2 class="h2">ภูมิประเทศมักถูกเข้าใจผิด</h2>
+        <p class="lead">ทุกโครงการเริ่มต้นจากที่ดิน นักพัฒนาส่วนใหญ่เห็นเพียงสิ่งที่อยู่บนผิวดิน เราช่วยให้คุณเห็นความเป็นไปได้ที่อยู่ลึกลงไป</p>
+      </div>
+
+      <div class="split reveal">
+        <div class="split__media">
+          <span class="split__tag">ก่อนหน้า — การคาดเดา</span>
+          <img src="../assets/img/p-chaos-land.jpg" alt="โครงการที่วางแผนไม่ดีและวุ่นวายบนภูมิประเทศที่ยาก">
+        </div>
+        <div class="split__body">
+          <h3 class="h3">ผู้คนเสียเงินก่อนการก่อสร้างจะเริ่มด้วยซ้ำ</h3>
+          <p>พวกเขาสร้างผิดตำแหน่ง ประเมินความลาดชันต่ำเกินไป ทำลายภูมิทัศน์ที่มีค่า และพลาดวิวที่ดีที่สุด — และมักรู้ตัวเมื่อสายเกินไปแล้ว</p>
+          <p>ปัญหานั้นเรียบง่าย: พวกเขาไม่ได้เห็นที่ดินของตนอย่างชัดเจนจริง ๆ</p>
+        </div>
+      </div>
+
+      <div class="split split--reverse reveal">
+        <div class="split__media">
+          <span class="split__tag">เก็บข้อมูล — LiDAR + โดรน</span>
+          <img src="../assets/img/p-surveying.jpg" alt="การสำรวจด้วย LiDAR และโดรนที่เก็บข้อมูลพื้นที่และแปลงเป็นข้อมูล 3 มิติ">
+        </div>
+        <div class="split__body">
+          <h3 class="h3">เราสแกนภูมิประเทศอย่างแม่นยำ</h3>
+          <p>EASY SCAN ใช้ LiDAR และการทำแผนที่ด้วยโดรนเก็บทุกเส้นชั้นความสูง ระดับ และรายละเอียดของที่ดินคุณ ผลลัพธ์คือบันทึกดิจิทัลที่ครบถ้วนและแม่นยำของสิ่งที่มีอยู่จริง</p>
+          <p>ไม่ต้องเดา — มีเพียงข้อมูลจริงและการตัดสินใจที่ชาญฉลาด</p>
+        </div>
+      </div>
+
+      <div class="split reveal">
+        <div class="split__media">
+          <span class="split__tag">ผลลัพธ์ — ออกแบบบนพื้นที่จริง</span>
+          <img src="../assets/img/p-villa-integration.jpg" alt="แนวคิดวิลล่าทางสถาปัตยกรรมที่วางลงบนภูมิประเทศไหล่เขาที่สแกนไว้โดยตรง">
+        </div>
+        <div class="split__body">
+          <h3 class="h3">สถาปัตยกรรมพบกับภูมิประเทศในพื้นที่จริง</h3>
+          <p>สถาปนิกวางอาคารลงบนภูมิประเทศที่สแกนไว้โดยตรง ดิจิทัลทวินแสดงให้เห็นอย่างชัดเจนว่าอาคารตั้งอยู่บนที่ดินอย่างไร สัมพันธ์กับความลาดชันอย่างไร และเชื่อมโยงกับสภาพแวดล้อมโดยรอบอย่างไร</p>
+          <p>การออกแบบตั้งอยู่บนความเป็นจริง</p>
+          <a class="link-arrow" href="twin.html">ดูดิจิทัลทวิน
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="section--tight">
+    <div class="wrap wrap--wide">
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat__num">200+</div>
+          <div class="stat__label">โครงการที่แล้วเสร็จตั้งแต่ปี 2020</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">2020</div>
+          <div class="stat__label">ก่อตั้งบนเกาะพะงัน</div>
+        </div>
+        <div class="stat">
+          <div class="stat__num">3</div>
+          <div class="stat__label">เกาะ — พะงัน · สมุย · ภูเก็ต</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section section--alt">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">แพ็กเกจ</p>
+        <h2 class="h2">เลือกแพ็กเกจของคุณ</h2>
+        <p class="lead">ชุดแผนที่เรียบง่าย พาคุณจากการเข้าใจที่ดินครั้งแรกไปสู่การควบคุมโครงการอย่างเต็มที่ — ด้วยข้อมูลจริงแทนการคาดเดา</p>
+      </div>
+
+      <div class="pricing">
+        <article class="plan reveal">
+          <h3 class="plan__name">Basic</h3>
+          <p class="plan__desc">เข้าใจพื้นที่ของคุณอย่างรวดเร็ว</p>
+          <ul class="plan__list">
+            <li>สแกนที่ดิน 3 มิติ</li>
+            <li>ภาพพาโนรามา 360° / HDRI</li>
+            <li>แบบจำลองภูมิประเทศแบบย่อ</li>
+            <li>โปรแกรมดูโมเดล 3 มิติออนไลน์</li>
+          </ul>
+          <p class="plan__result"><b>ผลลัพธ์</b>ภาพรวมของภูมิประเทศที่ชัดเจน</p>
+          <a class="btn btn--ghost btn--block" href="contact.html">ขอแพ็กเกจ Basic</a>
+        </article>
+
+        <article class="plan plan--featured reveal" data-delay="1">
+          <span class="plan__badge">เลือกมากที่สุด</span>
+          <h3 class="plan__name">Smart</h3>
+          <p class="plan__desc">ช่วงเริ่มต้นและการตัดสินใจ</p>
+          <ul class="plan__list">
+            <li class="grp">ทุกอย่างใน Basic และเพิ่ม</li>
+            <li>เส้นชั้นความสูงและระดับ (DXF + PDF)</li>
+            <li>คำแนะนำการใช้ประโยชน์ที่ดิน</li>
+            <li>การวางแนวคิดลงบนภูมิประเทศ</li>
+            <li>เซสชันออกแบบสดแบบเรียลไทม์ 1 ครั้ง</li>
+          </ul>
+          <p class="plan__result"><b>ผลลัพธ์</b>ทดสอบแนวคิดบนที่ดินของคุณโดยตรงในบริบทจริง</p>
+          <a class="btn btn--primary btn--block" href="contact.html">ขอแพ็กเกจ Smart</a>
+        </article>
+
+        <article class="plan reveal" data-delay="2">
+          <h3 class="plan__name">Developer</h3>
+          <p class="plan__desc">พัฒนาโครงการด้วยการควบคุมที่ดีขึ้น</p>
+          <ul class="plan__list">
+            <li class="grp">ทุกอย่างใน Smart และเพิ่ม</li>
+            <li>กลยุทธ์ที่ดินและแนวคิดผังโครงการ</li>
+            <li>ข้อมูลพร้อมใช้กับ BIM (OBJ, FBX, DXF)</li>
+            <li>การติดตามงานก่อสร้าง 3 มิติ</li>
+            <li class="sub">องค์ประกอบที่ซ่อนอยู่ — ท่อ งานระบบ</li>
+            <li class="sub">การวิเคราะห์ปริมาตรดินและระดับ</li>
+            <li class="sub">เซสชันเรียลไทม์หลายครั้ง</li>
+          </ul>
+          <p class="plan__result"><b>ผลลัพธ์</b>ควบคุมได้เต็มที่บนพื้นฐานข้อมูลจริง ตั้งแต่แนวคิดจนถึงการก่อสร้าง</p>
+          <a class="btn btn--ghost btn--block" href="contact.html">ขอแพ็กเกจ Developer</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GAUSSIAN TEASER ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="split reveal">
+        <div class="split__media">
+          <span class="split__tag">Gaussian Splatting</span>
+          <img src="../assets/img/gaussian-scene.jpg" alt="การสร้างใหม่แบบ Gaussian Splatting เสมือนจริงของพื้นที่ ที่สำรวจในเว็บเบราว์เซอร์">
+        </div>
+        <div class="split__body">
+          <p class="eyebrow">การเก็บภาพเสมือนจริง</p>
+          <h3 class="h3">เดินสำรวจพื้นที่ได้จากทุกที่</h3>
+          <p>Gaussian Splatting สร้างสถานที่ขึ้นใหม่จากภาพถ่ายนับพันภาพ โดยรักษาแสงธรรมชาติ พื้นผิว และรายละเอียดเล็ก ๆ ไว้ ผลลัพธ์คือฉากโต้ตอบที่เปิดได้ในเบราว์เซอร์โดยตรง — ไม่ต้องติดตั้งโปรแกรม</p>
+          <a class="link-arrow" href="gaussian.html">เกี่ยวกับเรา Gaussian Splatting
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section section--tight">
+    <div class="wrap wrap--wide">
+      <div class="cta reveal">
+        <div class="cta__grid" aria-hidden="true"></div>
+        <p class="eyebrow">เริ่มต้น</p>
+        <h2 class="h2">ส่งข้อความถึงเรา — เราจะแนะนำตัวเลือกที่ดีที่สุด</h2>
+        <p>บอกที่ตั้งและขนาดของที่ดินของคุณ เราจะตอบกลับภายใน 24 ชั่วโมงพร้อมคำแนะนำและใบเสนอราคา</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="contact.html">ติดต่อ EASY SCAN
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="mailto:lidareasyscan@gmail.com">lidareasyscan@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap wrap--wide">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="EASY SCAN — หน้าแรก"><img class="brand__img" src="../assets/img/logo.png" alt="EASY SCAN" width="720" height="377"></a>
+        <p>ข้อมูลที่ดินอัจฉริยะแบบดิจิทัลเพื่อการพัฒนาที่ชาญฉลาดขึ้น เราแปลงที่ดินจริงให้เป็นสภาพแวดล้อม 3 มิติที่แม่นยำและโต้ตอบได้ เพื่อให้คุณตัดสินใจได้ก่อนลงมือก่อสร้าง</p>
+      </div>
+      <div class="footer-col">
+        <h4>บริษัท</h4>
+        <ul>
+          <li><a href="about.html">เกี่ยวกับเรา</a></li>
+          <li><a href="contact.html">ติดต่อ</a></li>
+          <li><a href="education.html">การอบรม</a></li>
+          <li><a href="museum.html">พิพิธภัณฑ์ดิจิทัล</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>บริการ</h4>
+        <ul>
+          <li><a href="gaussian.html">Gaussian Splatting</a></li>
+          <li><a href="twin.html">ดิจิทัลทวิน</a></li>
+          <li><a href="concepting.html">ทดสอบแนวคิด</a></li>
+          <li><a href="monitoring.html">ติดตามงานก่อสร้าง</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> EASY SCAN บริษัท Limited</span>
+      <span>เกาะพะงัน · เกาะสมุย · ภูเก็ต — ประเทศไทย</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

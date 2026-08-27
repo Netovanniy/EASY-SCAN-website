@@ -1,0 +1,763 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/content/**",
+              "components/core/**",
+              "components/data/**",
+              "components/geo/**",
+              "components/media/**",
+              "ui_kits/report/**",
+              "ui_kits/viewer/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:ABNES|Tactic Sans|Andale Mono ES))/i]",
+        "message": "Font not provided by the design system. Available: ABNES, Tactic Sans, Andale Mono ES."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AnalysisCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:analysis|result|unit|interpretation|ramp|rampLabels|level|source|visual|style|key|ref|className|style|children)$/]",
+        "message": "<AnalysisCard> doesn't accept that prop. Declared props: analysis, result, unit, interpretation, ramp, rampLabels, level, source, visual, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AnalysisCard'] > JSXAttribute[name.name='level'] > Literal[value!=/^(?:measured|verified|calculated|estimated|approximate|conceptual)$/]",
+        "message": "<AnalysisCard> level must be one of 'measured' | 'verified' | 'calculated' | 'estimated' | 'approximate' | 'conceptual'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BeforeAfter'] > JSXAttribute > JSXIdentifier[name!=/^(?:beforeSrc|afterSrc|beforeLabel|afterLabel|ratio|initial|style|key|ref|className|style|children)$/]",
+        "message": "<BeforeAfter> doesn't accept that prop. Declared props: beforeSrc, afterSrc, beforeLabel, afterLabel, ratio, initial, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='BoundaryLegend'] > JSXAttribute > JSXIdentifier[name!=/^(?:types|showNotes|style|key|ref|className|style|children)$/]",
+        "message": "<BoundaryLegend> doesn't accept that prop. Declared props: types, showNotes, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|disabled|full|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, disabled, full."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|ghost|instrument)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'ghost' | 'instrument'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConfidenceTag'] > JSXAttribute > JSXIdentifier[name!=/^(?:level|source|style|key|ref|className|style|children)$/]",
+        "message": "<ConfidenceTag> doesn't accept that prop. Declared props: level, source, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ConfidenceTag'] > JSXAttribute[name.name='level'] > Literal[value!=/^(?:measured|verified|calculated|estimated|approximate|conceptual|unknown|unavailable)$/]",
+        "message": "<ConfidenceTag> level must be one of 'measured' | 'verified' | 'calculated' | 'estimated' | 'approximate' | 'conceptual' | 'unknown' | 'unavailable'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CoordinateLabel'] > JSXAttribute > JSXIdentifier[name!=/^(?:lat|lon|elevation|elevationUnit|local|system|format|overTerrain|style|key|ref|className|style|children)$/]",
+        "message": "<CoordinateLabel> doesn't accept that prop. Declared props: lat, lon, elevation, elevationUnit, local, system, format, overTerrain, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CoordinateLabel'] > JSXAttribute[name.name='format'] > Literal[value!=/^(?:decimal|dms)$/]",
+        "message": "<CoordinateLabel> format must be one of 'decimal' | 'dms'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DataColumn'] > JSXAttribute > JSXIdentifier[name!=/^(?:key|label|unit|align|muted|key|ref|className|style|children)$/]",
+        "message": "<DataColumn> doesn't accept that prop. Declared props: key, label, unit, align, muted."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DataColumn'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|right|center)$/]",
+        "message": "<DataColumn> align must be one of 'left' | 'right' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ElevationLegend'] > JSXAttribute > JSXIdentifier[name!=/^(?:min|max|interval|unit|datum|ramp|orientation|ticks|style|key|ref|className|style|children)$/]",
+        "message": "<ElevationLegend> doesn't accept that prop. Declared props: min, max, interval, unit, datum, ramp, orientation, ticks, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ElevationLegend'] > JSXAttribute[name.name='orientation'] > Literal[value!=/^(?:horizontal|vertical)$/]",
+        "message": "<ElevationLegend> orientation must be one of 'horizontal' | 'vertical'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|index|tone|rule|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, index, tone, rule, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:default|accent|instrument)$/]",
+        "message": "<Eyebrow> tone must be one of 'default' | 'accent' | 'instrument'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LayerDef'] > JSXAttribute > JSXIdentifier[name!=/^(?:key|label|hint|color|meta|key|ref|className|style|children)$/]",
+        "message": "<LayerDef> doesn't accept that prop. Declared props: key, label, hint, color, meta."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logotype'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|width|height|assetBase|strapline|style|key|ref|className|style|children)$/]",
+        "message": "<Logotype> doesn't accept that prop. Declared props: variant, width, height, assetBase, strapline, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logotype'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:wordmark|monogram|monogram-black)$/]",
+        "message": "<Logotype> variant must be one of 'wordmark' | 'monogram' | 'monogram-black'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MeasurementLine'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|unit|kind|orientation|length|tone|style|key|ref|className|style|children)$/]",
+        "message": "<MeasurementLine> doesn't accept that prop. Declared props: value, unit, kind, orientation, length, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MeasurementLine'] > JSXAttribute[name.name='kind'] > Literal[value!=/^(?:distance|height|elevation|slope|area|volume)$/]",
+        "message": "<MeasurementLine> kind must be one of 'distance' | 'height' | 'elevation' | 'slope' | 'area' | 'volume'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MeasurementLine'] > JSXAttribute[name.name='orientation'] > Literal[value!=/^(?:horizontal|vertical)$/]",
+        "message": "<MeasurementLine> orientation must be one of 'horizontal' | 'vertical'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MeasurementLine'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:instrument|neutral)$/]",
+        "message": "<MeasurementLine> tone must be one of 'instrument' | 'neutral'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MediaTitleCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|title|location|ratio|tags|meta|onClick|style|key|ref|className|style|children)$/]",
+        "message": "<MediaTitleCard> doesn't accept that prop. Declared props: src, title, location, ratio, tags, meta, onClick, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NavBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:items|active|onSelect|languages|language|onLanguage|assetBase|transparent|style|key|ref|className|style|children)$/]",
+        "message": "<NavBar> doesn't accept that prop. Declared props: items, active, onSelect, languages, language, onLanguage, assetBase, transparent, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NorthIndicator'] > JSXAttribute > JSXIdentifier[name!=/^(?:rotation|size|tone|label|style|key|ref|className|style|children)$/]",
+        "message": "<NorthIndicator> doesn't accept that prop. Declared props: rotation, size, tone, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='NorthIndicator'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:light|dark)$/]",
+        "message": "<NorthIndicator> tone must be one of 'light' | 'dark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProcessStep'] > JSXAttribute > JSXIdentifier[name!=/^(?:index|title|children|outcome|style|key|ref|className|style|children)$/]",
+        "message": "<ProcessStep> doesn't accept that prop. Declared props: index, title, children, outcome, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProjectMetadata'] > JSXAttribute > JSXIdentifier[name!=/^(?:project|location|area|captureDate|technology|accuracy|deliverables|coordinateSystem|layout|status|confidence|confidenceSource|demo|style|key|ref|className|style|children)$/]",
+        "message": "<ProjectMetadata> doesn't accept that prop. Declared props: project, location, area, captureDate, technology, accuracy, deliverables, coordinateSystem, layout, status, confidence, confidenceSource, demo, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProjectMetadata'] > JSXAttribute[name.name='layout'] > Literal[value!=/^(?:list|grid)$/]",
+        "message": "<ProjectMetadata> layout must be one of 'list' | 'grid'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProjectMetadata'] > JSXAttribute[name.name='status'] > Literal[value!=/^(?:scheduled|captured|processing|ready|updated)$/]",
+        "message": "<ProjectMetadata> status must be one of 'scheduled' | 'captured' | 'processing' | 'ready' | 'updated'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProjectMetadata'] > JSXAttribute[name.name='confidence'] > Literal[value!=/^(?:measured|verified|calculated|estimated|approximate|conceptual)$/]",
+        "message": "<ProjectMetadata> confidence must be one of 'measured' | 'verified' | 'calculated' | 'estimated' | 'approximate' | 'conceptual'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Quote'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|attribution|role|size|style|key|ref|className|style|children)$/]",
+        "message": "<Quote> doesn't accept that prop. Declared props: children, attribution, role, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Quote'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:md|lg)$/]",
+        "message": "<Quote> size must be one of 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ScaleBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:length|unit|pixels|segments|tone|style|key|ref|className|style|children)$/]",
+        "message": "<ScaleBar> doesn't accept that prop. Declared props: length, unit, pixels, segments, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ScaleBar'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:light|dark)$/]",
+        "message": "<ScaleBar> tone must be one of 'light' | 'dark'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute > JSXIdentifier[name!=/^(?:eyebrow|index|title|lead|align|level|size|style|key|ref|className|style|children)$/]",
+        "message": "<SectionHeading> doesn't accept that prop. Declared props: eyebrow, index, title, lead, align, level, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|center)$/]",
+        "message": "<SectionHeading> align must be one of 'left' | 'center'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeading'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:h1|h2|h3)$/]",
+        "message": "<SectionHeading> size must be one of 'h1' | 'h2' | 'h3'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SpecCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|subtitle|items|footer|tone|dense|children|style|key|ref|className|style|children)$/]",
+        "message": "<SpecCard> doesn't accept that prop. Declared props: title, subtitle, items, footer, tone, dense, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SpecCard'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:default|brand|instrument)$/]",
+        "message": "<SpecCard> tone must be one of 'default' | 'brand' | 'instrument'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SpecItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|unit|note|key|ref|className|style|children)$/]",
+        "message": "<SpecItem> doesn't accept that prop. Declared props: label, value, unit, note."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|unit|label|note|tone|align|style|key|ref|className|style|children)$/]",
+        "message": "<StatBlock> doesn't accept that prop. Declared props: value, unit, label, note, tone, align, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:default|instrument|brand)$/]",
+        "message": "<StatBlock> tone must be one of 'default' | 'instrument' | 'brand'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatBlock'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:left|right)$/]",
+        "message": "<StatBlock> align must be one of 'left' | 'right'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatusPill'] > JSXAttribute > JSXIdentifier[name!=/^(?:status|label|style|key|ref|className|style|children)$/]",
+        "message": "<StatusPill> doesn't accept that prop. Declared props: status, label, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatusPill'] > JSXAttribute[name.name='status'] > Literal[value!=/^(?:scheduled|captured|processing|ready|updated)$/]",
+        "message": "<StatusPill> status must be one of 'scheduled' | 'captured' | 'processing' | 'ready' | 'updated'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|symbol|style|key|ref|className|style|children)$/]",
+        "message": "<Tag> doesn't accept that prop. Declared props: children, tone, symbol, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Tag'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:neutral|brand|instrument|demo)$/]",
+        "message": "<Tag> tone must be one of 'neutral' | 'brand' | 'instrument' | 'demo'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TerrainFrame'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|ratio|scrim|overlay|caption|coordinates|grid|children|style|key|ref|className|style|children)$/]",
+        "message": "<TerrainFrame> doesn't accept that prop. Declared props: src, alt, ratio, scrim, overlay, caption, coordinates, grid, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TerrainFrame'] > JSXAttribute[name.name='scrim'] > Literal[value!=/^(?:none|bottom|top|flat)$/]",
+        "message": "<TerrainFrame> scrim must be one of 'none' | 'bottom' | 'top' | 'flat'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TerrainLegend'] > JSXAttribute > JSXIdentifier[name!=/^(?:layers|columns|style|key|ref|className|style|children)$/]",
+        "message": "<TerrainLegend> doesn't accept that prop. Declared props: layers, columns, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "AnalysisCard": {
+        "replaces": []
+      },
+      "BeforeAfter": {
+        "replaces": []
+      },
+      "BoundaryLegend": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "ConfidenceTag": {
+        "replaces": []
+      },
+      "CoordinateLabel": {
+        "replaces": []
+      },
+      "DataColumn": {
+        "replaces": []
+      },
+      "ElevationLegend": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "LayerDef": {
+        "replaces": []
+      },
+      "Logotype": {
+        "replaces": []
+      },
+      "MeasurementLine": {
+        "replaces": []
+      },
+      "MediaTitleCard": {
+        "replaces": []
+      },
+      "NavBar": {
+        "replaces": []
+      },
+      "NorthIndicator": {
+        "replaces": []
+      },
+      "ProcessStep": {
+        "replaces": []
+      },
+      "ProjectMetadata": {
+        "replaces": []
+      },
+      "Quote": {
+        "replaces": []
+      },
+      "ScaleBar": {
+        "replaces": []
+      },
+      "SectionHeading": {
+        "replaces": []
+      },
+      "SpecCard": {
+        "replaces": []
+      },
+      "SpecItem": {
+        "replaces": []
+      },
+      "StatBlock": {
+        "replaces": []
+      },
+      "StatusPill": {
+        "replaces": []
+      },
+      "Tag": {
+        "replaces": []
+      },
+      "TerrainFrame": {
+        "replaces": []
+      },
+      "TerrainLegend": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent-coral",
+      "--accent-coral-dim",
+      "--accent-coral-tint",
+      "--accent-scan",
+      "--accent-scan-dim",
+      "--accent-scan-tint",
+      "--bg-inset",
+      "--bg-overlay",
+      "--bg-page",
+      "--bg-surface",
+      "--bg-surface-raised",
+      "--blur-panel",
+      "--border-card",
+      "--border-faint",
+      "--border-hairline",
+      "--border-panel",
+      "--border-strong",
+      "--border-w",
+      "--border-w-strong",
+      "--boundary-approximate",
+      "--boundary-cadastral",
+      "--boundary-conceptual",
+      "--boundary-dash-approximate",
+      "--boundary-dash-conceptual",
+      "--boundary-surveyed",
+      "--content-max",
+      "--contour-interval-default",
+      "--contour-major",
+      "--contour-major-light",
+      "--contour-major-over-photo",
+      "--contour-minor",
+      "--contour-minor-light",
+      "--contour-minor-over-photo",
+      "--contour-weight-major",
+      "--contour-weight-minor",
+      "--control-h",
+      "--control-h-lg",
+      "--control-h-sm",
+      "--data-drainage",
+      "--data-existing-structure",
+      "--data-measure",
+      "--data-measure-ink",
+      "--data-pointcloud",
+      "--data-proposed",
+      "--data-proposed-fill",
+      "--data-road",
+      "--data-scan-coverage",
+      "--data-scan-grid",
+      "--data-selected",
+      "--data-selected-halo",
+      "--data-terrain",
+      "--data-terrain-shade",
+      "--data-vegetation",
+      "--data-water",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-instant",
+      "--dur-reveal",
+      "--dur-slow",
+      "--dur-sweep",
+      "--ease-enter",
+      "--ease-exit",
+      "--ease-standard",
+      "--ease-sweep",
+      "--elev-0",
+      "--elev-1",
+      "--elev-2",
+      "--elev-3",
+      "--elev-4",
+      "--elev-5",
+      "--elev-6",
+      "--elev-7",
+      "--elev-ramp",
+      "--fg-faint",
+      "--fg-inverse",
+      "--fg-muted",
+      "--fg-primary",
+      "--fg-secondary",
+      "--focus-ring",
+      "--font-identity",
+      "--font-information",
+      "--font-structure",
+      "--grid-columns-desktop",
+      "--grid-columns-mobile",
+      "--grid-columns-tablet",
+      "--grid-gap",
+      "--grid-gap-dense",
+      "--grid-line",
+      "--grid-size",
+      "--gutter-desktop",
+      "--gutter-mobile",
+      "--gutter-print",
+      "--gutter-slide",
+      "--gutter-tablet",
+      "--hit-min",
+      "--hover-opacity",
+      "--leading-body",
+      "--leading-data",
+      "--leading-heading",
+      "--leading-tight",
+      "--link-color",
+      "--link-hover",
+      "--measure-body",
+      "--measure-lead",
+      "--n-000",
+      "--n-050",
+      "--n-100",
+      "--n-150",
+      "--n-200",
+      "--n-300",
+      "--n-400",
+      "--n-500",
+      "--n-600",
+      "--n-700",
+      "--n-800",
+      "--n-900",
+      "--n-950",
+      "--n-white",
+      "--panel-over-terrain",
+      "--panel-over-terrain-light",
+      "--press-scale",
+      "--radius-0",
+      "--radius-1",
+      "--radius-2",
+      "--radius-card",
+      "--radius-control",
+      "--radius-frame",
+      "--radius-pill",
+      "--reading-max",
+      "--scan-captured",
+      "--scan-processing",
+      "--scan-ready",
+      "--scan-scheduled",
+      "--scan-updated",
+      "--scrim-bottom",
+      "--scrim-flat",
+      "--scrim-top",
+      "--section-data",
+      "--section-explanation",
+      "--section-marketing",
+      "--shadow-float",
+      "--shadow-none",
+      "--shadow-panel",
+      "--shadow-print",
+      "--slope-0",
+      "--slope-1",
+      "--slope-2",
+      "--slope-3",
+      "--slope-4",
+      "--slope-ramp",
+      "--space-1",
+      "--space-10",
+      "--space-11",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--space-unit",
+      "--status-approximate",
+      "--status-calculated",
+      "--status-conceptual",
+      "--status-estimated",
+      "--status-measured",
+      "--status-unavailable",
+      "--status-verified",
+      "--status-warning",
+      "--text-body-font",
+      "--text-data-font",
+      "--text-display",
+      "--text-heading",
+      "--text-ui",
+      "--texture-grid",
+      "--tracking-body",
+      "--tracking-data",
+      "--tracking-heading",
+      "--tracking-identity",
+      "--tracking-label",
+      "--type-body",
+      "--type-body-l",
+      "--type-body-sm",
+      "--type-data",
+      "--type-data-sm",
+      "--type-data-xl",
+      "--type-h1",
+      "--type-h2",
+      "--type-h3",
+      "--type-h4",
+      "--type-identity-l",
+      "--type-identity-m",
+      "--type-identity-xl",
+      "--type-label",
+      "--type-label-sm",
+      "--weight-light",
+      "--weight-medium",
+      "--weight-regular"
+    ],
+    "tokenKinds": {
+      "--font-identity": "font",
+      "--font-structure": "font",
+      "--font-information": "font",
+      "--weight-light": "other",
+      "--weight-regular": "other",
+      "--weight-medium": "other",
+      "--type-identity-xl": "font",
+      "--type-identity-l": "font",
+      "--type-identity-m": "font",
+      "--type-h1": "font",
+      "--type-h2": "font",
+      "--type-h3": "font",
+      "--type-h4": "font",
+      "--type-label": "font",
+      "--type-label-sm": "font",
+      "--type-body-l": "font",
+      "--type-body": "font",
+      "--type-body-sm": "font",
+      "--type-data": "font",
+      "--type-data-sm": "font",
+      "--type-data-xl": "font",
+      "--leading-tight": "other",
+      "--leading-heading": "other",
+      "--leading-body": "other",
+      "--leading-data": "other",
+      "--tracking-identity": "other",
+      "--tracking-heading": "other",
+      "--tracking-label": "other",
+      "--tracking-data": "other",
+      "--tracking-body": "other",
+      "--text-display": "font",
+      "--text-heading": "font",
+      "--text-ui": "font",
+      "--text-body-font": "font",
+      "--text-data-font": "font",
+      "--measure-body": "spacing",
+      "--measure-lead": "spacing",
+      "--n-000": "color",
+      "--n-050": "color",
+      "--n-100": "color",
+      "--n-150": "color",
+      "--n-200": "color",
+      "--n-300": "color",
+      "--n-400": "color",
+      "--n-500": "color",
+      "--n-600": "color",
+      "--n-700": "color",
+      "--n-800": "color",
+      "--n-900": "color",
+      "--n-950": "color",
+      "--n-white": "color",
+      "--accent-coral": "color",
+      "--accent-coral-dim": "color",
+      "--accent-coral-tint": "color",
+      "--accent-scan": "color",
+      "--accent-scan-dim": "color",
+      "--accent-scan-tint": "color",
+      "--bg-page": "color",
+      "--bg-surface": "color",
+      "--bg-surface-raised": "color",
+      "--bg-inset": "color",
+      "--bg-overlay": "color",
+      "--fg-primary": "color",
+      "--fg-secondary": "color",
+      "--fg-muted": "color",
+      "--fg-faint": "color",
+      "--fg-inverse": "color",
+      "--border-hairline": "color",
+      "--border-strong": "color",
+      "--border-faint": "color",
+      "--link-color": "color",
+      "--link-hover": "color",
+      "--focus-ring": "color",
+      "--scrim-bottom": "other",
+      "--scrim-top": "other",
+      "--scrim-flat": "color",
+      "--data-terrain": "color",
+      "--data-terrain-shade": "color",
+      "--data-existing-structure": "color",
+      "--data-proposed": "color",
+      "--data-proposed-fill": "color",
+      "--data-road": "color",
+      "--data-vegetation": "color",
+      "--data-water": "color",
+      "--data-drainage": "color",
+      "--data-measure": "color",
+      "--data-measure-ink": "color",
+      "--data-scan-coverage": "color",
+      "--data-scan-grid": "color",
+      "--data-pointcloud": "color",
+      "--data-selected": "color",
+      "--data-selected-halo": "color",
+      "--contour-major": "color",
+      "--contour-minor": "color",
+      "--contour-major-over-photo": "color",
+      "--contour-minor-over-photo": "color",
+      "--contour-major-light": "color",
+      "--contour-minor-light": "color",
+      "--contour-weight-major": "spacing",
+      "--contour-weight-minor": "spacing",
+      "--contour-interval-default": "other",
+      "--boundary-cadastral": "color",
+      "--boundary-surveyed": "color",
+      "--boundary-approximate": "color",
+      "--boundary-conceptual": "color",
+      "--boundary-dash-approximate": "other",
+      "--boundary-dash-conceptual": "other",
+      "--status-verified": "color",
+      "--status-measured": "color",
+      "--status-calculated": "color",
+      "--status-estimated": "color",
+      "--status-approximate": "color",
+      "--status-conceptual": "color",
+      "--status-warning": "color",
+      "--status-unavailable": "color",
+      "--scan-scheduled": "color",
+      "--scan-captured": "color",
+      "--scan-processing": "color",
+      "--scan-ready": "color",
+      "--scan-updated": "color",
+      "--elev-0": "shadow",
+      "--elev-1": "shadow",
+      "--elev-2": "shadow",
+      "--elev-3": "shadow",
+      "--elev-4": "shadow",
+      "--elev-5": "shadow",
+      "--elev-6": "shadow",
+      "--elev-7": "shadow",
+      "--elev-ramp": "other",
+      "--slope-0": "color",
+      "--slope-1": "color",
+      "--slope-2": "color",
+      "--slope-3": "color",
+      "--slope-4": "color",
+      "--slope-ramp": "other",
+      "--space-unit": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--space-11": "spacing",
+      "--gutter-desktop": "spacing",
+      "--gutter-tablet": "spacing",
+      "--gutter-mobile": "spacing",
+      "--gutter-slide": "spacing",
+      "--gutter-print": "spacing",
+      "--section-marketing": "spacing",
+      "--section-explanation": "spacing",
+      "--section-data": "spacing",
+      "--grid-columns-desktop": "other",
+      "--grid-columns-tablet": "other",
+      "--grid-columns-mobile": "other",
+      "--grid-gap": "spacing",
+      "--grid-gap-dense": "spacing",
+      "--content-max": "spacing",
+      "--reading-max": "spacing",
+      "--control-h-sm": "spacing",
+      "--control-h": "spacing",
+      "--control-h-lg": "spacing",
+      "--hit-min": "spacing",
+      "--radius-0": "radius",
+      "--radius-1": "radius",
+      "--radius-2": "radius",
+      "--radius-pill": "radius",
+      "--radius-frame": "radius",
+      "--radius-card": "radius",
+      "--radius-control": "radius",
+      "--border-w": "spacing",
+      "--border-w-strong": "spacing",
+      "--border-card": "other",
+      "--border-panel": "other",
+      "--shadow-none": "shadow",
+      "--shadow-panel": "shadow",
+      "--shadow-float": "shadow",
+      "--shadow-print": "shadow",
+      "--blur-panel": "other",
+      "--panel-over-terrain": "color",
+      "--panel-over-terrain-light": "color",
+      "--grid-line": "other",
+      "--grid-size": "spacing",
+      "--texture-grid": "other",
+      "--ease-standard": "other",
+      "--ease-enter": "other",
+      "--ease-exit": "other",
+      "--ease-sweep": "other",
+      "--dur-instant": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other",
+      "--dur-reveal": "other",
+      "--dur-sweep": "other",
+      "--hover-opacity": "other",
+      "--press-scale": "other"
+    },
+    "fontFamilies": [
+      "ABNES",
+      "Andale Mono ES",
+      "Tactic Sans"
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Terrain viewer" description="Digital twin / terrain viewer interface — layer rail, measurement tools, coordinates, legends and project metadata." -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:#000;overflow:hidden}</style></helmet>
+<div style="display:grid;grid-template-columns:296px 1fr 316px;grid-template-rows:56px 1fr 34px;height:100vh;background:#000;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace">
+
+<div style="grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 24px;border-bottom:1px solid rgba(255,255,255,.14);background:#0D1011;overflow-x:auto">
+<div style="display:flex;align-items:center;gap:32px;flex-shrink:0">
+<img src="../../assets/logo-wordmark-white-alpha.png" alt="EASY SCAN" style="width:150px;display:block">
+<span style="width:1px;height:22px;background:rgba(255,255,255,.14)"></span>
+<span style="font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;flex-shrink:0">The Hill</span>
+<span style="font-size:13px;color:#82898D;white-space:nowrap;flex-shrink:0">Koh Phangan · 8.1 ha</span>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatusPill" status="ready" hint-size="90px,24px"></x-import>
+</div>
+<div style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+<sc-for list="{{ tools }}" as="t" hint-placeholder-count="5">
+<sc-if value="{{ t.active }}">
+<button type="button" onClick="{{ t.onClick }}" style="appearance:none;cursor:pointer;height:28px;padding:0 12px;border-radius:2px;font-family:'Andale Mono ES',monospace;font-size:13px;letter-spacing:.02em;border:1px solid #1E9E71;background:rgba(61,227,166,.12);color:#3DE3A6">{{ t.label }}</button>
+</sc-if>
+<sc-if value="{{ t.idle }}">
+<button type="button" onClick="{{ t.onClick }}" style="appearance:none;cursor:pointer;height:28px;padding:0 12px;border-radius:2px;font-family:'Andale Mono ES',monospace;font-size:13px;letter-spacing:.02em;border:1px solid rgba(255,255,255,.07);background:transparent;color:#AAB0B3">{{ t.label }}</button>
+</sc-if>
+</sc-for>
+<span style="width:1px;height:22px;background:rgba(255,255,255,.14);margin:0 6px"></span>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" variant="secondary" size="sm" hint-size="80px,28px">Share</x-import>
+</div>
+</div>
+
+<aside style="border-right:1px solid rgba(255,255,255,.14);background:#0D1011;overflow-y:auto;padding:24px">
+<div style="display:flex;gap:24px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07)">
+<sc-if value="{{ onLayersTab }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ showLayers }}" style="appearance:none;background:none;border:0;border-bottom:1.5px solid #FF8562;cursor:pointer;padding:0 0 10px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#FFFFFF">Layers</button>
+</sc-if>
+<sc-if value="{{ onLegendTab }}">
+<button type="button" onClick="{{ showLayers }}" style="appearance:none;background:none;border:0;border-bottom:1.5px solid transparent;cursor:pointer;padding:0 0 10px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#82898D">Layers</button>
+</sc-if>
+<sc-if value="{{ onLegendTab }}">
+<button type="button" onClick="{{ showLegend }}" style="appearance:none;background:none;border:0;border-bottom:1.5px solid #FF8562;cursor:pointer;padding:0 0 10px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#FFFFFF">Legend</button>
+</sc-if>
+<sc-if value="{{ onLayersTab }}">
+<button type="button" onClick="{{ showLegend }}" style="appearance:none;background:none;border:0;border-bottom:1.5px solid transparent;cursor:pointer;padding:0 0 10px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#82898D">Legend</button>
+</sc-if>
+</div>
+<sc-if value="{{ onLayersTab }}" hint-placeholder-val="{{ true }}">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.LayerControl" groups="{{ layerGroups }}" active="{{ layers }}" onToggle="{{ toggle }}" hint-size="100%,460px"></x-import>
+</sc-if>
+<sc-if value="{{ onLegendTab }}">
+<div style="display:flex;flex-direction:column;gap:32px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ElevationLegend" min="{{ elevMin }}" max="{{ elevMax }}" interval="{{ elevInterval }}" hint-size="100%,110px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.BoundaryLegend" types="{{ boundaryTypes }}" hint-size="100%,140px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.TerrainLegend" layers="{{ activeLayerKeys }}" hint-size="100%,120px"></x-import>
+</div>
+</sc-if>
+</aside>
+
+<main style="position:relative;overflow:hidden;background:#07090A">
+<img src="../../assets/hero-terrain-scan.png" alt="Terrain model of the site" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<sc-if value="{{ imageryOff }}">
+<span style="position:absolute;inset:0;background:#07090A;opacity:.74"></span>
+</sc-if>
+<sc-if value="{{ dimForOverlay }}">
+<span style="position:absolute;inset:0;background:#000;opacity:.36"></span>
+</sc-if>
+<sc-if value="{{ layers.contours }}">
+<svg viewBox="0 0 800 640" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" aria-label="Contours, 1 m interval">
+<g stroke="rgba(255,255,255,.26)" stroke-width="0.75" fill="none">
+<ellipse cx="410" cy="330" rx="46" ry="30"></ellipse><ellipse cx="410" cy="330" rx="90" ry="58"></ellipse><ellipse cx="408" cy="332" rx="134" ry="86"></ellipse><ellipse cx="406" cy="334" rx="178" ry="114"></ellipse><ellipse cx="404" cy="336" rx="222" ry="142"></ellipse><ellipse cx="402" cy="338" rx="266" ry="170"></ellipse><ellipse cx="400" cy="340" rx="310" ry="198"></ellipse>
+</g>
+<g stroke="rgba(255,255,255,.62)" stroke-width="1.5" fill="none">
+<ellipse cx="410" cy="330" rx="112" ry="72"></ellipse><ellipse cx="403" cy="337" rx="244" ry="156"></ellipse>
+</g>
+</svg>
+</sc-if>
+<sc-if value="{{ layers.slope }}">
+<span style="position:absolute;inset:0;background:var(--slope-ramp);opacity:.32;mix-blend-mode:multiply"></span>
+</sc-if>
+<sc-if value="{{ layers.boundaries }}">
+<svg viewBox="0 0 800 600" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" aria-label="Boundaries">
+<polygon points="120,120 660,86 690,440 190,510" fill="none" stroke="#FFFFFF" stroke-width="1.5"></polygon>
+<polyline points="120,120 660,86" fill="none" stroke="#FFD166" stroke-width="2.5"></polyline>
+<polyline points="190,510 120,120" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="8 6" opacity=".6"></polyline>
+</svg>
+</sc-if>
+<sc-if value="{{ layers.drainage }}">
+<svg viewBox="0 0 800 600" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" aria-label="Drainage">
+<path d="M240 110 C 300 240, 260 360, 330 500" fill="none" stroke="#4FA8D8" stroke-width="2"></path>
+<path d="M540 100 C 520 260, 590 340, 560 500" fill="none" stroke="#4FA8D8" stroke-width="2"></path>
+</svg>
+</sc-if>
+<sc-if value="{{ layers.proposed }}">
+<svg viewBox="0 0 800 600" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%" aria-label="Proposed architecture, conceptual">
+<polygon points="300,220 470,208 476,300 306,314" fill="rgba(255,133,98,.18)" stroke="#FF8562" stroke-width="1.5" stroke-dasharray="2 5"></polygon>
+</svg>
+</sc-if>
+
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.MeasurementLine" value="184.6" unit="m" length="34%" style="position:absolute;left:22%;top:62%" hint-size="34%,1px"></x-import>
+
+<span style="position:absolute;left:37%;top:34%;width:22%;height:18%;border:1px solid #fff;box-shadow:0 0 0 4px rgba(61,227,166,.45)"></span>
+<span style="position:absolute;left:37%;top:53%;font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;background:rgba(0,0,0,.62);padding:3px 8px">Selected · Platform A · conceptual</span>
+
+<span style="position:absolute;left:24px;top:24px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.CoordinateLabel" lat="{{ lat }}" lon="{{ lon }}" elevation="{{ elev }}" local="E 412.8  N 208.4" system="WGS 84 / UTM 47N" overTerrain="{{ true }}" hint-size="240px,60px"></x-import></span>
+<span style="position:absolute;right:24px;top:24px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.NorthIndicator" rotation="{{ northRotation }}" hint-size="34px,50px"></x-import></span>
+<span style="position:absolute;left:24px;bottom:24px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ScaleBar" length="{{ scaleLength }}" unit="m" pixels="{{ scalePixels }}" hint-size="160px,30px"></x-import></span>
+<span style="position:absolute;left:24px;bottom:82px;display:flex;gap:8px;justify-content:flex-start">
+<span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:4px 8px;background:rgba(0,0,0,.58);border:1px solid rgba(255,255,255,.07);color:#82898D">Reality</span>
+<span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:4px 8px;background:rgba(0,0,0,.58);border:1px solid #1E9E71;color:#3DE3A6">Measured</span>
+<span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:4px 8px;background:rgba(0,0,0,.58);border:1px solid rgba(255,255,255,.07);color:#82898D">Analysis</span>
+<span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:4px 8px;background:rgba(0,0,0,.58);border:1px solid rgba(255,255,255,.07);color:#82898D">Proposed</span>
+</span>
+</main>
+
+<aside style="border-left:1px solid rgba(255,255,255,.14);background:#0D1011;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:32px">
+<div>
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#82898D">Selection</div>
+<div style="margin-top:16px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SpecList" dense="{{ true }}" items="{{ selectionSpecs }}" hint-size="100%,180px"></x-import></div>
+<div style="margin-top:12px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ConfidenceTag" level="conceptual" source="Client sketch overlay" hint-size="100%,20px"></x-import></div>
+</div>
+<span style="height:1px;background:rgba(255,255,255,.07)"></span>
+<div>
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#82898D">Project</div>
+<div style="margin-top:16px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProjectMetadata" layout="list" demo="{{ true }}" project="The Hill" location="Koh Phangan" area="8.1 ha" captureDate="2025-03-12" accuracy="±25 mm vertical" coordinateSystem="WGS 84 / UTM 47N" technology="{{ tech }}" hint-size="100%,280px"></x-import></div>
+</div>
+<span style="height:1px;background:rgba(255,255,255,.07)"></span>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#82898D">Export</div>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" variant="secondary" size="sm" full="{{ true }}" hint-size="100%,28px">Download contours (DXF)</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" variant="secondary" size="sm" full="{{ true }}" hint-size="100%,28px">Download terrain (OBJ)</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" variant="instrument" size="sm" full="{{ true }}" hint-size="100%,28px">Open measurement report</x-import>
+</div>
+</aside>
+
+<div style="grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-top:1px solid rgba(255,255,255,.14);background:#07090A;font-size:13px;color:#82898D">
+<span>{{ statusLine }}</span>
+<span style="color:#FFD166">Demo data — not a survey deliverable</span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    tab: 'layers',
+    tool: 'pointer',
+    layers: { imagery: true, contours: true, boundaries: true, proposed: false, slope: false, pointcloud: false, drainage: false }
+  };
+
+  renderVals() {
+    const s = this.state;
+    const on = Object.keys(s.layers).filter((k) => s.layers[k]);
+    const tools = [['Select', 'pointer'], ['Distance', 'distance'], ['Height', 'height'], ['Area', 'area'], ['Section', 'section']];
+    return {
+      tools: tools.map(([label, key]) => ({
+        label: label,
+        active: s.tool === key,
+        idle: s.tool !== key,
+        onClick: () => this.setState({ tool: key })
+      })),
+      layers: s.layers,
+      toggle: (k) => this.setState((st) => ({ layers: Object.assign({}, st.layers, { [k]: !st.layers[k] }) })),
+      onLayersTab: s.tab === 'layers',
+      onLegendTab: s.tab === 'legend',
+      showLayers: () => this.setState({ tab: 'layers' }),
+      showLegend: () => this.setState({ tab: 'legend' }),
+      imageryOff: !s.layers.imagery,
+      dimForOverlay: s.layers.imagery && s.layers.contours,
+      activeLayerKeys: on.filter((k) => k !== 'imagery'),
+      statusLine: 'Tool: ' + s.tool + ' · Layers on: ' + on.length + ' · 1 m contour interval',
+      boundaryTypes: ['cadastral', 'surveyed', 'approximate'],
+      tech: ['UAV LiDAR', 'Photogrammetry'],
+      lat: 9.73824, lon: 100.01362, elev: 38.2,
+      elevMin: 0, elevMax: 112, elevInterval: 1,
+      scaleLength: 100, scalePixels: 160, northRotation: -12,
+      selectionSpecs: [
+        { label: 'Object', value: 'Platform A' },
+        { label: 'State', value: 'Conceptual' },
+        { label: 'Footprint', value: '1 240', unit: 'm²' },
+        { label: 'Level', value: '+42.0', unit: 'm MSL' },
+        { label: 'Net cut', value: '+2 140', unit: 'm³' }
+      ],
+      layerGroups: [
+        { title: 'Reality', layers: [
+          { key: 'imagery', label: 'Aerial imagery', hint: 'What the site looks like today' },
+          { key: 'pointcloud', label: 'Point cloud', hint: 'Raw scan points', color: 'var(--data-pointcloud)' }] },
+        { title: 'Measured', layers: [
+          { key: 'contours', label: 'Contours', hint: 'Height lines every 1 m', meta: '1 m', color: 'var(--contour-major)' },
+          { key: 'boundaries', label: 'Boundaries', hint: 'Where the land ends', color: 'var(--boundary-surveyed)' },
+          { key: 'drainage', label: 'Drainage', hint: 'Where water runs', color: 'var(--data-water)' }] },
+        { title: 'Derived analysis', layers: [
+          { key: 'slope', label: 'Slope', hint: 'How steep the ground is', color: 'var(--slope-2)' }] },
+        { title: 'Proposed', layers: [
+          { key: 'proposed', label: 'Architecture', hint: 'Concept — not built', color: 'var(--data-proposed)' }] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

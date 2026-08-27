@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Marketing page" description="Full-bleed terrain hero, problem statement, four-step process and packages — EASY SCAN HERO + EXPLANATION modes." -->
+<helmet><script src="./ds-base.js"></script><style>body{margin:0;background:#000;color:#fff}</style></helmet>
+<div style="background:#000;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace;min-height:100vh">
+
+<header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 56px;background:rgba(0,0,0,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)">
+<img src="../../assets/logo-es-white.png" alt="EASY SCAN" style="width:64px;display:block">
+<nav style="display:flex;align-items:center;gap:32px">
+<a href="#" style="font-family:'Tactic Sans',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#FF8562;text-decoration:none">Home</a>
+<a href="#" style="font-family:'Tactic Sans',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-decoration:none">Services</a>
+<a href="#" style="font-family:'Tactic Sans',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-decoration:none">Projects</a>
+<a href="#" style="font-family:'Tactic Sans',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-decoration:none">Contact</a>
+<span style="display:flex;gap:8px;padding-left:16px;border-left:1px solid rgba(255,255,255,.14);font-size:11px;letter-spacing:.14em"><span style="color:#fff">EN</span><span style="color:#5C6367">ไทย</span></span>
+</nav>
+</header>
+
+<section style="position:relative;min-height:78vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 56px 80px;overflow:hidden">
+<img src="../../assets/hero-terrain-scan.png" alt="Aerial scan of a hillside" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<span style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 38%,rgba(0,0,0,0) 78%)"></span>
+<div style="position:relative;max-width:1440px;margin:0 auto;width:100%;display:flex;flex-direction:column;gap:32px">
+<h1 style="margin:0;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:clamp(2.25rem,4.4vw,3.75rem);letter-spacing:.02em;line-height:1.06;text-transform:uppercase;max-width:20ch">Understand the land before you build.</h1>
+<p style="margin:0;max-width:46ch;font-size:17px;line-height:1.62;border-top:1px solid rgba(255,255,255,.3);padding-top:16px">We scan real land with LiDAR and drone photogrammetry and turn it into accurate 3D terrain models — so you can see the site before design begins.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" size="lg" hint-size="200px,48px">Request a scan</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" variant="secondary" size="lg" hint-size="170px,48px">See projects</x-import>
+</div>
+</div>
+</section>
+
+<section style="padding:80px 56px">
+<div style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:7fr 5fr;gap:80px;align-items:start">
+<div>
+<div style="display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#82898D"><span>The problem</span><span style="flex:1;height:1px;background:rgba(255,255,255,.14)"></span></div>
+<h2 style="margin:24px 0 16px;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:clamp(2.25rem,4.4vw,3.75rem);line-height:1.12;text-transform:uppercase;letter-spacing:.02em;max-width:20ch">Terrain is often misunderstood</h2>
+<p style="margin:0 0 16px;font-size:17px;line-height:1.62;color:#AAB0B3;max-width:66ch">People lose money before construction even starts. A slope read wrong, drainage missed, a boundary assumed — each one becomes an expensive change on site.</p>
+<p style="margin:0;line-height:1.62;color:#AAB0B3;max-width:66ch">We scan terrain with precision. You get measurable ground instead of assumptions.</p>
+</div>
+<div style="display:grid;gap:32px;padding-top:40px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatBlock" value="±25" unit="mm" label="Typical vertical accuracy" note="Instrument specification" hint-size="100%,80px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatBlock" value="3" unit="islands" label="Operating area" note="Koh Phangan · Koh Samui · Phuket" hint-size="100%,80px"></x-import>
+</div>
+</div>
+</section>
+
+<section style="padding:80px 56px;background:#0D1011">
+<div style="max-width:1440px;margin:0 auto">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SectionHeading" eyebrow="Process" title="Complete solution for land transformation" lead="Each service addresses a specific phase of your project. Together they form one path from ground to decision." hint-size="100%,160px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="1" title="Environment scan" outcome="Every elevation recorded" hint-size="100%,180px">LiDAR and drone systems record every elevation and contour with precision.</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="2" title="3D terrain model" outcome="Slopes, drainage and earthwork are measurable" hint-size="100%,180px">Data becomes a digital terrain model of the real site.</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="3" title="Digital twin" outcome="The twin shows reality, not a sketch" hint-size="100%,180px">Architects position buildings on the scanned land.</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="4" title="Monitoring progress" outcome="Volumes and levels verified as built" hint-size="100%,180px">Construction phases tracked as 3D documentation.</x-import>
+</div>
+</div>
+</section>
+
+<section style="padding:80px 56px">
+<div style="max-width:1440px;margin:0 auto">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SectionHeading" eyebrow="Packages" title="Choose your package" lead="Three levels of depth, from a first look at the site to construction-stage monitoring." hint-size="100%,160px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SpecCard" title="Basic" subtitle="Quick understanding of your site" items="{{ basicItems }}" hint-size="100%,260px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SpecCard" title="Smart" tone="instrument" subtitle="Basic, plus measurable planning data" items="{{ smartItems }}" hint-size="100%,260px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SpecCard" title="Developer" tone="brand" subtitle="Smart, plus strategy and monitoring" items="{{ devItems }}" hint-size="100%,260px"></x-import>
+</div>
+</div>
+</section>
+
+<footer style="border-top:1px solid rgba(255,255,255,.14);padding:56px;display:flex;justify-content:space-between;font-size:13px;color:#5C6367">
+<span>Digital Land Intelligence · Thailand</span><span>Landscape First.</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      basicItems: [
+        { label: 'Scan', value: '3D land scan' },
+        { label: 'Imagery', value: '360° / HDRI panoramas' },
+        { label: 'Model', value: 'Simplified terrain model' },
+        { label: 'Access', value: 'Online 3D viewer' }
+      ],
+      smartItems: [
+        { label: 'Contours', value: 'DXF + PDF', note: 'levels included' },
+        { label: 'Advice', value: 'Land use recommendation' },
+        { label: 'Concept', value: 'Placement on terrain' },
+        { label: 'Session', value: '1 live design session' }
+      ],
+      devItems: [
+        { label: 'Strategy', value: 'Land strategy + layout ideas' },
+        { label: 'BIM data', value: 'OBJ / FBX / DXF' },
+        { label: 'Monitoring', value: '3D construction tracking' },
+        { label: 'Analysis', value: 'Earth volume and levels' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

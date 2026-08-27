@@ -1,0 +1,42 @@
+:root{
+  /* base unit 4px; architectural rhythm favours 8/16/24/40/64 */
+  --space-unit:4px; /* @kind spacing */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --space-7:40px;
+  --space-8:56px;
+  --space-9:80px;
+  --space-10:120px;
+  --space-11:160px;
+
+  /* page gutters per surface */
+  --gutter-desktop:56px;
+  --gutter-tablet:32px;
+  --gutter-mobile:20px;
+  --gutter-slide:72px;
+  --gutter-print:18mm; /* @kind spacing */
+
+  /* section rhythm */
+  --section-marketing:var(--space-10); /* @kind spacing */
+  --section-explanation:var(--space-9); /* @kind spacing */
+  --section-data:var(--space-6); /* @kind spacing */
+
+  /* grid */
+  --grid-columns-desktop:12; /* @kind other */
+  --grid-columns-tablet:8; /* @kind other */
+  --grid-columns-mobile:4; /* @kind other */
+  --grid-gap:24px;
+  --grid-gap-dense:12px;
+  --content-max:1440px; /* @kind spacing */
+  --reading-max:720px; /* @kind spacing */
+
+  /* control sizing */
+  --control-h-sm:28px; /* @kind spacing */
+  --control-h:36px; /* @kind spacing */
+  --control-h-lg:48px; /* @kind spacing */
+  --hit-min:44px; /* @kind spacing */
+}

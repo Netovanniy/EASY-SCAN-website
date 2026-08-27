@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Presentation deck" description="Client / investor deck — terrain title slide, statement, process, data slide, comparison and closing." -->
+<helmet><script src="./ds-base.js"></script></helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+<section data-label="Title" data-screen-label="01" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace">
+<img src="../../assets/hero-terrain-scan.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<span style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,0) 80%)"></span>
+<span style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.72) 0%,rgba(0,0,0,0) 60%)"></span>
+<img src="../../assets/logo-wordmark-white-alpha.png" alt="EASY SCAN" style="position:absolute;left:108px;top:84px;width:300px">
+<div style="position:absolute;left:108px;bottom:186px;display:flex;flex-direction:column;gap:34px">
+<span style="font-family:'ABNES',sans-serif;font-size:126px;line-height:.95;letter-spacing:.06em;text-transform:uppercase">Landscape<br>First.</span>
+<span style="font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:33px;letter-spacing:.14em;text-transform:uppercase;color:#FF8562">Data makes it understandable.</span>
+</div>
+<div style="position:absolute;left:108px;right:108px;bottom:52px;display:flex;justify-content:space-between;font-size:20px;color:#5C6367">
+<span>Digital Land Intelligence · Thailand</span><span>Koh Phangan · Koh Samui · Phuket</span>
+</div>
+</section>
+
+<section data-label="Problem" data-screen-label="02" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace;padding:108px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center">
+<span style="position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/100% 72px,linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/72px 100%"></span>
+<div style="position:relative;display:flex;flex-direction:column;gap:50px">
+<div style="display:flex;align-items:center;gap:18px;font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:#82898D"><span>The problem</span><span style="width:280px;height:1px;background:rgba(255,255,255,.14)"></span></div>
+<h1 style="margin:0;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:108px;line-height:1.04;text-transform:uppercase;letter-spacing:.01em;max-width:22ch">Terrain is often misunderstood</h1>
+<p style="margin:0;font-size:30px;line-height:1.6;color:#AAB0B3;max-width:46ch">People lose money before construction even starts. A slope read wrong, drainage missed, a boundary assumed — each becomes an expensive change on site.</p>
+</div>
+<div style="position:absolute;left:108px;right:108px;bottom:52px;display:flex;justify-content:space-between;font-size:20px;color:#5C6367"><span>EASY SCAN</span><span>02</span></div>
+</section>
+
+<section data-label="Process" data-screen-label="03" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#0D1011;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace;padding:108px;box-sizing:border-box">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SectionHeading" eyebrow="Process" title="Complete solution for land transformation" lead="Each service addresses a specific phase of your project." size="h1" hint-size="100%,220px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:48px;margin-top:96px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="1" title="Environment scan" outcome="Every elevation recorded" hint-size="100%,240px">LiDAR and drone systems record every elevation and contour with precision.</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="2" title="3D terrain model" outcome="Slopes and earthwork measurable" hint-size="100%,240px">Data becomes a digital terrain model of the real site.</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="3" title="Digital twin" outcome="The twin shows reality" hint-size="100%,240px">Architects position buildings on the scanned land.</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ProcessStep" index="4" title="Monitoring progress" outcome="Volumes verified as built" hint-size="100%,240px">Construction phases tracked as 3D documentation.</x-import>
+</div>
+<div style="position:absolute;left:108px;right:108px;bottom:52px;display:flex;justify-content:space-between;font-size:20px;color:#5C6367"><span>EASY SCAN</span><span>03</span></div>
+</section>
+
+<section data-label="Site data" data-screen-label="04" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace;display:grid;grid-template-columns:1fr 600px">
+<div style="position:relative;overflow:hidden">
+<img src="../../assets/hero-terrain-scan.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+<span style="position:absolute;inset:0;background:rgba(0,0,0,.42)"></span>
+<span style="position:absolute;left:52px;top:46px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.CoordinateLabel" lat="{{ lat }}" lon="{{ lon }}" elevation="{{ elev }}" system="WGS 84 / UTM 47N" overTerrain="{{ true }}" hint-size="300px,70px"></x-import></span>
+<span style="position:absolute;left:52px;bottom:46px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ScaleBar" length="{{ scaleLength }}" unit="m" pixels="{{ scalePixels }}" hint-size="220px,40px"></x-import></span>
+<span style="position:absolute;right:46px;top:46px"><x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.NorthIndicator" rotation="{{ northRotation }}" size="{{ northSize }}" hint-size="52px,70px"></x-import></span>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.MeasurementLine" value="184.6" unit="m" length="42%" style="position:absolute;left:14%;top:70%" hint-size="42%,1px"></x-import>
+</div>
+<div style="background:#0D1011;border-left:1px solid rgba(255,255,255,.14);padding:80px 60px;display:flex;flex-direction:column;gap:48px">
+<div>
+<span style="font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:#82898D">Site · demo data</span>
+<h2 style="margin:14px 0 0;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:52px;text-transform:uppercase;letter-spacing:.03em">The Hill</h2>
+</div>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.ElevationLegend" min="{{ elevMin }}" max="{{ elevMax }}" interval="{{ elevInterval }}" hint-size="100%,140px"></x-import>
+<div style="display:flex;gap:56px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatBlock" value="8.1" unit="ha" label="Area" hint-size="140px,90px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatBlock" value="±25" unit="mm" label="Accuracy" tone="instrument" hint-size="140px,90px"></x-import>
+</div>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.BoundaryLegend" types="{{ boundaryTypes }}" hint-size="100%,120px"></x-import>
+</div>
+</section>
+
+<section data-label="Existing → proposed" data-screen-label="05" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace;padding:108px;box-sizing:border-box;display:flex;flex-direction:column;gap:52px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.SectionHeading" eyebrow="Existing → proposed" title="The twin shows reality" size="h1" hint-size="100%,180px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.BeforeAfter" beforeSrc="../../assets/hero-terrain-scan.png" afterSrc="../../assets/hero-terrain-scan.png" beforeLabel="Photograph" afterLabel="Digital twin" ratio="16 / 7" hint-size="100%,420px"></x-import>
+<div style="display:flex;gap:72px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatBlock" value="1 240" unit="m²" label="Proposed footprint" note="Conceptual" hint-size="200px,90px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatBlock" value="+42.0" unit="m MSL" label="Platform level" note="Derived from DTM" hint-size="200px,90px"></x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.StatBlock" value="+2 140" unit="m³" label="Net cut" tone="instrument" note="Demo data" hint-size="200px,90px"></x-import>
+</div>
+</section>
+
+<section data-label="Closing" data-screen-label="06" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#000;color:#fff;font-family:'Andale Mono ES',ui-monospace,monospace;padding:108px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between">
+<img src="../../assets/logo-es-white.png" alt="EASY SCAN" style="width:168px">
+<div style="display:flex;flex-direction:column;gap:46px;max-width:26ch">
+<h1 style="margin:0;font-family:'Tactic Sans',sans-serif;font-weight:500;font-size:94px;line-height:1.04;text-transform:uppercase;letter-spacing:.01em">Understand the land before you build.</h1>
+<div style="display:flex;gap:24px">
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" size="lg" hint-size="220px,48px">Request a scan</x-import>
+<x-import component-from-global-scope="EASYSCANDesignSystem_1b72cd.Button" variant="secondary" size="lg" hint-size="190px,48px">See projects</x-import>
+</div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end;font-size:22px;color:#AAB0B3">
+<span>lidareasyscan.com</span><span style="color:#FF8562;letter-spacing:.14em;text-transform:uppercase">Landscape First.</span>
+</div>
+</section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      lat: 9.73824, lon: 100.01362, elev: 38.2,
+      elevMin: 0, elevMax: 112, elevInterval: 1,
+      scaleLength: 100, scalePixels: 220, northRotation: -12, northSize: 52,
+      boundaryTypes: ['surveyed', 'approximate']
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+:root{
+  /* geometry — architectural, near-square. Radius is a small deliberate
+     softening on controls only; terrain frames stay at 0. */
+  --radius-0:0px;
+  --radius-1:2px;
+  --radius-2:4px;
+  --radius-pill:999px;
+  --radius-frame:0px;
+  --radius-card:2px;
+  --radius-control:2px;
+
+  /* borders */
+  --border-w:1px; /* @kind spacing */
+  --border-w-strong:1.5px; /* @kind spacing */
+  --border-card:1px solid var(--border-hairline); /* @kind other */
+  --border-panel:1px solid var(--border-faint); /* @kind other */
+
+  /* elevation: EASY SCAN panels sit flat. Shadow is used only where a panel
+     floats over terrain, and then it is a soft depth cue, never a glow. */
+  --shadow-none:none;
+  --shadow-panel:0 1px 0 rgba(255,255,255,.04) inset;
+  --shadow-float:0 12px 32px -8px rgba(0,0,0,.72);
+  --shadow-print:0 0 0 1px rgba(13,16,17,.12);
+
+  /* blur is reserved for panels that must sit over live terrain */
+  --blur-panel:blur(14px) saturate(115%); /* @kind other */
+  --panel-over-terrain:rgba(7,9,10,.72);
+  --panel-over-terrain-light:rgba(255,255,255,.82);
+
+  /* technical texture: 1px scan grid, used sparingly on empty dark areas */
+  --grid-line:rgba(255,255,255,.05); /* @kind other */
+  --grid-size:48px; /* @kind spacing */
+  --texture-grid:linear-gradient(var(--grid-line) 1px,transparent 1px) 0 0/100% var(--grid-size),
+                 linear-gradient(90deg,var(--grid-line) 1px,transparent 1px) 0 0/var(--grid-size) 100%; /* @kind other */
+}
