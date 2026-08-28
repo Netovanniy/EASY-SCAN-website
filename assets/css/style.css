@@ -373,16 +373,17 @@ body.nav-open .mobile-nav{transform:none}
 /* ============================================================
    BLOCK · Scan grid (clickable project previews)
    ============================================================ */
-.scan-grid{display:grid;gap:1px;background:var(--border-faint);border:1px solid var(--border-faint)}
+.scan-grid{display:grid;gap:var(--space-4)}
 @media(min-width:640px){.scan-grid{grid-template-columns:repeat(2,1fr)}}
 .scan-card{
   display:block;background:var(--bg-page);color:inherit;
-  transition:background var(--dur-base) var(--ease-standard);
+  border:1px solid var(--border-faint);
+  transition:background var(--dur-base) var(--ease-standard),border-color var(--dur-base) var(--ease-standard);
 }
-.scan-card:hover{background:var(--bg-surface)}
+.scan-card:hover{background:var(--bg-surface);border-color:var(--border-hairline)}
 .scan-card__media{
   appearance:none;-webkit-appearance:none;margin:0;padding:0;border:0;font:inherit;color:inherit;
-  position:relative;display:block;width:100%;aspect-ratio:16/10;overflow:hidden;
+  position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;
   background:var(--bg-inset);cursor:pointer;
 }
 .scan-card__media img{
