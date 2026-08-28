@@ -377,6 +377,7 @@ T = {
 'Monitoring documents each phase in precise 3D — so teams can track progress, compare against plans, preserve hidden infrastructure, reduce misunderstandings and keep a permanent visual archive of the build.':
  'การติดตามบันทึกแต่ละช่วงในแบบ 3 มิติที่แม่นยำ — ทีมงานจึงติดตามความคืบหน้า เทียบกับแบบ เก็บรักษาโครงสร้างพื้นฐานที่ซ่อนอยู่ ลดความเข้าใจผิด และรักษาคลังภาพถาวรของการก่อสร้างได้',
 'What we document':'สิ่งที่เราบันทึก',
+'Four things worth capturing<br>on every build':'สี่สิ่งที่ควรเก็บบันทึก<br>ในทุกงานก่อสร้าง',
 'Four things worth capturing on every build':'สี่สิ่งที่ควรเก็บบันทึกในทุกงานก่อสร้าง',
 'Terrain changes':'การเปลี่ยนแปลงภูมิประเทศ',
 'Grading, retaining walls, slope adjustments and excavation measured and monitored in 3D — verifying volumes and site preparation.':
