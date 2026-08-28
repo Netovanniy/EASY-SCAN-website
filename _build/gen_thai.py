@@ -417,6 +417,7 @@ T = {
  'ผู้เยี่ยมชมสำรวจวัตถุ พื้นที่ และเรื่องราวได้จากทุกที่ในโลก การอนุรักษ์ดิจิทัลทำให้วัฒนธรรมทนทานขึ้น แบ่งปันง่ายขึ้น และสมจริงยิ่งขึ้น',
 'How it works':'ทำงานอย่างไร',
 'From real object to virtual exhibition':'จากวัตถุจริงสู่นิทรรศการเสมือน',
+'Beyond Physical Walls':'พ้นกำแพงทางกายภาพ',
 'Artifact digitisation':'การแปลงวัตถุเป็นดิจิทัล',
 'Sculptures, statues, archaeological pieces and historical items scanned with LiDAR, photogrammetry and high-resolution reconstruction.':
  'ประติมากรรม รูปปั้น ชิ้นงานทางโบราณคดี และวัตถุทางประวัติศาสตร์ ถูกสแกนด้วย LiDAR โฟโตแกรมเมทรี และการสร้างใหม่ความละเอียดสูง',
