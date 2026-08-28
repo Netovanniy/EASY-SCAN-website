@@ -167,6 +167,9 @@ T = {
  'EASY SCAN เปลี่ยนที่ดินจริงให้เป็นสภาพแวดล้อมดิจิทัลที่แม่นยำ เข้าใจง่าย และโต้ตอบได้ — ชั้นข้อมูลสำหรับการตัดสินใจระหว่างที่ดินดิบกับการพัฒนาในอนาคต',
 'Koh Phangan · 2020':'เกาะพะงัน · 2020',
 'Who we are':'เราคือใคร',
+'Make LiDAR practical and accessible':'ทำให้ LiDAR ใช้งานได้จริงและเข้าถึงง่าย',
+'EASY SCAN covers the full workflow — scanning, processing, training and consultation. Accurate capture that supports precise development decisions, with LiDAR used where it genuinely adds value.':'EASY SCAN ดูแลกระบวนการทั้งหมด — การสแกน การประมวลผล การอบรม และการให้คำปรึกษา การเก็บข้อมูลที่แม่นยำซึ่งสนับสนุนการตัดสินใจด้านการพัฒนาที่เที่ยงตรง โดยใช้ LiDAR ในจุดที่สร้างคุณค่าได้จริง',
+'The aim is simple: let people across architecture, development and construction use the full potential of the technology, and change how problems are solved — without deep technical expertise or expensive equipment.':'เป้าหมายเรียบง่าย: ให้ผู้คนในวงการสถาปัตยกรรม การพัฒนา และการก่อสร้าง ใช้ศักยภาพเต็มที่ของเทคโนโลยีนี้ และเปลี่ยนวิธีการแก้ปัญหา — โดยไม่ต้องมีความเชี่ยวชาญทางเทคนิคเชิงลึกหรืออุปกรณ์ราคาแพง',
 'Understand the land before you design, invest or build':'เข้าใจที่ดินก่อนออกแบบ ลงทุน หรือก่อสร้าง',
 'EASY SCAN began on Koh Phangan in 2020 as a scanning and technology experiment by founder Andrey Netovanniy. Over the following years the workflow matured around LiDAR, drone photogrammetry, 3D reconstruction and terrain analysis — and shifted from capturing objects toward practical land and development work.':
  'EASY SCAN เริ่มต้นบนเกาะพะงันในปี 2020 ในฐานะการทดลองด้านการสแกนและเทคโนโลยีโดย Andrey Netovanniy ผู้ก่อตั้ง ในปีต่อ ๆ มา กระบวนการทำงานพัฒนาไปรอบ ๆ LiDAR โฟโตแกรมเมทรีด้วยโดรน การสร้างใหม่ 3 มิติ และการวิเคราะห์ภูมิประเทศ — และเปลี่ยนจากการเก็บภาพวัตถุไปสู่งานด้านที่ดินและการพัฒนาที่ใช้งานได้จริง',
