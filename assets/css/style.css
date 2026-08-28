@@ -511,7 +511,9 @@ body.nav-open .mobile-nav{transform:none}
 /* compact, vertically-symmetric CTA band */
 .section--cozy{padding-top:0;padding-bottom:calc(var(--section-explanation) * 0.75)}
 .section--cozy .cta{padding-block:calc(var(--space-9) * 0.7)}
-/* CTA band that relies on the section's own padding only (no doubled inset) */
+/* CTA band that relies on the section's own padding only (no doubled inset);
+   no top padding, so the gap above equals the previous section's bottom padding */
+.section--flat-cta{padding-top:0}
 .section--flat-cta .cta{padding-block:0}
 .cta__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
 
