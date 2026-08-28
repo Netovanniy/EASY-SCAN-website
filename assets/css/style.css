@@ -259,6 +259,10 @@ body.nav-open .mobile-nav{transform:none}
   padding-bottom:var(--section-explanation);
 }
 .page-hero--full > .wrap{width:100%}
+.page-hero--full .page-hero__lead{
+  margin-top:var(--space-6);padding-top:var(--space-4);
+  border-top:1px solid var(--border-hairline);
+}
 .page-hero__media{position:absolute;inset:0;z-index:-2}
 .page-hero__media img{width:100%;height:100%;object-fit:cover;opacity:.5}
 .page-hero--full .page-hero__media img{opacity:.62}
