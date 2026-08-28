@@ -168,6 +168,7 @@ T = {
 'Koh Phangan · 2020':'เกาะพะงัน · 2020',
 'Who we are':'เราคือใคร',
 'EASY SCAN — intro video':'EASY SCAN — วิดีโอแนะนำ',
+'EASY SCAN — digital twin video':'EASY SCAN — วิดีโอดิจิทัลทวิน',
 'Make LiDAR practical and accessible':'ทำให้ LiDAR ใช้งานได้จริงและเข้าถึงง่าย',
 'EASY SCAN covers the full workflow — scanning, processing, training and consultation. Accurate capture that supports precise development decisions, with LiDAR used where it genuinely adds value.':'EASY SCAN ดูแลกระบวนการทั้งหมด — การสแกน การประมวลผล การอบรม และการให้คำปรึกษา การเก็บข้อมูลที่แม่นยำซึ่งสนับสนุนการตัดสินใจด้านการพัฒนาที่เที่ยงตรง โดยใช้ LiDAR ในจุดที่สร้างคุณค่าได้จริง',
 'The aim is simple: let people across architecture, development and construction use the full potential of the technology, and change how problems are solved — without deep technical expertise or expensive equipment.':'เป้าหมายเรียบง่าย: ให้ผู้คนในวงการสถาปัตยกรรม การพัฒนา และการก่อสร้าง ใช้ศักยภาพเต็มที่ของเทคโนโลยีนี้ และเปลี่ยนวิธีการแก้ปัญหา — โดยไม่ต้องมีความเชี่ยวชาญทางเทคนิคเชิงลึกหรืออุปกรณ์ราคาแพง',
