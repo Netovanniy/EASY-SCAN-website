@@ -405,8 +405,8 @@ T = {
 
 # ---- MUSEUM -----------------------------------------------------
 'The Digital Museum':'พิพิธภัณฑ์ดิจิทัล',
-'The Digital Museum is an experimental 3D environment that reimagines how we preserve and experience cultural artifacts — a curated virtual space where heritage, art, mythology and technology meet. Real artifacts, sculptures, environments and cultural objects are transformed into immersive digital experiences: not a traditional museum, but a way of preserving, exploring and presenting history through 3D environments, digital storytelling and interactive space. Because many artifacts are fragile, inaccessible or bound to a single location, it bridges preservation and accessibility by letting collections exist in a virtual environment that visitors can explore — objects, spaces and stories — from anywhere in the world, making culture more resilient, more shareable and more immersive.':
- 'พิพิธภัณฑ์ดิจิทัลคือสภาพแวดล้อม 3 มิติเชิงทดลองที่คิดใหม่ว่าเราจะอนุรักษ์และสัมผัสวัตถุทางวัฒนธรรมอย่างไร — พื้นที่เสมือนที่คัดสรร ซึ่งมรดก ศิลปะ ตำนาน และเทคโนโลยีมาบรรจบกัน วัตถุจริง ประติมากรรม สภาพแวดล้อม และวัตถุทางวัฒนธรรม ถูกแปลงเป็นประสบการณ์ดิจิทัลแบบสมจริง ไม่ใช่พิพิธภัณฑ์แบบดั้งเดิม แต่เป็นวิธีอนุรักษ์ สำรวจ และนำเสนอประวัติศาสตร์ผ่านสภาพแวดล้อม 3 มิติ การเล่าเรื่องดิจิทัล และพื้นที่โต้ตอบ เนื่องจากวัตถุจำนวนมากเปราะบาง เข้าถึงยาก หรือถูกจำกัดไว้ที่สถานที่เดียว จึงเชื่อมการอนุรักษ์กับการเข้าถึง โดยให้ของสะสมดำรงอยู่ในสภาพแวดล้อมเสมือนที่ผู้เยี่ยมชมสำรวจได้ — ทั้งวัตถุ พื้นที่ และเรื่องราว — จากทุกที่ในโลก ทำให้วัฒนธรรมทนทานขึ้น แบ่งปันง่ายขึ้น และสมจริงยิ่งขึ้น',
+'The Digital Museum is an experimental 3D environment that reimagines how we preserve and experience cultural artifacts. Real artifacts, sculptures, environments and cultural objects are transformed into immersive digital experiences where heritage, art, mythology and technology meet.':
+ 'พิพิธภัณฑ์ดิจิทัลคือสภาพแวดล้อม 3 มิติเชิงทดลองที่คิดใหม่ว่าเราจะอนุรักษ์และสัมผัสวัตถุทางวัฒนธรรมอย่างไร วัตถุจริง ประติมากรรม สภาพแวดล้อม และวัตถุทางวัฒนธรรม ถูกแปลงเป็นประสบการณ์ดิจิทัลแบบสมจริง ซึ่งมรดก ศิลปะ ตำนาน และเทคโนโลยีมาบรรจบกัน',
 'An experimental 3D environment that reimagines how we preserve and experience cultural artifacts — a curated virtual space where heritage, art, mythology and technology meet.':
  'สภาพแวดล้อม 3 มิติเชิงทดลองที่คิดใหม่ว่าเราจะอนุรักษ์และสัมผัสวัตถุทางวัฒนธรรมอย่างไร — พื้นที่เสมือนที่คัดสรร ซึ่งมรดก ศิลปะ ตำนาน และเทคโนโลยีมาบรรจบกัน',
 'Real artifacts, sculptures, environments and cultural objects are transformed into immersive digital experiences. This is not a traditional museum — it is a way of preserving, exploring and presenting history through 3D environments, digital storytelling and interactive space.':
@@ -418,6 +418,8 @@ T = {
 'Visitors explore objects, spaces and stories from anywhere in the world. Digital preservation makes culture more resilient, more shareable and more immersive.':
  'ผู้เยี่ยมชมสำรวจวัตถุ พื้นที่ และเรื่องราวได้จากทุกที่ในโลก การอนุรักษ์ดิจิทัลทำให้วัฒนธรรมทนทานขึ้น แบ่งปันง่ายขึ้น และสมจริงยิ่งขึ้น',
 'How it works':'ทำงานอย่างไร',
+'Rather than a traditional museum, it creates a new way to preserve, explore and share history through 3D environments, digital storytelling and interactive space. Fragile, inaccessible or location-bound collections can exist virtually and be explored from anywhere in the world, making culture more accessible, resilient and immersive.':
+ 'แทนที่จะเป็นพิพิธภัณฑ์แบบดั้งเดิม มันสร้างวิธีใหม่ในการอนุรักษ์ สำรวจ และแบ่งปันประวัติศาสตร์ผ่านสภาพแวดล้อม 3 มิติ การเล่าเรื่องดิจิทัล และพื้นที่โต้ตอบ ของสะสมที่เปราะบาง เข้าถึงยาก หรือผูกติดกับสถานที่เดียว สามารถดำรงอยู่แบบเสมือนและสำรวจได้จากทุกที่ในโลก ทำให้วัฒนธรรมเข้าถึงง่ายขึ้น ทนทานขึ้น และสมจริงยิ่งขึ้น',
 'From real object to virtual exhibition':'จากวัตถุจริงสู่นิทรรศการเสมือน',
 'Beyond Physical Walls':'พ้นกำแพงทางกายภาพ',
 'Artifact digitisation':'การแปลงวัตถุเป็นดิจิทัล',
