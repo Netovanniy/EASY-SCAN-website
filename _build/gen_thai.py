@@ -365,7 +365,7 @@ T = {
 'Reduce uncertainty, improve communication and avoid costly mistakes during planning.':
  'ลดความไม่แน่นอน ปรับปรุงการสื่อสาร และหลีกเลี่ยงความผิดพลาดที่มีค่าใช้จ่ายสูงระหว่างการวางแผน',
 'The idea':'แนวคิด',
-'Move it. Change it.<br>Test it. Before you build it.':'ย้ายมัน เปลี่ยนมัน<br>ทดสอบมัน ก่อนจะสร้างมัน',
+'Move it. Change it.<br>Test it. Before you build.':'ย้ายมัน เปลี่ยนมัน<br>ทดสอบมัน ก่อนจะสร้าง',
 'Move it. Change it. Test it. Before you build it.':'ย้ายมัน เปลี่ยนมัน ทดสอบมัน ก่อนจะสร้างมัน',
 'Order a 3D scan of your site and test development scenarios in real context. Send the location and size to begin.':
  'สั่งสแกนพื้นที่ของคุณแบบ 3 มิติ และทดสอบสถานการณ์การพัฒนาในบริบทจริง ส่งที่ตั้งและขนาดเพื่อเริ่มต้น',
