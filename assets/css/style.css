@@ -494,8 +494,7 @@ body.nav-open .mobile-nav{transform:none}
    ============================================================ */
 .cta{
   position:relative;overflow:hidden;
-  border:1px solid var(--border-hairline);border-radius:var(--radius-card);
-  padding:var(--space-9);background:var(--bg-surface);
+  padding:var(--space-9);background:var(--bg-page);
 }
 .cta__grid{
   position:absolute;inset:0;z-index:0;
