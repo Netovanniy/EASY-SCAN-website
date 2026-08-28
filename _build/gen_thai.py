@@ -335,7 +335,7 @@ T = {
  'ส่งที่ตั้งและขนาดพื้นที่ของคุณ เราจะสร้างทวินที่เหมาะกับระยะของคุณ — ตั้งแต่แนวคิดแรกจนถึงการก่อสร้าง',
 
 # ---- CONCEPTING ---------------------------------------------------
-'Test your ideas':'ทดสอบแนวคิดของคุณ','Test your<br>ideas':'ทดสอบ<br>แนวคิดของคุณ',
+'Test<br>your ideas':'ทดสอบ<br>แนวคิดของคุณ','Test your ideas':'ทดสอบแนวคิดของคุณ','Test your<br>ideas':'ทดสอบ<br>แนวคิดของคุณ',
 'Every landscape has its own challenges before construction even begins — slopes, rocks, vegetation, access roads, drainage and unclear spatial relationships — and traditional 2D plans often cannot fully communicate how a project will interact with the terrain. At EASY SCAN we transform real land into immersive 3D environments using LiDAR scanning, drone mapping, Gaussian Splatting and digital visualisation, so architects, developers and landowners can explore the exact terrain before construction starts and test ideas directly inside the digital space.':
  'ทุกภูมิทัศน์มีความท้าทายเฉพาะตัวก่อนการก่อสร้างจะเริ่ม — ความลาดชัน ก้อนหิน พืชพรรณ ถนนทางเข้า การระบายน้ำ และความสัมพันธ์เชิงพื้นที่ที่ไม่ชัดเจน — และแบบแปลน 2 มิติแบบดั้งเดิมมักไม่สามารถสื่อได้อย่างครบถ้วนว่าโครงการจะมีปฏิสัมพันธ์กับภูมิประเทศจริงอย่างไร ที่ EASY SCAN เราแปลงที่ดินจริงให้เป็นสภาพแวดล้อม 3 มิติแบบสมจริง ด้วยการสแกน LiDAR การทำแผนที่ด้วยโดรน Gaussian Splatting และกระบวนการสร้างภาพดิจิทัล เพื่อให้สถาปนิก นักพัฒนา และเจ้าของที่ดินสำรวจภูมิประเทศจริงได้ก่อนเริ่มก่อสร้าง และทดสอบแนวคิดภายในพื้นที่ดิจิทัลได้โดยตรง',
 'Every landscape has its own challenges before construction begins — slopes, rocks, vegetation, access roads, drainage and unclear spatial relationships. 2D plans rarely communicate how a project will actually meet the terrain.':
