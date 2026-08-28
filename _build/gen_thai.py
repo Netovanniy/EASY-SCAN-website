@@ -345,6 +345,7 @@ T = {
 'Architects, developers and landowners can explore the exact terrain before construction starts and test ideas directly inside the digital space.':
  'สถาปนิก นักพัฒนา และเจ้าของที่ดินสำรวจภูมิประเทศจริงได้ก่อนเริ่มก่อสร้าง และทดสอบแนวคิดภายในพื้นที่ดิจิทัลได้โดยตรง',
 'Designed to reduce uncertainty':'ออกแบบมาเพื่อลดความไม่แน่นอน',
+'A decision-making tool,<br>not just a picture':'เครื่องมือช่วยตัดสินใจ<br>ไม่ใช่แค่ภาพ',
 'A decision-making tool, not just a picture':'เครื่องมือช่วยตัดสินใจ ไม่ใช่แค่ภาพ',
 'Boundary lines, elevation changes, slope analysis, environmental context and alignment with official 2D maps are visualised together in one connected workflow. Future buildings are positioned on the scanned terrain to understand views, access, proportions and construction limits.':
  'แนวเขต การเปลี่ยนแปลงระดับ การวิเคราะห์ความลาดชัน บริบทของสภาพแวดล้อม และการเทียบกับแผนที่ราชการ 2 มิติ ถูกแสดงร่วมกันในกระบวนการเดียวที่เชื่อมโยงกัน อาคารในอนาคตถูกวางบนภูมิประเทศที่สแกนไว้ เพื่อเข้าใจวิว ทางเข้า สัดส่วน และข้อจำกัดในการก่อสร้าง',
