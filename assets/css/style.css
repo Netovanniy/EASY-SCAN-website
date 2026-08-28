@@ -290,8 +290,11 @@ body.nav-open .mobile-nav{transform:none}
 .page-hero__media::after{content:"";position:absolute;inset:0;background:var(--scrim-bottom)}
 .page-hero__media::before{content:"";position:absolute;inset:0;background:var(--scrim-top)}
 /* extra dim + bottom fades to solid black so the next section blends in */
-.page-hero--full .page-hero__media--fade-out img{opacity:.5}
-.page-hero__media--fade-out::after{background:linear-gradient(to top,#000 0%,rgba(0,0,0,.78) 32%,rgba(0,0,0,.35) 58%,rgba(0,0,0,0) 82%)}
+.page-hero--full .page-hero__media--fade-out img{opacity:.45}
+.page-hero__media--fade-out::after{
+  z-index:1;
+  background:linear-gradient(to top,#000 0%,#000 18%,rgba(0,0,0,.85) 40%,rgba(0,0,0,.45) 62%,rgba(0,0,0,0) 90%);
+}
 .page-hero__title{
   font-family:var(--font-identity);font-size:var(--type-identity-m);letter-spacing:var(--tracking-identity);
   text-transform:uppercase;line-height:var(--leading-tight);max-width:20ch;margin:0;
