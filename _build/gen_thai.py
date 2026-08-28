@@ -469,6 +469,8 @@ T = {
  'ดิจิทัลทวินแบบโต้ตอบของพื้นที่พัฒนาในเขตร้อน',
 '3D terrain visualisation blending scan data and photogrammetry':
  'การสร้างภาพภูมิประเทศ 3 มิติที่ผสานข้อมูลสแกนกับโฟโตแกรมเมทรี',
+'Two people reviewing a holographic 3D terrain model of a coastal site':
+ 'สองคนกำลังตรวจดูแบบจำลองภูมิประเทศ 3 มิติแบบโฮโลแกรมของพื้นที่ริมชายฝั่ง',
 'Aerial land plan with boundary lines overlaid on real terrain':
  'ผังที่ดินมุมสูงที่มีแนวเขตซ้อนบนภูมิประเทศจริง',
 'Tropical land reconstructed as an immersive 3D environment':
