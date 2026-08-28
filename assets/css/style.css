@@ -390,7 +390,7 @@ body.nav-open .mobile-nav{transform:none}
 .plan__result{
   font-family:var(--font-information);font-size:var(--type-body-sm);color:var(--fg-primary);
   border-top:1px solid var(--border-faint);padding-top:var(--space-3);margin-bottom:var(--space-5);
-  margin-top:auto;min-height:5.4em;
+  margin-top:auto;min-height:7em;
 }
 .plan__result b{color:var(--accent-coral);font-weight:var(--weight-regular);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;display:block;margin-bottom:4px}
 
