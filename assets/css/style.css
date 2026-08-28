@@ -45,6 +45,7 @@ body{overflow-x:hidden}
 .section--tight{padding-block:var(--section-explanation)}
 .section--pb-half{padding-bottom:calc(var(--section-marketing) / 2)}
 .section--pt-half{padding-top:calc(var(--section-explanation) / 2)}
+.section--pt-0{padding-top:0}
 .section--alt{background:var(--bg-surface)}
 .divider{height:1px;background:var(--border-faint);border:0;margin:0}
 
