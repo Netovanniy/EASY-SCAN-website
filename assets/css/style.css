@@ -76,7 +76,7 @@ body{overflow-x:hidden}
 .section__head{max-width:var(--measure-body);margin-bottom:var(--space-9)}
 .section__head .lead{margin-top:var(--space-5)}
 .section__head--wide{max-width:none}
-.section__head--wide .h2,.section__head--wide h2,.section__head--wide h3{max-width:var(--measure-body)}
+.section__head--wide .eyebrow,.section__head--wide .h2,.section__head--wide h2,.section__head--wide h3{max-width:34rem}
 .lead--wide{max-width:calc(var(--measure-lead) * 2)}
 .section__head--center{margin-inline:auto;text-align:center}
 .section__head--center .eyebrow{justify-content:center}
