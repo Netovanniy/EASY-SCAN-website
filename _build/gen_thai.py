@@ -226,6 +226,8 @@ T = {
  'การรับรองภายใต้กรอบสตาร์ทอัพและวีซ่าไม่ใช่ใบอนุญาตงานสำรวจ สำหรับแนวเขตตามกฎหมายและการสำรวจภูมิประเทศที่รับรองแล้ว จำเป็นต้องใช้ผู้สำรวจที่มีใบอนุญาตหรือหน่วยงานราชการไทยที่เกี่ยวข้อง',
 'Team':'ทีมงาน',
 'The people behind EASY SCAN':'บุคคลเบื้องหลัง EASY SCAN',
+'A small multidisciplinary team combining technology, business and development expertise to turn complex land data into practical solutions.':
+ 'ทีมเล็กแบบสหวิทยาการที่ผสานความเชี่ยวชาญด้านเทคโนโลยี ธุรกิจ และการพัฒนา เพื่อเปลี่ยนข้อมูลที่ดินที่ซับซ้อนให้เป็นแนวทางที่ใช้งานได้จริง',
 'Founder & CEO · Managing Director':'ผู้ก่อตั้งและซีอีโอ · กรรมการผู้จัดการ',
 'Co-Founder & Chief Commercial Officer':'ผู้ร่วมก่อตั้งและประธานเจ้าหน้าที่ฝ่ายพาณิชย์',
 'Co-Founder & Sales Director':'ผู้ร่วมก่อตั้งและผู้อำนวยการฝ่ายขาย',
