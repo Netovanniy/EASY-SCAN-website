@@ -50,7 +50,7 @@ T = {
 'Skip to content':'ข้ามไปยังเนื้อหา',
 'About':'เกี่ยวกับเรา','Services':'บริการ','Contact':'ติดต่อ','Main':'หน้าแรก',
 'Gaussian Splatting':'Gaussian Splatting','Digital Twin':'ดิจิทัลทวิน','Digital<br>Twin':'ดิจิทัลทวิน','Concepting':'ทดสอบแนวคิด',
-'Construction Monitoring':'ติดตามงานก่อสร้าง','Digital Museum':'พิพิธภัณฑ์ดิจิทัล','Education':'การอบรม','Education<br>program':'หลักสูตร<br>อบรม',
+'Construction Monitoring':'ติดตามงานก่อสร้าง','Digital Museum':'พิพิธภัณฑ์ดิจิทัล','Site Monitoring':'ติดตามไซต์งาน','Museum':'พิพิธภัณฑ์','Education':'การอบรม','Education<br>program':'หลักสูตร<br>อบรม',
 'EN':'EN','ไทย':'ไทย','Language':'ภาษา','Menu':'เมนู','Mobile':'มือถือ','Primary':'เมนูหลัก',
 'EASY SCAN — home':'EASY SCAN — หน้าแรก','EASY SCAN':'EASY SCAN',
 
