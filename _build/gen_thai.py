@@ -49,7 +49,7 @@ T = {
 # nav / chrome
 'Skip to content':'ข้ามไปยังเนื้อหา',
 'About':'เกี่ยวกับเรา','Services':'บริการ','Contact':'ติดต่อ','Main':'หน้าแรก',
-'Gaussian Splatting':'Gaussian Splatting','Digital Twin':'ดิจิทัลทวิน','Concepting':'ทดสอบแนวคิด',
+'Gaussian Splatting':'Gaussian Splatting','Digital Twin':'ดิจิทัลทวิน','Digital<br>Twin':'ดิจิทัลทวิน','Concepting':'ทดสอบแนวคิด',
 'Construction Monitoring':'ติดตามงานก่อสร้าง','Digital Museum':'พิพิธภัณฑ์ดิจิทัล','Education':'การอบรม',
 'EN':'EN','ไทย':'ไทย','Language':'ภาษา','Menu':'เมนู','Mobile':'มือถือ','Primary':'เมนูหลัก',
 'EASY SCAN — home':'EASY SCAN — หน้าแรก','EASY SCAN':'EASY SCAN',
@@ -321,7 +321,7 @@ T = {
  'ส่งที่ตั้งและขนาดพื้นที่ของคุณ เราจะสร้างทวินที่เหมาะกับระยะของคุณ — ตั้งแต่แนวคิดแรกจนถึงการก่อสร้าง',
 
 # ---- CONCEPTING ---------------------------------------------------
-'Test your ideas before construction':'ทดสอบแนวคิดของคุณก่อนการก่อสร้าง',
+'Test your ideas':'ทดสอบแนวคิดของคุณ',
 'Every landscape has its own challenges before construction begins — slopes, rocks, vegetation, access roads, drainage and unclear spatial relationships. 2D plans rarely communicate how a project will actually meet the terrain.':
  'ทุกภูมิทัศน์มีความท้าทายเฉพาะตัวก่อนการก่อสร้างจะเริ่ม — ความลาดชัน ก้อนหิน พืชพรรณ ถนนทางเข้า การระบายน้ำ และความสัมพันธ์เชิงพื้นที่ที่ไม่ชัดเจน แบบแปลน 2 มิติแทบไม่สื่อว่าโครงการจะพบกับภูมิประเทศจริงอย่างไร',
 'The method':'วิธีการ',
@@ -354,6 +354,7 @@ T = {
 
 # ---- MONITORING ---------------------------------------------------
 'Site monitoring':'การติดตามไซต์งาน',
+'Site<br>monitoring':'การติดตามไซต์งาน',
 'Construction is constantly changing. Foundations are poured, utilities disappear underground, structures rise floor by floor and critical details become hidden behind finished surfaces. Without documentation, valuable information is lost during the build.':
  'งานก่อสร้างเปลี่ยนแปลงตลอดเวลา มีการเทฐานราก งานระบบหายลงไปใต้ดิน โครงสร้างสูงขึ้นทีละชั้น และรายละเอียดสำคัญถูกซ่อนหลังผิวงานที่เสร็จแล้ว หากไม่มีการบันทึก ข้อมูลที่มีค่าจะสูญหายระหว่างการก่อสร้าง',
 'EASY SCAN provides site monitoring through 3D scanning and digital documentation. By capturing the site at different stages, we build an accurate visual record of progress that helps developers, architects, contractors and investors understand exactly what has been built.':
