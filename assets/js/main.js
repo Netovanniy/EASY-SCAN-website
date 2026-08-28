@@ -87,6 +87,27 @@
     });
   }
 
+  /* ---- Scan cards: load Polycam embed in place on click ---- */
+  document.querySelectorAll(".scan-card[data-embed]").forEach(function (card) {
+    var media = card.querySelector(".scan-card__media");
+    if (!media) return;
+    media.addEventListener("click", function () {
+      if (card.classList.contains("is-live")) return;
+      var frame = document.createElement("div");
+      frame.className = "scan-card__media";
+      var iframe = document.createElement("iframe");
+      iframe.src = card.getAttribute("data-embed");
+      iframe.title = "Polycam capture viewer";
+      iframe.loading = "lazy";
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allow", "fullscreen; xr-spatial-tracking; accelerometer; gyroscope");
+      iframe.setAttribute("allowfullscreen", "");
+      frame.appendChild(iframe);
+      media.replaceWith(frame);
+      card.classList.add("is-live");
+    });
+  });
+
   /* ---- Footer year ---- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

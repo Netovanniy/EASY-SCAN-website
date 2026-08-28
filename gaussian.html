@@ -7,8 +7,8 @@
 <meta name="description" content="EASY SCAN reconstructs real places with Gaussian Splatting — photorealistic, interactive 3D scenes you explore directly in a web browser.">
 <link rel="icon" href="assets/img/logo-mark-white.png">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="design-system/styles.css?v=4">
-<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="design-system/styles.css?v=5">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -100,38 +100,50 @@
         <h2 class="h2">Featured scans</h2>
       </div>
       <div class="scan-grid reveal">
-        <a class="scan-card" href="https://poly.cam/capture/cb50de9e-d4a7-49ed-bf21-d98f5185ff12" target="_blank" rel="noopener">
-          <span class="scan-card__media"><img src="assets/img/scan-bay.jpg" alt="Gaussian Splatting scan of The Bay, Koh Phangan" loading="lazy" width="1100" height="586"></span>
-          <span class="scan-card__body">
+        <article class="scan-card" data-embed="https://poly.cam/capture/cb50de9e-d4a7-49ed-bf21-d98f5185ff12/embed">
+          <button class="scan-card__media" type="button" aria-label="Load the interactive 3D scan of The Bay">
+            <img src="assets/img/scan-bay.jpg" alt="Gaussian Splatting scan of The Bay, Koh Phangan" loading="lazy" width="1100" height="586">
+            <span class="scan-card__cue">Explore scan</span>
+          </button>
+          <div class="scan-card__body">
             <span class="scan-card__loc">Koh Phangan</span>
-            <span class="scan-card__name">The Bay</span>
+            <a class="scan-card__name" href="https://poly.cam/capture/cb50de9e-d4a7-49ed-bf21-d98f5185ff12" target="_blank" rel="noopener">The Bay</a>
             <span class="scan-card__text">Coastal development site captured as an explorable scene.</span>
-          </span>
-        </a>
-        <a class="scan-card" href="https://poly.cam/capture/2443B870-D4F1-4EFE-80BA-9E4C7458E808" target="_blank" rel="noopener">
-          <span class="scan-card__media"><img src="assets/img/scan-hill.jpg" alt="Gaussian Splatting scan of The Hill, Koh Phangan" loading="lazy" width="1100" height="586"></span>
-          <span class="scan-card__body">
+          </div>
+        </article>
+        <article class="scan-card" data-embed="https://poly.cam/capture/2443B870-D4F1-4EFE-80BA-9E4C7458E808/embed">
+          <button class="scan-card__media" type="button" aria-label="Load the interactive 3D scan of The Hill">
+            <img src="assets/img/scan-hill.jpg" alt="Gaussian Splatting scan of The Hill, Koh Phangan" loading="lazy" width="1100" height="586">
+            <span class="scan-card__cue">Explore scan</span>
+          </button>
+          <div class="scan-card__body">
             <span class="scan-card__loc">Koh Phangan</span>
-            <span class="scan-card__name">The Hill</span>
+            <a class="scan-card__name" href="https://poly.cam/capture/2443B870-D4F1-4EFE-80BA-9E4C7458E808" target="_blank" rel="noopener">The Hill</a>
             <span class="scan-card__text">Steep hillside terrain reconstructed for planning review.</span>
-          </span>
-        </a>
-        <a class="scan-card" href="https://poly.cam/capture/477723ab-ac17-4628-b993-5c11330c5637" target="_blank" rel="noopener">
-          <span class="scan-card__media"><img src="assets/img/scan-ameno.jpg" alt="Gaussian Splatting scan of Ameno, Koh Samui" loading="lazy" width="1100" height="586"></span>
-          <span class="scan-card__body">
+          </div>
+        </article>
+        <article class="scan-card" data-embed="https://poly.cam/capture/477723ab-ac17-4628-b993-5c11330c5637/embed">
+          <button class="scan-card__media" type="button" aria-label="Load the interactive 3D scan of Ameno">
+            <img src="assets/img/scan-ameno.jpg" alt="Gaussian Splatting scan of Ameno, Koh Samui" loading="lazy" width="1100" height="586">
+            <span class="scan-card__cue">Explore scan</span>
+          </button>
+          <div class="scan-card__body">
             <span class="scan-card__loc">Koh Samui</span>
-            <span class="scan-card__name">Ameno</span>
+            <a class="scan-card__name" href="https://poly.cam/capture/477723ab-ac17-4628-b993-5c11330c5637" target="_blank" rel="noopener">Ameno</a>
             <span class="scan-card__text">Estate site documented in photorealistic 3D.</span>
-          </span>
-        </a>
-        <a class="scan-card" href="https://poly.cam/capture/216e419d-b3bb-497a-8112-0f7e4c98dc75" target="_blank" rel="noopener">
-          <span class="scan-card__media"><img src="assets/img/scan-akasha.jpg" alt="Gaussian Splatting scan of Akasha, Koh Phangan" loading="lazy" width="1100" height="586"></span>
-          <span class="scan-card__body">
+          </div>
+        </article>
+        <article class="scan-card" data-embed="https://poly.cam/capture/216e419d-b3bb-497a-8112-0f7e4c98dc75/embed">
+          <button class="scan-card__media" type="button" aria-label="Load the interactive 3D scan of Akasha">
+            <img src="assets/img/scan-akasha.jpg" alt="Gaussian Splatting scan of Akasha, Koh Phangan" loading="lazy" width="1100" height="586">
+            <span class="scan-card__cue">Explore scan</span>
+          </button>
+          <div class="scan-card__body">
             <span class="scan-card__loc">Koh Phangan</span>
-            <span class="scan-card__name">Akasha</span>
+            <a class="scan-card__name" href="https://poly.cam/capture/216e419d-b3bb-497a-8112-0f7e4c98dc75" target="_blank" rel="noopener">Akasha</a>
             <span class="scan-card__text">Retreat environment preserved as a shareable digital record.</span>
-          </span>
-        </a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -172,6 +184,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=5"></script>
 </body>
 </html>

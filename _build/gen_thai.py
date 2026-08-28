@@ -266,6 +266,11 @@ T = {
 'Featured scans':'สแกนที่แนะนำ',
 'The Bay':'The Bay','The Hill':'The Hill','Ameno':'Ameno','Akasha':'Akasha',
 'Koh Phangan':'เกาะพะงัน','Koh Samui':'เกาะสมุย',
+'Explore scan':'สำรวจสแกน',
+'Load the interactive 3D scan of The Bay':'โหลดสแกน 3 มิติแบบโต้ตอบของ The Bay',
+'Load the interactive 3D scan of The Hill':'โหลดสแกน 3 มิติแบบโต้ตอบของ The Hill',
+'Load the interactive 3D scan of Ameno':'โหลดสแกน 3 มิติแบบโต้ตอบของ Ameno',
+'Load the interactive 3D scan of Akasha':'โหลดสแกน 3 มิติแบบโต้ตอบของ Akasha',
 'Coastal development site captured as an explorable scene.':
  'พื้นที่พัฒนาริมชายฝั่งที่เก็บภาพเป็นฉากซึ่งสำรวจได้',
 'Steep hillside terrain reconstructed for planning review.':
