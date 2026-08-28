@@ -257,8 +257,9 @@ body.nav-open .mobile-nav{transform:none}
    Extra bottom padding compensates for the home hero's button row,
    so the centred text lands at the same height. */
 .page-hero--full{
-  min-height:100svh;display:flex;align-items:center;
-  padding-bottom:calc(var(--section-explanation) + 210px);
+  min-height:100svh;display:flex;align-items:flex-start;
+  padding-top:calc(72px + var(--space-11));
+  padding-bottom:var(--section-explanation);
 }
 .page-hero--full > .wrap{width:100%}
 .page-hero--full .page-hero__lead{
