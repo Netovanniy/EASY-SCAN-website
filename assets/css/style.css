@@ -287,6 +287,7 @@ body.nav-open .mobile-nav{transform:none}
 .page-hero__media--right img{object-position:100% 50%}
 .page-hero--full .page-hero__media img{opacity:.62}
 .page-hero--full .page-hero__media--light img{opacity:.8}
+.page-hero--full .page-hero__media--65 img{opacity:.65}
 .page-hero__media::after{content:"";position:absolute;inset:0;background:var(--scrim-bottom)}
 .page-hero__media::before{content:"";position:absolute;inset:0;background:var(--scrim-top)}
 .page-hero__title{
