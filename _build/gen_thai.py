@@ -321,7 +321,7 @@ T = {
  'ส่งที่ตั้งและขนาดพื้นที่ของคุณ เราจะสร้างทวินที่เหมาะกับระยะของคุณ — ตั้งแต่แนวคิดแรกจนถึงการก่อสร้าง',
 
 # ---- CONCEPTING ---------------------------------------------------
-'Test your ideas':'ทดสอบแนวคิดของคุณ',
+'Test your ideas':'ทดสอบแนวคิดของคุณ','Test your<br>ideas':'ทดสอบ<br>แนวคิดของคุณ',
 'Every landscape has its own challenges before construction begins — slopes, rocks, vegetation, access roads, drainage and unclear spatial relationships. 2D plans rarely communicate how a project will actually meet the terrain.':
  'ทุกภูมิทัศน์มีความท้าทายเฉพาะตัวก่อนการก่อสร้างจะเริ่ม — ความลาดชัน ก้อนหิน พืชพรรณ ถนนทางเข้า การระบายน้ำ และความสัมพันธ์เชิงพื้นที่ที่ไม่ชัดเจน แบบแปลน 2 มิติแทบไม่สื่อว่าโครงการจะพบกับภูมิประเทศจริงอย่างไร',
 'The method':'วิธีการ',
