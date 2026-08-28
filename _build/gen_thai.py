@@ -197,6 +197,7 @@ T = {
 'Repeat scans document earthworks, hidden utilities and construction progress over time.':
  'การสแกนซ้ำบันทึกงานดิน งานระบบที่ซ่อนอยู่ และความคืบหน้าการก่อสร้างตลอดช่วงเวลา',
 'Timeline':'ไทม์ไลน์',
+'From personal project<br>to land intelligence':'จากโปรเจกต์ส่วนตัว<br>สู่ข้อมูลที่ดินอัจฉริยะ',
 'From personal project to land intelligence':'จากโปรเจกต์ส่วนตัวสู่ข้อมูลที่ดินอัจฉริยะ',
 'Personal project':'โปรเจกต์ส่วนตัว',
 '3D scanning and digital capture of real environments begins on Koh Phangan.':
