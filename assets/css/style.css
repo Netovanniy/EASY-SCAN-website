@@ -556,7 +556,7 @@ body.nav-open .mobile-nav{transform:none}
 @media(min-width:840px){.footer-top{grid-template-columns:1fr max-content max-content;column-gap:var(--space-9)}}
 /* widen the gap so COMPANY lines up under the ABOUT nav item (both are the
    left edge of a right-anchored group, so this holds at every desktop width) */
-@media(min-width:1001px){.footer-top{column-gap:147px}}
+@media(min-width:1001px){.footer-top{column-gap:140px}}
 .footer-brand .brand{margin-bottom:var(--space-4)}
 .footer-brand p{font-family:var(--font-information);color:var(--fg-secondary);max-width:44ch;font-size:var(--type-body-sm)}
 .footer-col h4{font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:var(--type-label-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-muted);margin-bottom:var(--space-4)}
