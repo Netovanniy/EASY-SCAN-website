@@ -469,7 +469,7 @@ body.nav-open .mobile-nav{transform:none}
 /* ============================================================
    BLOCK · Pricing plans
    ============================================================ */
-.pricing{display:grid;gap:var(--space-4)}
+.pricing{display:grid;gap:var(--space-4);grid-template-columns:minmax(0,1fr)}
 @media(min-width:900px){.pricing{grid-template-columns:repeat(3,1fr)}}
 .plan{
   display:flex;flex-direction:column;
@@ -604,6 +604,32 @@ body.nav-open .mobile-nav{transform:none}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
+}
+
+/* ============================================================
+   Responsive · phone layout  (≤640px)
+   Desktop is untouched: this only compresses the vertical rhythm
+   and the hero top-inset, both of which are tuned for large
+   viewports and leave too much empty space on a phone.
+   ============================================================ */
+@media(max-width:640px){
+  :root{
+    --section-marketing:72px;   /* desktop 120 */
+    --section-explanation:48px; /* desktop 80  */
+  }
+  /* hero clears the 72px fixed header + 40px, not + 160/120 */
+  .page-hero--full{padding-top:calc(72px + var(--space-7))}
+  .page-hero{padding-top:calc(72px + var(--space-7))}
+  /* heading-to-content gap: 80 -> 32 */
+  .section__head{margin-bottom:var(--space-6)}
+  .split{gap:var(--space-6)}
+  .split + .split{margin-top:var(--space-8)}
+  /* roomy card insets -> one step tighter */
+  .process__item,.feature{padding:var(--space-6)}
+  .stat{padding:var(--space-6)}
+  .plan{padding:var(--space-5)}
+  .plan__name{font-size:1.5rem}
+  .cta{padding-block:var(--space-8)}
 }
 
 /* ============================================================
