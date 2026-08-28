@@ -278,7 +278,7 @@ T = {
 # ---- TWIN -----------------------------------------------------------
 'A dynamic digital representation of a real-world environment — terrain, vegetation, roads and structures you can explore from any angle.':
  'ภาพแทนดิจิทัลแบบไดนามิกของสภาพแวดล้อมในโลกจริง — ภูมิประเทศ พืชพรรณ ถนน และสิ่งปลูกสร้างที่คุณสำรวจได้จากทุกมุม',
-'LiDAR + drone + splatting':'LiDAR + โดรน + splatting',
+'LiDAR + drone + overlays':'LiDAR + โดรน + โอเวอร์เลย์',
 'More than just a 3D model':'มากกว่าแค่โมเดล 3 มิติ',
 'We combine LiDAR data, drone mapping, Gaussian Splatting and photogrammetry and blend them to recreate landscapes and developments in accurate, immersive 3D space.':
  'เรารวมข้อมูล LiDAR การทำแผนที่ด้วยโดรน Gaussian Splatting และโฟโตแกรมเมทรี แล้วผสานเข้าด้วยกันเพื่อสร้างภูมิทัศน์และโครงการขึ้นใหม่ในพื้นที่ 3 มิติที่แม่นยำและสมจริง',
