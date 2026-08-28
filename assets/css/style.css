@@ -345,8 +345,7 @@ body.nav-open .mobile-nav{transform:none}
   padding:7px 12px;border-radius:var(--radius-1);
 }
 .split__body .eyebrow{margin-bottom:var(--space-3);color:var(--accent-coral)}
-.h3--caps{text-transform:uppercase;letter-spacing:var(--tracking-heading)}
-.split__body h3{margin:0 0 var(--space-4)}
+.split__body h2,.split__body h3{margin:0 0 var(--space-4)}
 .split__body p{font-family:var(--font-information);color:var(--fg-secondary);line-height:var(--leading-body);max-width:none}
 .split__body p + p{margin-top:var(--space-3)}
 .split__body .link-arrow{margin-top:var(--space-5)}
