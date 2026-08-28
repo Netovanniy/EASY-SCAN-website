@@ -154,8 +154,11 @@ body{overflow-x:hidden}
 
 .nav__item--has-sub{position:relative}
 .nav__sub{
-  position:absolute;top:calc(100% + 14px);left:-16px;min-width:230px;
-  background:var(--bg-surface);border:1px solid var(--border-faint);border-radius:var(--radius-card);
+  position:absolute;top:calc(100% + 14px);left:-16px;
+  width:max-content;
+  background:var(--panel-over-terrain);
+  backdrop-filter:var(--blur-panel);-webkit-backdrop-filter:var(--blur-panel);
+  border:1px solid var(--border-faint);border-radius:var(--radius-card);
   padding:8px;display:grid;gap:2px;
   opacity:0;visibility:hidden;transform:translateY(-4px);
   transition:opacity var(--dur-fast) var(--ease-standard),transform var(--dur-fast) var(--ease-standard),visibility var(--dur-fast);

@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
