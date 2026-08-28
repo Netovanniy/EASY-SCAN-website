@@ -287,6 +287,8 @@ T = {
  'ส่งที่ตั้งและขนาดของที่ดินของคุณ — เราจะบอกว่า Gaussian Splatting, LiDAR หรือทั้งสองอย่างเหมาะกับโครงการของคุณ',
 
 # ---- TWIN -----------------------------------------------------------
+'A Digital Twin is more than just a 3D model — it is a dynamic digital representation of a real-world environment. We combine LiDAR data, drone mapping, Gaussian Splatting and photogrammetry and “blend” them to recreate landscapes and developments in accurate, immersive 3D space. Real terrain, vegetation, roads, structures, and environmental context are transformed into interactive digital environments that can be explored from any angle.':
+ 'Digital Twin เป็นมากกว่าแค่โมเดล 3 มิติ — มันคือภาพแทนดิจิทัลแบบไดนามิกของสภาพแวดล้อมในโลกจริง เรารวมข้อมูล LiDAR การทำแผนที่ด้วยโดรน Gaussian Splatting และโฟโตแกรมเมทรี แล้ว “ผสาน” เข้าด้วยกันเพื่อสร้างภูมิทัศน์และโครงการขึ้นใหม่ในพื้นที่ 3 มิติที่แม่นยำและสมจริง ภูมิประเทศจริง พืชพรรณ ถนน สิ่งปลูกสร้าง และบริบทของสภาพแวดล้อม กลายเป็นสภาพแวดล้อมดิจิทัลโต้ตอบที่สำรวจได้จากทุกมุม',
 'A dynamic digital representation of a real-world environment — terrain, vegetation, roads and structures you can explore from any angle.':
  'ภาพแทนดิจิทัลแบบไดนามิกของสภาพแวดล้อมในโลกจริง — ภูมิประเทศ พืชพรรณ ถนน และสิ่งปลูกสร้างที่คุณสำรวจได้จากทุกมุม',
 'LiDAR + drone + overlays':'LiDAR + โดรน + โอเวอร์เลย์',
