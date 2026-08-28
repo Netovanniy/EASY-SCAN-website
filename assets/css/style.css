@@ -85,7 +85,6 @@ body{overflow-x:hidden}
 .section__head--wide{max-width:none}
 .section__head--wide .eyebrow{max-width:34rem}
 .lead--wide{max-width:calc(var(--measure-lead) * 2)}
-.lead--full{max-width:none}
 .section__head--center{margin-inline:auto;text-align:center}
 .section__head--center .eyebrow{justify-content:center}
 .section__head h2,.section__head h3{margin:0}
