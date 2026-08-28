@@ -253,10 +253,12 @@ body.nav-open .mobile-nav{transform:none}
   position:relative;padding-top:calc(72px + var(--space-10));
   padding-bottom:var(--section-explanation);overflow:hidden;
 }
-/* full-viewport variant — matches the home hero */
+/* full-viewport variant — matches the home hero.
+   Extra bottom padding compensates for the home hero's button row,
+   so the centred text lands at the same height. */
 .page-hero--full{
   min-height:100svh;display:flex;align-items:center;
-  padding-bottom:var(--section-explanation);
+  padding-bottom:calc(var(--section-explanation) + 210px);
 }
 .page-hero--full > .wrap{width:100%}
 .page-hero--full .page-hero__lead{
