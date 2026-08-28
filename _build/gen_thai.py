@@ -259,8 +259,13 @@ T = {
 'Everyone reviews the same place in one shared browser link.':
  'ทุกคนทบทวนสถานที่เดียวกันผ่านลิงก์เบราว์เซอร์ที่แชร์ร่วมกัน',
 'Selected scenes':'ฉากที่คัดสรร',
+'Gaussian Splatting scan of The Bay, Koh Phangan':'สแกน Gaussian Splatting ของ The Bay เกาะพะงัน',
+'Gaussian Splatting scan of The Hill, Koh Phangan':'สแกน Gaussian Splatting ของ The Hill เกาะพะงัน',
+'Gaussian Splatting scan of Ameno, Koh Samui':'สแกน Gaussian Splatting ของ Ameno เกาะสมุย',
+'Gaussian Splatting scan of Akasha, Koh Phangan':'สแกน Gaussian Splatting ของ Akasha เกาะพะงัน',
 'Featured scans':'สแกนที่แนะนำ',
 'The Bay':'The Bay','The Hill':'The Hill','Ameno':'Ameno','Akasha':'Akasha',
+'Koh Phangan':'เกาะพะงัน','Koh Samui':'เกาะสมุย',
 'Coastal development site captured as an explorable scene.':
  'พื้นที่พัฒนาริมชายฝั่งที่เก็บภาพเป็นฉากซึ่งสำรวจได้',
 'Steep hillside terrain reconstructed for planning review.':

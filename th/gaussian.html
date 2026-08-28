@@ -7,8 +7,8 @@
 <meta name="description" content="EASY SCAN สร้างสถานที่จริงขึ้นใหม่ด้วย Gaussian Splatting — ฉาก 3 มิติเสมือนจริงที่สำรวจได้โดยตรงในเว็บเบราว์เซอร์">
 <link rel="icon" href="../assets/img/logo-mark-white.png">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="../design-system/styles.css?v=3">
-<link rel="stylesheet" href="../assets/css/style.css?v=3">
+<link rel="stylesheet" href="../design-system/styles.css?v=4">
+<link rel="stylesheet" href="../assets/css/style.css?v=4">
 </head>
 <body>
 <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
@@ -99,12 +99,40 @@
         <p class="eyebrow">ฉากที่คัดสรร</p>
         <h2 class="h2">สแกนที่แนะนำ</h2>
       </div>
-      <ul class="features reveal">
-        <li class="feature"><span class="feature__idx">Koh Phangan</span><h3 class="feature__title">The Bay</h3><p class="feature__text">พื้นที่พัฒนาริมชายฝั่งที่เก็บภาพเป็นฉากซึ่งสำรวจได้</p></li>
-        <li class="feature"><span class="feature__idx">Koh Phangan</span><h3 class="feature__title">The Hill</h3><p class="feature__text">ภูมิประเทศไหล่เขาลาดชันที่สร้างขึ้นใหม่เพื่อการทบทวนการวางแผน</p></li>
-        <li class="feature"><span class="feature__idx">Koh Samui</span><h3 class="feature__title">Ameno</h3><p class="feature__text">พื้นที่โครงการที่บันทึกไว้ในแบบ 3 มิติเสมือนจริง</p></li>
-        <li class="feature"><span class="feature__idx">Koh Phangan</span><h3 class="feature__title">Akasha</h3><p class="feature__text">สภาพแวดล้อมรีทรีตที่เก็บรักษาเป็นบันทึกดิจิทัลซึ่งแบ่งปันได้</p></li>
-      </ul>
+      <div class="scan-grid reveal">
+        <a class="scan-card" href="https://poly.cam/capture/cb50de9e-d4a7-49ed-bf21-d98f5185ff12" target="_blank" rel="noopener">
+          <span class="scan-card__media"><img src="../assets/img/scan-bay.jpg" alt="สแกน Gaussian Splatting ของ The Bay เกาะพะงัน" loading="lazy" width="1100" height="586"></span>
+          <span class="scan-card__body">
+            <span class="scan-card__loc">เกาะพะงัน</span>
+            <span class="scan-card__name">The Bay</span>
+            <span class="scan-card__text">พื้นที่พัฒนาริมชายฝั่งที่เก็บภาพเป็นฉากซึ่งสำรวจได้</span>
+          </span>
+        </a>
+        <a class="scan-card" href="https://poly.cam/capture/2443B870-D4F1-4EFE-80BA-9E4C7458E808" target="_blank" rel="noopener">
+          <span class="scan-card__media"><img src="../assets/img/scan-hill.jpg" alt="สแกน Gaussian Splatting ของ The Hill เกาะพะงัน" loading="lazy" width="1100" height="586"></span>
+          <span class="scan-card__body">
+            <span class="scan-card__loc">เกาะพะงัน</span>
+            <span class="scan-card__name">The Hill</span>
+            <span class="scan-card__text">ภูมิประเทศไหล่เขาลาดชันที่สร้างขึ้นใหม่เพื่อการทบทวนการวางแผน</span>
+          </span>
+        </a>
+        <a class="scan-card" href="https://poly.cam/capture/477723ab-ac17-4628-b993-5c11330c5637" target="_blank" rel="noopener">
+          <span class="scan-card__media"><img src="../assets/img/scan-ameno.jpg" alt="สแกน Gaussian Splatting ของ Ameno เกาะสมุย" loading="lazy" width="1100" height="586"></span>
+          <span class="scan-card__body">
+            <span class="scan-card__loc">เกาะสมุย</span>
+            <span class="scan-card__name">Ameno</span>
+            <span class="scan-card__text">พื้นที่โครงการที่บันทึกไว้ในแบบ 3 มิติเสมือนจริง</span>
+          </span>
+        </a>
+        <a class="scan-card" href="https://poly.cam/capture/216e419d-b3bb-497a-8112-0f7e4c98dc75" target="_blank" rel="noopener">
+          <span class="scan-card__media"><img src="../assets/img/scan-akasha.jpg" alt="สแกน Gaussian Splatting ของ Akasha เกาะพะงัน" loading="lazy" width="1100" height="586"></span>
+          <span class="scan-card__body">
+            <span class="scan-card__loc">เกาะพะงัน</span>
+            <span class="scan-card__name">Akasha</span>
+            <span class="scan-card__text">สภาพแวดล้อมรีทรีตที่เก็บรักษาเป็นบันทึกดิจิทัลซึ่งแบ่งปันได้</span>
+          </span>
+        </a>
+      </div>
     </div>
   </section>
   <p class="text-center muted" style="max-width:60ch;margin:0 auto;padding:0 24px 8px;font-size:.9rem">Gaussian Splatting มีค่าสำหรับการแสดงภาพเชิงพื้นที่ที่สมจริง แต่ไม่ใช่สิ่งทดแทนการสำรวจเชิงเรขาคณิตที่แม่นยำหรือการสำรวจที่รับรองแล้ว</p>
