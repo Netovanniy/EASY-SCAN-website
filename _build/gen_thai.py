@@ -59,8 +59,7 @@ T = {
 'Digital Land Intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.':
  'ข้อมูลที่ดินอัจฉริยะแบบดิจิทัลเพื่อการพัฒนาที่ชาญฉลาดขึ้น เราแปลงที่ดินจริงให้เป็นสภาพแวดล้อม 3 มิติที่แม่นยำและโต้ตอบได้ เพื่อให้คุณตัดสินใจได้ก่อนลงมือก่อสร้าง',
 'EASY SCAN Company Limited':'บริษัท อีซี่ สแกน จำกัด',
-'Koh Phangan · Koh Samui · Phuket — Thailand':'All rights reserved ©',
- 'All rights reserved ©':'สงวนลิขสิทธิ์ ©',
+'Social media':'โซเชียลมีเดีย',
 
 # ---- HOME --------------------------------------------------------------
 'See your land.':'มองเห็นที่ดินของคุณ',
