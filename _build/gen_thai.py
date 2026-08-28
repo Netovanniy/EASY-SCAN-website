@@ -215,6 +215,7 @@ T = {
  'การรับรอง SMART Visa ได้รับการต่ออายุอีกสองปี ขอบเขตงานขยายไปสู่ดิจิทัลทวิน การทดสอบแนวคิด และการติดตามงาน',
 'Government recognition':'การรับรองจากภาครัฐ',
 'SMART Visa':'SMART Visa',
+'An officially recognised technology<br>startup in Thailand':'สตาร์ทอัพเทคโนโลยีที่ได้รับการรับรอง<br>อย่างเป็นทางการในประเทศไทย',
 'An officially recognised technology startup in Thailand':'สตาร์ทอัพเทคโนโลยีที่ได้รับการรับรองอย่างเป็นทางการในประเทศไทย',
 "EASY SCAN is recognised as a technology startup within Thailand's SMART Visa framework, supported through the relevant government evaluation process. In 2026 that recognition was renewed — a continuation of long-term commitment to advanced digital technology for land development.":
  'EASY SCAN ได้รับการรับรองเป็นสตาร์ทอัพเทคโนโลยีภายใต้กรอบ SMART Visa ของประเทศไทย ผ่านกระบวนการประเมินของภาครัฐที่เกี่ยวข้อง ในปี 2026 การรับรองนี้ได้รับการต่ออายุ — เป็นการสานต่อความมุ่งมั่นระยะยาวต่อเทคโนโลยีดิจิทัลขั้นสูงเพื่อการพัฒนาที่ดิน',
