@@ -59,7 +59,8 @@ T = {
 'Digital Land Intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.':
  'ข้อมูลที่ดินอัจฉริยะแบบดิจิทัลเพื่อการพัฒนาที่ชาญฉลาดขึ้น เราแปลงที่ดินจริงให้เป็นสภาพแวดล้อม 3 มิติที่แม่นยำและโต้ตอบได้ เพื่อให้คุณตัดสินใจได้ก่อนลงมือก่อสร้าง',
 'EASY SCAN Company Limited':'บริษัท อีซี่ สแกน จำกัด',
-'Koh Phangan · Koh Samui · Phuket — Thailand':'เกาะพะงัน · เกาะสมุย · ภูเก็ต — ประเทศไทย',
+'Koh Phangan · Koh Samui · Phuket — Thailand':'All rights reserved ©',
+ 'All rights reserved ©':'สงวนลิขสิทธิ์ ©',
 
 # ---- HOME --------------------------------------------------------------
 'See your land.':'มองเห็นที่ดินของคุณ',
@@ -482,13 +483,18 @@ T = {
 
 # ---- transform ---------------------------------------------------------------
 def translate(html):
-    for en, th in T.items():
-        if en == th:
-            continue
-        for variant in (en, en.replace('&', '&amp;'), en.replace('&amp;', '&')):
-            if variant in html:
-                html = html.replace(variant, th)
-    return html
+    # never translate inside <script> blocks (head js-flag, main.js include)
+    parts = re.split(r'(<script\b.*?</script>)', html, flags=re.S | re.I)
+    for i in range(0, len(parts), 2):
+        seg = parts[i]
+        for en, th in T.items():
+            if en == th:
+                continue
+            for variant in (en, en.replace('&', '&amp;'), en.replace('&amp;', '&')):
+                if variant in seg:
+                    seg = seg.replace(variant, th)
+        parts[i] = seg
+    return ''.join(parts)
 
 LANG_RE = re.compile(r'<span class="lang"[^>]*>.*?ไทย</a>\s*</span>', re.S)
 
