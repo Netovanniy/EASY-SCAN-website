@@ -488,6 +488,8 @@ T = {
  'ภูมิประเทศป่าเขตร้อนหนาทึบที่กำลังถูกสแกนบนเกาะพะงัน',
 'Aerial view of an eco-resort development site in Thailand':
  'ภาพมุมสูงของพื้นที่พัฒนาอีโครีสอร์ตในประเทศไทย',
+'Thailand SMART Visa card and Board of Investment certificates':
+ 'บัตร Thailand SMART Visa และหนังสือรับรองจากคณะกรรมการส่งเสริมการลงทุน',
 }
 
 # ---- transform ---------------------------------------------------------------
