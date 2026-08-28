@@ -277,6 +277,8 @@ T = {
  'พื้นที่โครงการที่บันทึกไว้ในแบบ 3 มิติเสมือนจริง',
 'Retreat environment preserved as a shareable digital record.':
  'สภาพแวดล้อมรีทรีตที่เก็บรักษาเป็นบันทึกดิจิทัลซึ่งแบ่งปันได้',
+'Gaussian Splatting is valuable for realistic spatial representation.<br>It is not a replacement for accurate geometric or certified surveying.':
+ 'Gaussian Splatting มีค่าสำหรับการแสดงภาพเชิงพื้นที่ที่สมจริง<br>แต่ไม่ใช่สิ่งทดแทนการสำรวจเชิงเรขาคณิตที่แม่นยำหรือการสำรวจที่รับรองแล้ว',
 'Gaussian Splatting is valuable for realistic spatial representation. It is not a replacement for accurate geometric or certified surveying.':
  'Gaussian Splatting มีค่าสำหรับการแสดงภาพเชิงพื้นที่ที่สมจริง แต่ไม่ใช่สิ่งทดแทนการสำรวจเชิงเรขาคณิตที่แม่นยำหรือการสำรวจที่รับรองแล้ว',
 'See your site as a scene you can walk':'เห็นพื้นที่ของคุณเป็นฉากที่เดินเข้าไปได้',
