@@ -349,7 +349,6 @@ body.nav-open .mobile-nav{transform:none}
 .split__body h3{margin:0 0 var(--space-4)}
 .split__body p{font-family:var(--font-information);color:var(--fg-secondary);line-height:var(--leading-body);max-width:none}
 .split__body p + p{margin-top:var(--space-3)}
-.split--body-80 .split__body p{max-width:80%}
 .split__body .link-arrow{margin-top:var(--space-5)}
 @media(min-width:900px){
   .split{grid-template-columns:1fr 1fr}
