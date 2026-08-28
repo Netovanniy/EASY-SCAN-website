@@ -520,6 +520,8 @@ body.nav-open .mobile-nav{transform:none}
    no top padding, so the gap above equals the previous section's bottom padding */
 .section--flat-cta{padding-top:0}
 .section--flat-cta .cta{padding-block:0}
+/* same, but keeps the section's own top/bottom padding (use after a flush block) */
+.section--cta-flush .cta{padding-block:0}
 .cta__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
 
 /* ============================================================
