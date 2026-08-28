@@ -319,7 +319,7 @@ body.nav-open .mobile-nav{transform:none}
 @media(min-width:900px){
   .split{grid-template-columns:1fr 1fr}
   .split--reverse .split__media{order:2}
-  .split--media-sm{grid-template-columns:minmax(0,380px) 1fr;gap:clamp(32px,6vw,88px)}
+  .split--media-sm{grid-template-columns:minmax(0,570px) 1fr;gap:clamp(32px,6vw,88px)}
   .split--media-sm .split__body p{max-width:none}
 }
 
