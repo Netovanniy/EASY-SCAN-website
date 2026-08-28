@@ -292,6 +292,7 @@ T = {
  'เรารวมข้อมูล LiDAR การทำแผนที่ด้วยโดรน Gaussian Splatting และโฟโตแกรมเมทรี แล้วผสานเข้าด้วยกันเพื่อสร้างภูมิทัศน์และโครงการขึ้นใหม่ในพื้นที่ 3 มิติที่แม่นยำและสมจริง',
 'Real terrain, vegetation, roads, structures and environmental context become interactive digital environments that can be explored from any angle.':
  'ภูมิประเทศจริง พืชพรรณ ถนน สิ่งปลูกสร้าง และบริบทของสภาพแวดล้อม กลายเป็นสภาพแวดล้อมดิจิทัลโต้ตอบที่สำรวจได้จากทุกมุม',
+'Understand a site before<br>construction begins':'เข้าใจพื้นที่<br>ก่อนการก่อสร้างจะเริ่ม',
 'Understand a site before construction begins':'เข้าใจพื้นที่ก่อนการก่อสร้างจะเริ่ม',
 'Future buildings can be placed directly onto the scanned terrain, panoramic environments integrated for realistic spatial experience, and design decisions tested inside the model itself — a tool for planning, communication, visualisation and development.':
  'อาคารในอนาคตวางลงบนภูมิประเทศที่สแกนไว้ได้โดยตรง ผสานสภาพแวดล้อมพาโนรามาเพื่อประสบการณ์เชิงพื้นที่ที่สมจริง และทดสอบการตัดสินใจด้านการออกแบบภายในโมเดลได้เอง — เครื่องมือสำหรับการวางแผน การสื่อสาร การสร้างภาพ และการพัฒนา',
