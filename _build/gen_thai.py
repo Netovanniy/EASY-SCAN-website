@@ -214,6 +214,10 @@ T = {
  'การรับรองภายใต้กรอบสตาร์ทอัพและวีซ่าไม่ใช่ใบอนุญาตงานสำรวจ สำหรับแนวเขตตามกฎหมายและการสำรวจภูมิประเทศที่รับรองแล้ว จำเป็นต้องใช้ผู้สำรวจที่มีใบอนุญาตหรือหน่วยงานราชการไทยที่เกี่ยวข้อง',
 'Team':'ทีมงาน',
 'The people behind EASY SCAN':'บุคคลเบื้องหลัง EASY SCAN',
+'CEO & Founder':'ซีอีโอ และผู้ก่อตั้ง',
+'Chief Commercial Officer':'ประธานเจ้าหน้าที่ฝ่ายพาณิชย์',
+'Sales Director':'ผู้อำนวยการฝ่ายขาย',
+'3D, LiDAR, photogrammetry and digital environments.':'งาน 3 มิติ · LiDAR · โฟโตแกรมเมทรี · สภาพแวดล้อมดิจิทัล',
 'Founder / CEO':'ผู้ก่อตั้ง / ซีอีโอ',
 '3D, LiDAR, photogrammetry and digital environments. Substantial Blender and 3D-generalist background.':
  'งาน 3 มิติ LiDAR โฟโตแกรมเมทรี และสภาพแวดล้อมดิจิทัล มีพื้นฐาน Blender และงาน 3 มิติแบบครอบคลุมอย่างลึกซึ้ง',
@@ -486,7 +490,7 @@ def translate(html):
     parts = re.split(r'(<script\b.*?</script>)', html, flags=re.S | re.I)
     for i in range(0, len(parts), 2):
         seg = parts[i]
-        for en, th in T.items():
+        for en, th in sorted(T.items(), key=lambda kv: -len(kv[0])):
             if en == th:
                 continue
             for variant in (en, en.replace('&', '&amp;'), en.replace('&amp;', '&')):
