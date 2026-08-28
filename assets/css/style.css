@@ -474,13 +474,13 @@ body.nav-open .mobile-nav{transform:none}
 .plan{
   display:flex;flex-direction:column;
   border:1px solid var(--border-hairline);border-radius:var(--radius-card);
-  padding:var(--space-7);background:var(--bg-surface);
+  padding:var(--space-6);background:var(--bg-page);
   transition:border-color var(--dur-base) var(--ease-standard),background var(--dur-base) var(--ease-standard);
 }
-.plan:hover{border-color:var(--border-strong);background:var(--bg-surface-raised)}
+.plan:hover{border-color:var(--border-strong);background:var(--bg-surface)}
 .plan__name{font-family:var(--font-identity);font-size:var(--type-identity-m);letter-spacing:var(--tracking-identity);text-transform:uppercase}
-.plan__desc{font-family:var(--font-information);color:var(--fg-secondary);font-size:var(--type-body);margin-top:10px;min-height:2.8em}
-.plan__list{margin:var(--space-5) 0;display:grid;gap:12px}
+.plan__desc{font-family:var(--font-information);color:var(--fg-secondary);font-size:var(--type-body);margin-top:8px;min-height:2.4em}
+.plan__list{margin:var(--space-4) 0;display:grid;gap:10px}
 .plan__list li{position:relative;padding-left:22px;font-family:var(--font-information);font-size:var(--type-body-sm);color:var(--fg-secondary);line-height:var(--leading-body)}
 .plan__list li::before{content:"";position:absolute;left:0;top:.58em;width:8px;height:8px;border:1px solid var(--accent-coral)}
 .plan__list li.sub{padding-left:34px;color:var(--fg-muted)}
@@ -489,8 +489,8 @@ body.nav-open .mobile-nav{transform:none}
 .plan__list .grp::before{display:none}
 .plan__result{
   font-family:var(--font-information);font-size:var(--type-body-sm);color:var(--fg-primary);
-  border-top:1px solid var(--border-faint);padding-top:var(--space-3);margin-bottom:var(--space-5);
-  margin-top:auto;min-height:7em;
+  border-top:1px solid var(--border-faint);padding-top:var(--space-3);margin-bottom:var(--space-4);
+  margin-top:auto;min-height:4.5em;
 }
 .plan__result b{color:var(--accent-coral);font-weight:var(--weight-regular);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;display:block;margin-bottom:4px}
 
