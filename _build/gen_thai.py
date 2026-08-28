@@ -240,10 +240,8 @@ T = {
  'ภาพแทนดิจิทัลของสถานที่ที่สมจริงอย่างยิ่ง สร้างจากภาพถ่ายนับพันภาพและสำรวจได้โดยตรงในเบราว์เซอร์ของคุณ',
 'What it is':'มันคืออะไร',
 'Visual fidelity instead of a plain mesh':'ความสมจริงของภาพแทนเมชธรรมดา',
-'Gaussian Splatting reconstructs a scene with remarkable visual fidelity — preserving natural lighting, textures and fine detail. Instead of a traditional 3D mesh, the place is rebuilt from the photographs themselves.':
- 'Gaussian Splatting สร้างฉากขึ้นใหม่ด้วยความสมจริงของภาพที่โดดเด่น — รักษาแสงธรรมชาติ พื้นผิว และรายละเอียดเล็ก ๆ ไว้ แทนที่จะใช้เมช 3 มิติแบบดั้งเดิม สถานที่ถูกสร้างขึ้นใหม่จากภาพถ่ายเอง',
-'The result is an interactive experience that runs directly in a web browser. Walk through the site from anywhere, review existing conditions with your team and share the location with clients and partners without installing any additional software.':
- 'ผลลัพธ์คือประสบการณ์โต้ตอบที่ทำงานในเว็บเบราว์เซอร์โดยตรง เดินสำรวจพื้นที่ได้จากทุกที่ ทบทวนสภาพปัจจุบันร่วมกับทีม และแบ่งปันสถานที่กับลูกค้าและพันธมิตรได้โดยไม่ต้องติดตั้งโปรแกรมเพิ่ม',
+'Gaussian Splatting reconstructs a scene with remarkable visual fidelity — natural lighting, textures and fine detail preserved — by rebuilding the place from the photographs themselves rather than as a traditional 3D mesh. It runs directly in a web browser: walk through the site from anywhere, review existing conditions with your team and share it with clients and partners without installing any software.':
+ 'Gaussian Splatting สร้างฉากขึ้นใหม่ด้วยความสมจริงของภาพที่โดดเด่น — รักษาแสงธรรมชาติ พื้นผิว และรายละเอียดเล็ก ๆ ไว้ — โดยสร้างสถานที่ขึ้นใหม่จากภาพถ่ายเองแทนที่จะใช้เมช 3 มิติแบบดั้งเดิม ทำงานในเว็บเบราว์เซอร์โดยตรง เดินสำรวจพื้นที่ได้จากทุกที่ ทบทวนสภาพปัจจุบันร่วมกับทีม และแบ่งปันกับลูกค้าและพันธมิตรได้โดยไม่ต้องติดตั้งโปรแกรมใด ๆ',
 'Where it helps':'ช่วยได้ตรงไหน',
 'Built for spatial presence':'สร้างมาเพื่อความรู้สึกอยู่ในพื้นที่จริง',
 'Remote site presentation':'นำเสนอพื้นที่จากระยะไกล',
