@@ -43,6 +43,8 @@ body{overflow-x:hidden}
 .wrap--wide{max-width:var(--maxw)}
 .section{padding-block:var(--section-marketing)}
 .section--tight{padding-block:var(--section-explanation)}
+.section--pb-half{padding-bottom:calc(var(--section-marketing) / 2)}
+.section--pt-half{padding-top:calc(var(--section-explanation) / 2)}
 .section--alt{background:var(--bg-surface)}
 .divider{height:1px;background:var(--border-faint);border:0;margin:0}
 
