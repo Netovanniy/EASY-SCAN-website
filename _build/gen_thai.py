@@ -163,6 +163,8 @@ T = {
 
 # ---- ABOUT ---------------------------------------------------------------
 'Digital Land Intelligence':'ข้อมูลที่ดินอัจฉริยะแบบดิจิทัล',
+'EASY SCAN turns physical land into accurate, understandable and interactive digital environments — a decision-making layer between raw land and future development. We cover the full workflow, from scanning and processing to training and consultation, using LiDAR where it genuinely adds value and capturing detail accurate enough to support precise development decisions. The aim is simple: let people across architecture, development and construction use the full potential of the technology and change how problems are solved — without deep technical expertise or expensive equipment.':
+ 'EASY SCAN เปลี่ยนที่ดินจริงให้เป็นสภาพแวดล้อมดิจิทัลที่แม่นยำ เข้าใจง่าย และโต้ตอบได้ — ชั้นข้อมูลสำหรับการตัดสินใจระหว่างที่ดินดิบกับการพัฒนาในอนาคต เราดูแลกระบวนการทั้งหมด ตั้งแต่การสแกนและการประมวลผล ไปจนถึงการอบรมและการให้คำปรึกษา โดยใช้ LiDAR ในจุดที่สร้างคุณค่าได้จริง และเก็บข้อมูลที่แม่นยำพอจะสนับสนุนการตัดสินใจด้านการพัฒนาที่เที่ยงตรง เป้าหมายเรียบง่าย: ให้ผู้คนในวงการสถาปัตยกรรม การพัฒนา และการก่อสร้าง ใช้ศักยภาพเต็มที่ของเทคโนโลยีนี้ และเปลี่ยนวิธีการแก้ปัญหา — โดยไม่ต้องมีความเชี่ยวชาญทางเทคนิคเชิงลึกหรืออุปกรณ์ราคาแพง',
 'EASY SCAN turns physical land into accurate, understandable and interactive digital environments — a decision-making layer between raw land and future development.':
  'EASY SCAN เปลี่ยนที่ดินจริงให้เป็นสภาพแวดล้อมดิจิทัลที่แม่นยำ เข้าใจง่าย และโต้ตอบได้ — ชั้นข้อมูลสำหรับการตัดสินใจระหว่างที่ดินดิบกับการพัฒนาในอนาคต',
 'Koh Phangan · 2020':'เกาะพะงัน · 2020',
