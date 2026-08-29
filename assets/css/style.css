@@ -255,11 +255,12 @@ body.nav-open .mobile-nav{transform:none}
 }
 .hero__title .accent{color:var(--accent-coral)}
 .hero__lead{
-  margin:var(--space-6) 0 0;max-width:var(--measure-lead);
+  margin:var(--space-6) 0 0;max-width:none;
   font-family:var(--font-information);font-size:1.25rem;color:var(--fg-secondary);
   text-transform:uppercase;letter-spacing:0.04em;line-height:var(--leading-heading);
   padding-top:var(--space-4);border-top:1px solid var(--border-hairline);
 }
+@media(min-width:1000px){.hero__lead{white-space:nowrap}}
 .hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
 .hero__scroll{
   position:absolute;bottom:20px;
