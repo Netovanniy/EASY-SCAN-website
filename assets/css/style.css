@@ -232,7 +232,7 @@ body.nav-open .mobile-nav{transform:none}
   position:relative;min-height:100svh;
   display:flex;align-items:center;
   padding-top:calc(72px + var(--space-7));
-  padding-bottom:var(--section-marketing);
+  padding-bottom:calc(72px + var(--space-7)); /* == padding-top: symmetric so the content is vertically centred */
   overflow:hidden;
 }
 .hero__media{position:absolute;inset:0;z-index:-2}
