@@ -430,13 +430,14 @@ body.nav-open .mobile-nav{transform:none}
 }
 /* backdrop band — about half the previous full-aspect height */
 .smart-visa .section__head{margin-bottom:var(--space-6)}
-/* SMART Visa backdrop: more visible image, shorter + harder top/bottom fade */
+/* SMART Visa backdrop: more visible image, NO top fade, short hard bottom fade */
+.smart-visa .why__bg{inset:var(--section-marketing) 0 100px}
 .smart-visa .why__bg img{opacity:.8}
 .smart-visa .why__bg::after{
-  background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 9%,rgba(0,0,0,0) 91%,var(--bg-page) 100%);
+  background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 91%,var(--bg-page) 100%);
 }
 @media(min-width:900px){
-  .smart-visa{min-height:calc((100vw * 942 / 1672) / 2 + 2 * var(--section-marketing))}
+  .smart-visa{min-height:calc((100vw * 942 / 1672) / 2 + var(--section-marketing) + 100px)}
 }
 
 /* ============================================================
