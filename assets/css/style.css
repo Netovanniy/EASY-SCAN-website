@@ -565,6 +565,9 @@ body.nav-open .mobile-nav{transform:none}
   /* buttons stack full-width, all the same size */
   .hero__actions,.cta__actions{flex-direction:column;align-items:stretch}
   .hero__actions .btn,.cta__actions .btn{width:100%}
+  /* hero: title fills the screen width on one line; divider + lead follow */
+  .hero__title{font-size:calc(var(--hero-cw) / 11.9);max-width:none}
+  .hero__lead{font-size:calc(var(--hero-cw) / 20)}
 }
 .team-member__role{
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
