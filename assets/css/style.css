@@ -641,7 +641,8 @@ body.nav-open .mobile-nav{transform:none}
   mask-image:radial-gradient(circle at 82% 100%,#000,transparent 70%);
 }
 .cta > *{position:relative;z-index:1}
-.cta .eyebrow{color:var(--accent-coral)}
+/* keep the eyebrow at label size — .cta p (below) would otherwise bump it to body-l */
+.cta .eyebrow{color:var(--accent-coral);font-size:var(--type-label-sm);line-height:var(--leading-heading);margin-top:0}
 .cta h2{max-width:20ch;margin:0}
 .cta h2.cta__h2--free{max-width:none}
 .cta p{margin-top:var(--space-4);font-family:var(--font-information);color:var(--fg-secondary);max-width:calc(var(--measure-lead) * 2);font-size:var(--type-body-l);line-height:var(--leading-body)}

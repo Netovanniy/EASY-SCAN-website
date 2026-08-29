@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=113">
+<link rel="stylesheet" href="assets/css/style.css?v=114">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -369,7 +369,7 @@ k += header()
 k += '<main id="main">\n'
 k += page_hero("Contact", "Contact",
     "Need assistance? Fill in the form and we will contact you within 24 hours with a recommendation and a quote.",
-    "assets/img/contact-back.jpg?v=113", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
+    "assets/img/contact-back.jpg?v=114", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
 k += """  <section class="section">
     <div class="wrap wrap--wide">
       <div class="contact-grid">
