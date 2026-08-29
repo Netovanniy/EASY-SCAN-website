@@ -250,7 +250,7 @@ body.nav-open .mobile-nav{transform:none}
 }
 .hero__title{
   display:inline-block;
-  font-family:var(--font-identity);font-size:var(--type-identity-l);
+  font-family:var(--font-identity);font-size:calc(var(--type-identity-l) * 1.2);
   letter-spacing:var(--tracking-identity);text-transform:uppercase;line-height:var(--leading-tight);
   max-width:16ch;margin:0;
   padding-bottom:var(--space-5);border-bottom:1px solid var(--border-hairline);
@@ -258,10 +258,13 @@ body.nav-open .mobile-nav{transform:none}
 .hero__title .accent{color:var(--accent-coral)}
 .hero__lead{
   margin:var(--space-6) 0 0;max-width:none;
-  font-family:var(--font-information);font-size:1.25rem;color:var(--fg-secondary);
+  font-family:var(--font-information);
+  /* tracks the title so the line ends ≈ where EASY SCAN ends */
+  font-size:max(1.25rem, calc(var(--type-identity-l) * 0.354));
+  color:var(--fg-secondary);
   text-transform:uppercase;letter-spacing:0.04em;line-height:var(--leading-heading);
 }
-@media(min-width:1000px){.hero__lead{white-space:nowrap}}
+@media(min-width:1200px){.hero__lead{white-space:nowrap;width:max-content}}
 .hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
 .hero__scroll{
   position:absolute;bottom:20px;
