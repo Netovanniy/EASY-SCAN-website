@@ -347,7 +347,10 @@ body.nav-open .mobile-nav{transform:none}
 .page-hero--full .page-hero__media--scrim-65 img{opacity:.55}
 .page-hero__media--scrim-65::after{background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 38%,rgba(0,0,0,0) 65%)}
 .page-hero__title{
-  font-family:var(--font-identity);font-size:var(--type-identity-m);letter-spacing:var(--tracking-identity);
+  font-family:var(--font-identity);
+  /* shrink on narrow screens so the widest word (e.g. MONITORING in ABNES) still fits */
+  font-size:clamp(1.375rem, calc((100vw - 40px) / 12), var(--type-identity-m));
+  letter-spacing:var(--tracking-identity);
   text-transform:uppercase;line-height:var(--leading-tight);max-width:20ch;margin:0;
 }
 @media(min-width:760px){.page-hero__title{font-size:var(--type-identity-l)}}
@@ -358,7 +361,7 @@ body.nav-open .mobile-nav{transform:none}
 .page-hero__lead--wide{max-width:calc(var(--measure-lead) * 2)}
 .breadcrumb{
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
-  text-transform:uppercase;color:var(--fg-faint);margin-bottom:var(--space-5);display:flex;gap:10px;align-items:center;
+  text-transform:uppercase;color:var(--fg-faint);margin-bottom:var(--space-5);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;
 }
 .breadcrumb a:hover{color:var(--accent-coral)}
 .breadcrumb span{color:var(--border-strong)}
