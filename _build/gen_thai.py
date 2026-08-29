@@ -85,6 +85,16 @@ T = {
 'Repeated scans track construction phases and build a 3D record of progress.':
  'การสแกนซ้ำติดตามแต่ละช่วงของการก่อสร้างและสร้างบันทึกความคืบหน้าแบบ 3 มิติ',
 'Why it matters':'ทำไมจึงสำคัญ',
+"We don't just scan land — we help you use it right. With LIDAR EASY SCAN, you get an accurate 3D terrain model, a clear understanding of your land, and strategic insight for building or development. No guesswork — just real data and smart decisions.":
+ 'เราไม่ได้แค่สแกนที่ดิน — เราช่วยให้คุณใช้มันอย่างถูกต้อง ด้วย LIDAR EASY SCAN คุณจะได้แบบจำลองภูมิประเทศ 3 มิติที่แม่นยำ ความเข้าใจที่ชัดเจนในที่ดินของคุณ และข้อมูลเชิงกลยุทธ์สำหรับการก่อสร้างหรือการพัฒนา ไม่ต้องเดา — มีเพียงข้อมูลจริงและการตัดสินใจที่ชาญฉลาด',
+'Most developers see only what is on the surface. We help you see what is possible beneath — slopes, drainage, access and context.':
+ 'นักพัฒนาส่วนใหญ่เห็นเพียงสิ่งที่อยู่บนผิวดิน เราช่วยให้คุณเห็นความเป็นไปได้ที่อยู่ข้างใต้ — ความลาดชัน การระบายน้ำ ทางเข้า และบริบทโดยรอบ',
+'Building in the wrong place, underestimating slopes, damaging landscape, missing the best views — realised only when it is already too late.':
+ 'สร้างผิดตำแหน่ง ประเมินความลาดชันต่ำเกินไป ทำลายภูมิทัศน์ พลาดวิวที่ดีที่สุด — รู้ตัวเมื่อสายเกินไปแล้ว',
+'LiDAR and drone mapping capture every contour, elevation and detail of your land — a complete, accurate digital record of what exists.':
+ 'LiDAR และการทำแผนที่ด้วยโดรนเก็บทุกเส้นชั้นความสูง ระดับ และรายละเอียดของที่ดินคุณ — บันทึกดิจิทัลที่ครบถ้วนและแม่นยำของสิ่งที่มีอยู่จริง',
+'Architects place buildings directly onto the scanned terrain and see exactly how structures sit on the land and interact with slopes.':
+ 'สถาปนิกวางอาคารลงบนภูมิประเทศที่สแกนไว้โดยตรง และเห็นอย่างชัดเจนว่าอาคารตั้งอยู่บนที่ดินอย่างไรและสัมพันธ์กับความลาดชันอย่างไร',
 'Terrain is often misunderstood':'ภูมิประเทศมักถูกเข้าใจผิด',
 'Every project begins with land. Most developers see only what exists on the surface. We help you see what is possible beneath.':
  'ทุกโครงการเริ่มต้นจากที่ดิน นักพัฒนาส่วนใหญ่เห็นเพียงสิ่งที่อยู่บนผิวดิน เราช่วยให้คุณเห็นความเป็นไปได้ที่อยู่ลึกลงไป',

@@ -385,6 +385,18 @@ body.nav-open .mobile-nav{transform:none}
 .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* ============================================================
+   BLOCK · Why it matters — terrain-mesh backdrop behind head + cards
+   ============================================================ */
+.why{position:relative;overflow:hidden;background:var(--bg-page)}
+.why > .wrap{position:relative;z-index:1}
+.why__bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.why__bg img{width:100%;height:100%;object-fit:cover;opacity:.34}
+.why__bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 78%,var(--bg-page) 100%);
+}
+
+/* ============================================================
    BLOCK · Feature cards
    ============================================================ */
 .features{display:grid;gap:1px;background:var(--border-faint);border:1px solid var(--border-faint)}
