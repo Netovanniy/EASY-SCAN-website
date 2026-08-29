@@ -438,7 +438,7 @@ body.nav-open .mobile-nav{transform:none}
   background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0) 90%,var(--bg-page) 100%);
 }
 @media(min-width:900px){
-  .smart-visa{min-height:calc((100vw * 942 / 1672) / 2 + var(--section-marketing) + 100px)}
+  .smart-visa{min-height:calc((100vw * 942 / 1672) / 2 + var(--section-marketing) + 120px)}
 }
 
 /* ============================================================
