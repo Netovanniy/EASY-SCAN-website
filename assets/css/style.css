@@ -560,8 +560,9 @@ body.nav-open .mobile-nav{transform:none}
 .team-member:hover .team-member__photo{filter:grayscale(0)}
 .team-member__body{display:flex;flex-direction:column;gap:6px;min-width:0}
 @media(max-width:560px){
-  .team-member{padding:var(--space-5)}
-  .team-member__photo{width:80px;height:80px}
+  /* stack the card (photo on top) so long names don't wrap unevenly */
+  .team-member{padding:var(--space-6) var(--space-5);flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:var(--space-4)}
+  .team-member__photo{width:88px;height:88px}
   /* buttons stack full-width, all the same size */
   .hero__actions,.cta__actions{flex-direction:column;align-items:stretch}
   .hero__actions .btn,.cta__actions .btn{width:100%}
