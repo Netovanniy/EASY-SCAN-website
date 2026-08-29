@@ -431,9 +431,9 @@ body.nav-open .mobile-nav{transform:none}
 /* backdrop band — about half the previous full-aspect height */
 .smart-visa .section__head{margin-bottom:var(--space-6)}
 /* SMART Visa backdrop: more visible image, soft 10% fade top + bottom;
-   container is 100px taller (extends upward), image aligned to its top edge */
+   container is 100px taller (extends upward), image centred */
 .smart-visa .why__bg{inset:calc(var(--section-marketing) - 100px) 0 100px}
-.smart-visa .why__bg img{opacity:.8;object-position:center top}
+.smart-visa .why__bg img{opacity:.8;object-position:center}
 .smart-visa .why__bg::after{
   background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0) 90%,var(--bg-page) 100%);
 }
