@@ -421,7 +421,7 @@ body.nav-open .mobile-nav{transform:none}
 .why__bg img{width:100%;height:100%;object-fit:cover;opacity:.5}
 .why__bg::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 16%,rgba(0,0,0,0) 78%,var(--bg-page) 100%);
+  background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 78%,var(--bg-page) 100%);
 }
 /* SMART Visa variant of the .why block (about page) — fine-print under the head */
 .smart-visa__note{
@@ -430,15 +430,15 @@ body.nav-open .mobile-nav{transform:none}
 }
 /* backdrop band — about half the previous full-aspect height */
 .smart-visa .section__head{margin-bottom:var(--space-6)}
-/* SMART Visa backdrop: more visible image, soft 10% fade top + bottom;
-   container is 100px taller (extends upward), image centred */
-.smart-visa .why__bg{inset:calc(var(--section-marketing) - 100px) 0 100px}
+/* SMART Visa backdrop: more visible image, soft 20% fade top + bottom;
+   image centred, +20px black gap above the container */
+.smart-visa .why__bg{inset:calc(var(--section-marketing) - 80px) 0 100px}
 .smart-visa .why__bg img{opacity:.8;object-position:center}
 .smart-visa .why__bg::after{
-  background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 10%,rgba(0,0,0,0) 90%,var(--bg-page) 100%);
+  background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 80%,var(--bg-page) 100%);
 }
 @media(min-width:900px){
-  .smart-visa{min-height:calc((100vw * 942 / 1672) / 2 + var(--section-marketing) + 120px)}
+  .smart-visa{min-height:calc((100vw * 942 / 1672) / 2 + var(--section-marketing) + 140px)}
 }
 
 /* ============================================================
