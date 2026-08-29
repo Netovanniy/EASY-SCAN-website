@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=106">
+<link rel="stylesheet" href="assets/css/style.css?v=108">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -61,13 +61,13 @@ def header(active_about=False):
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
   <a href="index.html">Main</a>
   <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
   <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSub">Services
     <svg class="m-sub-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </button>
   <div class="m-sub" id="mSub">
 {M_SUB}
   </div>
+  <a href="contact.html">Contact</a>
 </nav>
 """
 
@@ -369,7 +369,7 @@ k += header()
 k += '<main id="main">\n'
 k += page_hero("Contact", "Contact",
     "Need assistance? Fill in the form and we will contact you within 24 hours with a recommendation and a quote.",
-    "assets/img/contact-back.jpg?v=106", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
+    "assets/img/contact-back.jpg?v=108", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
 k += """  <section class="section">
     <div class="wrap wrap--wide">
       <div class="contact-grid">

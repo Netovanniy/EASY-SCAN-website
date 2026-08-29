@@ -32,10 +32,12 @@
 
   /* Mobile nav — collapsible Services sub-menu */
   var subToggle = document.querySelector(".m-sub-toggle");
-  if (subToggle) {
+  var subMenu = subToggle && subToggle.nextElementSibling;
+  if (subToggle && subMenu) {
     subToggle.addEventListener("click", function () {
       var open = subToggle.getAttribute("aria-expanded") === "true";
       subToggle.setAttribute("aria-expanded", open ? "false" : "true");
+      subMenu.classList.toggle("is-open", !open);
     });
   }
   window.addEventListener("keydown", function (e) {

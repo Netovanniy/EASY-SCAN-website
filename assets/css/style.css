@@ -208,17 +208,17 @@ body.nav-open .nav-toggle .icon-close{display:block}
 .mobile-nav{
   position:fixed;inset:72px 0 0 0;z-index:99;
   background:var(--bg-page);
-  padding:var(--space-6) var(--gutter) var(--space-8);
+  padding:var(--space-5) var(--gutter) calc(var(--space-10) + env(safe-area-inset-bottom, 0px));
   display:flex;flex-direction:column;gap:4px;
   transform:translateX(100%);
   transition:transform var(--dur-slow) var(--ease-standard);
-  overflow-y:auto;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
 }
 body.nav-open .mobile-nav{transform:none}
 .mobile-nav a,
 .mobile-nav .m-sub-toggle{
   font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:1.4rem;text-transform:uppercase;
-  padding:16px 0;border-bottom:1px solid var(--border-faint);color:var(--fg-secondary);
+  padding:13px 0;border-bottom:1px solid var(--border-faint);color:var(--fg-secondary);
 }
 .mobile-nav a:hover,
 .mobile-nav .m-sub-toggle:hover{color:var(--accent-coral)}
@@ -239,11 +239,11 @@ body.nav-open .mobile-nav{transform:none}
   overflow:hidden;max-height:0;
   transition:max-height var(--dur-slow) var(--ease-standard);
 }
-.mobile-nav .m-sub-toggle[aria-expanded="true"] + .m-sub{max-height:70vh}
+.mobile-nav .m-sub.is-open{max-height:80vh}
 .mobile-nav .m-sub a{
   display:block;
   font-size:var(--type-body);font-family:var(--font-information);letter-spacing:var(--tracking-data);
-  padding:14px 0 14px 18px;
+  padding:11px 0 11px 18px;
   border-bottom:1px solid var(--border-faint);color:var(--fg-faint);
 }
 .mobile-nav .m-sub a:last-child{border-bottom:0}
@@ -569,8 +569,6 @@ body.nav-open .mobile-nav{transform:none}
   /* hero: title fills the screen width on one line; divider + lead follow */
   .hero__title{font-size:calc(var(--hero-cw) / 11.9);max-width:none}
   .hero__lead{font-size:calc(var(--hero-cw) / 20)}
-  /* SMART Visa backdrop: keep the card/certs (right side of the image) in frame */
-  .smart-visa .why__bg img{object-position:right}
 }
 .team-member__role{
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
