@@ -423,6 +423,11 @@ body.nav-open .mobile-nav{transform:none}
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 78%,var(--bg-page) 100%);
 }
+/* SMART Visa variant of the .why block (about page) — fine-print under the head */
+.smart-visa__note{
+  max-width:calc(var(--measure-lead) * 2);margin-top:var(--space-6);
+  font-family:var(--font-information);font-size:var(--type-body-sm);line-height:var(--leading-body);
+}
 
 /* ============================================================
    BLOCK · Feature cards
