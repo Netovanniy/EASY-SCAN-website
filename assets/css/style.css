@@ -304,6 +304,12 @@ body.nav-open .mobile-nav{transform:none}
   padding-bottom:var(--section-explanation);
 }
 .page-hero--full > .wrap{width:100%}
+/* bottom edge fades to page black so the hero blends into the section below */
+.page-hero--full::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;
+  height:clamp(200px, 34vh, 420px);z-index:-1;pointer-events:none;
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, var(--bg-page) 100%);
+}
 .page-hero--full .page-hero__lead{
   margin-top:var(--space-6);padding-top:var(--space-6);
   border-top:1px solid var(--border-hairline);
