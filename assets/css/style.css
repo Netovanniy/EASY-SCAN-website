@@ -249,16 +249,17 @@ body.nav-open .mobile-nav{transform:none}
   text-transform:uppercase;color:var(--fg-secondary);margin:0 0 var(--space-5);
 }
 .hero__title{
+  display:inline-block;
   font-family:var(--font-identity);font-size:var(--type-identity-l);
   letter-spacing:var(--tracking-identity);text-transform:uppercase;line-height:var(--leading-tight);
   max-width:16ch;margin:0;
+  padding-bottom:var(--space-5);border-bottom:1px solid var(--border-hairline);
 }
 .hero__title .accent{color:var(--accent-coral)}
 .hero__lead{
   margin:var(--space-6) 0 0;max-width:none;
   font-family:var(--font-information);font-size:1.25rem;color:var(--fg-secondary);
   text-transform:uppercase;letter-spacing:0.04em;line-height:var(--leading-heading);
-  padding-top:var(--space-4);border-top:1px solid var(--border-hairline);
 }
 @media(min-width:1000px){.hero__lead{white-space:nowrap}}
 .hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
