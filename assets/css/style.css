@@ -191,7 +191,7 @@ body{overflow-x:hidden}
   padding-left:var(--space-4);border-left:1px solid var(--border-hairline);
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
 }
-.lang a{color:var(--fg-faint);padding:4px 4px;transition:color var(--dur-fast) var(--ease-standard)}
+.lang a{color:var(--fg-primary);padding:4px 4px;transition:color var(--dur-fast) var(--ease-standard)}
 .lang a[aria-current]{color:var(--fg-primary)}
 .lang a:hover{color:var(--accent-coral)}
 .lang span{color:var(--border-strong)}
