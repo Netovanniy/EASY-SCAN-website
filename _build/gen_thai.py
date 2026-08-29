@@ -64,7 +64,7 @@ T = {
 # ---- HOME --------------------------------------------------------------
 'See your land.':'มองเห็นที่ดินของคุณ',
 'Use it right.':'ใช้มันอย่างถูกต้อง',
-'Your digital partner in land analysis and development insight.':
+'Your digital partner in land analysis and development insight':
  'พันธมิตรดิจิทัลของคุณในการวิเคราะห์ที่ดินและวางแผนการพัฒนา',
 'Get a scan quote':'ขอใบเสนอราคาสแกน','Explore services':'ดูบริการทั้งหมด','Scroll':'เลื่อนลง',
 'The workflow':'ขั้นตอนการทำงาน',
