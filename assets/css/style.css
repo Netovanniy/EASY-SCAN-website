@@ -428,6 +428,10 @@ body.nav-open .mobile-nav{transform:none}
   max-width:calc(var(--measure-lead) * 2);margin-top:var(--space-6);
   font-family:var(--font-information);font-size:var(--type-body-sm);line-height:var(--leading-body);
 }
+/* tall enough that the full-bleed backdrop shows at its own aspect ratio (1672x942) */
+@media(min-width:900px){
+  .smart-visa{min-height:calc(100vw * 942 / 1672 + 2 * var(--section-marketing))}
+}
 
 /* ============================================================
    BLOCK · Feature cards
