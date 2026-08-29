@@ -569,6 +569,8 @@ body.nav-open .mobile-nav{transform:none}
   /* hero: title fills the screen width on one line; divider + lead follow */
   .hero__title{font-size:calc(var(--hero-cw) / 11.9);max-width:none}
   .hero__lead{font-size:calc(var(--hero-cw) / 20)}
+  /* SMART Visa backdrop: keep the card/certs (right side of the image) in frame */
+  .smart-visa .why__bg img{object-position:right}
 }
 .team-member__role{
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
