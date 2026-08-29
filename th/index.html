@@ -7,8 +7,8 @@
 <meta name="description" content="ข้อมูลที่ดินอัจฉริยะแบบดิจิทัลเพื่อการพัฒนาที่ชาญฉลาดขึ้น EASY SCAN ใช้ LiDAR และการทำแผนที่ด้วยโดรน เพื่อมอบแบบจำลองภูมิประเทศ 3 มิติที่แม่นยำแก่สถาปนิก นักพัฒนา และเจ้าของที่ดินในประเทศไทยก่อนเริ่มก่อสร้าง">
 <link rel="icon" href="../assets/img/logo-mark-white.png">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="../design-system/styles.css?v=100">
-<link rel="stylesheet" href="../assets/css/style.css?v=100">
+<link rel="stylesheet" href="../design-system/styles.css?v=101">
+<link rel="stylesheet" href="../assets/css/style.css?v=101">
 </head>
 <body>
 <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
@@ -47,8 +47,10 @@
   <a href="index.html">หน้าแรก</a>
   <a href="about.html">เกี่ยวกับเรา</a>
   <a href="contact.html">ติดต่อ</a>
-  <p class="m-group-label">บริการ</p>
-  <div class="m-sub">
+  <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSub">บริการ
+    <svg class="m-sub-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="m-sub" id="mSub">
     <a href="gaussian.html">Gaussian</a>
     <a href="twin.html">ดิจิทัลทวิน</a>
     <a href="concepting.html">ทดสอบแนวคิด</a>
@@ -276,6 +278,6 @@
   </div>
 </footer>
 
-<script src="../assets/js/main.js?v=100"></script>
+<script src="../assets/js/main.js?v=101"></script>
 </body>
 </html>

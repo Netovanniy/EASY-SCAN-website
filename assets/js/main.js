@@ -29,6 +29,15 @@
       });
     });
   }
+
+  /* Mobile nav — collapsible Services sub-menu */
+  var subToggle = document.querySelector(".m-sub-toggle");
+  if (subToggle) {
+    subToggle.addEventListener("click", function () {
+      var open = subToggle.getAttribute("aria-expanded") === "true";
+      subToggle.setAttribute("aria-expanded", open ? "false" : "true");
+    });
+  }
   window.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && body.classList.contains("nav-open")) {
       body.classList.remove("nav-open");

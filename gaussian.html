@@ -7,8 +7,8 @@
 <meta name="description" content="EASY SCAN reconstructs real places with Gaussian Splatting — photorealistic, interactive 3D scenes you explore directly in a web browser.">
 <link rel="icon" href="assets/img/logo-mark-white.png">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="design-system/styles.css?v=100">
-<link rel="stylesheet" href="assets/css/style.css?v=100">
+<link rel="stylesheet" href="design-system/styles.css?v=101">
+<link rel="stylesheet" href="assets/css/style.css?v=101">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -43,8 +43,10 @@
   <a href="index.html">Main</a>
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
-  <p class="m-group-label">Services</p>
-  <div class="m-sub">
+  <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSub">Services
+    <svg class="m-sub-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="m-sub" id="mSub">
     <a href="gaussian.html">Gaussian</a>
     <a href="twin.html">Digital Twin</a>
     <a href="concepting.html">Concepting</a>
@@ -167,6 +169,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/main.js?v=100"></script>
+<script src="assets/js/main.js?v=101"></script>
 </body>
 </html>
