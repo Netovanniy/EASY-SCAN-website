@@ -390,7 +390,8 @@ body.nav-open .mobile-nav{transform:none}
    ============================================================ */
 .why{position:relative;overflow:hidden;background:var(--bg-page)}
 .why > .wrap{position:relative;z-index:1}
-.why__bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+/* backdrop starts below the section's top padding -> clean black gap above */
+.why__bg{position:absolute;inset:var(--section-marketing) 0 0;z-index:0;pointer-events:none}
 .why__bg img{width:100%;height:100%;object-fit:cover;opacity:.34}
 .why__bg::after{
   content:"";position:absolute;inset:0;
