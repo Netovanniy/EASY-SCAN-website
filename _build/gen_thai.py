@@ -562,6 +562,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
     # ---- 2. build the Thai page ----
     t = s_en
     t = t.replace('href="assets/', 'href="../assets/').replace('src="assets/', 'src="../assets/')
+    t = t.replace('poster="assets/', 'poster="../assets/')
     t = t.replace('href="design-system/', 'href="../design-system/')
     t = t.replace('<html lang="en">', '<html lang="th">')
     th_lang = ('<span class="lang" aria-label="ภาษา">'
