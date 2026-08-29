@@ -239,8 +239,8 @@ T = {
 'A small multidisciplinary team combining technology, business and development expertise to turn complex land data into practical solutions.':
  'ทีมเล็กแบบสหวิทยาการที่ผสานความเชี่ยวชาญด้านเทคโนโลยี ธุรกิจ และการพัฒนา เพื่อเปลี่ยนข้อมูลที่ดินที่ซับซ้อนให้เป็นแนวทางที่ใช้งานได้จริง',
 'Founder & CEO · Managing Director':'ผู้ก่อตั้งและซีอีโอ · กรรมการผู้จัดการ',
-'Co-Founder & Chief Commercial Officer':'ผู้ร่วมก่อตั้งและประธานเจ้าหน้าที่ฝ่ายพาณิชย์',
-'Co-Founder & Sales Director':'ผู้ร่วมก่อตั้งและผู้อำนวยการฝ่ายขาย',
+'Co-Founder ·<br>Chief Commercial Officer':'ผู้ร่วมก่อตั้ง ·<br>ประธานเจ้าหน้าที่ฝ่ายพาณิชย์',
+'Co-Founder ·<br>Sales Director':'ผู้ร่วมก่อตั้ง ·<br>ผู้อำนวยการฝ่ายขาย',
 '3D generalist and business-process engineer. BSc in Engineering and in Transport and Logistics.':'นักออกแบบ 3 มิติแบบครอบคลุมและวิศวกรกระบวนการธุรกิจ ปริญญาตรีวิศวกรรมศาสตร์ และด้านการขนส่งและโลจิสติกส์',
 'MBA, with master&#8217;s degrees in project management and marketing. 10+ years in marketing.':'ปริญญาโทบริหารธุรกิจ (MBA) พร้อมปริญญาโทด้านการจัดการโครงการและการตลาด ประสบการณ์การตลาดกว่า 10 ปี',
 'Diploma of Finance and an MBA. 20+ years in taxation and finance, 5+ in B2B sales.':'อนุปริญญาด้านการเงินและปริญญาโทบริหารธุรกิจ ประสบการณ์ด้านภาษีและการเงินกว่า 20 ปี และงานขายแบบ B2B กว่า 5 ปี',
