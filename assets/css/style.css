@@ -288,7 +288,7 @@ body.nav-open .mobile-nav{transform:none}
   font-family:var(--font-identity);
   font-size:max(calc(var(--type-identity-l) * 1.2), calc(var(--hero-cw) / 11.8));
   letter-spacing:var(--tracking-identity);text-transform:uppercase;line-height:var(--leading-tight);
-  max-width:16ch;margin:0;
+  white-space:nowrap;max-width:none;margin:0;
   padding-bottom:var(--space-5);
 }
 .hero__title::after{
