@@ -95,23 +95,23 @@ T = {
  'LiDAR และการทำแผนที่ด้วยโดรนเก็บทุกเส้นชั้นความสูง ระดับ และรายละเอียดของที่ดินคุณ — บันทึกดิจิทัลที่ครบถ้วนและแม่นยำของสิ่งที่มีอยู่จริง',
 'Architects place buildings directly onto the scanned terrain and see exactly how structures sit on the land and interact with slopes.':
  'สถาปนิกวางอาคารลงบนภูมิประเทศที่สแกนไว้โดยตรง และเห็นอย่างชัดเจนว่าอาคารตั้งอยู่บนที่ดินอย่างไรและสัมพันธ์กับความลาดชันอย่างไร',
-'Terrain is often misunderstood':'ภูมิประเทศมักถูกเข้าใจผิด',
+'Understand the<br>real terrain':'เข้าใจภูมิประเทศ<br>ที่แท้จริง',
 'Every project begins with land. Most developers see only what exists on the surface. We help you see what is possible beneath.':
  'ทุกโครงการเริ่มต้นจากที่ดิน นักพัฒนาส่วนใหญ่เห็นเพียงสิ่งที่อยู่บนผิวดิน เราช่วยให้คุณเห็นความเป็นไปได้ที่อยู่ลึกลงไป',
 'Before — assumptions':'ก่อนหน้า — การคาดเดา',
-'People lose money before construction even starts':'ผู้คนเสียเงินก่อนการก่อสร้างจะเริ่มด้วยซ้ำ',
+'Avoid costly<br>design mistakes':'เลี่ยงข้อผิดพลาด<br>ด้านการออกแบบที่แพง',
 'They build in the wrong place, underestimate slopes, damage valuable landscape and miss the best views — often realising it only when it is already too late.':
  'พวกเขาสร้างผิดตำแหน่ง ประเมินความลาดชันต่ำเกินไป ทำลายภูมิทัศน์ที่มีค่า และพลาดวิวที่ดีที่สุด — และมักรู้ตัวเมื่อสายเกินไปแล้ว',
 'The problem is simple: they do not truly see their land clearly.':
  'ปัญหานั้นเรียบง่าย: พวกเขาไม่ได้เห็นที่ดินของตนอย่างชัดเจนจริง ๆ',
 'Capture — LiDAR + drone':'เก็บข้อมูล — LiDAR + โดรน',
-'We scan terrain with precision':'เราสแกนภูมิประเทศอย่างแม่นยำ',
+'Capture the land<br>with precision':'เก็บข้อมูลที่ดิน<br>อย่างแม่นยำ',
 'EASY SCAN uses LiDAR and drone mapping to capture every contour, elevation and detail of your land. The result is a complete, accurate digital record of what exists.':
  'EASY SCAN ใช้ LiDAR และการทำแผนที่ด้วยโดรนเก็บทุกเส้นชั้นความสูง ระดับ และรายละเอียดของที่ดินคุณ ผลลัพธ์คือบันทึกดิจิทัลที่ครบถ้วนและแม่นยำของสิ่งที่มีอยู่จริง',
 'No guesswork — just real data and smart decisions.':
  'ไม่ต้องเดา — มีเพียงข้อมูลจริงและการตัดสินใจที่ชาญฉลาด',
 'Result — design on real ground':'ผลลัพธ์ — ออกแบบบนพื้นที่จริง',
-'Architecture meets terrain in real space':'สถาปัตยกรรมพบกับภูมิประเทศในพื้นที่จริง',
+'Design directly<br>on the terrain':'ออกแบบโดยตรง<br>บนภูมิประเทศ',
 'Architects place buildings directly onto the scanned terrain. The digital twin shows exactly how structures sit on the land, how they interact with slopes and how they relate to the surrounding environment.':
  'สถาปนิกวางอาคารลงบนภูมิประเทศที่สแกนไว้โดยตรง ดิจิทัลทวินแสดงให้เห็นอย่างชัดเจนว่าอาคารตั้งอยู่บนที่ดินอย่างไร สัมพันธ์กับความลาดชันอย่างไร และเชื่อมโยงกับสภาพแวดล้อมโดยรอบอย่างไร',
 'Design becomes grounded in reality.':'การออกแบบตั้งอยู่บนความเป็นจริง',
