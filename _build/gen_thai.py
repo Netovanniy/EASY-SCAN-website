@@ -124,7 +124,7 @@ T = {
 'Choose your package':'เลือกแพ็กเกจของคุณ',
 'A simple set of plans that guide you from first understanding your land to full project control — using real data instead of guesswork.':
  'ชุดแผนที่เรียบง่าย พาคุณจากการเข้าใจที่ดินครั้งแรกไปสู่การควบคุมโครงการอย่างเต็มที่ — ด้วยข้อมูลจริงแทนการคาดเดา',
-'Basic':'Basic','Smart':'Smart','Export':'Export',
+'Basic':'Basic','Smart':'Smart','Expert':'Expert',
 'Quick understanding of your site.':'เข้าใจพื้นที่ของคุณอย่างรวดเร็ว',
 '3D land scan':'สแกนที่ดิน 3 มิติ',
 '360° panoramas / HDRI':'ภาพพาโนรามา 360° / HDRI',
@@ -132,7 +132,7 @@ T = {
 'Online 3D viewer':'โปรแกรมดูโมเดล 3 มิติออนไลน์',
 'Result':'ผลลัพธ์',
 'A clear overview of the terrain.':'ภาพรวมของภูมิประเทศที่ชัดเจน',
-'Request Basic':'ขอแพ็กเกจ Basic','Request Smart':'ขอแพ็กเกจ Smart','Request Export':'ขอแพ็กเกจ Export',
+'Request Basic':'ขอแพ็กเกจ Basic','Request Smart':'ขอแพ็กเกจ Smart','Request Expert':'ขอแพ็กเกจ Expert',
 'Most chosen':'เลือกมากที่สุด',
 'Early stage and decision-making.':'ช่วงเริ่มต้นและการตัดสินใจ',
 'Everything in Basic, plus':'ทุกอย่างใน Basic และเพิ่ม',
@@ -140,8 +140,8 @@ T = {
 'Land-use recommendation':'คำแนะนำการใช้ประโยชน์ที่ดิน',
 'Concept placement on terrain':'การวางแนวคิดลงบนภูมิประเทศ',
 '1 live real-time design session':'เซสชันออกแบบสดแบบเรียลไทม์ 1 ครั้ง',
-'Test ideas directly on your land, in real context.':
- 'ทดสอบแนวคิดบนที่ดินของคุณโดยตรงในบริบทจริง',
+'Test ideas in real context.':
+ 'ทดสอบแนวคิดในบริบทจริง',
 'Development with better control.':'พัฒนาโครงการด้วยการควบคุมที่ดีขึ้น',
 'Everything in Smart, plus':'ทุกอย่างใน Smart และเพิ่ม',
 'Land strategy &amp; layout ideas':'กลยุทธ์ที่ดินและแนวคิดผังโครงการ',

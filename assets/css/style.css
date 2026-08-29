@@ -500,11 +500,7 @@ body.nav-open .mobile-nav{transform:none}
    ============================================================ */
 .pricing{display:grid;gap:var(--space-4);grid-template-columns:minmax(0,1fr)}
 @media(min-width:900px){
-  .pricing{
-    grid-template-columns:repeat(3,1fr);
-    gap:var(--space-7);
-    max-width:1140px;margin-inline:auto;
-  }
+  .pricing{grid-template-columns:repeat(3,1fr);gap:var(--space-6)}
 }
 .plan{
   display:flex;flex-direction:column;
