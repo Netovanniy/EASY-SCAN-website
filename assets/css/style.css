@@ -430,6 +430,11 @@ body.nav-open .mobile-nav{transform:none}
 }
 /* backdrop band — about half the previous full-aspect height */
 .smart-visa .section__head{margin-bottom:var(--space-6)}
+/* SMART Visa backdrop: more visible image, shorter + harder top/bottom fade */
+.smart-visa .why__bg img{opacity:.8}
+.smart-visa .why__bg::after{
+  background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 9%,rgba(0,0,0,0) 91%,var(--bg-page) 100%);
+}
 @media(min-width:900px){
   .smart-visa{min-height:calc((100vw * 942 / 1672) / 2 + 2 * var(--section-marketing))}
 }
