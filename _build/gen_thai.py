@@ -468,8 +468,8 @@ T = {
 'Ask about training':'สอบถามเรื่องการอบรม',
 
 # ---- CONTACT -------------------------------------------------
-'Need assistance? Fill in the form and we will contact you within 24 hours with a recommendation and a quote.':
- 'ต้องการความช่วยเหลือ? กรอกแบบฟอร์ม แล้วเราจะติดต่อกลับภายใน 24 ชั่วโมงพร้อมคำแนะนำและใบเสนอราคา',
+'Need assistance? Fill in the form below.<br>We\'ll get back to you within 24 hours with a recommendation and quote.<br>You can also call us or send us an email.':
+ 'ต้องการความช่วยเหลือ? กรอกแบบฟอร์มด้านล่าง<br>เราจะติดต่อกลับภายใน 24 ชั่วโมง พร้อมคำแนะนำและใบเสนอราคา<br>หรือจะโทรหาเราหรือส่งอีเมลถึงเราก็ได้',
 'Name':'ชื่อ','Email':'อีเมล','Land location':'ที่ตั้งของที่ดิน','Approximate area':'พื้นที่โดยประมาณ','Message':'ข้อความ',
 'Your name':'ชื่อของคุณ','you@example.com':'you@example.com',
 'Google Maps link or coordinates':'ลิงก์ Google Maps หรือพิกัด',
