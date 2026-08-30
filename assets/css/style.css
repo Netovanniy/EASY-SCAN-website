@@ -313,6 +313,7 @@ body.nav-open .mobile-nav{transform:none}
 .hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
 /* secondary row: quick phone + email buttons under the lead */
 .hero__actions--contacts{margin-top:var(--space-4)}
+.page-hero .hero__actions--contacts{margin-top:var(--space-6)}
 .hero__actions--contacts .btn svg{width:14px;height:14px;flex-shrink:0}
 .hero__scroll{
   position:absolute;bottom:20px;

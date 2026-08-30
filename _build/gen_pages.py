@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=121">
+<link rel="stylesheet" href="assets/css/style.css?v=122">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -367,9 +367,21 @@ k = head("Contact EASY SCAN | LiDAR &amp; 3D Scanning Services in Thailand",
          "Get in touch with EASY SCAN for LiDAR surveying, drone mapping and 3D terrain visualisation in Koh Phangan, Koh Samui and Phuket. We respond within 24 hours.")
 k += header()
 k += '<main id="main">\n'
+_contact_hero_btns = """      <div class="hero__actions hero__actions--contacts">
+        <a class="btn btn--ghost btn--sm" href="tel:+66806577769">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.24 1z"/></svg>
+          +66 (0)80 657 7769
+        </a>
+        <a class="btn btn--ghost btn--sm" href="mailto:lidareasyscan@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          lidareasyscan@gmail.com
+        </a>
+      </div>
+"""
 k += page_hero("Contact", "Contact",
     "Need assistance? Fill in the form and we will contact you within 24 hours with a recommendation and a quote.",
-    "assets/img/contact-back.jpg?v=121", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
+    "assets/img/contact-back.jpg?v=122", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
+    ).replace('</p>\n    </div>\n  </section>', '</p>\n' + _contact_hero_btns + '    </div>\n  </section>')
 k += """  <section class="section">
     <div class="wrap wrap--wide">
       <div class="contact-grid">
