@@ -76,6 +76,22 @@ function doGet() {
   return json({ ok: true, status: 'EASY SCAN contact endpoint is live' });
 }
 
+/**
+ * Run this ONCE from the editor (select "setup" ▸ Run) right after pasting the
+ * code and filling in SHEET_ID. It forces Google to ask for the Sheets + Gmail
+ * permissions that doPost needs. Approve the prompt. It also writes one test row
+ * and sends one test email so you can confirm both work. Then (re)deploy.
+ */
+function setup() {
+  getSheet_().appendRow([new Date(), 'setup test', 'setup@example.com', '-', '-', 'setup() ran OK']);
+  MailApp.sendEmail({
+    to: RECIPIENT,
+    subject: 'EASY SCAN form — setup test',
+    body: 'If you can read this, the contact endpoint can send mail.'
+  });
+  return 'OK — check the Leads tab and ' + RECIPIENT;
+}
+
 function getSheet_() {
   var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME);
