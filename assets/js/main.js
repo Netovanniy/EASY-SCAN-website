@@ -5,6 +5,26 @@
   /* Enable JS-only visual states (scroll reveal). Without JS everything stays visible. */
   document.documentElement.classList.add("js");
 
+  /* ---- Hero video: clean poster fallback when autoplay is blocked ----
+     iOS blocks muted-inline autoplay under Low Power Mode / Reduce Motion / Low
+     Data Mode and shows its own play-button overlay. Detect that and swap to the
+     poster image (.is-poster) so no play button is ever shown. */
+  var heroVideo = document.querySelector(".hero__video");
+  if (heroVideo) {
+    var heroMedia = heroVideo.closest(".hero__media") || heroVideo.parentNode;
+    var heroPoster = function () {
+      if (heroMedia) heroMedia.classList.add("is-poster");
+      heroVideo.removeAttribute("controls");
+    };
+    var playAttempt = heroVideo.play();
+    if (playAttempt && typeof playAttempt.then === "function") {
+      playAttempt.catch(heroPoster);
+    }
+    setTimeout(function () {
+      if (heroVideo.paused) heroPoster();
+    }, 1400);
+  }
+
   /* ---- Header scroll state ---- */
   var header = document.querySelector(".site-header");
   var onScroll = function () {

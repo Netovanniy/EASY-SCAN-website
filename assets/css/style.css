@@ -267,6 +267,10 @@ body.nav-open .mobile-nav{transform:none}
   .hero__video{display:none}
   .hero__media{background:#0b0e0f url(../img/hero-poster.jpg) center/cover no-repeat}
 }
+/* JS adds this when autoplay is blocked (iOS Low Power / Reduce Motion / Low Data)
+   — show the poster still, never iOS's play-button overlay */
+.hero__media.is-poster{background:#0b0e0f url(../img/hero-poster.jpg) center/cover no-repeat}
+.hero__media.is-poster .hero__video{display:none}
 .hero__media::after{content:"";position:absolute;inset:0;background:var(--scrim-bottom)}
 .hero__media::before{content:"";position:absolute;inset:0;z-index:1;background:var(--scrim-top)}
 /* bottom edge fades fully to page black so the hero blends into the section below */
