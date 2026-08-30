@@ -598,8 +598,8 @@ body.nav-open .mobile-nav{transform:none}
   /* hero: title fills the screen width on one line; divider + lead follow */
   .hero__title{font-size:calc(var(--hero-cw) / 11.9);max-width:none}
   .hero__lead{font-size:calc(var(--hero-cw) / 20)}
-  /* social buttons: circles, spread across the full window width */
-  .footer-bottom .footer-social{width:100%;justify-content:space-between;gap:10px}
+  /* social buttons: bigger circles, left-aligned */
+  .footer-bottom .footer-social{width:100%;justify-content:flex-start;gap:12px}
   .footer-bottom .footer-social a{width:52px;height:52px;flex:0 0 auto}
   .footer-bottom .footer-social svg{width:22px;height:22px}
 }
