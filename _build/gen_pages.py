@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=120">
+<link rel="stylesheet" href="assets/css/style.css?v=121">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -369,7 +369,7 @@ k += header()
 k += '<main id="main">\n'
 k += page_hero("Contact", "Contact",
     "Need assistance? Fill in the form and we will contact you within 24 hours with a recommendation and a quote.",
-    "assets/img/contact-back.jpg?v=120", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
+    "assets/img/contact-back.jpg?v=121", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
 k += """  <section class="section">
     <div class="wrap wrap--wide">
       <div class="contact-grid">
@@ -399,29 +399,6 @@ k += """  <section class="section">
           <p class="form__status" role="status" aria-live="polite"></p>
           <p class="form__note">We reply within 24 hours. You can also write to us directly at lidareasyscan@gmail.com.</p>
         </form>
-
-        <div class="reveal" data-delay="1">
-          <div class="info-card">
-            <span class="info-card__label">Email</span>
-            <a class="info-card__value" href="mailto:lidareasyscan@gmail.com">lidareasyscan@gmail.com</a>
-            <span class="info-card__hint">For any question or business enquiry.</span>
-          </div>
-          <div class="info-card">
-            <span class="info-card__label">Phone</span>
-            <a class="info-card__value" href="tel:+66806577769">+66 (0)80 657 7769</a>
-            <span class="info-card__hint">Please call within business hours.</span>
-          </div>
-          <div class="info-card">
-            <span class="info-card__label">Location</span>
-            <span class="info-card__value">Koh Phangan, Thailand 84280</span>
-            <span class="info-card__hint">Based in Koh Phangan, operating across Thailand.</span>
-          </div>
-          <div class="info-card">
-            <span class="info-card__label">What to send</span>
-            <span class="info-card__value">Location · Chanote or boundary map · Area</span>
-            <span class="info-card__hint">These three let us prepare a first recommendation quickly.</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>

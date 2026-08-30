@@ -119,6 +119,7 @@ body{overflow-x:hidden}
 .btn--ghost{background:transparent;color:var(--fg-secondary);border-color:var(--border-hairline)}
 .btn--ghost:hover{color:var(--fg-primary);border-color:var(--border-strong)}
 .btn--block{width:100%}
+.btn--sm{min-height:0;padding:11px 18px;font-size:var(--type-data-sm)}
 .btn__arrow{width:16px;height:16px}
 
 .link-arrow{
@@ -310,6 +311,9 @@ body.nav-open .mobile-nav{transform:none}
 }
 @media(min-width:1200px){.hero__lead{white-space:nowrap;width:max-content}}
 .hero__actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-7)}
+/* secondary row: quick phone + email buttons under the lead */
+.hero__actions--contacts{margin-top:var(--space-4)}
+.hero__actions--contacts .btn svg{width:14px;height:14px;flex-shrink:0}
 .hero__scroll{
   position:absolute;bottom:20px;
   left:calc(max(0px, (100% - var(--maxw)) / 2) + var(--gutter));
@@ -664,8 +668,7 @@ body.nav-open .mobile-nav{transform:none}
 /* ============================================================
    BLOCK · Contact
    ============================================================ */
-.contact-grid{display:grid;gap:var(--space-8)}
-@media(min-width:920px){.contact-grid{grid-template-columns:1.1fr .9fr}}
+.contact-grid{display:grid;gap:var(--space-8);max-width:44rem}
 .form{display:grid;gap:var(--space-5)}
 .field{display:grid;gap:8px}
 .field label{font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-muted)}
