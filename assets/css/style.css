@@ -774,6 +774,9 @@ body.nav-open .mobile-nav{transform:none}
   /* hero clears the 72px fixed header + 40px, not + 160/120 */
   .page-hero--full{padding-top:calc(72px + var(--space-7))}
   .page-hero{padding-top:calc(72px + var(--space-7))}
+  /* tighten the Scroll-indicator → first field gap by ~30% */
+  .page-hero--full{padding-bottom:calc(var(--section-explanation) * 0.7)}
+  .page-hero--full + .section{padding-top:calc(var(--section-marketing) * 0.7)}
   /* heading-to-content gap: 80 -> 32 */
   .section__head{margin-bottom:var(--space-6)}
   .split{gap:var(--space-6)}
