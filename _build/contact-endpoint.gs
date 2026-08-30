@@ -1,30 +1,36 @@
 /**
  * EASY SCAN — contact form endpoint (Google Apps Script)
  * ----------------------------------------------------------------------------
- * What it does when the website form is submitted:
+ * On form submit it:
  *   1. Appends a row to a Google Sheet (tab "Leads") on your Google Drive.
  *   2. Emails the enquiry to lidareasyscan@gmail.com (Reply-To = the visitor).
  *
- * ONE-TIME SETUP
+ * SETUP — standalone script (use this if "Extensions ▸ Apps Script" from the
+ * Sheet fails with "Failed to create a script"):
  * ----------------------------------------------------------------------------
- * 1. Go to https://sheets.new  →  rename the file e.g. "EASY SCAN — Leads".
- * 2. Extensions ▸ Apps Script. Delete the sample code, paste this whole file,
- *    press the save icon.
- * 3. Deploy ▸ New deployment ▸ gear icon ▸ "Web app".
- *       Description : contact form
- *       Execute as  : Me
+ * 1. Sign in to Google with ONLY lidareasyscan@gmail.com (sign out of any other
+ *    Google accounts first — multi-login is what causes that error).
+ * 2. Create the Sheet: https://sheets.new  → name it "EASY SCAN — Leads".
+ *    Copy its ID from the address bar:
+ *      https://docs.google.com/spreadsheets/d/<<< THIS PART IS THE ID >>>/edit
+ * 3. Open https://script.new  → delete the sample → paste this whole file.
+ * 4. Put the Sheet ID between the quotes on the SHEET_ID line below. Save.
+ * 5. Deploy ▸ New deployment ▸ gear ▸ "Web app"
+ *       Execute as     : Me
  *       Who has access : Anyone
- *    Click Deploy. Approve the permission prompt (Advanced ▸ Go to project ▸ Allow).
- * 4. Copy the "Web app URL" — it ends with /exec .
- *    Send that URL back so it can be put into the site
- *    (contact form: data-endpoint="…").
+ *    Deploy ▸ approve the permission prompt (Advanced ▸ Go to project ▸ Allow).
+ * 6. Copy the Web app URL (ends with /exec) and send it back.
  *
- * To change the code later: edit here, then Deploy ▸ Manage deployments ▸
- * pencil ▸ Version: New version ▸ Deploy. The URL stays the same.
+ * (If the Sheet-bound editor DOES open for you, you can instead leave SHEET_ID
+ *  empty — getActiveSpreadsheet() is used as a fallback.)
+ *
+ * To change code later: edit ▸ Deploy ▸ Manage deployments ▸ pencil ▸
+ * Version: New version ▸ Deploy. The URL stays the same.
  */
 
-var RECIPIENT  = 'lidareasyscan@gmail.com';
+var SHEET_ID   = '';                        // <-- paste the Google Sheet ID here
 var SHEET_NAME = 'Leads';
+var RECIPIENT  = 'lidareasyscan@gmail.com';
 
 function doPost(e) {
   try {
@@ -43,17 +49,8 @@ function doPost(e) {
       return json({ ok: false, error: 'Missing name or email' });
     }
 
-    // 1) log to the sheet
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet = ss.getSheetByName(SHEET_NAME);
-    if (!sheet) {
-      sheet = ss.insertSheet(SHEET_NAME);
-      sheet.appendRow(['Timestamp', 'Name', 'Email', 'Land location', 'Approx. area', 'Message']);
-      sheet.setFrozenRows(1);
-    }
-    sheet.appendRow([new Date(), name, email, location, area, message]);
+    getSheet_().appendRow([new Date(), name, email, location, area, message]);
 
-    // 2) email the team
     var body =
       'New enquiry from the EASY SCAN website\n\n' +
       'Name: '          + name + '\n' +
@@ -77,6 +74,17 @@ function doPost(e) {
 
 function doGet() {
   return json({ ok: true, status: 'EASY SCAN contact endpoint is live' });
+}
+
+function getSheet_() {
+  var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME);
+    sheet.appendRow(['Timestamp', 'Name', 'Email', 'Land location', 'Approx. area', 'Message']);
+    sheet.setFrozenRows(1);
+  }
+  return sheet;
 }
 
 function json(obj) {
