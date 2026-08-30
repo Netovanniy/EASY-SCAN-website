@@ -220,7 +220,7 @@ body.nav-open .mobile-nav{transform:none}
 .mobile-nav > *{flex-shrink:0}
 .mobile-nav a,
 .mobile-nav .m-sub-toggle{
-  font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:1.4rem;text-transform:uppercase;
+  font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:1.2rem;text-transform:uppercase;
   padding:13px 0;border-bottom:1px solid var(--border-faint);color:var(--fg-secondary);
 }
 .mobile-nav a:hover,
