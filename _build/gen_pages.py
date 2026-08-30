@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=118">
+<link rel="stylesheet" href="assets/css/style.css?v=119">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -369,11 +369,11 @@ k += header()
 k += '<main id="main">\n'
 k += page_hero("Contact", "Contact",
     "Need assistance? Fill in the form and we will contact you within 24 hours with a recommendation and a quote.",
-    "assets/img/contact-back.jpg?v=118", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
+    "assets/img/contact-back.jpg?v=119", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
 k += """  <section class="section">
     <div class="wrap wrap--wide">
       <div class="contact-grid">
-        <form class="form reveal" data-contact-form data-endpoint="" novalidate>
+        <form class="form reveal" data-contact-form data-endpoint="https://script.google.com/macros/s/AKfycbyp-zG7_W40MZlW9qnkdoFgt_IQ-aZIBB1GpbYEA4S30jf8TkkQVJmKcCN3MXKEuQ48/exec" novalidate>
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" autocomplete="name" required placeholder="Your name">
