@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=117">
+<link rel="stylesheet" href="assets/css/style.css?v=118">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -369,11 +369,11 @@ k += header()
 k += '<main id="main">\n'
 k += page_hero("Contact", "Contact",
     "Need assistance? Fill in the form and we will contact you within 24 hours with a recommendation and a quote.",
-    "assets/img/contact-back.jpg?v=117", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
+    "assets/img/contact-back.jpg?v=118", "Aerial view of a Thai coastline dissolving into a 3D point cloud")
 k += """  <section class="section">
     <div class="wrap wrap--wide">
       <div class="contact-grid">
-        <form class="form reveal" data-contact-form novalidate>
+        <form class="form reveal" data-contact-form data-endpoint="" novalidate>
           <div class="field">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" autocomplete="name" required placeholder="Your name">
@@ -397,7 +397,7 @@ k += """  <section class="section">
           <button class="btn btn--primary btn--block" type="submit">Send message
             <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <p class="form__status" role="status" aria-live="polite"></p>
-          <p class="form__note">This form opens your email app with the details filled in. You can also write to us directly at lidareasyscan@gmail.com.</p>
+          <p class="form__note">We reply within 24 hours. You can also write to us directly at lidareasyscan@gmail.com.</p>
         </form>
 
         <div class="reveal" data-delay="1">

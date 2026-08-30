@@ -64,22 +64,16 @@
     revealEls.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---- Contact form (no backend — opens mail client) ---- */
+  /* ---- Contact form ----
+     Posts to a Google Apps Script web app that (1) emails lidareasyscan@gmail.com
+     and (2) appends the enquiry to a Google Sheet. The deployment URL lives in the
+     form's data-endpoint attribute (contact.html). If it is missing, or the request
+     fails, we fall back to opening the visitor's mail app with the details filled in. */
   var form = document.querySelector("[data-contact-form]");
   if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var status = form.querySelector(".form__status");
-      var data = new FormData(form);
-      var name = (data.get("name") || "").toString().trim();
-      var email = (data.get("email") || "").toString().trim();
-      var loc = (data.get("location") || "").toString().trim();
-      var area = (data.get("area") || "").toString().trim();
-      var msg = (data.get("message") || "").toString().trim();
-      if (!name || !email) {
-        if (status) status.textContent = "Please add your name and email.";
-        return;
-      }
+    var endpoint = (form.getAttribute("data-endpoint") || "").trim();
+
+    var mailtoFallback = function (name, email, loc, area, msg) {
       var bodyLines = [
         "Name: " + name,
         "Email: " + email,
@@ -88,13 +82,56 @@
         "",
         msg
       ].filter(Boolean).join("\n");
-      var href =
+      window.location.href =
         "mailto:lidareasyscan@gmail.com" +
         "?subject=" + encodeURIComponent("Website enquiry — " + name) +
         "&body=" + encodeURIComponent(bodyLines);
-      window.location.href = href;
-      if (status) status.textContent = "Opening your email app…";
-      form.reset();
+    };
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var status = form.querySelector(".form__status");
+      var btn = form.querySelector("[type=submit]");
+      var data = new FormData(form);
+      var name = (data.get("name") || "").toString().trim();
+      var email = (data.get("email") || "").toString().trim();
+      var loc = (data.get("location") || "").toString().trim();
+      var area = (data.get("area") || "").toString().trim();
+      var msg = (data.get("message") || "").toString().trim();
+
+      if (!name || !email) {
+        if (status) status.textContent = "Please add your name and email.";
+        return;
+      }
+
+      if (!endpoint) {
+        if (status) status.textContent = "Opening your email app…";
+        mailtoFallback(name, email, loc, area, msg);
+        return;
+      }
+
+      if (btn) btn.disabled = true;
+      if (status) status.textContent = "Sending…";
+
+      fetch(endpoint, { method: "POST", body: data })
+        .then(function (r) {
+          return r.json().catch(function () { return { ok: r.ok }; });
+        })
+        .then(function (res) {
+          if (!res || !res.ok) throw new Error("bad response");
+          form.reset();
+          if (status) status.textContent = "Thank you — your message has been sent.";
+        })
+        .catch(function () {
+          if (status) {
+            status.textContent =
+              "We could not send it automatically — opening your email app instead.";
+          }
+          mailtoFallback(name, email, loc, area, msg);
+        })
+        .finally(function () {
+          if (btn) btn.disabled = false;
+        });
     });
   }
 

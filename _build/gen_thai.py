@@ -477,8 +477,8 @@ T = {
 'Tell us what you want to understand about the site, and what you plan to build.':
  'บอกเราว่าคุณอยากเข้าใจอะไรเกี่ยวกับพื้นที่ และคุณวางแผนจะสร้างอะไร',
 'Send message':'ส่งข้อความ',
-'This form opens your email app with the details filled in. You can also write to us directly at lidareasyscan@gmail.com.':
- 'แบบฟอร์มนี้จะเปิดแอปอีเมลของคุณพร้อมกรอกรายละเอียดไว้ให้ หรือคุณจะเขียนถึงเราโดยตรงที่ lidareasyscan@gmail.com ก็ได้',
+'We reply within 24 hours. You can also write to us directly at lidareasyscan@gmail.com.':
+ 'เราจะติดต่อกลับภายใน 24 ชั่วโมง หรือคุณจะเขียนถึงเราโดยตรงที่ lidareasyscan@gmail.com ก็ได้',
 'For any question or business enquiry.':'สำหรับคำถามหรือการติดต่อทางธุรกิจ',
 'Phone':'โทรศัพท์',
 'Please call within business hours.':'กรุณาโทรในเวลาทำการ',
