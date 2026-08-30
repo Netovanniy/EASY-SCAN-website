@@ -25,7 +25,7 @@ def head(title, desc):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="assets/img/logo-mark-white.png">
-<link rel="stylesheet" href="assets/css/style.css?v=124">
+<link rel="stylesheet" href="assets/css/style.css?v=125">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -379,8 +379,8 @@ _contact_hero_btns = """      <div class="hero__actions hero__actions--contacts"
       </div>
 """
 k += page_hero("Contact", "Contact",
-    "Need assistance? Fill in the form below.<br>We'll get back to you within 24 hours with a recommendation and quote.<br>You can also call us or send us an email.",
-    "assets/img/contact-back.jpg?v=124", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
+    "Need assistance?<br>Fill in the form below.<br>We'll get back to you within 24 hours.<br>You can also call us or send us an email.",
+    "assets/img/contact-back.jpg?v=125", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
     ).replace('</p>\n    </div>\n  </section>', '</p>\n' + _contact_hero_btns + '    </div>\n  </section>')
 k += """  <section class="section">
     <div class="wrap wrap--wide">
