@@ -24,6 +24,9 @@
   letter-spacing:.01em;
 }
 :lang(th) .hero__title,:lang(th) .page-hero__title{line-height:1.15}
+/* the homepage wordmark is always the Latin "EASY SCAN" — keep the ABNES
+   display face even on the Thai page (only real Thai text needs the Thai stack) */
+:lang(th) .hero__title{--font-identity:"ABNES","Tactic Sans",sans-serif;letter-spacing:var(--tracking-identity)}
 
 *,*::before,*::after{box-sizing:border-box}
 img,svg,video{max-width:100%;display:block;height:auto}
