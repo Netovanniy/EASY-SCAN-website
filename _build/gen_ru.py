@@ -252,6 +252,22 @@ T = {
 'Engineering':'Инженерия',
 'Technical engineering and delivery.':'Техническая инженерия и реализация.',
 
+# ---- ABOUT · client testimonials ----
+'Client feedback':'Отзывы клиентов',
+'What clients say':'Что говорят клиенты',
+'Architects, developers and landowners we have worked with across Koh Phangan and beyond.':
+ 'Архитекторы, девелоперы и владельцы земли, с которыми мы работали на Ко Пхангане и за его пределами.',
+'Collaboration with the EASY SCAN team can usher architects into a new era of design work. The site holds paramount importance in any architectural project — every design should be linked to the specific location where the building will sit. Terrain levels, trees, environmental conditions, the orientation of sun and wind — all must be carefully considered.':
+ 'Работа с командой EASY SCAN способна вывести архитекторов в новую эпоху проектирования. Участок имеет первостепенное значение в любом архитектурном проекте — каждое решение должно быть привязано к конкретному месту, где встанет здание. Перепады рельефа, деревья, условия среды, ориентация по солнцу и ветру — всё это нужно тщательно учитывать.',
+"I am very satisfied with the service. It helps us with complex positioning and design issues, and lets us work proactively with our customers' wishes. Thank you for the great work together.":
+ 'Я очень доволен сервисом. Он помогает нам со сложными задачами по посадке и проектированию и позволяет работать на опережение с пожеланиями наших клиентов. Спасибо за отличную совместную работу.',
+'Working with Easy Scan left a very pleasant impression — professionalism and quality throughout. The specialists have a high level of competence in scanning and territory analysis, which lets them study a site accurately and in detail before construction begins.':
+ 'Работа с Easy Scan оставила очень приятное впечатление — профессионализм и качество во всём. У специалистов высокий уровень компетенции в сканировании и анализе территории, что позволяет точно и детально изучить участок до начала строительных работ.',
+'We worked with Easy Scan to better measure our land and help the architects remotely understand its details and how to integrate the villas. It was a successful collaboration — something we also recommend for other projects.':
+ 'Мы работали с Easy Scan, чтобы точнее измерить нашу землю и помочь архитекторам удалённо разобраться в её деталях и в том, как вписать виллы. Это было успешное сотрудничество — рекомендуем и для других проектов.',
+'I was extremely pleased with the service to scan, map and digitise my house, currently being remodelled. The digital model has been a great help — conceptually, to visualise the project, and practically, for planning and materials estimates. The whole job was done quickly, efficiently and professionally, with good communication and easy response to feedback.':
+ 'Я остался очень доволен услугой по сканированию, съёмке и оцифровке моего дома, который сейчас реконструируется. Цифровая модель очень помогла — и концептуально, чтобы увидеть проект, и практически, для планирования и расчёта материалов. Вся работа была сделана быстро, эффективно и профессионально, с хорошей коммуникацией и лёгкой реакцией на правки.',
+
 # ---- GAUSSIAN ---------------------------------------------------------
 'A highly realistic digital representation of a place, built from thousands of photographs and explored directly in your browser.':
  'Предельно реалистичное цифровое представление места, собранное из тысяч фотографий и доступное прямо в браузере.',

@@ -254,6 +254,22 @@ T = {
 'Engineering':'วิศวกรรม',
 'Technical engineering and delivery.':'งานวิศวกรรมเทคนิคและการส่งมอบงาน',
 
+# ---- ABOUT · client testimonials ----
+'Client feedback':'เสียงจากลูกค้า',
+'What clients say':'ลูกค้าพูดถึงเราอย่างไร',
+'Architects, developers and landowners we have worked with across Koh Phangan and beyond.':
+ 'สถาปนิก นักพัฒนา และเจ้าของที่ดินที่เราเคยร่วมงานด้วยบนเกาะพะงันและที่อื่น ๆ',
+'Collaboration with the EASY SCAN team can usher architects into a new era of design work. The site holds paramount importance in any architectural project — every design should be linked to the specific location where the building will sit. Terrain levels, trees, environmental conditions, the orientation of sun and wind — all must be carefully considered.':
+ 'การร่วมงานกับทีม EASY SCAN ช่วยพาสถาปนิกเข้าสู่ยุคใหม่ของงานออกแบบ ที่ตั้งมีความสำคัญอย่างยิ่งในทุกโครงการสถาปัตยกรรม ทุกการออกแบบควรเชื่อมโยงกับตำแหน่งที่อาคารจะตั้งอยู่ ระดับพื้นที่ ต้นไม้ สภาพแวดล้อม รวมถึงทิศทางของแดดและลม ล้วนต้องพิจารณาอย่างรอบคอบ',
+"I am very satisfied with the service. It helps us with complex positioning and design issues, and lets us work proactively with our customers' wishes. Thank you for the great work together.":
+ 'เราพอใจกับบริการมาก มันช่วยเราจัดการงานที่ซับซ้อนเรื่องตำแหน่งและการออกแบบ และทำงานเชิงรุกกับความต้องการของลูกค้าได้ ขอบคุณสำหรับการทำงานร่วมกันที่ยอดเยี่ยม',
+'Working with Easy Scan left a very pleasant impression — professionalism and quality throughout. The specialists have a high level of competence in scanning and territory analysis, which lets them study a site accurately and in detail before construction begins.':
+ 'การทำงานกับ Easy Scan สร้างความประทับใจอย่างมาก ทั้งความเป็นมืออาชีพและคุณภาพของบริการ ทีมงานมีความเชี่ยวชาญสูงในการสแกนและวิเคราะห์พื้นที่ ทำให้ศึกษาไซต์งานได้อย่างแม่นยำและละเอียดก่อนเริ่มก่อสร้าง',
+'We worked with Easy Scan to better measure our land and help the architects remotely understand its details and how to integrate the villas. It was a successful collaboration — something we also recommend for other projects.':
+ 'เราร่วมงานกับ Easy Scan เพื่อวัดที่ดินของเราให้ดีขึ้น และช่วยให้สถาปนิกเข้าใจรายละเอียดของที่ดินจากระยะไกล รวมถึงวิธีวางวิลล่าให้เข้ากับพื้นที่ เป็นการร่วมงานที่ประสบความสำเร็จ และเราแนะนำสำหรับโครงการอื่น ๆ ด้วย',
+'I was extremely pleased with the service to scan, map and digitise my house, currently being remodelled. The digital model has been a great help — conceptually, to visualise the project, and practically, for planning and materials estimates. The whole job was done quickly, efficiently and professionally, with good communication and easy response to feedback.':
+ 'ผมพอใจมากกับบริการสแกน ทำแผนที่ และแปลงบ้านของผมเป็นดิจิทัล ซึ่งกำลังรีโนเวทอยู่ แบบจำลองดิจิทัลช่วยได้มาก ทั้งในเชิงแนวคิดเพื่อเห็นภาพโครงการ และในทางปฏิบัติสำหรับการวางแผนและประเมินวัสดุ งานทั้งหมดทำได้รวดเร็ว มีประสิทธิภาพ และเป็นมืออาชีพ พร้อมการสื่อสารที่ดีและตอบรับฟีดแบ็กง่าย',
+
 # ---- GAUSSIAN ---------------------------------------------------------
 'A highly realistic digital representation of a place, built from thousands of photographs and explored directly in your browser.':
  'ภาพแทนดิจิทัลของสถานที่ที่สมจริงอย่างยิ่ง สร้างจากภาพถ่ายนับพันภาพและสำรวจได้โดยตรงในเบราว์เซอร์ของคุณ',

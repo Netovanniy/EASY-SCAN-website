@@ -685,6 +685,24 @@ body.nav-open .mobile-nav{transform:none}
 .stat__num{font-family:var(--font-information);font-size:clamp(2rem,1.4rem + 2.4vw,3rem);line-height:var(--leading-data);color:var(--fg-primary);letter-spacing:var(--tracking-data)}
 .stat__label{font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-muted);margin-top:10px}
 
+/* client testimonials — bordered grid (matches .features) */
+.quotes{display:grid;gap:1px;background:var(--border-faint);border:1px solid var(--border-faint)}
+@media(min-width:680px){.quotes{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{background:var(--bg-page);padding:var(--space-7);margin:0;display:flex;flex-direction:column;gap:var(--space-5);transition:background var(--dur-base) var(--ease-standard)}
+.quote:hover{background:var(--bg-surface)}
+.quote__text{
+  position:relative;margin:0;padding-top:calc(var(--space-6) + 4px);
+  font-family:var(--font-information);color:var(--fg-secondary);font-size:var(--type-body);line-height:var(--leading-body);
+}
+.quote__text::before{
+  content:"\201C";position:absolute;top:-6px;left:-2px;
+  font-family:var(--font-identity);font-size:2.4rem;line-height:1;color:var(--accent-coral);
+}
+.quote__by{margin-top:auto}
+.quote__name{display:block;font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-primary)}
+.quote__org{display:block;font-family:var(--font-information);font-size:var(--type-data-sm);color:var(--fg-faint);margin-top:5px}
+
 /* ============================================================
    BLOCK · CTA band  (flat; optional 1px scan-grid texture)
    ============================================================ */
