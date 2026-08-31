@@ -699,9 +699,16 @@ body.nav-open .mobile-nav{transform:none}
   content:"\201C";position:absolute;top:-6px;left:-2px;
   font-family:var(--font-identity);font-size:2.4rem;line-height:1;color:var(--accent-coral);
 }
-.quote__by{margin-top:auto}
-.quote__name{display:block;font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-primary)}
-.quote__org{display:block;font-family:var(--font-information);font-size:var(--type-data-sm);color:var(--fg-faint);margin-top:5px}
+.quote__by{margin-top:auto;display:flex;align-items:center;gap:14px}
+.quote__photo{
+  width:48px;height:48px;flex-shrink:0;border-radius:var(--radius-pill);object-fit:cover;
+  border:1px solid var(--border-hairline);filter:grayscale(1);
+  transition:filter var(--dur-base) var(--ease-standard);
+}
+.quote:hover .quote__photo{filter:grayscale(0)}
+.quote__meta{display:flex;flex-direction:column;gap:3px;min-width:0}
+.quote__name{font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-primary)}
+.quote__org{font-family:var(--font-information);font-size:var(--type-data-sm);color:var(--fg-faint)}
 
 /* ============================================================
    BLOCK · CTA band  (flat; optional 1px scan-grid texture)
