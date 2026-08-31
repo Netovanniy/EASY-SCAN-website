@@ -50,16 +50,16 @@
     });
   }
 
-  /* Mobile nav — collapsible Services sub-menu */
-  var subToggle = document.querySelector(".m-sub-toggle");
-  var subMenu = subToggle && subToggle.nextElementSibling;
-  if (subToggle && subMenu) {
+  /* Mobile nav — collapsible sub-menus (Services, Language) */
+  document.querySelectorAll(".m-sub-toggle").forEach(function (subToggle) {
+    var subMenu = subToggle.nextElementSibling;
+    if (!subMenu) return;
     subToggle.addEventListener("click", function () {
       var open = subToggle.getAttribute("aria-expanded") === "true";
       subToggle.setAttribute("aria-expanded", open ? "false" : "true");
       subMenu.classList.toggle("is-open", !open);
     });
-  }
+  });
   window.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && body.classList.contains("nav-open")) {
       body.classList.remove("nav-open");

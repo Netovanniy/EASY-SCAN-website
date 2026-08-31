@@ -29,20 +29,48 @@ def head(title, desc):
 <meta property="og:site_name" content="EASY SCAN">
 <meta property="og:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta property="og:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=133">
+<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=134">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta name="twitter:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=133">
-<link rel="stylesheet" href="assets/css/style.css?v=133">
+<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=134">
+<link rel="stylesheet" href="assets/css/style.css?v=134">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 """
 
-def header(active_about=False):
+GLOBE = ('<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">'
+         '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/>'
+         '<path d="M12 3c2.7 2.9 4 6.2 4 9s-1.3 6.1-4 9c-2.7-2.9-4-6.2-4-9s1.3-6.1 4-9z"/></svg>')
+CHEV = ('<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">'
+        '<path d="M6 9l6 6 6-6"/></svg>')
+
+def lang_desktop(name):
+    return ('<div class="lang" aria-label="Language">\n'
+            '        <button class="lang__toggle" type="button" aria-haspopup="true" aria-label="Change language">'
+            + GLOBE.format(cls="lang__globe") + CHEV.format(cls="lang__chevron") + '</button>\n'
+            '        <div class="lang__menu">\n'
+            '          <a href="#" aria-current="true" hreflang="en">EN</a>\n'
+            f'          <a href="th/{name}" hreflang="th">ไทย</a>\n'
+            f'          <a href="ru/{name}" hreflang="ru">RU</a>\n'
+            '        </div>\n'
+            '      </div>')
+
+def lang_mobile(name):
+    return ('  <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mLang">'
+            '<span class="m-sub-lead">' + GLOBE.format(cls="m-sub-globe") + 'Language</span>\n'
+            '    ' + CHEV.format(cls="m-sub-chevron") + '\n'
+            '  </button>\n'
+            '  <div class="m-sub" id="mLang">\n'
+            '    <a href="#" aria-current="true" hreflang="en">EN</a>\n'
+            f'    <a href="th/{name}" hreflang="th">ไทย</a>\n'
+            f'    <a href="ru/{name}" hreflang="ru">RU</a>\n'
+            '  </div>')
+
+def header(name, active_about=False):
     ac = ' aria-current="page"' if active_about else ''
     return f"""<header class="site-header">
   <div class="wrap">
@@ -61,7 +89,7 @@ def header(active_about=False):
         </li>
         <li><a class="nav__link" href="contact.html">Contact</a></li>
       </ul>
-      <span class="lang" aria-label="Language"><a href="#" aria-current="true">EN</a><span>/</span><a href="#">ไทย</a></span>
+      {lang_desktop(name)}
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
         <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
@@ -79,6 +107,7 @@ def header(active_about=False):
 {M_SUB}
   </div>
   <a href="contact.html">Contact</a>
+{lang_mobile(name)}
 </nav>
 """
 
@@ -176,7 +205,7 @@ def write(name, body):
 # ---------------- GAUSSIAN ----------------
 g = head("3D Terrain Modeling with Gaussian Splatting | EASY SCAN Thailand",
          "EASY SCAN reconstructs real places with Gaussian Splatting — photorealistic, interactive 3D scenes you explore directly in a web browser.")
-g += header()
+g += header("gaussian.html")
 g += '<main id="main">\n'
 g += page_hero("Services <span>/</span> Gaussian Splatting", "Gaussian Splatting",
     "A highly realistic digital representation of a place, built from thousands of photographs and explored directly in your browser.",
@@ -216,7 +245,7 @@ write("gaussian.html", g)
 # ---------------- DIGITAL TWIN ----------------
 t = head("Digital Twin for Land Development | EASY SCAN Thailand",
          "See how your building fits the land with EASY SCAN's digital twin — accurate 3D terrain models combining LiDAR, drone mapping, Gaussian Splatting and photogrammetry.")
-t += header()
+t += header("twin.html")
 t += '<main id="main">\n'
 t += page_hero("Services <span>/</span> Digital Twin", "Digital Twin",
     "A dynamic digital representation of a real-world environment — terrain, vegetation, roads and structures you can explore from any angle.",
@@ -256,7 +285,7 @@ write("twin.html", t)
 # ---------------- CONCEPTING ----------------
 c = head("Environment Scanning &amp; Concept Testing | EASY SCAN Thailand",
          "Scan your land with LiDAR and drones, then test architectural concepts directly on the real terrain before construction — EASY SCAN's concepting service in Thailand.")
-c += header()
+c += header("concepting.html")
 c += '<main id="main">\n'
 c += page_hero("Services <span>/</span> Concepting", "Test your ideas before construction",
     "Every landscape has its own challenges before construction begins — slopes, rocks, vegetation, access roads, drainage and unclear spatial relationships. 2D plans rarely communicate how a project will actually meet the terrain.",
@@ -286,7 +315,7 @@ write("concepting.html", c)
 # ---------------- MONITORING ----------------
 m = head("Construction Monitoring with LiDAR | EASY SCAN Thailand",
          "Track construction progress with 3D LiDAR monitoring. EASY SCAN documents earthwork, hidden utilities and site changes throughout your build in Thailand.")
-m += header()
+m += header("monitoring.html")
 m += '<main id="main">\n'
 m += page_hero("Services <span>/</span> Construction Monitoring", "Site monitoring",
     "Construction is constantly changing. Foundations are poured, utilities disappear underground, structures rise floor by floor and critical details become hidden behind finished surfaces. Without documentation, valuable information is lost during the build.",
@@ -318,7 +347,7 @@ write("monitoring.html", m)
 # ---------------- MUSEUM ----------------
 mu = head("Digital Museum | 3D Cultural Heritage Preservation by EASY SCAN",
           "EASY SCAN's Digital Museum uses 3D scanning to preserve and present cultural artifacts and heritage sites through immersive digital experiences.")
-mu += header()
+mu += header("museum.html")
 mu += '<main id="main">\n'
 mu += page_hero("Digital Museum", "The Digital Museum",
     "An experimental 3D environment that reimagines how we preserve and experience cultural artifacts — a curated virtual space where heritage, art, mythology and technology meet.",
@@ -351,7 +380,7 @@ write("museum.html", mu)
 # ---------------- EDUCATION ----------------
 e = head("LiDAR Training &amp; Education | EASY SCAN Thailand",
          "Learn LiDAR scanning, drone mapping and 3D terrain analysis through EASY SCAN's workshops and training programs in Thailand.")
-e += header()
+e += header("education.html")
 e += '<main id="main">\n'
 e += page_hero("Education", "Education",
     "Workshops and training in LiDAR scanning, drone mapping and terrain-based design thinking.",
@@ -376,7 +405,7 @@ write("education.html", e)
 # ---------------- CONTACT ----------------
 k = head("Contact EASY SCAN | LiDAR &amp; 3D Scanning Services in Thailand",
          "Get in touch with EASY SCAN for LiDAR surveying, drone mapping and 3D terrain visualisation in Koh Phangan, Koh Samui and Phuket. We respond within 24 hours.")
-k += header()
+k += header("contact.html")
 k += '<main id="main">\n'
 _contact_hero_btns = """      <div class="hero__actions hero__actions--contacts">
         <a class="btn btn--ghost btn--sm" href="tel:+66806577769">
@@ -391,7 +420,7 @@ _contact_hero_btns = """      <div class="hero__actions hero__actions--contacts"
 """
 k += page_hero("Contact", "Contact",
     "Need assistance?<br>Fill in the form below.<br>We'll get back to you within 24 hours.<br>You can also call us or send us an email.",
-    "assets/img/contact-back.jpg?v=133", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
+    "assets/img/contact-back.jpg?v=134", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
     ).replace('</p>\n    </div>\n  </section>', '</p>\n' + _contact_hero_btns + '    </div>\n  </section>')
 k += """  <section class="section">
     <div class="wrap wrap--wide">

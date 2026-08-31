@@ -51,7 +51,7 @@ T = {
 'About':'เกี่ยวกับเรา','Services':'บริการ','Contact':'ติดต่อ','Main':'หน้าแรก',
 'Gaussian Splatting':'Gaussian Splatting','Digital Twin':'ดิจิทัลทวิน','Digital<br>Twin':'ดิจิทัลทวิน','Concepting':'ทดสอบแนวคิด',
 'Construction Monitoring':'ติดตามงานก่อสร้าง','Digital Museum':'พิพิธภัณฑ์ดิจิทัล','Site Monitoring':'ติดตามไซต์งาน','Museum':'พิพิธภัณฑ์','Education':'การอบรม','Education<br>program':'หลักสูตร<br>อบรม',
-'EN':'EN','ไทย':'ไทย','Language':'ภาษา','Menu':'เมนู','Mobile':'มือถือ','Primary':'เมนูหลัก',
+'EN':'EN','RU':'RU','ไทย':'ไทย','Language':'ภาษา','Change language':'เปลี่ยนภาษา','Menu':'เมนู','Mobile':'มือถือ','Primary':'เมนูหลัก',
 'EASY SCAN — home':'EASY SCAN — หน้าแรก','EASY SCAN':'EASY SCAN',
 
 # footer
@@ -555,30 +555,32 @@ def translate(html):
         parts[i] = seg
     return ''.join(parts)
 
-LANG_RE = re.compile(r'<span class="lang"[^>]*>.*?ไทย</a>\s*</span>', re.S)
+def relink_lang(html, name, target):
+    """Rewrite the language-switcher <a> tags (anchored by hreflang) for a
+    translated page that lives in ./<target>/ . Works on both the desktop
+    dropdown and the mobile accordion (identical <a> strings)."""
+    html = html.replace('<a href="#" aria-current="true" hreflang="en">',
+                        '<a href="../%s" hreflang="en">' % name)
+    if target == 'th':
+        html = html.replace('<a href="th/%s" hreflang="th">' % name,
+                            '<a href="#" aria-current="true" hreflang="th">')
+        html = html.replace('<a href="ru/%s" hreflang="ru">' % name,
+                            '<a href="../ru/%s" hreflang="ru">' % name)
+    else:  # ru
+        html = html.replace('<a href="ru/%s" hreflang="ru">' % name,
+                            '<a href="#" aria-current="true" hreflang="ru">')
+        html = html.replace('<a href="th/%s" hreflang="th">' % name,
+                            '<a href="../th/%s" hreflang="th">' % name)
+    return html
 
 for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
     name = os.path.basename(f)
-    s = open(f, encoding="utf-8").read()
-
-    # ---- 1. patch the EN original: ไทย -> th/<name> ----
-    en_lang = ('<span class="lang" aria-label="Language">'
-               '<a href="#" aria-current="true">EN</a><span>/</span>'
-               '<a href="th/%s">ไทย</a></span>' % name)
-    s_en = LANG_RE.sub(en_lang, s)
-    if s_en != s:
-        open(f, "w", encoding="utf-8").write(s_en)
-
-    # ---- 2. build the Thai page ----
-    t = s_en
+    t = open(f, encoding="utf-8").read()
     t = t.replace('href="assets/', 'href="../assets/').replace('src="assets/', 'src="../assets/')
     t = t.replace('poster="assets/', 'poster="../assets/')
     t = t.replace('href="design-system/', 'href="../design-system/')
     t = t.replace('<html lang="en">', '<html lang="th">')
-    th_lang = ('<span class="lang" aria-label="ภาษา">'
-               '<a href="../%s">EN</a><span>/</span>'
-               '<a href="#" aria-current="true">ไทย</a></span>' % name)
-    t = LANG_RE.sub(th_lang, t)
+    t = relink_lang(t, name, 'th')
     t = translate(t)
     open(os.path.join(OUT, name), "w", encoding="utf-8").write(t)
     print("th/%s" % name)
