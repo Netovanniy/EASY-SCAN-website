@@ -475,8 +475,8 @@ T = {
 'Tell us what you want to understand about the site, and what you plan to build.':
  'Расскажите, что вы хотите понять об участке и что планируете строить.',
 'Send message':'Отправить сообщение',
-'We reply within 24 hours. You can also write to us directly at lidareasyscan@gmail.com.':
- 'Отвечаем в течение 24 часов. Также можно написать нам напрямую на lidareasyscan@gmail.com.',
+'We reply within 24 hours. You can also write to us directly at hello@easyscan.asia.':
+ 'Отвечаем в течение 24 часов. Также можно написать нам напрямую на hello@easyscan.asia.',
 'For any question or business enquiry.':'По любым вопросам и деловым запросам.',
 'Phone':'Телефон',
 'Please call within business hours.':'Пожалуйста, звоните в рабочее время.',

@@ -85,7 +85,7 @@
   }
 
   /* ---- Contact form ----
-     Posts to a Google Apps Script web app that (1) emails lidareasyscan@gmail.com
+     Posts to a Google Apps Script web app that (1) emails hello@easyscan.asia
      and (2) appends the enquiry to a Google Sheet. The deployment URL lives in the
      form's data-endpoint attribute (contact.html). If it is missing, or the request
      fails, we fall back to opening the visitor's mail app with the details filled in. */
@@ -103,7 +103,7 @@
         msg
       ].filter(Boolean).join("\n");
       window.location.href =
-        "mailto:lidareasyscan@gmail.com" +
+        "mailto:hello@easyscan.asia" +
         "?subject=" + encodeURIComponent("Website enquiry — " + name) +
         "&body=" + encodeURIComponent(bodyLines);
     };

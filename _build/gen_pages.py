@@ -29,14 +29,14 @@ def head(title, desc):
 <meta property="og:site_name" content="EASY SCAN">
 <meta property="og:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta property="og:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=135">
+<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=136">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta name="twitter:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=135">
-<link rel="stylesheet" href="assets/css/style.css?v=135">
+<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=136">
+<link rel="stylesheet" href="assets/css/style.css?v=136">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -412,15 +412,15 @@ _contact_hero_btns = """      <div class="hero__actions hero__actions--contacts"
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.3a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.24 1z"/></svg>
           +66 (0)80 657 7769
         </a>
-        <a class="btn btn--ghost btn--sm" href="mailto:lidareasyscan@gmail.com">
+        <a class="btn btn--ghost btn--sm" href="mailto:hello@easyscan.asia">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          lidareasyscan@gmail.com
+          hello@easyscan.asia
         </a>
       </div>
 """
 k += page_hero("Contact", "Contact",
     "Need assistance?<br>Fill in the form below.<br>We'll get back to you within 24 hours.<br>You can also call us or send us an email.",
-    "assets/img/contact-back.jpg?v=135", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
+    "assets/img/contact-back.jpg?v=136", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
     ).replace('</p>\n    </div>\n  </section>', '</p>\n' + _contact_hero_btns + '    </div>\n  </section>')
 k += """  <section class="section">
     <div class="wrap wrap--wide">
@@ -449,7 +449,7 @@ k += """  <section class="section">
           <button class="btn btn--primary btn--block" type="submit">Send message
             <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <p class="form__status" role="status" aria-live="polite"></p>
-          <p class="form__note">We reply within 24 hours. You can also write to us directly at lidareasyscan@gmail.com.</p>
+          <p class="form__note">We reply within 24 hours. You can also write to us directly at hello@easyscan.asia.</p>
         </form>
       </div>
     </div>
