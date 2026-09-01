@@ -67,6 +67,8 @@ T = {
 'Your digital partner in land analysis and development insight':
  'Ваш цифровой партнёр в анализе земли и планировании застройки',
 'Get a scan quote':'Запросить смету на скан','Explore services':'Все услуги','Scroll':'Листайте',
+# mobile taplink intro
+'Quick links':'Быстрые ссылки','Send a request':'Оставить заявку','Call us':'Позвонить','Email us':'Написать на почту','Enter the site':'Перейти на сайт',
 'The workflow':'Как это работает',
 'Complete solution for land transformation':'Полное решение для преобразования земли',
 'Each service addresses a specific phase of your project. Together, they form a complete ecosystem for understanding and developing land.':

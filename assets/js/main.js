@@ -5,6 +5,27 @@
   /* Enable JS-only visual states (scroll reveal). Without JS everything stays visible. */
   document.documentElement.classList.add("js");
 
+  /* ---- Mobile taplink intro ----
+     Shown by an inline <head> script on the phone-width homepage. Dismiss on
+     "Enter the site" or when any link inside is tapped; remember for the session. */
+  var taplink = document.querySelector(".taplink");
+  if (taplink) {
+    var closeTaplink = function () {
+      document.documentElement.classList.remove("taplink-on");
+      try { sessionStorage.setItem("es-taplink", "1"); } catch (e) {}
+    };
+    var enterBtn = taplink.querySelector("[data-taplink-enter]");
+    if (enterBtn) enterBtn.addEventListener("click", closeTaplink);
+    taplink.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        try { sessionStorage.setItem("es-taplink", "1"); } catch (e) {}
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && document.documentElement.classList.contains("taplink-on")) closeTaplink();
+    });
+  }
+
   /* ---- Hero video: clean poster fallback when autoplay is blocked ----
      iOS blocks muted-inline autoplay under Low Power Mode / Reduce Motion / Low
      Data Mode and shows its own play-button overlay. Detect that and swap to the

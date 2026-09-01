@@ -67,6 +67,8 @@ T = {
 'Your digital partner in land analysis and development insight':
  'พันธมิตรดิจิทัลของคุณในการวิเคราะห์ที่ดินและวางแผนการพัฒนา',
 'Get a scan quote':'ขอใบเสนอราคาสแกน','Explore services':'ดูบริการทั้งหมด','Scroll':'เลื่อนลง',
+# mobile taplink intro
+'Quick links':'ลิงก์ด่วน','Send a request':'ส่งคำขอ','Call us':'โทรหาเรา','Email us':'อีเมลหาเรา','Enter the site':'เข้าสู่เว็บไซต์',
 'The workflow':'ขั้นตอนการทำงาน',
 'Complete solution for land transformation':'โซลูชันครบวงจรสำหรับการเปลี่ยนแปลงที่ดิน',
 'Each service addresses a specific phase of your project. Together, they form a complete ecosystem for understanding and developing land.':
