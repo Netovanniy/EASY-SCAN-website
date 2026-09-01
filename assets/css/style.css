@@ -292,7 +292,7 @@ html.taplink-on body{overflow:hidden}
   padding:calc(env(safe-area-inset-top,0px) + 40px) var(--gutter) calc(env(safe-area-inset-bottom,0px) + 44px);
 }
 .taplink__inner{max-width:440px;margin-inline:auto;display:flex;flex-direction:column;align-items:stretch;text-align:center}
-.taplink__logo{width:100%;max-width:320px;height:auto;margin:0 auto var(--space-6);object-fit:contain}
+.taplink__logo{width:75%;height:auto;margin:0 auto var(--space-6);object-fit:contain}
 .taplink__group{
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
   text-transform:uppercase;color:var(--accent-coral);margin:var(--space-6) 0 var(--space-3);

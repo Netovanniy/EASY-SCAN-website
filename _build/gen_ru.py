@@ -587,6 +587,8 @@ for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
     t = t.replace('href="assets/', 'href="../assets/').replace('src="assets/', 'src="../assets/')
     t = t.replace('poster="assets/', 'poster="../assets/')
     t = t.replace('href="design-system/', 'href="../design-system/')
+    t = t.replace('rel="canonical" href="https://easyscan.asia/%s"' % name,
+                  'rel="canonical" href="https://easyscan.asia/ru/%s"' % name)
     t = t.replace('<html lang="en">', '<html lang="ru">')
     t = relink_lang(t, name)
     t = translate(t)
