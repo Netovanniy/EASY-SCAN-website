@@ -515,7 +515,7 @@ body.nav-open .mobile-nav{transform:none}
 /* SMART Visa backdrop: more visible image, soft 20% fade top + bottom;
    image centred; 40px gap above the container, 50px below */
 .smart-visa .why__bg{inset:calc(var(--section-marketing) - 80px) 0 50px}
-.smart-visa .why__bg img{opacity:.4;object-position:center}
+.smart-visa .why__bg img{opacity:.5;object-position:center}
 .smart-visa .why__bg::after{
   background:linear-gradient(180deg,var(--bg-page) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 80%,var(--bg-page) 100%);
 }
