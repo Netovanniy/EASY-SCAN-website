@@ -841,7 +841,7 @@ html.taplink-on body{overflow:hidden}
    ============================================================ */
 
 .pr-calc{
-  background:var(--bg-surface);border:1px solid var(--border-faint);
+  background:var(--bg-page);border:1px solid var(--border-faint);
   border-radius:var(--radius-control);padding:var(--space-7);
 }
 .pr-calc__cols{display:flex;gap:var(--space-7);flex-wrap:wrap;align-items:flex-start}
