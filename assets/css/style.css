@@ -436,6 +436,7 @@ html.taplink-on body{overflow:hidden}
 .page-hero__media::before{content:"";position:absolute;inset:0;background:var(--scrim-top)}
 /* price hero: full-strength image, aligned top-right, no scrims */
 .page-hero--full .page-hero__media--price img{opacity:1;filter:brightness(.7);object-position:100% 0}
+@media(max-width:560px){.page-hero--full .page-hero__media--price img{object-position:50% 50%}}
 .page-hero__media--price::before,.page-hero__media--price::after{content:none}
 /* bottom scrim fades out earlier (transparent by 65% of the height); dimmer image */
 .page-hero--full .page-hero__media--scrim-65 img{opacity:.55}
