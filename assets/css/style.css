@@ -844,10 +844,12 @@ html.taplink-on body{overflow:hidden}
   background:var(--bg-page);border:1px solid var(--border-faint);
   border-radius:var(--radius-control);padding:var(--space-7);
 }
-.pr-calc__cols{display:flex;gap:var(--space-7);flex-wrap:wrap;align-items:stretch}
-.pr-calc__left{display:flex;flex-direction:column;gap:var(--space-6);flex:0 1 460px;max-width:460px}
-/* terrain column fills the rest of the row; preview grows to match the estimate card */
-.pr-calc__right{display:flex;flex-direction:column;gap:var(--space-4);flex:1 1 340px;min-width:0}
+.pr-calc__cols{display:flex;gap:var(--space-6);flex-wrap:wrap;align-items:stretch}
+.pr-calc__left{display:flex;flex-direction:column;gap:var(--space-6);flex:0 1 340px;max-width:340px}
+/* terrain column: fixed-ish width, leaves room for a third block on its right */
+.pr-calc__right{display:flex;flex-direction:column;gap:var(--space-4);flex:0 1 360px;max-width:360px;min-width:0}
+/* third slot — reserved for upcoming content */
+.pr-calc__extra{flex:1 1 280px;min-width:0}
 .pr-field-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .pr-terrain-preview{
   position:relative;width:100%;margin-top:auto;
