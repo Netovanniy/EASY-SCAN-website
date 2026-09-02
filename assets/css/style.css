@@ -856,6 +856,7 @@ html.taplink-on body{overflow:hidden}
 }
 .pr-terrain-preview img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:left center;
+  filter:brightness(.7);
   opacity:0;transition:opacity var(--dur-base) var(--ease-standard);
 }
 .pr-terrain-preview img.is-active{opacity:1}
