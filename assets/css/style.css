@@ -911,6 +911,8 @@ html.taplink-on body{overflow:hidden}
 .pricepg .price-card.quote{border-style:dotted}
 .pricepg .price-label{font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-secondary)}
 .pricepg .price-label--split .label-secondary{color:var(--fg-faint);text-transform:none;letter-spacing:0}
+/* reserve two lines for the fixed-rate card labels so value + note align across all cards */
+.pricepg .price-card.fixed .price-label{min-height:42px}
 .pricepg .price-value{font-family:var(--font-information);font-size:1.75rem;color:var(--accent-scan);font-variant-numeric:tabular-nums;transition:opacity .12s ease}
 .pricepg .price-value.pulse{opacity:.5}
 .pricepg .price-note{font-family:var(--font-information);font-size:var(--type-data-sm);color:var(--fg-faint);line-height:var(--leading-body)}
@@ -918,6 +920,7 @@ html.taplink-on body{overflow:hidden}
 .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
 
 .pricepg .stepper{display:flex;align-items:center;gap:14px;margin:6px 0 2px}
+.pricepg .stepper--ghost{visibility:hidden;height:30px}
 .pricepg .stepper button{
   width:30px;height:30px;border-radius:var(--radius-pill);
   border:1px solid var(--border-hairline);background:var(--bg-surface);color:var(--fg-primary);
