@@ -29,14 +29,14 @@ def head(title, desc):
 <meta property="og:site_name" content="EASY SCAN">
 <meta property="og:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta property="og:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=154">
+<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=155">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta name="twitter:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=154">
-<link rel="stylesheet" href="assets/css/style.css?v=154">
+<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=155">
+<link rel="stylesheet" href="assets/css/style.css?v=155">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -422,7 +422,7 @@ _contact_hero_btns = """      <div class="hero__actions hero__actions--contacts"
 """
 k += page_hero("Contact", "Contact",
     "Need assistance?<br>Fill in the form below.<br>We'll get back to you within 24 hours.<br>You can also call us or send us an email.",
-    "assets/img/contact-back.jpg?v=154", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
+    "assets/img/contact-back.jpg?v=155", "Aerial view of a Thai coastline dissolving into a 3D point cloud"
     ).replace('</p>\n    </div>\n  </section>', '</p>\n' + _contact_hero_btns + '    </div>\n  </section>')
 k += """  <section class="section">
     <div class="wrap wrap--wide">

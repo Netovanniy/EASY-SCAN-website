@@ -851,7 +851,6 @@ html.taplink-on body{overflow:hidden}
 .pr-field-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .pr-terrain-preview{
   position:relative;width:100%;flex:1 1 auto;min-height:180px;
-  border:1px solid var(--border-faint);border-radius:var(--radius-control);
   overflow:hidden;background:var(--bg-page);
 }
 .pr-terrain-preview img{
