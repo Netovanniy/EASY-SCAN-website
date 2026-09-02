@@ -510,6 +510,7 @@ T = {
 
 # ---- PRICE ------------------------------------------------------
 'Price':'ราคา',
+'Dark 3D contour model of land parcels with area and slope readouts':'แบบจำลองเส้นชั้นความสูง 3 มิติสีเข้มของแปลงที่ดิน พร้อมค่าพื้นที่และความลาดชัน',
 'Pricing':'ราคา',
 'Pricing | LiDAR &amp; Drone Land Scanning Rates — EASY SCAN Thailand':
  'ราคา | อัตราค่าบริการสแกนที่ดินด้วย LiDAR และโดรน — EASY SCAN ประเทศไทย',
