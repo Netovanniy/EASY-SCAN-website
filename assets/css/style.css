@@ -832,6 +832,104 @@ html.taplink-on body{overflow:hidden}
 .footer-social svg{width:18px;height:18px;display:block}
 
 /* ============================================================
+   BLOCK · Pricing page  (area calculator + rate cards)
+   ============================================================ */
+.pricepg .pr-legend{
+  display:flex;gap:22px;flex-wrap:wrap;padding:14px 0;margin-bottom:var(--space-7);
+  border-block:1px solid var(--border-faint);
+  font-family:var(--font-information);font-size:var(--type-data-sm);
+  letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-faint);
+}
+.pr-legend__item{display:inline-flex;align-items:center;gap:8px}
+.pr-swatch{width:20px;border-top:2px solid currentColor;display:inline-block}
+.pr-swatch--dash{border-top-style:dashed}
+.pr-swatch--dot{border-top-style:dotted}
+
+.pr-calc{
+  background:var(--bg-surface);border:1px solid var(--border-faint);
+  border-radius:var(--radius-control);padding:var(--space-7);
+}
+.pr-calc__cols{display:flex;justify-content:space-between;gap:var(--space-7);flex-wrap:wrap}
+.pr-calc__left{display:flex;flex-direction:column;gap:var(--space-6);flex:1 1 460px;max-width:460px}
+.pr-calc__right{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-4);flex:1 1 260px}
+.pr-terrain-note{
+  font-family:var(--font-information);font-size:var(--type-body-sm);line-height:var(--leading-body);
+  color:var(--fg-faint);margin:4px 0 0;max-width:36ch;
+}
+
+.pricepg .segmented{
+  display:inline-flex;flex-wrap:wrap;gap:6px;background:var(--bg-page);
+  padding:5px;border-radius:var(--radius-control);width:fit-content;
+}
+.pricepg .segmented.small .seg-btn{padding:7px 12px;font-size:var(--type-data-sm)}
+.pricepg .seg-btn{
+  font-family:var(--font-structure);font-weight:var(--weight-medium);
+  font-size:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;
+  padding:9px 16px;border:0;border-radius:var(--radius-control);
+  background:transparent;color:var(--fg-secondary);cursor:pointer;
+  transition:background var(--dur-fast) var(--ease-standard),color var(--dur-fast) var(--ease-standard);
+}
+.pricepg .seg-btn:hover{color:var(--fg-primary)}
+.pricepg .seg-btn.active{background:var(--bg-surface);color:var(--fg-primary)}
+
+.pricepg .field-label{
+  font-family:var(--font-information);font-size:var(--type-data-sm);
+  letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-faint);
+}
+.pricepg .slider-row{display:grid;gap:10px;width:100%}
+.pricepg input[type="range"]{
+  -webkit-appearance:none;appearance:none;width:100%;height:3px;
+  background:var(--border-hairline);border-radius:2px;outline:none;
+}
+.pricepg input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+  background:var(--accent-scan);border:3px solid var(--bg-surface);
+  box-shadow:0 0 0 1px var(--accent-scan);cursor:pointer;
+}
+.pricepg input[type="range"]::-moz-range-thumb{
+  width:18px;height:18px;border-radius:50%;background:var(--accent-scan);
+  border:3px solid var(--bg-surface);box-shadow:0 0 0 1px var(--accent-scan);cursor:pointer;
+}
+.pricepg .rai-readout{font-family:var(--font-information);font-size:var(--type-body);font-variant-numeric:tabular-nums;color:var(--fg-secondary)}
+.pricepg .rai-readout .sub{color:var(--fg-faint)}
+
+.pricepg .price-card{
+  background:var(--bg-page);border:1px solid var(--border-hairline);
+  border-radius:var(--radius-control);padding:var(--space-6);display:grid;gap:6px;
+}
+.pricepg .price-card.estimate{border-style:dashed;width:100%;max-width:460px}
+.pricepg .price-card.quote{border-style:dotted}
+.pricepg .price-label{font-family:var(--font-structure);font-weight:var(--weight-medium);font-size:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-secondary)}
+.pricepg .price-label--split .label-secondary{color:var(--fg-faint);text-transform:none;letter-spacing:0}
+.pricepg .price-value{font-family:var(--font-information);font-size:1.75rem;color:var(--accent-scan);font-variant-numeric:tabular-nums;transition:opacity .12s ease}
+.pricepg .price-value.pulse{opacity:.5}
+.pricepg .price-note{font-family:var(--font-information);font-size:var(--type-data-sm);color:var(--fg-faint);line-height:var(--leading-body)}
+
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+
+.pricepg .stepper{display:flex;align-items:center;gap:14px;margin:6px 0 2px}
+.pricepg .stepper button{
+  width:30px;height:30px;border-radius:var(--radius-pill);
+  border:1px solid var(--border-hairline);background:var(--bg-surface);color:var(--fg-primary);
+  font-size:16px;line-height:1;cursor:pointer;
+  transition:border-color var(--dur-fast) var(--ease-standard),color var(--dur-fast) var(--ease-standard);
+}
+.pricepg .stepper button:hover{border-color:var(--accent-scan);color:var(--accent-scan)}
+.pricepg .stepper span{font-family:var(--font-information);font-variant-numeric:tabular-nums;min-width:16px;text-align:center;color:var(--fg-primary)}
+
+.pricepg .cta-link{
+  justify-self:start;margin-top:6px;font-family:var(--font-information);font-size:var(--type-data-sm);
+  color:var(--accent-coral);text-decoration:none;border-bottom:1px solid transparent;
+}
+.pricepg .cta-link:hover{border-bottom-color:var(--accent-coral)}
+.pr-fineprint{margin-top:var(--space-6);font-family:var(--font-information);font-size:var(--type-data-sm)}
+
+@media(max-width:640px){
+  .pricepg .pr-calc__left,.pricepg .price-card.estimate{max-width:100%}
+  .pricepg .pr-calc{padding:var(--space-6)}
+}
+
+/* ============================================================
    Scroll reveal  (stand-in for DS Contour/Scan reveal)
    ============================================================ */
 .js .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-reveal) var(--ease-enter),transform var(--dur-reveal) var(--ease-enter)}

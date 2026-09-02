@@ -5,7 +5,7 @@ import os, datetime
 ROOT = "/Users/andreynetovanniy/Desktop/EASY SCAN/ES_CLAUDE website"
 BASE = "https://easyscan.asia"
 PAGES = [
-    "index.html", "about.html", "contact.html",
+    "index.html", "about.html", "contact.html", "price.html",
     "gaussian.html", "twin.html", "concepting.html", "monitoring.html",
     "museum.html", "education.html",
 ]

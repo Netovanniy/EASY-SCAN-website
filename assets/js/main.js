@@ -197,6 +197,97 @@
     });
   });
 
+  /* ---- Pricing page: area calculator + rate steppers ---- */
+  if (document.getElementById("raiRange")) {
+    (function () {
+      var LIDAR_RATES = { open: 10000, moderate: 12500, dense: 15000 };
+      var TERRAIN_LABEL = { open: "open terrain", moderate: "moderate terrain", dense: "rugged terrain" };
+      var DRONE_BRACKETS = [
+        { max: 1, price: 10000, label: "up to 1 rai" },
+        { max: 3, price: 15000, label: "1–3 rai" },
+        { max: 5, price: 20000, label: "3–5 rai" },
+        { max: 10, price: 30000, label: "5–10 rai" }
+      ];
+      function droneBracket(rai) {
+        for (var i = 0; i < DRONE_BRACKETS.length; i++) {
+          if (rai <= DRONE_BRACKETS[i].max) return DRONE_BRACKETS[i];
+        }
+        return null;
+      }
+      var state = { service: "lidar", terrain: "open", rai: 5 };
+      var raiRange = document.getElementById("raiRange");
+      var raiValue = document.getElementById("raiValue");
+      var sqmValue = document.getElementById("sqmValue");
+      var priceValue = document.getElementById("priceValue");
+      var priceNote = document.getElementById("priceNote");
+      var serviceBtns = document.querySelectorAll(".seg-btn[data-service]");
+      var terrainBtns = document.querySelectorAll(".seg-btn[data-terrain]");
+
+      function fmt(n) { return new Intl.NumberFormat("en-US").format(Math.round(n)); }
+      function pulse() {
+        priceValue.classList.add("pulse");
+        window.setTimeout(function () { priceValue.classList.remove("pulse"); }, 120);
+      }
+      function render() {
+        raiValue.textContent = state.rai;
+        sqmValue.textContent = fmt(state.rai * 1600);
+        var price, note;
+        if (state.service === "lidar") {
+          var rate = LIDAR_RATES[state.terrain];
+          price = state.rai * rate;
+          note = fmt(rate) + " THB / rai · " + TERRAIN_LABEL[state.terrain];
+        } else {
+          var bracket = droneBracket(state.rai);
+          if (bracket) { price = bracket.price; note = "Tiered by area · " + bracket.label; }
+          else { price = null; note = "Above 10 rai — multi-plot pricing, contact us"; }
+        }
+        priceValue.textContent = price === null ? "Custom quote" : fmt(price) + " THB";
+        priceNote.textContent = note;
+        pulse();
+      }
+      serviceBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          serviceBtns.forEach(function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          state.service = btn.getAttribute("data-service");
+          render();
+        });
+      });
+      terrainBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          terrainBtns.forEach(function (b) { b.classList.remove("active"); });
+          btn.classList.add("active");
+          state.terrain = btn.getAttribute("data-terrain");
+          render();
+        });
+      });
+      raiRange.addEventListener("input", function () {
+        state.rai = parseFloat(raiRange.value);
+        render();
+      });
+      render();
+
+      function stepper(minusId, plusId, qtyId, priceId, base, step, min, max) {
+        var qtyEl = document.getElementById(qtyId);
+        var priceEl = document.getElementById(priceId);
+        var qty = min;
+        function draw() {
+          qtyEl.textContent = qty;
+          priceEl.textContent = fmt(base + (qty - min) * step) + " THB";
+        }
+        document.getElementById(minusId).addEventListener("click", function () {
+          if (qty > min) { qty -= 1; draw(); }
+        });
+        document.getElementById(plusId).addEventListener("click", function () {
+          if (qty < max) { qty += 1; draw(); }
+        });
+        draw();
+      }
+      stepper("panoMinus", "panoPlus", "panoQty", "panoPrice", 1500, 500, 1, 20);
+      stepper("consultMinus", "consultPlus", "consultQty", "consultPrice", 5000, 3000, 2, 12);
+    })();
+  }
+
   /* ---- Footer year ---- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
