@@ -512,6 +512,9 @@ T = {
 'Price':'ราคา',
 'Dark 3D contour model of land parcels with area and slope readouts':'แบบจำลองเส้นชั้นความสูง 3 มิติสีเข้มของแปลงที่ดิน พร้อมค่าพื้นที่และความลาดชัน',
 'Pricing':'ราคา',
+'Open terrain — flat with minimal cover':'ภูมิประเทศโล่ง — ราบ พืชปกคลุมน้อย',
+'Moderate terrain — rolling with light cover':'ภูมิประเทศปานกลาง — เป็นลอนเนิน พืชปกคลุมบาง',
+'Rugged terrain — steep with dense cover':'ภูมิประเทศขรุขระ — ชัน พืชปกคลุมหนา',
 'Pricing | LiDAR &amp; Drone Land Scanning Rates — EASY SCAN Thailand':
  'ราคา | อัตราค่าบริการสแกนที่ดินด้วย LiDAR และโดรน — EASY SCAN ประเทศไทย',
 'EASY SCAN pricing for LiDAR scanning, drone photogrammetry and 3D site visualisation in Koh Phangan, Koh Samui and Phuket. Instant estimate by land area plus fixed-rate services.':

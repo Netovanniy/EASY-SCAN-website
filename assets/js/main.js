@@ -253,11 +253,15 @@
           render();
         });
       });
+      var terrainImgs = document.querySelectorAll("[data-terrain-img]");
       terrainBtns.forEach(function (btn) {
         btn.addEventListener("click", function () {
           terrainBtns.forEach(function (b) { b.classList.remove("active"); });
           btn.classList.add("active");
           state.terrain = btn.getAttribute("data-terrain");
+          terrainImgs.forEach(function (im) {
+            im.classList.toggle("is-active", im.getAttribute("data-terrain-img") === state.terrain);
+          });
           render();
         });
       });

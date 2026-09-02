@@ -510,6 +510,9 @@ T = {
 'Price':'Цены',
 'Dark 3D contour model of land parcels with area and slope readouts':'Тёмная 3D-модель горизонталей участков с показателями площади и уклона',
 'Pricing':'Цены',
+'Open terrain — flat with minimal cover':'Открытый рельеф — ровный, почти без растительности',
+'Moderate terrain — rolling with light cover':'Средний рельеф — холмистый, лёгкая растительность',
+'Rugged terrain — steep with dense cover':'Сложный рельеф — крутой, густая растительность',
 'Pricing | LiDAR &amp; Drone Land Scanning Rates — EASY SCAN Thailand':
  'Цены | Тарифы на LiDAR- и дрон-сканирование земли — EASY SCAN Таиланд',
 'EASY SCAN pricing for LiDAR scanning, drone photogrammetry and 3D site visualisation in Koh Phangan, Koh Samui and Phuket. Instant estimate by land area plus fixed-rate services.':
