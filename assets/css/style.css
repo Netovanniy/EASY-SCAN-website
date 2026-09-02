@@ -834,16 +834,6 @@ html.taplink-on body{overflow:hidden}
 /* ============================================================
    BLOCK · Pricing page  (area calculator + rate cards)
    ============================================================ */
-.pricepg .pr-legend{
-  display:flex;gap:22px;flex-wrap:wrap;padding:14px 0;margin-bottom:var(--space-7);
-  border-block:1px solid var(--border-faint);
-  font-family:var(--font-information);font-size:var(--type-data-sm);
-  letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-faint);
-}
-.pr-legend__item{display:inline-flex;align-items:center;gap:8px}
-.pr-swatch{width:20px;border-top:2px solid currentColor;display:inline-block}
-.pr-swatch--dash{border-top-style:dashed}
-.pr-swatch--dot{border-top-style:dotted}
 
 .pr-calc{
   background:var(--bg-surface);border:1px solid var(--border-faint);
