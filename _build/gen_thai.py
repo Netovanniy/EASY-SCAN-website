@@ -563,6 +563,7 @@ T = {
 '2 hours &middot; 10,000 THB':'2 ชั่วโมง · 10,000 บาท',
 'Work directly with your 3D site model to test building positions, volumes, levels and development ideas.':'ทำงานกับแบบจำลอง 3 มิติของพื้นที่โดยตรง เพื่อทดสอบตำแหน่งอาคาร ปริมาตร ระดับ และแนวคิดการพัฒนา',
 'Architect Data':'ข้อมูลสำหรับสถาปนิก',
+'<span class="price-label">Monitoring</span>':'<span class="price-label">การติดตาม</span>',
 'From 5,000 THB':'เริ่มต้น 5,000 บาท',
 'Additional terrain data preparation, contours and project-specific exports for architects and designers.':'การเตรียมข้อมูลภูมิประเทศเพิ่มเติม เส้นชั้นความสูง และไฟล์ส่งออกเฉพาะโครงการสำหรับสถาปนิกและนักออกแบบ',
 'From 15,000 THB':'เริ่มต้น 15,000 บาท',

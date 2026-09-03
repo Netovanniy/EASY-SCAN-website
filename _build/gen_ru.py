@@ -561,6 +561,7 @@ T = {
 '2 hours &middot; 10,000 THB':'2 часа · 10 000 THB',
 'Work directly with your 3D site model to test building positions, volumes, levels and development ideas.':'Работа напрямую с 3D-моделью участка: проверка положения зданий, объёмов, уровней и идей развития.',
 'Architect Data':'Данные для архитектора',
+'<span class="price-label">Monitoring</span>':'<span class="price-label">Мониторинг</span>',
 'From 5,000 THB':'от 5 000 THB',
 'Additional terrain data preparation, contours and project-specific exports for architects and designers.':'Подготовка дополнительных данных рельефа, горизонталей и экспортов под конкретный проект для архитекторов и дизайнеров.',
 'From 15,000 THB':'от 15 000 THB',
