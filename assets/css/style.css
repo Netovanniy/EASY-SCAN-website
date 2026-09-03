@@ -857,6 +857,7 @@ html.taplink-on body{overflow:hidden}
   font-family:var(--font-information);font-size:var(--type-body-sm);line-height:var(--leading-body);
   color:var(--fg-faint);margin:0;
 }
+.pr-divider{height:0;border:0;border-top:1px dashed var(--border-hairline)}
 
 .pricepg .segmented{
   display:inline-flex;flex-wrap:wrap;gap:6px;background:var(--bg-page);
@@ -871,7 +872,7 @@ html.taplink-on body{overflow:hidden}
   transition:background var(--dur-fast) var(--ease-standard),color var(--dur-fast) var(--ease-standard);
 }
 .pricepg .seg-btn:hover{color:var(--fg-primary)}
-.pricepg .seg-btn.active{background:var(--bg-surface);color:var(--fg-primary)}
+.pricepg .seg-btn.active{background:var(--bg-surface);color:var(--accent-coral)}
 
 .pricepg .field-label{
   font-family:var(--font-information);font-size:var(--type-data-sm);
