@@ -845,7 +845,7 @@ html.taplink-on body{overflow:hidden}
   background:var(--bg-page);border:1px solid var(--border-faint);
   border-radius:var(--radius-control);padding:var(--space-7);
 }
-.pr-calc__cols{display:flex;gap:var(--space-7);flex-wrap:wrap;align-items:flex-start}
+.pr-calc__cols{display:flex;gap:var(--space-7);flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
 /* col 1: terrain · vegetation · type   ·   col 2: land size · estimate */
 .pr-calc__left{display:flex;flex-direction:column;gap:var(--space-5);flex:0 1 380px;max-width:420px}
 .pr-calc__right{display:flex;flex-direction:column;gap:var(--space-5);flex:0 1 320px;max-width:320px}
