@@ -197,73 +197,94 @@
     });
   });
 
-  /* ---- Pricing page: area calculator + rate steppers ---- */
+  /* ---- Pricing page: site-capture calculator ----
+     Estimates the cost of digitally capturing the land (LiDAR / drone / both).
+     Add-on services below the calculator are NOT part of this estimate. */
   if (document.getElementById("raiRange")) {
     (function () {
       /* -------------------------------------------------------------------
-         Central pricing config — the only place to edit rates/multipliers.
+         Site-capture pricing config — the only place to edit the numbers.
 
-         The estimate is:  base area price  ×  terrain multiplier  ×  vegetation multiplier
-         evaluated per scan type, so LiDAR and Drone can diverge later.
-
-         Current state: the LiDAR terrain multipliers (1 / 1.25 / 1.5) reproduce
-         the former 10,000 / 12,500 / 15,000 THB-per-rai rates exactly. Every
-         other multiplier is a configurable placeholder left at 1 (no effect
-         yet) — vegetation, Drone terrain/vegetation, and the whole `both`
-         block (which currently just sums the LiDAR and Drone estimates).
-         Change the numbers here when the new pricing is agreed; nothing else
-         needs touching.
+         Pricing is per project, not per rai: sparse area-base tables plus
+         terrain / vegetation multipliers, with linear interpolation between
+         the tabulated sizes. Projects above 20 rai are a manual quote — the
+         formula is never extrapolated. Multipliers are internal; the UI
+         never shows them.
       ------------------------------------------------------------------- */
       var PRICING = {
         lidar: {
-          basePerRai: 10000,                          // THB per rai — current production rate
-          terrain:    { flat: 1, sloped: 1.25, steep: 1.5 }, // = old 10,000 / 12,500 / 15,000 per rai
-          vegetation: { clear: 1, light: 1, dense: 1 }       // placeholder — not priced in yet
+          area: { 0.5: 10000, 1: 15000, 2: 25000, 3: 34000, 4: 42000, 5: 50000,
+                  6: 58000, 7: 65000, 8: 72000, 9: 79000, 10: 85000,
+                  12: 99000, 15: 118000, 20: 145000 },
+          terrain:    { flat: 1, sloped: 1.15, steep: 1.30 },
+          vegetation: { clear: 1, light: 1.15, dense: 1.35 }
         },
         drone: {
-          brackets: [                                 // current production tiers, flat per plot
-            { max: 1,  price: 10000, label: "up to 1 rai" },
-            { max: 3,  price: 15000, label: "1–3 rai" },
-            { max: 5,  price: 20000, label: "3–5 rai" },
-            { max: 10, price: 30000, label: "5–10 rai" }
-          ],
-          terrain:    { flat: 1, sloped: 1, steep: 1 },      // placeholder — not priced in yet
-          vegetation: { clear: 1, light: 1, dense: 1 }       // placeholder — not priced in yet
+          area: { 0.5: 12000, 1: 12000, 2: 13000, 3: 14000, 5: 15000,
+                  10: 20000, 15: 24000, 20: 28000 },
+          terrain: { flat: 1, sloped: 1, steep: 1.10 }
+          /* vegetation does not affect drone pricing */
         },
-        both: {                                       // LiDAR + drone on the same survey
-          terrain:    { flat: 1, sloped: 1, steep: 1 },      // placeholder — applied on top of the combined total
-          vegetation: { clear: 1, light: 1, dense: 1 }       // placeholder
-        }
+        both: { droneMultiplier: 0.70 }   /* BOTH = LiDAR + 70% of the drone component */
       };
 
-      var TERRAIN_LABEL    = { flat: "flat", sloped: "sloped", steep: "steep" };
+      var MAX_RAI = 20;
+      var SQM_PER_RAI = 1600;
+
+      var TERRAIN_LABEL   = { flat: "flat", sloped: "sloped", steep: "steep" };
       var VEGETATION_LABEL = { clear: "clear", light: "light", dense: "dense" };
+      var TERRAIN_NAME    = { flat: "Flat", sloped: "Sloped", steep: "Steep" };
+      var VEGETATION_NAME = { clear: "Clear", light: "Light", dense: "Dense" };
+      var TYPE_NAME       = { lidar: "LiDAR", drone: "Drone", both: "Both" };
+      var TYPE_CONTEXT    = {
+        lidar: "Detailed ground and terrain capture.",
+        drone: "Fast aerial mapping and 3D reconstruction.",
+        both:  "Complete site capture combining ground LiDAR and aerial drone data."
+      };
 
-      function droneBracket(rai) {
-        var b = PRICING.drone.brackets;
-        for (var i = 0; i < b.length; i++) {
-          if (rai <= b[i].max) return b[i];
+      /* --- calculation ------------------------------------------------- */
+      var nf = new Intl.NumberFormat("en-US");
+
+      /* linear interpolation over a sparse { size: price } table */
+      function getAreaBasePrice(table, area) {
+        var sizes = Object.keys(table).map(parseFloat).sort(function (a, b) { return a - b; });
+        if (area <= sizes[0]) return table[sizes[0]];
+        if (area >= sizes[sizes.length - 1]) return table[sizes[sizes.length - 1]];
+        for (var i = 0; i < sizes.length - 1; i++) {
+          var a1 = sizes[i], a2 = sizes[i + 1];
+          if (area >= a1 && area <= a2) {
+            var p1 = table[a1], p2 = table[a2];
+            return p1 + ((area - a1) / (a2 - a1)) * (p2 - p1);
+          }
         }
-        return null;
+        return table[sizes[sizes.length - 1]];
       }
-
-      /* per-scan-type estimate; returns null when it needs a manual quote */
-      function lidarEstimate(rai, terrain, veg) {
+      function calculateLidarRaw(area, terrain, veg) {
         var c = PRICING.lidar;
-        return rai * c.basePerRai * (c.terrain[terrain] || 1) * (c.vegetation[veg] || 1);
+        return getAreaBasePrice(c.area, area) * c.terrain[terrain] * c.vegetation[veg];
       }
-      function droneEstimate(rai, terrain, veg) {
-        var c = PRICING.drone, b = droneBracket(rai);
-        if (!b) return null;
-        return b.price * (c.terrain[terrain] || 1) * (c.vegetation[veg] || 1);
+      function calculateDroneRaw(area, terrain) {
+        var c = PRICING.drone;
+        return getAreaBasePrice(c.area, area) * c.terrain[terrain]; /* vegetation always 1 */
       }
+      function calculateBothRaw(area, terrain, veg) {
+        return calculateLidarRaw(area, terrain, veg) +
+               calculateDroneRaw(area, terrain) * PRICING.both.droneMultiplier;
+      }
+      function roundEstimate(price) { return Math.round(price / 1000) * 1000; }
+      function formatPrice(n) { return nf.format(n) + " THB"; }
+      function fmtRai(n) { return (n % 1 === 0) ? String(n) : n.toFixed(1); }
 
-      var state = { scanType: "lidar", terrain: "flat", vegetation: "clear", landSize: 1 };
+      /* --- state + DOM ---------------------------------------------------- */
+      var state = { scanType: "lidar", terrain: "flat", vegetation: "clear", landSize: 1, oversize: false };
+
       var raiRange = document.getElementById("raiRange");
-      var raiValue = document.getElementById("raiValue");
-      var sqmValue = document.getElementById("sqmValue");
+      var raiReadout = document.getElementById("raiReadout");
       var priceValue = document.getElementById("priceValue");
       var priceNote = document.getElementById("priceNote");
+      var priceCta = document.getElementById("priceCta");
+      var priceCtaLabel = document.getElementById("priceCtaLabel");
+      var typeNote = document.getElementById("typeNote");
       var serviceBtns = document.querySelectorAll(".seg-btn[data-service]");
       var terrainBtns = document.querySelectorAll(".seg-btn[data-terrain]");
       var vegetationBtns = document.querySelectorAll(".seg-btn[data-vegetation]");
@@ -271,11 +292,12 @@
       var metaTerrain = document.getElementById("metaTerrain");
       var metaVegetation = document.getElementById("metaVegetation");
       var metaType = document.getElementById("metaType");
-      var TERRAIN_NAME = { flat: "Flat", sloped: "Sloped", steep: "Steep" };
-      var VEGETATION_NAME = { clear: "Clear", light: "Light", dense: "Dense" };
-      var TYPE_NAME = { lidar: "LiDAR", drone: "Drone", both: "Both" };
 
-      /* swap the preview image + its caption to the current combination */
+      function pulse() {
+        priceValue.classList.add("pulse");
+        window.setTimeout(function () { priceValue.classList.remove("pulse"); }, 200);
+      }
+
       function updatePreview() {
         var key = state.terrain + "-" + state.vegetation;
         previewImgs.forEach(function (im) {
@@ -286,54 +308,56 @@
         if (metaType) metaType.textContent = TYPE_NAME[state.scanType];
       }
 
-      function fmt(n) { return new Intl.NumberFormat("en-US").format(Math.round(n)); }
-      function pulse() {
-        priceValue.classList.add("pulse");
-        window.setTimeout(function () { priceValue.classList.remove("pulse"); }, 120);
+      function currentRaw() {
+        var a = state.landSize, t = state.terrain, v = state.vegetation;
+        if (state.scanType === "lidar") return calculateLidarRaw(a, t, v);
+        if (state.scanType === "drone") return calculateDroneRaw(a, t);
+        return calculateBothRaw(a, t, v);
       }
+
       function render() {
-        var rai = state.landSize, t = state.terrain, v = state.vegetation;
-        raiValue.textContent = rai;
-        sqmValue.textContent = fmt(rai * 1600);
+        var t = state.terrain, v = state.vegetation;
 
-        var tail = " · " + TERRAIN_LABEL[t] + " · " + VEGETATION_LABEL[v] + " vegetation";
-        var price, note;
+        if (raiReadout) {
+          raiReadout.innerHTML = state.oversize
+            ? "20+ rai"
+            : fmtRai(state.landSize) + " rai <span class=\"sub\">(&asymp; " +
+              nf.format(state.landSize * SQM_PER_RAI) + " m²)</span>";
+        }
+        if (typeNote) typeNote.textContent = TYPE_CONTEXT[state.scanType];
 
-        if (state.scanType === "lidar") {
-          price = lidarEstimate(rai, t, v);
-          note = fmt(price / rai) + " THB / rai" + tail;
-        } else if (state.scanType === "drone") {
-          var bracket = droneBracket(rai);
-          price = droneEstimate(rai, t, v);
-          note = bracket ? "Drone · " + bracket.label + tail
-                         : "Above 10 rai — multi-plot pricing, contact us";
-        } else { // both — LiDAR + drone on the same survey
-          var d = droneEstimate(rai, t, v);
-          if (d === null) {
-            price = null;
-            note = "Above 10 rai — multi-plot pricing, contact us";
-          } else {
-            var bm = PRICING.both;
-            price = (lidarEstimate(rai, t, v) + d) *
-                    (bm.terrain[t] || 1) * (bm.vegetation[v] || 1);
-            note = "LiDAR + drone" + tail;
-          }
+        if (state.oversize) {
+          priceValue.textContent = "Custom quote";
+          priceNote.textContent = "Large-scale site · individual estimate required";
+          if (priceCtaLabel) priceCtaLabel.textContent = "Request a quote";
+        } else {
+          priceValue.textContent = formatPrice(roundEstimate(currentRaw()));
+          priceNote.textContent = fmtRai(state.landSize) + " rai · " + TERRAIN_LABEL[t] +
+            " · " + VEGETATION_LABEL[v] + " vegetation · " + TYPE_NAME[state.scanType];
+          if (priceCtaLabel) priceCtaLabel.textContent = "Get exact quote";
         }
 
-        priceValue.textContent = price === null ? "Custom quote" : fmt(price) + " THB";
-        priceNote.textContent = note;
+        if (priceCta) {
+          var cfg = [
+            "Land size: " + (state.oversize ? "20+ rai" : fmtRai(state.landSize) + " rai"),
+            "Terrain: " + TERRAIN_NAME[t],
+            "Vegetation: " + VEGETATION_NAME[v],
+            "Capture: " + TYPE_NAME[state.scanType],
+            "Estimated price: " + priceValue.textContent
+          ].join("\n");
+          priceCta.setAttribute("href", "contact.html?capture=" + encodeURIComponent(cfg));
+        }
+
         updatePreview();
         pulse();
       }
 
-      /* wire a segmented button group to a state key; `attr` is its data-* name */
-      function wireSegment(btns, attr, stateKey, afterSelect) {
+      function wireSegment(btns, attr, stateKey) {
         btns.forEach(function (btn) {
           btn.addEventListener("click", function () {
             btns.forEach(function (b) { b.classList.remove("active"); });
             btn.classList.add("active");
             state[stateKey] = btn.getAttribute("data-" + attr);
-            if (afterSelect) afterSelect();
             render();
           });
         });
@@ -343,31 +367,27 @@
       wireSegment(vegetationBtns, "vegetation", "vegetation");
 
       raiRange.addEventListener("input", function () {
-        state.landSize = parseFloat(raiRange.value);
+        var raw = parseFloat(raiRange.value);
+        state.oversize = raw > MAX_RAI;
+        state.landSize = state.oversize ? MAX_RAI : raw;
         render();
       });
       render();
-
-      function stepper(minusId, plusId, qtyId, priceId, base, step, min, max) {
-        var qtyEl = document.getElementById(qtyId);
-        var priceEl = document.getElementById(priceId);
-        var qty = min;
-        function draw() {
-          qtyEl.textContent = qty;
-          priceEl.textContent = fmt(base + (qty - min) * step) + " THB";
-        }
-        document.getElementById(minusId).addEventListener("click", function () {
-          if (qty > min) { qty -= 1; draw(); }
-        });
-        document.getElementById(plusId).addEventListener("click", function () {
-          if (qty < max) { qty += 1; draw(); }
-        });
-        draw();
-      }
-      stepper("panoMinus", "panoPlus", "panoQty", "panoPrice", 1500, 500, 1, 20);
-      stepper("consultMinus", "consultPlus", "consultQty", "consultPrice", 5000, 3000, 2, 12);
     })();
   }
+
+  /* ---- Contact form: prefill from a price-calculator hand-off ---- */
+  (function () {
+    var form = document.querySelector("[data-contact-form]");
+    if (!form || !window.URLSearchParams) return;
+    var capture = new URLSearchParams(window.location.search).get("capture");
+    if (!capture) return;
+    var area = form.querySelector("#area");
+    var msg = form.querySelector("#message");
+    var m = capture.match(/Land size:\s*(.+)/);
+    if (area && m && !area.value) area.value = m[1].trim();
+    if (msg && !msg.value) msg.value = "Site capture request\n\n" + capture + "\n\n";
+  })();
 
   /* ---- Footer year ---- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
