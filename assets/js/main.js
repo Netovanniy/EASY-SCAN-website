@@ -267,6 +267,15 @@
       var serviceBtns = document.querySelectorAll(".seg-btn[data-service]");
       var terrainBtns = document.querySelectorAll(".seg-btn[data-terrain]");
       var vegetationBtns = document.querySelectorAll(".seg-btn[data-vegetation]");
+      var previewImgs = document.querySelectorAll("[data-preview]");
+
+      /* swap the right-column preview to the terrain + vegetation combination */
+      function updatePreview() {
+        var key = state.terrain + "-" + state.vegetation;
+        previewImgs.forEach(function (im) {
+          im.classList.toggle("is-active", im.getAttribute("data-preview") === key);
+        });
+      }
 
       function fmt(n) { return new Intl.NumberFormat("en-US").format(Math.round(n)); }
       function pulse() {
@@ -304,6 +313,7 @@
 
         priceValue.textContent = price === null ? "Custom quote" : fmt(price) + " THB";
         priceNote.textContent = note;
+        updatePreview();
         pulse();
       }
 
