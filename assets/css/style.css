@@ -977,7 +977,7 @@ html.taplink-on body{overflow:hidden}
 
 /* mobile: stack the calculator — controls, land size + visual, estimate */
 @media(max-width:720px){
-  .pr-calc__cols{flex-direction:column;justify-content:flex-start;align-items:stretch}
+  .pr-calc__cols{flex-direction:column;flex-wrap:nowrap;justify-content:flex-start;align-items:stretch}
   .pr-calc__left,.pr-calc__right,.pr-calc__preview{max-width:none;margin-top:0}
 }
 @media(max-width:640px){
