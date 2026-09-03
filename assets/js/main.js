@@ -268,13 +268,22 @@
       var terrainBtns = document.querySelectorAll(".seg-btn[data-terrain]");
       var vegetationBtns = document.querySelectorAll(".seg-btn[data-vegetation]");
       var previewImgs = document.querySelectorAll("[data-preview]");
+      var metaTerrain = document.getElementById("metaTerrain");
+      var metaVegetation = document.getElementById("metaVegetation");
+      var metaType = document.getElementById("metaType");
+      var TERRAIN_NAME = { flat: "Flat", sloped: "Sloped", steep: "Steep" };
+      var VEGETATION_NAME = { clear: "Clear", light: "Light", dense: "Dense" };
+      var TYPE_NAME = { lidar: "LiDAR", drone: "Drone", both: "Both" };
 
-      /* swap the right-column preview to the terrain + vegetation combination */
+      /* swap the preview image + its caption to the current combination */
       function updatePreview() {
         var key = state.terrain + "-" + state.vegetation;
         previewImgs.forEach(function (im) {
           im.classList.toggle("is-active", im.getAttribute("data-preview") === key);
         });
+        if (metaTerrain) metaTerrain.textContent = TERRAIN_NAME[state.terrain];
+        if (metaVegetation) metaVegetation.textContent = VEGETATION_NAME[state.vegetation];
+        if (metaType) metaType.textContent = TYPE_NAME[state.scanType];
       }
 
       function fmt(n) { return new Intl.NumberFormat("en-US").format(Math.round(n)); }
