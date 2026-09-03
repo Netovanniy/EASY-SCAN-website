@@ -848,7 +848,7 @@ html.taplink-on body{overflow:hidden}
 .pr-calc__cols{display:flex;gap:var(--space-7);flex-wrap:wrap;align-items:flex-start}
 /* col 1: terrain · vegetation · type   ·   col 2: land size · estimate */
 .pr-calc__left{display:flex;flex-direction:column;gap:var(--space-5);flex:0 1 380px;max-width:420px}
-.pr-calc__right{display:flex;flex-direction:column;gap:var(--space-5);flex:1 1 320px;max-width:460px}
+.pr-calc__right{display:flex;flex-direction:column;gap:var(--space-5);flex:0 1 320px;max-width:320px}
 .pr-field{display:flex;flex-direction:column;gap:10px}
 /* label inline with its buttons; fixed label width keeps all segmented rows on one left edge */
 .pr-field-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
@@ -858,6 +858,7 @@ html.taplink-on body{overflow:hidden}
   color:var(--fg-faint);margin:0;
 }
 .pr-divider{height:0;border:0;border-top:1px dashed var(--border-hairline)}
+.pr-card-summary{margin-top:calc(var(--space-5) * -0.4);max-width:42ch}
 
 .pricepg .segmented{
   display:inline-flex;flex-wrap:wrap;gap:6px;background:var(--bg-page);

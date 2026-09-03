@@ -209,8 +209,10 @@
          Current state: the LiDAR terrain multipliers (1 / 1.25 / 1.5) reproduce
          the former 10,000 / 12,500 / 15,000 THB-per-rai rates exactly. Every
          other multiplier is a configurable placeholder left at 1 (no effect
-         yet) — vegetation, and Drone terrain/vegetation. Change the numbers
-         here when the new pricing is agreed; nothing else needs touching.
+         yet) — vegetation, Drone terrain/vegetation, and the whole `both`
+         block (which currently just sums the LiDAR and Drone estimates).
+         Change the numbers here when the new pricing is agreed; nothing else
+         needs touching.
       ------------------------------------------------------------------- */
       var PRICING = {
         lidar: {
@@ -227,6 +229,10 @@
           ],
           terrain:    { flat: 1, sloped: 1, steep: 1 },      // placeholder — not priced in yet
           vegetation: { clear: 1, light: 1, dense: 1 }       // placeholder — not priced in yet
+        },
+        both: {                                       // LiDAR + drone on the same survey
+          terrain:    { flat: 1, sloped: 1, steep: 1 },      // placeholder — applied on top of the combined total
+          vegetation: { clear: 1, light: 1, dense: 1 }       // placeholder
         }
       };
 
@@ -239,6 +245,17 @@
           if (rai <= b[i].max) return b[i];
         }
         return null;
+      }
+
+      /* per-scan-type estimate; returns null when it needs a manual quote */
+      function lidarEstimate(rai, terrain, veg) {
+        var c = PRICING.lidar;
+        return rai * c.basePerRai * (c.terrain[terrain] || 1) * (c.vegetation[veg] || 1);
+      }
+      function droneEstimate(rai, terrain, veg) {
+        var c = PRICING.drone, b = droneBracket(rai);
+        if (!b) return null;
+        return b.price * (c.terrain[terrain] || 1) * (c.vegetation[veg] || 1);
       }
 
       var state = { scanType: "lidar", terrain: "flat", vegetation: "clear", landSize: 1 };
@@ -257,28 +274,31 @@
         window.setTimeout(function () { priceValue.classList.remove("pulse"); }, 120);
       }
       function render() {
-        raiValue.textContent = state.landSize;
-        sqmValue.textContent = fmt(state.landSize * 1600);
+        var rai = state.landSize, t = state.terrain, v = state.vegetation;
+        raiValue.textContent = rai;
+        sqmValue.textContent = fmt(rai * 1600);
 
-        var cfg = PRICING[state.scanType];
-        var terrainMult = cfg.terrain[state.terrain] || 1;
-        var vegMult = cfg.vegetation[state.vegetation] || 1;
+        var tail = " · " + TERRAIN_LABEL[t] + " · " + VEGETATION_LABEL[v] + " vegetation";
         var price, note;
 
         if (state.scanType === "lidar") {
-          var perRai = cfg.basePerRai * terrainMult * vegMult;
-          price = state.landSize * perRai;
-          note = fmt(perRai) + " THB / rai · " + TERRAIN_LABEL[state.terrain] +
-                 " terrain · " + VEGETATION_LABEL[state.vegetation] + " vegetation";
-        } else {
-          var bracket = droneBracket(state.landSize);
-          if (bracket) {
-            price = bracket.price * terrainMult * vegMult;
-            note = "Drone · " + bracket.label + " · " + TERRAIN_LABEL[state.terrain] +
-                   " · " + VEGETATION_LABEL[state.vegetation] + " vegetation";
-          } else {
+          price = lidarEstimate(rai, t, v);
+          note = fmt(price / rai) + " THB / rai" + tail;
+        } else if (state.scanType === "drone") {
+          var bracket = droneBracket(rai);
+          price = droneEstimate(rai, t, v);
+          note = bracket ? "Drone · " + bracket.label + tail
+                         : "Above 10 rai — multi-plot pricing, contact us";
+        } else { // both — LiDAR + drone on the same survey
+          var d = droneEstimate(rai, t, v);
+          if (d === null) {
             price = null;
             note = "Above 10 rai — multi-plot pricing, contact us";
+          } else {
+            var bm = PRICING.both;
+            price = (lidarEstimate(rai, t, v) + d) *
+                    (bm.terrain[t] || 1) * (bm.vegetation[v] || 1);
+            note = "LiDAR + drone" + tail;
           }
         }
 
