@@ -856,7 +856,6 @@ html.taplink-on body{overflow:hidden}
   font-family:var(--font-information);font-size:var(--type-data-sm);
   letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--fg-faint);
 }
-.pr-quote-cta{margin-top:var(--space-2)}
 /* label inline with its buttons; fixed label width keeps all segmented rows on one left edge */
 .pr-field-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .pr-field-head .field-label{flex:0 0 auto;min-width:118px}

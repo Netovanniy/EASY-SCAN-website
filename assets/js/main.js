@@ -282,8 +282,6 @@
       var raiReadout = document.getElementById("raiReadout");
       var priceValue = document.getElementById("priceValue");
       var priceNote = document.getElementById("priceNote");
-      var priceCta = document.getElementById("priceCta");
-      var priceCtaLabel = document.getElementById("priceCtaLabel");
       var typeNote = document.getElementById("typeNote");
       var serviceBtns = document.querySelectorAll(".seg-btn[data-service]");
       var terrainBtns = document.querySelectorAll(".seg-btn[data-terrain]");
@@ -329,23 +327,10 @@
         if (state.oversize) {
           priceValue.textContent = "Custom quote";
           priceNote.textContent = "Large-scale site · individual estimate required";
-          if (priceCtaLabel) priceCtaLabel.textContent = "Request a quote";
         } else {
           priceValue.textContent = formatPrice(roundEstimate(currentRaw()));
           priceNote.textContent = fmtRai(state.landSize) + " rai · " + TERRAIN_LABEL[t] +
             " · " + VEGETATION_LABEL[v] + " vegetation · " + TYPE_NAME[state.scanType];
-          if (priceCtaLabel) priceCtaLabel.textContent = "Get exact quote";
-        }
-
-        if (priceCta) {
-          var cfg = [
-            "Land size: " + (state.oversize ? "20+ rai" : fmtRai(state.landSize) + " rai"),
-            "Terrain: " + TERRAIN_NAME[t],
-            "Vegetation: " + VEGETATION_NAME[v],
-            "Capture: " + TYPE_NAME[state.scanType],
-            "Estimated price: " + priceValue.textContent
-          ].join("\n");
-          priceCta.setAttribute("href", "contact.html?capture=" + encodeURIComponent(cfg));
         }
 
         updatePreview();
@@ -375,19 +360,6 @@
       render();
     })();
   }
-
-  /* ---- Contact form: prefill from a price-calculator hand-off ---- */
-  (function () {
-    var form = document.querySelector("[data-contact-form]");
-    if (!form || !window.URLSearchParams) return;
-    var capture = new URLSearchParams(window.location.search).get("capture");
-    if (!capture) return;
-    var area = form.querySelector("#area");
-    var msg = form.querySelector("#message");
-    var m = capture.match(/Land size:\s*(.+)/);
-    if (area && m && !area.value) area.value = m[1].trim();
-    if (msg && !msg.value) msg.value = "Site capture request\n\n" + capture + "\n\n";
-  })();
 
   /* ---- Footer year ---- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
