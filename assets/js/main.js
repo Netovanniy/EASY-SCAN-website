@@ -250,7 +250,6 @@
       var serviceBtns = document.querySelectorAll(".seg-btn[data-service]");
       var terrainBtns = document.querySelectorAll(".seg-btn[data-terrain]");
       var vegetationBtns = document.querySelectorAll(".seg-btn[data-vegetation]");
-      var terrainImgs = document.querySelectorAll("[data-terrain-img]");
 
       function fmt(n) { return new Intl.NumberFormat("en-US").format(Math.round(n)); }
       function pulse() {
@@ -301,12 +300,8 @@
         });
       }
       wireSegment(serviceBtns, "service", "scanType");
+      wireSegment(terrainBtns, "terrain", "terrain");
       wireSegment(vegetationBtns, "vegetation", "vegetation");
-      wireSegment(terrainBtns, "terrain", "terrain", function () {
-        terrainImgs.forEach(function (im) {
-          im.classList.toggle("is-active", im.getAttribute("data-terrain-img") === state.terrain);
-        });
-      });
 
       raiRange.addEventListener("input", function () {
         state.landSize = parseFloat(raiRange.value);
@@ -332,17 +327,6 @@
       }
       stepper("panoMinus", "panoPlus", "panoQty", "panoPrice", 1500, 500, 1, 20);
       stepper("consultMinus", "consultPlus", "consultQty", "consultPrice", 5000, 3000, 2, 12);
-
-      /* keep the terrain preview the same box size as the estimate card */
-      var estCard = document.getElementById("priceCard");
-      var previewBox = document.querySelector(".pr-terrain-preview");
-      function syncPreview() {
-        if (!estCard || !previewBox) return;
-        previewBox.style.height = estCard.offsetHeight + "px";
-      }
-      syncPreview();
-      window.addEventListener("resize", syncPreview, { passive: true });
-      if (window.ResizeObserver) new ResizeObserver(syncPreview).observe(estCard);
     })();
   }
 
