@@ -860,7 +860,7 @@ html.taplink-on body{overflow:hidden}
   color:var(--fg-faint);margin:0;
 }
 .pr-divider{height:0;border:0;border-top:1px dashed var(--border-hairline)}
-.pr-card-summary{max-width:42ch}
+.pr-card-summary{max-width:42ch;margin-top:var(--space-5)}
 .pr-calc__preview{display:flex;flex-direction:column;gap:var(--space-4);flex:1 1 260px;max-width:340px}
 /* slider sits at the bottom of the preview column, pushed away from the caption */
 .pr-calc__preview .pr-calc__size{margin-top:var(--space-2)}
