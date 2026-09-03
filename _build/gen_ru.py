@@ -558,7 +558,7 @@ T = {
 'High-resolution 360&deg; site view for presentation, planning and visual reference.':'Панорамный вид участка 360° высокого разрешения — для презентаций, планирования и визуальных референсов.',
 'Additional view +1,500 THB':'Дополнительный ракурс +1 500 THB',
 'Concept Session':'Концепт-сессия',
-'2 hours &middot; 10,000 THB':'2 часа · 10 000 THB',
+'2h &middot; 10,000 THB':'2 ч · 10 000 THB',
 'Work directly with your 3D site model to test building positions, volumes, levels and development ideas.':'Работа напрямую с 3D-моделью участка: проверка положения зданий, объёмов, уровней и идей развития.',
 'Architect Data':'Данные для архитектора',
 '<span class="price-label">Monitoring</span>':'<span class="price-label">Мониторинг</span>',

@@ -560,7 +560,7 @@ T = {
 'High-resolution 360&deg; site view for presentation, planning and visual reference.':'ภาพพื้นที่ 360° ความละเอียดสูง สำหรับการนำเสนอ วางแผน และใช้อ้างอิงภาพ',
 'Additional view +1,500 THB':'มุมมองเพิ่มเติม +1,500 บาท',
 'Concept Session':'เซสชันคอนเซปต์',
-'2 hours &middot; 10,000 THB':'2 ชั่วโมง · 10,000 บาท',
+'2h &middot; 10,000 THB':'2 ชม. · 10,000 บาท',
 'Work directly with your 3D site model to test building positions, volumes, levels and development ideas.':'ทำงานกับแบบจำลอง 3 มิติของพื้นที่โดยตรง เพื่อทดสอบตำแหน่งอาคาร ปริมาตร ระดับ และแนวคิดการพัฒนา',
 'Architect Data':'ข้อมูลสำหรับสถาปนิก',
 '<span class="price-label">Monitoring</span>':'<span class="price-label">การติดตาม</span>',
