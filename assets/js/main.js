@@ -241,7 +241,7 @@
         return null;
       }
 
-      var state = { scanType: "lidar", terrain: "flat", vegetation: "clear", landSize: 5 };
+      var state = { scanType: "lidar", terrain: "flat", vegetation: "clear", landSize: 1 };
       var raiRange = document.getElementById("raiRange");
       var raiValue = document.getElementById("raiValue");
       var sqmValue = document.getElementById("sqmValue");

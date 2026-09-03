@@ -541,6 +541,7 @@ T = {
 '<span class="price-label">Estimated price</span>':'<span class="price-label">Ориентировочная цена</span>',
 'Terrain describes the slope of the land.':'Рельеф описывает уклон участка.',
 'Vegetation reflects site coverage and scanning difficulty.':'Растительность отражает покрытие участка и сложность сканирования.',
+'LiDAR is priced per rai; drone is tiered by area.':'LiDAR считается за рай, дрон — по диапазонам площади.',
 'Fixed rate':'Фиксированная цена',
 'Fixed-rate services':'Услуги по фиксированной цене',
 'Standard deliverables, priced as-is.':'Стандартные результаты, цена без изменений.',

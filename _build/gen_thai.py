@@ -543,6 +543,7 @@ T = {
 '<span class="price-label">Estimated price</span>':'<span class="price-label">ราคาโดยประมาณ</span>',
 'Terrain describes the slope of the land.':'ภูมิประเทศบอกความลาดชันของพื้นที่',
 'Vegetation reflects site coverage and scanning difficulty.':'พืชพรรณสะท้อนการปกคลุมพื้นที่และความยากในการสแกน',
+'LiDAR is priced per rai; drone is tiered by area.':'LiDAR คิดราคาต่อไร่ ส่วนโดรนคิดตามช่วงพื้นที่',
 'Fixed rate':'ราคาคงที่',
 'Fixed-rate services':'บริการราคาคงที่',
 'Standard deliverables, priced as-is.':'งานส่งมอบมาตรฐาน ราคาตายตัว',
