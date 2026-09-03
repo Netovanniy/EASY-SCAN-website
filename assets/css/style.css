@@ -861,9 +861,8 @@ html.taplink-on body{overflow:hidden}
 }
 .pr-divider{height:0;border:0;border-top:1px dashed var(--border-hairline)}
 .pr-card-summary{max-width:42ch}
-.pr-calc__preview{display:flex;flex-direction:column;gap:var(--space-4);flex:1 1 260px;max-width:340px;align-self:stretch}
-/* desktop: drop the preview so it lines up with the estimate card (past the land-size row) */
-@media(min-width:721px){.pr-calc__preview{margin-top:calc(69px + var(--space-5))}}
+.pr-calc__preview{display:flex;flex-direction:column;gap:var(--space-4);flex:1 1 260px;max-width:340px}
+.pr-calc__preview .pr-calc__size{margin-bottom:var(--space-2)}
 .pr-preview{position:relative;width:100%;aspect-ratio:900 / 468;overflow:hidden;background:var(--bg-page)}
 .pr-preview img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
@@ -872,7 +871,6 @@ html.taplink-on body{overflow:hidden}
 }
 .pr-preview img.is-active{opacity:1}
 .pr-preview-meta{margin:var(--space-5) 0 0;display:flex;flex-direction:column;gap:0;line-height:var(--leading-body)}
-@media(min-width:721px){.pr-preview-meta{margin-top:auto}}
 .pr-preview-meta > div{display:flex;gap:8px;align-items:baseline}
 .pr-preview-meta dt{
   flex:0 0 auto;
@@ -968,14 +966,9 @@ html.taplink-on body{overflow:hidden}
 .pricepg .cta-link:hover{border-bottom-color:var(--accent-coral)}
 .pr-fineprint{margin-top:var(--space-6);font-family:var(--font-information);font-size:var(--type-data-sm)}
 
-/* mobile: stack the calculator — land size, controls, visual, estimate */
+/* mobile: stack the calculator — controls, land size + visual, estimate */
 @media(max-width:720px){
-  .pr-calc__cols{flex-direction:column}
-  .pr-calc__right{display:contents}
-  .pr-calc__size{order:1}
-  .pr-calc__left{order:2}
-  .pr-calc__preview{order:3}
-  .pr-calc__estimate{order:4}
+  .pr-calc__cols{flex-direction:column;justify-content:flex-start}
 }
 @media(max-width:640px){
   .pricepg .pr-calc__left,.pricepg .price-card.estimate{max-width:100%}
