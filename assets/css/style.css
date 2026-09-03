@@ -845,9 +845,10 @@ html.taplink-on body{overflow:hidden}
   background:var(--bg-page);border:1px solid var(--border-faint);
   border-radius:var(--radius-control);padding:var(--space-7);
 }
-.pr-calc__cols{display:flex;gap:var(--space-6);flex-wrap:wrap;align-items:flex-start}
-/* single stack: terrain · vegetation · type · slider · estimate */
-.pr-calc__left{display:flex;flex-direction:column;gap:var(--space-5);flex:0 1 460px;max-width:460px}
+.pr-calc__cols{display:flex;gap:var(--space-7);flex-wrap:wrap;align-items:flex-start}
+/* col 1: terrain · vegetation · type   ·   col 2: land size · estimate */
+.pr-calc__left{display:flex;flex-direction:column;gap:var(--space-5);flex:0 1 380px;max-width:420px}
+.pr-calc__right{display:flex;flex-direction:column;gap:var(--space-5);flex:1 1 320px;max-width:460px}
 .pr-field{display:flex;flex-direction:column;gap:10px}
 .pr-field-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .pr-terrain-note{
