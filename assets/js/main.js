@@ -239,7 +239,7 @@
       var TYPE_CONTEXT    = {
         lidar: "Detailed ground and terrain capture.",
         drone: "Fast aerial mapping and 3D reconstruction.",
-        both:  "Complete site capture combining ground LiDAR and aerial drone data."
+        both:  "Ground LiDAR plus aerial drone capture."
       };
 
       /* --- calculation ------------------------------------------------- */
