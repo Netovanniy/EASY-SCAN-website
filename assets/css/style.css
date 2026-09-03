@@ -865,6 +865,7 @@ html.taplink-on body{overflow:hidden}
 .pr-preview{position:relative;width:100%;aspect-ratio:900 / 468;overflow:hidden;background:var(--bg-page)}
 .pr-preview img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  filter:brightness(.7);
   opacity:0;transition:opacity var(--dur-base) var(--ease-standard);
 }
 .pr-preview img.is-active{opacity:1}
