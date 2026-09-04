@@ -213,11 +213,11 @@
       ------------------------------------------------------------------- */
       var PRICING = {
         lidar: {
-          area: { 0.5: 10000, 1: 15000, 2: 25000, 3: 34000, 4: 42000, 5: 50000,
-                  6: 58000, 7: 65000, 8: 72000, 9: 79000, 10: 85000,
-                  12: 99000, 15: 118000, 20: 145000 },
-          terrain:    { flat: 1, sloped: 1.15, steep: 1.30 },
-          vegetation: { clear: 1, light: 1.15, dense: 1.35 }
+          area: { 0.5: 10000, 1: 12500, 2: 20000, 3: 27000, 4: 34000, 5: 40000,
+                  6: 46000, 7: 52000, 8: 58000, 9: 64000, 10: 70000,
+                  12: 82000, 15: 98000, 20: 120000 },
+          terrain:    { flat: 1, sloped: 1.10, steep: 1.20 },
+          vegetation: { clear: 1, light: 1.10, dense: 1.30 }
         },
         drone: {
           area: { 0.5: 12000, 1: 12000, 2: 13000, 3: 14000, 5: 15000,
@@ -271,7 +271,7 @@
         return calculateLidarRaw(area, terrain, veg) +
                calculateDroneRaw(area, terrain) * PRICING.both.droneMultiplier;
       }
-      function roundEstimate(price) { return Math.round(price / 1000) * 1000; }
+      function roundEstimate(price) { return Math.round(price / 500) * 500; }
       function formatPrice(n) { return nf.format(n) + " THB"; }
       function fmtRai(n) { return (n % 1 === 0) ? String(n) : n.toFixed(1); }
 
