@@ -205,19 +205,22 @@
       /* -------------------------------------------------------------------
          Site-capture pricing config — the only place to edit the numbers.
 
-         Pricing is per project, not per rai: sparse area-base tables plus
-         terrain / vegetation multipliers, with linear interpolation between
-         the tabulated sizes. Projects above 20 rai are a manual quote — the
-         formula is never extrapolated. Multipliers are internal; the UI
-         never shows them.
+         LiDAR: linear rate per rai (base rate x terrain x vegetation),
+         with a mild volume discount that depends ONLY on area — it never
+         compounds with terrain/vegetation complexity, so a large, steep,
+         densely-vegetated plot is never discounted as if it were easy.
+         The discount is capped low on purpose (small, not a bulk rate).
+
+         Drone keeps its own sparse area-base table (aerial capture cost
+         barely scales with area, so a lookup table fits it better).
+         Projects above 20 rai are a manual quote — never extrapolated.
       ------------------------------------------------------------------- */
       var PRICING = {
         lidar: {
-          area: { 0.5: 10000, 1: 12500, 2: 20000, 3: 27000, 4: 34000, 5: 40000,
-                  6: 46000, 7: 52000, 8: 58000, 9: 64000, 10: 70000,
-                  12: 82000, 15: 98000, 20: 120000 },
+          baseRatePerRai: 12500,               /* THB/rai, flat + clear reference rate */
           terrain:    { flat: 1, sloped: 1.10, steep: 1.20 },
-          vegetation: { clear: 1, light: 1.10, dense: 1.30 }
+          vegetation: { clear: 1, light: 1.10, dense: 1.30 },
+          volumeDiscount: { perRaiAfterFirst: 0.018, max: 0.20 } /* small, capped, area-only */
         },
         drone: {
           area: { 0.5: 12000, 1: 12000, 2: 13000, 3: 14000, 5: 15000,
@@ -259,9 +262,15 @@
         }
         return table[sizes[sizes.length - 1]];
       }
+      /* area-only volume discount: 0% at 1 rai, growing slowly, capped at max */
+      function volumeDiscountFactor(area, cfg) {
+        var d = Math.max(0, Math.min(cfg.max, cfg.perRaiAfterFirst * (area - 1)));
+        return 1 - d;
+      }
       function calculateLidarRaw(area, terrain, veg) {
         var c = PRICING.lidar;
-        return getAreaBasePrice(c.area, area) * c.terrain[terrain] * c.vegetation[veg];
+        var linear = c.baseRatePerRai * area * c.terrain[terrain] * c.vegetation[veg];
+        return linear * volumeDiscountFactor(area, c.volumeDiscount);
       }
       function calculateDroneRaw(area, terrain) {
         var c = PRICING.drone;
