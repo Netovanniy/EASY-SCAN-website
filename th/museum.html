@@ -15,16 +15,16 @@
 <meta property="og:site_name" content="EASY SCAN">
 <meta property="og:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta property="og:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=202">
+<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=203">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta name="twitter:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=202">
+<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=203">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="../design-system/styles.css?v=202">
-<link rel="stylesheet" href="../assets/css/style.css?v=202">
+<link rel="stylesheet" href="../design-system/styles.css?v=203">
+<link rel="stylesheet" href="../assets/css/style.css?v=203">
 </head>
 <body>
 <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
@@ -33,7 +33,15 @@
     <a class="brand" href="index.html" aria-label="EASY SCAN — หน้าแรก"><img class="brand__img" src="../assets/img/logo.png" alt="EASY SCAN" width="720" height="361"></a>
     <nav class="nav" aria-label="เมนูหลัก">
       <ul class="nav__list">
-        <li><a class="nav__link" href="about.html">เกี่ยวกับเรา</a></li>
+        <li class="nav__item--has-sub">
+          <a class="nav__link" href="about.html" aria-haspopup="true">เกี่ยวกับเรา</a>
+          <div class="nav__sub">
+            <a href="about.html#timeline">ไทม์ไลน์</a>
+            <a href="about.html#smart-visa">Smart Visa</a>
+            <a href="about.html#team">ทีมงาน</a>
+            <a href="about.html#testimonials">ความคิดเห็นลูกค้า</a>
+          </div>
+        </li>
         <li class="nav__item--has-sub">
           <a class="nav__link" href="index.html#services" aria-haspopup="true">บริการ</a>
           <div class="nav__sub">
@@ -65,7 +73,16 @@
 </header>
 <nav class="mobile-nav" id="mobileNav" aria-label="มือถือ">
   <a href="index.html">หน้าแรก</a>
-  <a href="about.html">เกี่ยวกับเรา</a>
+  <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mabout">เกี่ยวกับเรา
+    <svg class="m-sub-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="m-sub" id="mabout">
+    <a href="about.html">ภาพรวม</a>
+    <a href="about.html#timeline">ไทม์ไลน์</a>
+    <a href="about.html#smart-visa">Smart Visa</a>
+    <a href="about.html#team">ทีมงาน</a>
+    <a href="about.html#testimonials">ความคิดเห็นลูกค้า</a>
+  </div>
   <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSub">บริการ
     <svg class="m-sub-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </button>
@@ -162,6 +179,6 @@
     </div>
   </div>
 </footer>
-<script src="../assets/js/main.js?v=202"></script>
+<script src="../assets/js/main.js?v=203"></script>
 </body>
 </html>

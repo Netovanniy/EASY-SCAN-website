@@ -15,18 +15,18 @@
 <meta property="og:site_name" content="EASY SCAN">
 <meta property="og:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta property="og:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=202">
+<meta property="og:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=203">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="EASY SCAN — LiDAR &amp; Drone Land Scanning in Thailand">
 <meta name="twitter:description" content="Digital land intelligence for smarter development. We turn real land into accurate, interactive 3D environments so you can decide before you build.">
-<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=202">
+<meta name="twitter:image" content="https://easyscan.asia/assets/img/og-image.jpg?v=203">
 <script>document.documentElement.className+=" js";
 /* mobile "taplink" intro: show once per session on the phone-width homepage */
 try{if(window.matchMedia("(max-width:640px)").matches&&sessionStorage.getItem("es-taplink")!=="1"){document.documentElement.className+=" taplink-on";}}catch(e){}</script>
-<link rel="stylesheet" href="../design-system/styles.css?v=202">
-<link rel="stylesheet" href="../assets/css/style.css?v=202">
+<link rel="stylesheet" href="../design-system/styles.css?v=203">
+<link rel="stylesheet" href="../assets/css/style.css?v=203">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,7 +97,15 @@ try{if(window.matchMedia("(max-width:640px)").matches&&sessionStorage.getItem("e
 
     <nav class="nav" aria-label="Основное меню">
       <ul class="nav__list">
-        <li><a class="nav__link" href="about.html">О нас</a></li>
+        <li class="nav__item--has-sub">
+          <a class="nav__link" href="about.html" aria-haspopup="true">О нас</a>
+          <div class="nav__sub">
+            <a href="about.html#timeline">Хронология</a>
+            <a href="about.html#smart-visa">Smart Visa</a>
+            <a href="about.html#team">Команда</a>
+            <a href="about.html#testimonials">Отзывы</a>
+          </div>
+        </li>
         <li class="nav__item--has-sub">
           <a class="nav__link" href="#services" aria-haspopup="true">Услуги</a>
           <div class="nav__sub">
@@ -130,7 +138,16 @@ try{if(window.matchMedia("(max-width:640px)").matches&&sessionStorage.getItem("e
 
 <nav class="mobile-nav" id="mobileNav" aria-label="Мобильное меню">
   <a href="index.html">Главная</a>
-  <a href="about.html">О нас</a>
+  <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mabout">О нас
+    <svg class="m-sub-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="m-sub" id="mabout">
+    <a href="about.html">Обзор</a>
+    <a href="about.html#timeline">Хронология</a>
+    <a href="about.html#smart-visa">Smart Visa</a>
+    <a href="about.html#team">Команда</a>
+    <a href="about.html#testimonials">Отзывы</a>
+  </div>
   <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSub">Услуги
     <svg class="m-sub-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </button>
@@ -372,6 +389,6 @@ try{if(window.matchMedia("(max-width:640px)").matches&&sessionStorage.getItem("e
   </div>
 </footer>
 
-<script src="../assets/js/main.js?v=202"></script>
+<script src="../assets/js/main.js?v=203"></script>
 </body>
 </html>

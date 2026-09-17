@@ -211,6 +211,9 @@ T = {
 'Repeat scans document earthworks, hidden utilities and construction progress over time.':
  'การสแกนซ้ำบันทึกงานดิน งานระบบที่ซ่อนอยู่ และความคืบหน้าการก่อสร้างตลอดช่วงเวลา',
 'Timeline':'ไทม์ไลน์',
+'Smart Visa':'Smart Visa',
+'Testimonials':'ความคิดเห็นลูกค้า',
+'Overview':'ภาพรวม',
 'What started as an experiment in capturing real environments evolved into a technology-driven approach to understanding, planning and transforming land.':
  'สิ่งที่เริ่มต้นจากการทดลองเก็บภาพสภาพแวดล้อมจริง พัฒนาไปสู่แนวทางที่ขับเคลื่อนด้วยเทคโนโลยีเพื่อทำความเข้าใจ วางแผน และเปลี่ยนแปลงที่ดิน',
 'From personal project<br>to land intelligence':'จากโปรเจกต์ส่วนตัว<br>สู่ข้อมูลที่ดินอัจฉริยะ',
