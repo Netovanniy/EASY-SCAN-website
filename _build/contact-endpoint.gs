@@ -29,7 +29,7 @@
  * ----------------------------------------------------------------------------
  * 1. In Telegram, open a chat with @BotFather → send /newbot → follow the
  *    prompts (any name/username). It replies with a token that looks like
- *    123456789:AAExampleTokenAAAAAAAAAAAAAAAAAAAAA — paste it into
+ *    <bot-id>:<35-char-token> — paste it into
  *    TELEGRAM_BOT_TOKEN below.
  * 2. Open a chat with YOUR new bot (search its @username) and send it any
  *    message, e.g. "hi" — a bot cannot message you first, you have to speak
