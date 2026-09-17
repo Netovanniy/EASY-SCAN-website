@@ -190,6 +190,9 @@ body{overflow-x:hidden}
 }
 .nav__sub a:hover{background:var(--bg-surface-raised);color:var(--fg-primary)}
 
+/* anchor targets reached from the About dropdown — clear the fixed header */
+#timeline,#smart-visa,#team,#testimonials{scroll-margin-top:96px}
+
 /* language switcher — globe + hover dropdown (matches .nav__sub) */
 .lang{position:relative;padding-left:var(--space-4);border-left:1px solid var(--border-hairline)}
 .lang__toggle{

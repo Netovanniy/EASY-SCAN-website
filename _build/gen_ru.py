@@ -209,6 +209,9 @@ T = {
 'Repeat scans document earthworks, hidden utilities and construction progress over time.':
  'Повторные сканы фиксируют земляные работы, скрытые коммуникации и ход строительства во времени.',
 'Timeline':'Хронология',
+'Smart Visa':'Smart Visa',
+'Testimonials':'Отзывы',
+'Overview':'Обзор',
 'What started as an experiment in capturing real environments evolved into a technology-driven approach to understanding, planning and transforming land.':
  'То, что начиналось как эксперимент со съёмкой реальных пространств, превратилось в технологичный подход к пониманию, планированию и преобразованию земли.',
 'From personal project<br>to land intelligence':'От личного проекта<br>к аналитике земли',
