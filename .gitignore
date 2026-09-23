@@ -1,6 +1,10 @@
 .DS_Store
 **/.DS_Store
 
+# Scratch/output dirs for unrelated one-off tasks — never belong in this repo
+/tmp/
+/output/
+
 # Raw source drops — not used by the site (optimised copies live in assets/)
 /FONTS/
 /LOGO/
