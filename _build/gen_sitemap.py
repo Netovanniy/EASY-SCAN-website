@@ -12,9 +12,10 @@ PAGES = [
 today = datetime.date.today().isoformat()
 
 def loc(lang, page):
+    slug = "" if page == "index.html" else page[:-5]
     if lang == "en":
-        return f"{BASE}/{page}"
-    return f"{BASE}/{lang}/{page}"
+        return f"{BASE}/{slug}"
+    return f"{BASE}/{lang}/{slug}"
 
 rows = []
 for page in PAGES:

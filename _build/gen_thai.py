@@ -665,22 +665,30 @@ def translate(html):
         parts[i] = seg
     return ''.join(parts)
 
+
+PAGE_RE = r"about|concepting|contact|education|gaussian|monitoring|museum|price|twin"
+
+def slug_of(name):
+    return "" if name == "index.html" else name[:-5]
+
+def prefix_links(html, lang):
+    """EN source uses root-absolute extensionless links (/about, /#services);
+    point them at the /<lang>/ copy of the site."""
+    html = re.sub(r'href="/(%s)(?=[\"#?])' % PAGE_RE, r'href="/%s/\1' % lang, html)
+    html = html.replace('href="/"', 'href="/%s/"' % lang)
+    html = html.replace('href="/#', 'href="/%s/#' % lang)
+    return html
+
 def relink_lang(html, name, target):
     """Rewrite the language-switcher <a> tags (anchored by hreflang) for a
-    translated page that lives in ./<target>/ . Works on both the desktop
+    translated page that lives in /<target>/ . Works on both the desktop
     dropdown and the mobile accordion (identical <a> strings)."""
+    slug = slug_of(name)
     html = html.replace('<a href="#" aria-current="true" hreflang="en">',
-                        '<a href="../%s" hreflang="en">' % name)
-    if target == 'th':
-        html = html.replace('<a href="th/%s" hreflang="th">' % name,
-                            '<a href="#" aria-current="true" hreflang="th">')
-        html = html.replace('<a href="ru/%s" hreflang="ru">' % name,
-                            '<a href="../ru/%s" hreflang="ru">' % name)
-    else:  # ru
-        html = html.replace('<a href="ru/%s" hreflang="ru">' % name,
-                            '<a href="#" aria-current="true" hreflang="ru">')
-        html = html.replace('<a href="th/%s" hreflang="th">' % name,
-                            '<a href="../th/%s" hreflang="th">' % name)
+                        '<a href="/%s" hreflang="en">' % slug)
+    other = 'ru' if target == 'th' else 'th'
+    html = html.replace('<a href="/%s/%s" hreflang="%s">' % (target, slug, target),
+                        '<a href="#" aria-current="true" hreflang="%s">' % target)
     return html
 
 for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
@@ -689,9 +697,10 @@ for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
     t = t.replace('href="assets/', 'href="../assets/').replace('src="assets/', 'src="../assets/')
     t = t.replace('poster="assets/', 'poster="../assets/')
     t = t.replace('href="design-system/', 'href="../design-system/')
-    t = t.replace('rel="canonical" href="https://easyscan.asia/%s"' % name,
-                  'rel="canonical" href="https://easyscan.asia/th/%s"' % name)
+    t = t.replace('rel="canonical" href="https://easyscan.asia/%s"' % slug_of(name),
+                  'rel="canonical" href="https://easyscan.asia/th/%s"' % slug_of(name))
     t = t.replace('<html lang="en">', '<html lang="th">')
+    t = prefix_links(t, 'th')
     t = relink_lang(t, name, 'th')
     t = translate(t)
     open(os.path.join(OUT, name), "w", encoding="utf-8").write(t)
