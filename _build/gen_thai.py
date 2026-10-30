@@ -650,6 +650,9 @@ T = {
  'บัตร Thailand SMART Visa และหนังสือรับรองจากคณะกรรมการส่งเสริมการลงทุน',
 }
 
+import i18n_portfolio
+T.update(i18n_portfolio.build('th'))
+
 # ---- transform ---------------------------------------------------------------
 def translate(html):
     # never translate inside <script> blocks (head js-flag, main.js include)
@@ -666,15 +669,18 @@ def translate(html):
     return ''.join(parts)
 
 
-PAGE_RE = r"about|concepting|contact|education|gaussian|monitoring|museum|price|twin"
+PAGE_RE = r"about|concepting|contact|education|gaussian|monitoring|museum|portfolio|price|twin"
 
 def slug_of(name):
-    return "" if name == "index.html" else name[:-5]
+    slug = name[:-5]
+    if slug == "index":
+        return ""
+    return slug[:-6] if slug.endswith("/index") else slug
 
 def prefix_links(html, lang):
     """EN source uses root-absolute extensionless links (/about, /#services);
     point them at the /<lang>/ copy of the site."""
-    html = re.sub(r'href="/(%s)(?=[\"#?])' % PAGE_RE, r'href="/%s/\1' % lang, html)
+    html = re.sub(r'href="/(%s)(?=[\"#?/])' % PAGE_RE, r'href="/%s/\1' % lang, html)
     html = html.replace('href="/"', 'href="/%s/"' % lang)
     html = html.replace('href="/#', 'href="/%s/#' % lang)
     return html
@@ -691,8 +697,8 @@ def relink_lang(html, name, target):
                         '<a href="#" aria-current="true" hreflang="%s">' % target)
     return html
 
-for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
-    name = os.path.basename(f)
+for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))) + sorted(glob.glob(os.path.join(ROOT, "portfolio", "*.html"))):
+    name = os.path.relpath(f, ROOT)
     t = open(f, encoding="utf-8").read()
     t = t.replace('href="assets/', 'href="../assets/').replace('src="assets/', 'src="../assets/')
     t = t.replace('poster="assets/', 'poster="../assets/')
@@ -703,6 +709,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
     t = prefix_links(t, 'th')
     t = relink_lang(t, name, 'th')
     t = translate(t)
+    os.makedirs(os.path.dirname(os.path.join(OUT, name)), exist_ok=True)
     open(os.path.join(OUT, name), "w", encoding="utf-8").write(t)
     print("th/%s" % name)
 

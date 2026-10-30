@@ -8,11 +8,13 @@ PAGES = [
     "index.html", "about.html", "contact.html", "price.html",
     "gaussian.html", "twin.html", "concepting.html", "monitoring.html",
     "museum.html", "education.html",
+    "portfolio/index.html", "portfolio/villa-majesta.html",
 ]
 today = datetime.date.today().isoformat()
 
 def loc(lang, page):
-    slug = "" if page == "index.html" else page[:-5]
+    slug = page[:-5]
+    slug = "" if slug == "index" else (slug[:-6] if slug.endswith("/index") else slug)
     if lang == "en":
         return f"{BASE}/{slug}"
     return f"{BASE}/{lang}/{slug}"
