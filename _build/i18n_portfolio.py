@@ -40,6 +40,7 @@ ROWS = [
           'Участок на склоне, изученный до проектирования: карты высот и уклонов, горизонтали, измерения и путь солнца в течение дня.'),
     ('t', 'Photogrammetry · LiDAR · Sun study', 'โฟโตแกรมเมทรี · LiDAR · การศึกษาแสงแดด', 'Фотограмметрия · LiDAR · Инсоляция'),
     ('s', 'aria-label="Open the Villa Majesta site study"', 'aria-label="เปิดการศึกษาพื้นที่ Villa Majesta"', 'aria-label="Открыть исследование участка Villa Majesta"'),
+    ('s', 'alt="Terrain block in photogrammetry and wireframe mesh"', 'alt="ภูมิประเทศแบบ 3 มิติ: โฟโตแกรมเมทรีและโครงตาข่าย"', 'alt="Блок рельефа: фотограмметрия и каркасная сетка"'),
     ('s', 'alt="3D terrain model of Villa Majesta on Koh Samui"', 'alt="แบบจำลองภูมิประเทศ 3 มิติของ Villa Majesta บนเกาะสมุย"', 'alt="3D-модель рельефа Villa Majesta на Самуи"'),
     ('t', 'Want a study like this for your land?', 'ต้องการการศึกษาแบบนี้สำหรับที่ดินของคุณหรือไม่', 'Нужно такое исследование для вашего участка?'),
     ('s', 'Send the location and size of your plot — we will tell you which surfaces and analysis fit your project.',

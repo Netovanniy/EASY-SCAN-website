@@ -230,15 +230,16 @@ export async function createViewer(root) {
     if (reframe) view3d();
     buildSunPath(); renderLegend(); update();
   }
+  const VIEW_DIR = new THREE.Vector3(0, 0.62, -0.79); // looks south from the north side: north at the bottom of the frame
   function view3d() {
     const k = W < H ? 1.7 : 1;
     controls.target.set(center.x, center.y - radius * 0.05, center.z);
     if (camera === persp) {
       const d = radius * 2.0 * k * Math.tan(20 * rad) / Math.tan(persp.fov / 2 * rad);
-      camera.position.copy(controls.target).add(new THREE.Vector3(0.45, 0.62, 0.65).normalize().multiplyScalar(d));
+      camera.position.copy(controls.target).add(VIEW_DIR.clone().normalize().multiplyScalar(d));
     } else {
       orthoHalfH = radius * 0.95 * k; camera.zoom = 1; updateOrtho();
-      camera.position.copy(controls.target).add(new THREE.Vector3(0.45, 0.62, 0.65).normalize().multiplyScalar(radius * 3));
+      camera.position.copy(controls.target).add(VIEW_DIR.clone().normalize().multiplyScalar(radius * 3));
     }
     controls.minDistance = radius * 0.1; controls.maxDistance = radius * 8; controls.update();
   }
