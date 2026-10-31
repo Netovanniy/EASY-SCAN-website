@@ -197,14 +197,14 @@ export async function createViewer(root) {
   }
 
   /* ---------- framing, height range ---------- */
-  let contourStep = 1;
+  let contourStep = 1, modelBox = null, arcPts = [];
   function frame(reframe) {
     world.updateMatrixWorld(true);
     const surf = surfaces[active];
     const box = new THREE.Box3().setFromObject(surf);
     plotBox = new THREE.Box3().setFromObject(boundary);
     plotBox.getCenter(center);
-    const size = box.getSize(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3()); modelBox = box;
     radius = Math.max(size.x, size.z) * 0.6; groundY = box.min.y;
 
     // height percentiles inside the plot footprint
@@ -227,20 +227,41 @@ export async function createViewer(root) {
     sun.shadow.bias = -0.0003; sun.shadow.normalBias = 0.04;
     sun.target.position.copy(center); moon.target.position.copy(center);
     sky.scale.setScalar(radius * 60);
+    buildSunPath();
     if (reframe) view3d();
-    buildSunPath(); renderLegend(); update();
+    renderLegend(); update();
   }
   const VIEW_DIR = new THREE.Vector3(0, 0.62, -0.79); // looks south from the north side: north at the bottom of the frame
   function view3d() {
-    const k = W < H ? 1.7 : 1;
     controls.target.set(center.x, center.y - radius * 0.05, center.z);
-    if (camera === persp) {
-      const d = radius * 2.0 * k * Math.tan(20 * rad) / Math.tan(persp.fov / 2 * rad);
-      camera.position.copy(controls.target).add(VIEW_DIR.clone().normalize().multiplyScalar(d));
-    } else {
-      orthoHalfH = radius * 0.95 * k; camera.zoom = 1; updateOrtho();
-      camera.position.copy(controls.target).add(VIEW_DIR.clone().normalize().multiplyScalar(radius * 3));
+    const dir = VIEW_DIR.clone().normalize(), tg = controls.target, base = tg.clone();
+    const wide = root.clientWidth > 760, aspect = W / H;
+    // keep the whole model and the full sun arc inside the part of the frame the panels leave free
+    const xMax = wide ? 1 - 2 * 236 / W : 0.94, xMin = -0.94, yMax = 0.92, yMin = wide ? -0.84 : -0.5;
+    const pts = arcPts.slice();
+    if (modelBox) {
+      const c = modelBox.getCenter(new THREE.Vector3()), sz = modelBox.getSize(new THREE.Vector3());
+      for (const sx of [-1, 1]) for (const sy of [0, 1]) for (const sz2 of [-1, 1])
+        pts.push(new THREE.Vector3(c.x + sx * sz.x * 0.46, modelBox.min.y + sy * sz.y, c.z + sz2 * sz.z * 0.46));
     }
+    let dist = radius * 3, half = radius * 1.6, shift = 0, up = 0;
+    const right = new THREE.Vector3(), upv = new THREE.Vector3(), v = new THREE.Vector3();
+    for (let i = 0; i < 12; i++) {
+      tg.copy(base);
+      camera.position.copy(base).addScaledVector(dir, dist); camera.lookAt(base);
+      camera.updateMatrixWorld(); right.setFromMatrixColumn(camera.matrixWorld, 0); upv.setFromMatrixColumn(camera.matrixWorld, 1);
+      tg.addScaledVector(right, shift).addScaledVector(upv, up); camera.position.copy(tg).addScaledVector(dir, dist); camera.lookAt(tg);
+      if (camera === ortho) { orthoHalfH = half; updateOrtho(); }
+      camera.updateMatrixWorld(); camera.updateProjectionMatrix();
+      let x0 = 9, x1 = -9, y0 = 9, y1 = -9;
+      for (const p of pts) { v.copy(p).project(camera); x0 = Math.min(x0, v.x); x1 = Math.max(x1, v.x); y0 = Math.min(y0, v.y); y1 = Math.max(y1, v.y); }
+      const grow = Math.max((x1 - x0) / (xMax - xMin), (y1 - y0) / (yMax - yMin));
+      const unit = camera === persp ? dist * Math.tan(persp.fov / 2 * rad) : half; // world units per NDC y at the target
+      shift += ((x0 + x1) / 2 - (xMin + xMax) / 2) * unit * aspect;
+      up += ((y0 + y1) / 2 - (yMin + yMax) / 2) * unit;
+      if (camera === persp) dist *= Math.pow(grow, 0.9); else half *= Math.pow(grow, 0.9);
+    }
+    if (camera === ortho) camera.position.copy(tg).addScaledVector(dir, radius * 3);
     controls.minDistance = radius * 0.1; controls.maxDistance = radius * 8; controls.update();
   }
   function viewTop() {
@@ -318,7 +339,7 @@ export async function createViewer(root) {
   const pathR = () => radius * 1.05;
   function buildSunPath() {
     pathGroup.clear();
-    const R = pathR(), o = new THREE.Vector3(center.x, groundY, center.z), pts = [];
+    const R = pathR(), o = new THREE.Vector3(center.x, groundY, center.z), pts = []; arcPts = pts;
     for (let m = 0; m <= 1440; m += 4) { const s = sunPos(siteDate(m)); if (s.alt < -0.5 * rad) continue; pts.push(o.clone().addScaledVector(dirFromAzAlt(s.az, s.alt), R)); }
     if (pts.length > 1) pathGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), pathMat));
     const dg = new THREE.SphereGeometry(R * 0.008, 10, 6);
