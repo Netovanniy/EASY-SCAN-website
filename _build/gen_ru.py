@@ -78,6 +78,10 @@ T = {
 'LiDAR and drone systems record every elevation and contour of the site with precision.':
  'Системы LiDAR и дроны с высокой точностью фиксируют каждую отметку высоты и каждый контур участка.',
 '3D terrain model':'3D-модель рельефа',
+'Raw data becomes a digital twin of the site. Slopes, drainage and earthwork are now measurable.':
+ 'Сырые данные превращаются в цифровой двойник участка. Уклоны, водоотвод и объёмы земляных работ теперь можно измерить.',
+'Architects position buildings on the scanned land. Concepts are tested against reality, not assumptions.':
+ 'Архитекторы размещают здания на отсканированной земле. Концепции проверяются на реальности, а не на догадках.',
 'Raw data becomes a digital terrain model. Slopes, drainage and earthwork are now measurable.':
  'Сырые данные превращаются в цифровую модель рельефа. Уклоны, водоотвод и объёмы земляных работ теперь можно измерить.',
 'Digital twin':'Цифровой двойник',

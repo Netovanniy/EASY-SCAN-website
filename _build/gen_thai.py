@@ -78,6 +78,10 @@ T = {
 'LiDAR and drone systems record every elevation and contour of the site with precision.':
  'ระบบ LiDAR และโดรนบันทึกทุกระดับความสูงและเส้นชั้นความสูงของพื้นที่อย่างแม่นยำ',
 '3D terrain model':'แบบจำลองภูมิประเทศ 3 มิติ',
+'Raw data becomes a digital twin of the site. Slopes, drainage and earthwork are now measurable.':
+ 'ข้อมูลดิบกลายเป็นดิจิทัลทวินของพื้นที่ วัดความลาดชัน การระบายน้ำ และงานดินได้',
+'Architects position buildings on the scanned land. Concepts are tested against reality, not assumptions.':
+ 'สถาปนิกวางอาคารลงบนที่ดินที่สแกนไว้ แนวคิดถูกทดสอบกับความเป็นจริง ไม่ใช่การคาดเดา',
 'Raw data becomes a digital terrain model. Slopes, drainage and earthwork are now measurable.':
  'ข้อมูลดิบกลายเป็นแบบจำลองภูมิประเทศดิจิทัล วัดความลาดชัน การระบายน้ำ และงานดินได้',
 'Digital twin':'ดิจิทัลทวิน',
