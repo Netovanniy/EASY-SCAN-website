@@ -191,7 +191,7 @@ body{overflow-x:hidden}
 .nav__sub a:hover{background:var(--bg-surface-raised);color:var(--fg-primary)}
 
 /* anchor targets reached from the About dropdown — clear the fixed header */
-#timeline,#smart-visa,#team,#testimonials{scroll-margin-top:96px}
+#timeline,#smart-visa,#team,#testimonials,#projects{scroll-margin-top:96px}
 
 /* language switcher — globe + hover dropdown (matches .nav__sub) */
 .lang{position:relative;padding-left:var(--space-4);border-left:1px solid var(--border-hairline)}
@@ -452,6 +452,7 @@ html.taplink-on body{overflow:hidden}
   text-transform:uppercase;line-height:var(--leading-tight);max-width:20ch;margin:0;
 }
 @media(min-width:760px){.page-hero__title{font-size:var(--type-identity-l)}}
+@media(min-width:760px){.page-hero__title--long{font-size:min(var(--type-identity-l),4.1vw)}}
 .page-hero__lead{
   margin:var(--space-5) 0 0;max-width:var(--measure-lead);
   font-family:var(--font-information);font-size:var(--type-body-l);color:var(--fg-secondary);line-height:var(--leading-body);
