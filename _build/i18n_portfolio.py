@@ -10,6 +10,8 @@ Add a row here for every new visible string on a portfolio page, then re-run
 gen_thai.py and gen_ru.py."""
 
 ROWS = [
+    ('t', 'Plot area', 'พื้นที่แปลงที่ดิน', 'Площадь участка'),
+    ('t', '≈ 1,300 m²', '≈ 1,300 ตร.ม.', '≈ 1 300 м²'),
     ('t', 'Coming soon', 'เร็วๆ นี้', 'Скоро'),
     # ---- projects (renamed from "Portfolio")
     ('s', 'Projects', 'โครงการ', 'Проекты'),

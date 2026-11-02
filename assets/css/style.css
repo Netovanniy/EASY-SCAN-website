@@ -662,15 +662,15 @@ html.taplink-on body{overflow:hidden}
 }
 a.scan-card__media{text-decoration:none}
 .case-spec{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;margin:0;
+  display:flex;flex-wrap:wrap;gap:1px;margin:0;
   background:var(--border-faint);border-block:1px solid var(--border-faint);
 }
-.case-spec > div{background:var(--bg-page);padding:var(--space-5) var(--space-6)}
+.case-spec > div{flex:1 1 auto;background:var(--bg-page);padding:var(--space-5) var(--space-5)}
 .case-spec dt{
   font-family:var(--font-information);font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);
-  text-transform:uppercase;color:var(--fg-muted);
+  text-transform:uppercase;color:var(--fg-muted);white-space:nowrap;
 }
-.case-spec dd{margin:8px 0 0;font-family:var(--font-information);font-size:var(--type-body-sm);color:var(--fg-primary);letter-spacing:var(--tracking-data)}
+.case-spec dd{margin:8px 0 0;white-space:nowrap;font-family:var(--font-information);font-size:var(--type-body-sm);color:var(--fg-primary);letter-spacing:var(--tracking-data)}
 .case-note{margin:var(--space-5) 0 0;max-width:var(--measure-body);font-size:var(--type-body-sm)}
 
 /* ============================================================
