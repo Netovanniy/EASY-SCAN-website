@@ -10,6 +10,7 @@ Add a row here for every new visible string on a portfolio page, then re-run
 gen_thai.py and gen_ru.py."""
 
 ROWS = [
+    ('s', 'alt="360° panorama from Villa Majesta on Koh Samui"', 'alt="พาโนรามา 360° จาก Villa Majesta บนเกาะสมุย"', 'alt="Панорама 360° с Villa Majesta на Самуи"'),
     ('s', 'Take a closer look at real sites captured by EASY SCAN and explore them in interactive 3D. See how terrain, slopes and elevations come together to reveal a clearer picture of each location — helping you understand the land and make informed decisions about what comes next.',
           'ดูไซต์จริงที่ EASY SCAN บันทึกข้อมูลอย่างใกล้ชิด และสำรวจในรูปแบบ 3 มิติแบบโต้ตอบ ดูว่าภูมิประเทศ ความลาดชัน และระดับความสูงประกอบกันให้เห็นภาพของแต่ละสถานที่ชัดเจนขึ้นอย่างไร ช่วยให้คุณเข้าใจที่ดินและตัดสินใจได้อย่างรอบคอบว่าจะทำอะไรต่อไป',
           'Присмотритесь к реальным участкам, снятым EASY SCAN, и изучите их в интерактивном 3D. Узнайте, как рельеф, уклоны и высоты складываются в более ясную картину каждого места, чтобы вы лучше понимали землю и принимали взвешенные решения о дальнейших шагах.'),
