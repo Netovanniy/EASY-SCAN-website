@@ -51,7 +51,7 @@ ROWS = [
           'การศึกษาพื้นที่ Villa Majesta บนเกาะสมุยแบบ 3 มิติโต้ตอบได้: โฟโตแกรมเมทรีด้วยโดรน ภูมิประเทศจาก LiDAR การวิเคราะห์ความสูงและความลาดชัน เส้นชั้นความสูง และเส้นทางดวงอาทิตย์ตลอดวัน',
           'Интерактивное 3D-исследование Villa Majesta на Самуи: фотограмметрия с дрона, рельеф по LiDAR, анализ высот и уклонов, горизонтали и путь солнца в течение дня.'),
     # ---- portfolio index
-    ('s', 'alt="Terrain block in photogrammetry and wireframe mesh"', 'alt="ภูมิประเทศแบบ 3 มิติ: โฟโตแกรมเมทรีและโครงตาข่าย"', 'alt="Блок рельефа: фотограмметрия и каркасная сетка"'),
+    ('s', 'alt="Hillside villas on Koh Samui overlaid with a 3D scan mesh"', 'alt="วิลล่าบนเนินเขาเกาะสมุยพร้อมโครงตาข่ายสแกน 3 มิติ"', 'alt="Виллы на склоне на Самуи с сеткой 3D-скана"'),
     ('s', 'alt="3D terrain model of Villa Majesta on Koh Samui"', 'alt="แบบจำลองภูมิประเทศ 3 มิติของ Villa Majesta บนเกาะสมุย"', 'alt="3D-модель рельефа Villa Majesta на Самуи"'),
     # ---- case page
     ('s', 'A hillside plot on Koh Samui, studied before design: drone photogrammetry, a LiDAR terrain model, elevation and slope analysis, and a sun path you can scrub through the day.',
