@@ -670,7 +670,7 @@ def translate(html):
     return ''.join(parts)
 
 
-PAGE_RE = r"about|concepting|contact|education|gaussian|monitoring|museum|portfolio|price|twin"
+PAGE_RE = r"about|concepting|contact|education|gaussian|monitoring|museum|projects|price|twin"
 
 def slug_of(name):
     slug = name[:-5]
@@ -696,7 +696,7 @@ def relink_lang(html, name):
                         '<a href="#" aria-current="true" hreflang="ru">')
     return html
 
-for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))) + sorted(glob.glob(os.path.join(ROOT, "portfolio", "*.html"))):
+for f in sorted(glob.glob(os.path.join(ROOT, "*.html"))) + sorted(glob.glob(os.path.join(ROOT, "projects", "*.html"))):
     name = os.path.relpath(f, ROOT)
     t = open(f, encoding="utf-8").read()
     t = t.replace('href="assets/', 'href="../assets/').replace('src="assets/', 'src="../assets/')

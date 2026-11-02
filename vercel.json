@@ -1,23 +1,64 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/portfolio",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/:path*",
+      "destination": "/projects/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/th/portfolio",
+      "destination": "/th/projects",
+      "permanent": true
+    },
+    {
+      "source": "/th/portfolio/:path*",
+      "destination": "/th/projects/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ru/portfolio",
+      "destination": "/ru/projects",
+      "permanent": true
+    },
+    {
+      "source": "/ru/portfolio/:path*",
+      "destination": "/ru/projects/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/((?!assets/|design-system/).*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/design-system/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
   ]
