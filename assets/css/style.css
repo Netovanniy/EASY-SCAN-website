@@ -192,6 +192,7 @@ body{overflow-x:hidden}
 
 /* anchor targets reached from the About dropdown — clear the fixed header */
 #timeline,#smart-visa,#team,#testimonials,#projects{scroll-margin-top:96px}
+#projects{margin-bottom:var(--space-6)}
 
 /* language switcher — globe + hover dropdown (matches .nav__sub) */
 .lang{position:relative;padding-left:var(--space-4);border-left:1px solid var(--border-hairline)}
