@@ -526,8 +526,8 @@ T = {
  'ราคา | อัตราค่าบริการสแกนที่ดินด้วย LiDAR และโดรน — EASY SCAN ประเทศไทย',
 'EASY SCAN pricing for LiDAR scanning, drone photogrammetry and 3D site visualisation in Koh Phangan, Koh Samui and Phuket. Instant estimate by land area plus fixed-rate services.':
  'ราคาบริการ EASY SCAN สำหรับการสแกน LiDAR โฟโตแกรมเมทรีด้วยโดรน และการแสดงภาพพื้นที่ 3 มิติ บนเกาะพะงัน เกาะสมุย และภูเก็ต ประเมินราคาทันทีตามพื้นที่ พร้อมบริการราคาคงที่',
-'Rates for land scanning, 3D modelling and site visualisation across Koh Phangan, Koh Samui and Phuket. Get an instant estimate by land area below, or request a quote for larger and multi-site projects.':
- 'อัตราค่าบริการสแกนที่ดิน การสร้างแบบจำลอง 3 มิติ และการแสดงภาพพื้นที่ บนเกาะพะงัน เกาะสมุย และภูเก็ต ประเมินราคาตามพื้นที่ได้ทันทีด้านล่าง หรือขอใบเสนอราคาสำหรับโครงการขนาดใหญ่และหลายพื้นที่',
+'Explore pricing for land scanning and interactive 3D visualisation across Thailand. From individual plots to larger developments, we help you understand your site and plan your next steps. Use the calculator below for an instant estimate based on land area, or tell us about your project for a tailored quote.':
+ 'ดูราคาบริการสแกนที่ดินและการแสดงภาพ 3 มิติแบบโต้ตอบทั่วประเทศไทย ตั้งแต่ที่ดินแปลงเดียวไปจนถึงโครงการขนาดใหญ่ เราช่วยให้คุณเข้าใจไซต์ของคุณและวางแผนขั้นตอนต่อไป ใช้เครื่องคำนวณด้านล่างเพื่อประเมินราคาทันทีตามพื้นที่ที่ดิน หรือบอกเราเกี่ยวกับโครงการของคุณเพื่อรับใบเสนอราคาที่เหมาะกับคุณ',
 'Estimate':'ประเมินราคา',
 'Estimate by land area':'ประเมินราคาตามพื้นที่',
 'Choose a service and move the slider to your plot size. Figures are indicative and confirmed after a site review.':
