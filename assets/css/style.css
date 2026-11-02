@@ -640,7 +640,22 @@ html.taplink-on body{overflow:hidden}
 }
 
 /* portfolio: case catalogue + case spec strip */
-.scan-grid--cases{grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr))}
+@media(min-width:1100px){.scan-grid--cases{grid-template-columns:repeat(4,1fr)}}
+.scan-card--soon,.scan-card--soon:hover{background:transparent;border:1px dashed var(--border-faint)}
+.scan-card__media--soon{
+  display:grid;place-items:center;cursor:default;
+  background-color:var(--bg-inset);
+  background-image:linear-gradient(var(--border-faint) 1px,transparent 1px),linear-gradient(90deg,var(--border-faint) 1px,transparent 1px);
+  background-size:32px 32px;background-position:center;
+}
+.scan-card__soon{
+  padding:6px 12px;font-family:var(--font-structure);font-weight:var(--weight-medium);
+  font-size:var(--type-data-sm);letter-spacing:var(--tracking-label);text-transform:uppercase;
+  color:var(--fg-muted);background:var(--bg-page);border:1px solid var(--border-hairline);
+}
+.scan-card__ghost{display:block;height:8px;margin-bottom:12px;background:var(--border-faint)}
+.scan-card__ghost--name{height:14px;margin-block:18px 16px}
+@media(max-width:639px){.scan-card--soon{display:none}}
 .scan-card__name--case::after{content:" →"}
 .scan-card__tags{
   display:block;margin-top:var(--space-4);font-family:var(--font-information);font-size:var(--type-data-sm);

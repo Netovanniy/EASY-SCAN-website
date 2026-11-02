@@ -10,6 +10,7 @@ Add a row here for every new visible string on a portfolio page, then re-run
 gen_thai.py and gen_ru.py."""
 
 ROWS = [
+    ('t', 'Coming soon', 'เร็วๆ นี้', 'Скоро'),
     # ---- projects (renamed from "Portfolio")
     ('s', 'Projects', 'โครงการ', 'Проекты'),
     ('s', 'Projects | Real Sites in 3D — EASY SCAN Thailand',
