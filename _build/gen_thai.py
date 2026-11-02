@@ -517,7 +517,7 @@ T = {
 
 # ---- PRICE ------------------------------------------------------
 'Price':'ราคา',
-'Dark 3D contour model of land parcels with area and slope readouts':'แบบจำลองเส้นชั้นความสูง 3 มิติสีเข้มของแปลงที่ดิน พร้อมค่าพื้นที่และความลาดชัน',
+'Sunset over a Koh Samui hillside with three land parcels outlined and measured in 3D':'ซันเซตเหนือเนินเขาเกาะสมุย พร้อมแปลงที่ดินสามแปลงที่ระบุขอบเขตและวัดขนาดแบบ 3 มิติ',
 'Pricing':'ราคา',
 'Flat terrain — small height variation':'ภูมิประเทศราบ — ความสูงต่างกันเล็กน้อย',
 'Sloped terrain — rolling, inclined relief':'ภูมิประเทศลาดเอียง — เป็นลอนเนินและลาดเท',

@@ -515,7 +515,7 @@ T = {
 
 # ---- PRICE ------------------------------------------------------
 'Price':'Цены',
-'Dark 3D contour model of land parcels with area and slope readouts':'Тёмная 3D-модель горизонталей участков с показателями площади и уклона',
+'Sunset over a Koh Samui hillside with three land parcels outlined and measured in 3D':'Закат над склоном на Самуи: три земельных участка с контурами и замерами в 3D',
 'Pricing':'Цены',
 'Flat terrain — small height variation':'Ровный рельеф — небольшой перепад высот',
 'Sloped terrain — rolling, inclined relief':'Наклонный рельеф — холмистый, с уклоном',
