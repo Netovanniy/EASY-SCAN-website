@@ -26,7 +26,6 @@ ROWS = [
           'สำรวจไซต์จริงที่ EASY SCAN บันทึกข้อมูล ดูแบบจำลอง 3 มิติแบบโต้ตอบ และค้นพบข้อมูลภูมิประเทศเบื้องหลังแต่ละโครงการ',
           'Изучайте реальные участки, снятые EASY SCAN. Смотрите интерактивные 3D-модели и данные рельефа за каждым проектом.'),
     ('t', 'Real sites', 'ไซต์จริง', 'Реальные участки'),
-    ('s', 'Explore projects', 'ดูโครงการ', 'Смотреть проекты'),
     ('t', 'Our work', 'ผลงานของเรา', 'Наши работы'),
     ('t', 'Selected projects', 'โครงการที่คัดสรร', 'Избранные проекты'),
     ('s', 'From site capture to terrain analysis, explore how we turn real places into digital environments you can navigate, measure and understand.',
