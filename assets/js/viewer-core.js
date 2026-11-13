@@ -17,7 +17,7 @@ export async function createViewer(root) {
   const SITE = {
     lat: +ds.lat, lng: +ds.lng, tz: +ds.tz, north: +(ds.north || 0),
     files: { drone: ds.drone, lidar: ds.lidar },
-    units: ds.units || null, zoom: +(ds.zoom || 1) || 1,
+    units: ds.units || null, zoom: +(ds.zoom || 1) || 1, elev: +(ds.elev || 0) || 0,
     overlay: ds.overlay ? { url: ds.overlay, reg: ds.overlayReg.split(",").map(Number) } : null
   };
   const nParam = new URLSearchParams(location.search).get("n");
@@ -262,7 +262,7 @@ export async function createViewer(root) {
   const VIEW_DIR = new THREE.Vector3(0, 0.62, -0.79); // looks south from the north side: north at the bottom of the frame
   function view3d() {
     controls.target.set(center.x, center.y - radius * 0.05, center.z);
-    const dir = VIEW_DIR.clone().normalize(), tg = controls.target, base = tg.clone();
+    const dir = (SITE.elev ? new THREE.Vector3(0, Math.sin(SITE.elev * rad), -Math.cos(SITE.elev * rad)) : VIEW_DIR.clone()).normalize(), tg = controls.target, base = tg.clone();
     const wide = root.clientWidth > 760, aspect = W / H;
     // keep the whole model and the full sun arc inside the part of the frame the panels leave free
     const xMax = wide ? 1 - 2 * 236 / W : 0.94, xMin = -0.94, yMax = 0.92, yMin = wide ? -0.84 : -0.5;
