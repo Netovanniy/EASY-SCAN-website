@@ -17,7 +17,7 @@ export async function createViewer(root) {
   const SITE = {
     lat: +ds.lat, lng: +ds.lng, tz: +ds.tz, north: +(ds.north || 0),
     files: { drone: ds.drone, lidar: ds.lidar },
-    units: ds.units || null,
+    units: ds.units || null, zoom: +(ds.zoom || 1) || 1,
     overlay: ds.overlay ? { url: ds.overlay, reg: ds.overlayReg.split(",").map(Number) } : null
   };
   const nParam = new URLSearchParams(location.search).get("n");
@@ -288,6 +288,10 @@ export async function createViewer(root) {
       shift += ((x0 + x1) / 2 - (xMin + xMax) / 2) * unit * aspect;
       up += ((y0 + y1) / 2 - (yMin + yMax) / 2) * unit;
       if (camera === persp) dist *= Math.pow(grow, 0.9); else half *= Math.pow(grow, 0.9);
+    }
+    if (SITE.zoom !== 1) { // optional per-site default zoom-in (data-zoom)
+      if (camera === persp) camera.position.copy(tg).addScaledVector(dir, dist / SITE.zoom);
+      else { orthoHalfH = half / SITE.zoom; updateOrtho(); }
     }
     if (camera === ortho) camera.position.copy(tg).addScaledVector(dir, radius * 3);
     controls.minDistance = radius * 0.1; controls.maxDistance = radius * 8; controls.update();
