@@ -195,3 +195,5 @@ body.viewer-max{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .viewer__poster,.viewer__bar i{transition:none}
 }
+
+.vopt.is-busy{opacity:.55;pointer-events:none}

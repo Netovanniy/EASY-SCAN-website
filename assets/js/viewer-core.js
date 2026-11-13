@@ -17,6 +17,7 @@ export async function createViewer(root) {
   const SITE = {
     lat: +ds.lat, lng: +ds.lng, tz: +ds.tz, north: +(ds.north || 0),
     files: { drone: ds.drone, lidar: ds.lidar },
+    units: ds.units || null,
     overlay: ds.overlay ? { url: ds.overlay, reg: ds.overlayReg.split(",").map(Number) } : null
   };
   const nParam = new URLSearchParams(location.search).get("n");
@@ -335,10 +336,11 @@ export async function createViewer(root) {
   $("v3d").onclick = view3d;
 
   /* ---------- legend ---------- */
-  const state = { mode: 0, contours: false, path: true, measure: false, boundary: true, survey: false };
+  const state = { mode: 0, contours: false, path: true, measure: false, boundary: true, survey: false, units: false };
   function renderLegend() {
     const L = $("legend"), rng = U.uMaxY.value - U.uMinY.value, m = t("unitM"); let h = "";
     if (state.boundary) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:var(--boundary-approximate)"></i><span>' + t("legBoundary") + "</span></div>";
+    if (state.units) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:#E6E2DA"></i><span>' + t("legUnits") + "</span></div>";
     if (state.survey) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:#E040FB"></i><span>' + t("legSurvey") + "</span></div>";
     const sep = () => (h ? '<div class="vlegend__sep"></div>' : "");
     if (state.mode === 1) {
@@ -463,6 +465,22 @@ export async function createViewer(root) {
     };
   });
   const tBoundary = $("tBoundary"), tContours = $("tContours"), tPath = $("tPath"), tMeasure = $("tMeasure"), tOverlay = $("tOverlay");
+  const tUnits = $("tUnits");
+  if (tUnits && SITE.units) {
+    let unitsObj = null, unitsLoading = null;
+    const mat = new THREE.MeshStandardMaterial({ color: 0xE6E2DA, roughness: 0.85, metalness: 0, side: THREE.DoubleSide });
+    const loadUnits = () => unitsLoading || (unitsLoading = loadGLTF(SITE.units, () => {}).then(gl => {
+      unitsObj = gl.scene;
+      unitsObj.traverse(o => { if (o.isMesh) { o.material = mat; o.castShadow = o.receiveShadow = true; } });
+      world.add(unitsObj);
+    }).catch(e => { unitsLoading = null; console.error(e); }));
+    tUnits.onclick = async () => {
+      state.units = !state.units; tUnits.classList.toggle("is-on", state.units);
+      if (state.units && !unitsObj) { tUnits.classList.add("is-busy"); await loadUnits(); tUnits.classList.remove("is-busy"); }
+      if (unitsObj) unitsObj.visible = state.units;
+      renderLegend();
+    };
+  }
   if (tOverlay) tOverlay.onclick = () => { state.survey = ovWanted = !state.survey; tOverlay.classList.toggle("is-on", state.survey); applyOverlay(); renderLegend(); };
   tBoundary.onclick = () => { state.boundary = !state.boundary; tBoundary.classList.toggle("is-on", state.boundary); if (boundary) boundary.visible = state.boundary; renderLegend(); };
   tContours.onclick = () => { state.contours = !state.contours; U.uContours.value = state.contours ? 1 : 0; tContours.classList.toggle("is-on", state.contours); renderLegend(); };

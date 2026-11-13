@@ -169,6 +169,8 @@ ROWS = [
     ('s', 'aria-label="Interactive 3D model of the 11 Rai plot at Haad Yao"', 'aria-label="แบบจำลอง 3 มิติแบบโต้ตอบของที่ดิน 11 ไร่ หาดยาว"', 'aria-label="Интерактивная 3D-модель участка 11 рай в Хаад Яо"'),
     ('t', 'Interactive 3D · Photogrammetry + survey overlay', '3 มิติแบบโต้ตอบ · โฟโตแกรมเมทรี + ชั้นซ้อนทับแผนที่รังวัด', 'Интерактивное 3D · Фотограмметрия + наложение съёмки'),
     ('t', 'Koh Phangan · 9.7735° N 99.9749° E', 'เกาะพะงัน · 9.7735° N 99.9749° E', 'о. Пханган · 9.7735° N 99.9749° E'),
+    ('t', 'Units', 'ยูนิต', 'Юниты'),
+    ('k', 'legUnits', 'Units · concept layout', 'ยูนิต · ผังแนวคิด', 'Юниты · концепт-планировка'),
     ('t', 'Topographic survey', 'แผนที่รังวัดภูมิประเทศ', 'Топографическая съёмка'),
     ('k', 'legSurvey', 'Topographic survey · third party', 'แผนที่รังวัดภูมิประเทศ · บุคคลที่สาม', 'Топографическая съёмка · сторонняя'),
     ('k', 'legSlopeLidar', 'A LiDAR survey gives a cleaner terrain surface.', 'การสำรวจ LiDAR ให้พื้นผิวภูมิประเทศที่สะอาดกว่า', 'Съёмка LiDAR даёт более чистую поверхность рельефа.'),
