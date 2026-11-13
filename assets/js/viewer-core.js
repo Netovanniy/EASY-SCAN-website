@@ -17,7 +17,7 @@ export async function createViewer(root) {
   const SITE = {
     lat: +ds.lat, lng: +ds.lng, tz: +ds.tz, north: +(ds.north || 0),
     files: { drone: ds.drone, lidar: ds.lidar },
-    units: ds.units || null, zoom: +(ds.zoom || 1) || 1, elev: +(ds.elev || 0) || 0,
+    units: ds.units || null, zoom: +(ds.zoom || 1) || 1, elev: +(ds.elev || 0) || 0, pan: +(ds.pan || 0) || 0,
     overlay: ds.overlay ? { url: ds.overlay, reg: ds.overlayReg.split(",").map(Number) } : null
   };
   const nParam = new URLSearchParams(location.search).get("n");
@@ -292,6 +292,11 @@ export async function createViewer(root) {
     if (SITE.zoom !== 1) { // optional per-site default zoom-in (data-zoom)
       if (camera === persp) camera.position.copy(tg).addScaledVector(dir, dist / SITE.zoom);
       else { orthoHalfH = half / SITE.zoom; updateOrtho(); }
+    }
+    if (SITE.pan) { // optional vertical offset of the default framing, in NDC units (data-pan; + moves the model up)
+      camera.updateMatrixWorld(); upv.setFromMatrixColumn(camera.matrixWorld, 1);
+      const d = SITE.pan * (camera === persp ? camera.position.distanceTo(tg) * Math.tan(persp.fov / 2 * rad) : orthoHalfH);
+      tg.addScaledVector(upv, d); camera.position.addScaledVector(upv, d);
     }
     if (camera === ortho) camera.position.copy(tg).addScaledVector(dir, radius * 3);
     controls.minDistance = radius * 0.1; controls.maxDistance = radius * 8; controls.update();
