@@ -16,7 +16,8 @@ export async function createViewer(root) {
   const ds = root.dataset;
   const SITE = {
     lat: +ds.lat, lng: +ds.lng, tz: +ds.tz, north: +(ds.north || 0),
-    files: { drone: ds.drone, lidar: ds.lidar }
+    files: { drone: ds.drone, lidar: ds.lidar },
+    overlay: ds.overlay ? { url: ds.overlay, reg: ds.overlayReg.split(",").map(Number) } : null
   };
   const nParam = new URLSearchParams(location.search).get("n");
   if (nParam !== null && nParam !== "" && !isNaN(+nParam)) SITE.north = +nParam;
@@ -112,15 +113,17 @@ export async function createViewer(root) {
   /* ---------- analysis shader (elevation / slope / contours) ---------- */
   const U = {
     uMode: { value: 0 }, uContours: { value: 0 }, uMinY: { value: 0 }, uMaxY: { value: 1 }, uStep: { value: 1 },
-    uElev: { value: ELEV }, uSlope: { value: SLOPE }, uLineCol: { value: C_CONTOUR_PHOTO }
+    uElev: { value: ELEV }, uSlope: { value: SLOPE }, uLineCol: { value: C_CONTOUR_PHOTO },
+    uOv: { value: new THREE.DataTexture(new Uint8Array([0, 0, 0, 0]), 1, 1) }, uOvOn: { value: 0 }, uOvA: { value: 0.9 }, uOvM: { value: new THREE.Matrix4() }
   };
+  U.uOv.value.needsUpdate = true;
   function patchMaterial(m) {
     m.onBeforeCompile = sh => {
       Object.assign(sh.uniforms, U);
       sh.vertexShader = "varying vec3 vWP; varying vec3 vWN;\n" + sh.vertexShader.replace("#include <begin_vertex>",
         "#include <begin_vertex>\n vWP = (modelMatrix*vec4(transformed,1.)).xyz; vWN = normalize(mat3(modelMatrix)*objectNormal);");
       sh.fragmentShader = "varying vec3 vWP; varying vec3 vWN;\n" +
-        "uniform int uMode; uniform float uContours, uMinY, uMaxY, uStep; uniform vec3 uElev[8]; uniform vec3 uSlope[5]; uniform vec3 uLineCol;\n" +
+        "uniform int uMode; uniform float uContours, uMinY, uMaxY, uStep; uniform vec3 uElev[8]; uniform vec3 uSlope[5]; uniform vec3 uLineCol; uniform sampler2D uOv; uniform float uOvOn, uOvA; uniform mat4 uOvM;\n" +
         "vec3 elevRamp(float k){ k = clamp(k,0.,1.)*7.; int i = int(floor(k)); if (i >= 7) return uElev[7]; return mix(uElev[i], uElev[i+1], fract(k)); }\n" +
         sh.fragmentShader.replace("#include <map_fragment>", "#include <map_fragment>\n" +
         "{\n" +
@@ -141,6 +144,12 @@ export async function createViewer(root) {
         "    float a = photo ? mix(.38, .85, major) : mix(.26, .62, major);\n" +
         "    diffuseColor.rgb = mix(diffuseColor.rgb, lc, line*a);\n" +
         "  }\n" +
+        "  if (uOvOn > .5){\n" +
+        "    vec2 q = (uOvM * vec4(vWP, 1.)).xy;\n" +
+        "    vec4 o = texture2D(uOv, q);\n" +
+        "    float inside = step(0., q.x) * step(q.x, 1.) * step(0., q.y) * step(q.y, 1.);\n" +
+        "    diffuseColor.rgb = mix(diffuseColor.rgb, o.rgb, clamp(o.a * 3., 0., 1.) * uOvA * inside);\n" +
+        "  }\n" +
         "}");
     };
     m.needsUpdate = true;
@@ -158,6 +167,8 @@ export async function createViewer(root) {
       const m = o.material; m.envMapIntensity = 0; m.metalness = 0; m.roughness = 1; patchMaterial(m);
     });
   }
+  let ovReady = false, ovWanted = false;
+  const applyOverlay = () => { U.uOvOn.value = ovReady && ovWanted ? 1 : 0; };
   const surfaces = { drone: null, lidar: null };
   let active = "drone", boundary = null, lidarLoading = null;
 
@@ -176,6 +187,22 @@ export async function createViewer(root) {
     ghost.renderOrder = 6; o.add(ghost);
   }
   world.rotation.y = -SITE.north * rad;
+  world.updateMatrixWorld(true);
+
+  /* ---------- optional third-party survey overlay (registered to the model) ---------- */
+  if (SITE.overlay) {
+    const [tx, ty, sc, rot, x0, y0, w, h] = SITE.overlay.reg, c = Math.cos(rot), sn = Math.sin(rot);
+    // glTF local (x, z) -> survey image pixels -> overlay UV (image row 0 = top, so flipY stays off)
+    const A = new THREE.Matrix4().set(
+      sc * c / w, 0, sc * sn / w, (tx - x0) / w,
+      -sc * sn / h, 0, sc * c / h, (ty - y0) / h,
+      0, 0, 0, 0, 0, 0, 0, 1);
+    U.uOvM.value.copy(A).multiply(world.matrixWorld.clone().invert());
+    new THREE.TextureLoader().load(SITE.overlay.url, tex => {
+      tex.flipY = false; tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
+      U.uOv.value = tex; ovReady = true; applyOverlay();
+    });
+  }
 
   function loadLidar() {
     if (lidarLoading) return lidarLoading;
@@ -308,10 +335,11 @@ export async function createViewer(root) {
   $("v3d").onclick = view3d;
 
   /* ---------- legend ---------- */
-  const state = { mode: 0, contours: false, path: true, measure: false, boundary: true };
+  const state = { mode: 0, contours: false, path: true, measure: false, boundary: true, survey: false };
   function renderLegend() {
     const L = $("legend"), rng = U.uMaxY.value - U.uMinY.value, m = t("unitM"); let h = "";
     if (state.boundary) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:var(--boundary-approximate)"></i><span>' + t("legBoundary") + "</span></div>";
+    if (state.survey) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:#E040FB"></i><span>' + t("legSurvey") + "</span></div>";
     const sep = () => (h ? '<div class="vlegend__sep"></div>' : "");
     if (state.mode === 1) {
       h += sep() + "<h4>" + t("legElev") + '</h4><div class="vlegend__ramp" style="background:var(--elev-ramp)"></div>' +
@@ -434,7 +462,8 @@ export async function createViewer(root) {
       root.querySelectorAll("[data-mode]").forEach(x => x.classList.toggle("is-on", x === b)); renderLegend();
     };
   });
-  const tBoundary = $("tBoundary"), tContours = $("tContours"), tPath = $("tPath"), tMeasure = $("tMeasure");
+  const tBoundary = $("tBoundary"), tContours = $("tContours"), tPath = $("tPath"), tMeasure = $("tMeasure"), tOverlay = $("tOverlay");
+  if (tOverlay) tOverlay.onclick = () => { state.survey = ovWanted = !state.survey; tOverlay.classList.toggle("is-on", state.survey); applyOverlay(); renderLegend(); };
   tBoundary.onclick = () => { state.boundary = !state.boundary; tBoundary.classList.toggle("is-on", state.boundary); if (boundary) boundary.visible = state.boundary; renderLegend(); };
   tContours.onclick = () => { state.contours = !state.contours; U.uContours.value = state.contours ? 1 : 0; tContours.classList.toggle("is-on", state.contours); renderLegend(); };
   tPath.onclick = () => { state.path = !state.path; tPath.classList.toggle("is-on", state.path); update(); };

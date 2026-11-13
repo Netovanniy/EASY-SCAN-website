@@ -8,7 +8,7 @@ PAGES = [
     "index.html", "about.html", "contact.html", "price.html",
     "gaussian.html", "twin.html", "concepting.html", "monitoring.html",
     "museum.html", "education.html",
-    "projects/index.html", "projects/villa-majesta.html",
+    "projects/index.html", "projects/villa-majesta.html", "projects/11-rai-haad-yao.html",
 ]
 today = datetime.date.today().isoformat()
 
