@@ -17,7 +17,7 @@ export async function createViewer(root) {
   const SITE = {
     lat: +ds.lat, lng: +ds.lng, tz: +ds.tz, north: +(ds.north || 0),
     files: { drone: ds.drone, lidar: ds.lidar },
-    units: ds.units || null, zoom: +(ds.zoom || 1) || 1, elev: +(ds.elev || 0) || 0, pan: +(ds.pan || 0) || 0,
+    units: ds.units || null, road: ds.road || null, zoom: +(ds.zoom || 1) || 1, elev: +(ds.elev || 0) || 0, pan: +(ds.pan || 0) || 0,
     overlay: ds.overlay ? { url: ds.overlay, reg: ds.overlayReg.split(",").map(Number) } : null
   };
   const nParam = new URLSearchParams(location.search).get("n");
@@ -345,10 +345,11 @@ export async function createViewer(root) {
   $("v3d").onclick = view3d;
 
   /* ---------- legend ---------- */
-  const state = { mode: 0, contours: false, path: true, measure: false, boundary: true, survey: false, units: false };
+  const state = { mode: 0, contours: false, path: true, measure: false, boundary: true, survey: false, units: false, road: false };
   function renderLegend() {
     const L = $("legend"), rng = U.uMaxY.value - U.uMinY.value, m = t("unitM"); let h = "";
     if (state.boundary) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:var(--boundary-approximate)"></i><span>' + t("legBoundary") + "</span></div>";
+    if (state.road) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:#F2A33A"></i><span>' + t("legRoad") + "</span></div>";
     if (state.units) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:#E6E2DA"></i><span>' + t("legUnits") + "</span></div>";
     if (state.survey) h += '<div class="vlegend__line"><i class="vlegend__swatch" style="background:#E040FB"></i><span>' + t("legSurvey") + "</span></div>";
     const sep = () => (h ? '<div class="vlegend__sep"></div>' : "");
@@ -487,6 +488,22 @@ export async function createViewer(root) {
       state.units = !state.units; tUnits.classList.toggle("is-on", state.units);
       if (state.units && !unitsObj) { tUnits.classList.add("is-busy"); await loadUnits(); tUnits.classList.remove("is-busy"); }
       if (unitsObj) unitsObj.visible = state.units;
+      renderLegend();
+    };
+  }
+  const tRoad = $("tRoad");
+  if (tRoad && SITE.road) {
+    let roadObj = null, roadLoading = null;
+    const mat = new THREE.MeshStandardMaterial({ color: 0xF2A33A, roughness: 0.8, metalness: 0, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -3, polygonOffsetUnits: -3 });
+    const loadRoad = () => roadLoading || (roadLoading = loadGLTF(SITE.road, () => {}).then(gl => {
+      roadObj = gl.scene;
+      roadObj.traverse(o => { if (o.isMesh) { o.material = mat; o.receiveShadow = true; o.renderOrder = 3; } });
+      world.add(roadObj);
+    }).catch(e => { roadLoading = null; console.error(e); }));
+    tRoad.onclick = async () => {
+      state.road = !state.road; tRoad.classList.toggle("is-on", state.road);
+      if (state.road && !roadObj) { tRoad.classList.add("is-busy"); await loadRoad(); tRoad.classList.remove("is-busy"); }
+      if (roadObj) roadObj.visible = state.road;
       renderLegend();
     };
   }

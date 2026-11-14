@@ -15,17 +15,17 @@
 <meta property="og:site_name" content="EASY SCAN">
 <meta property="og:title" content="11 Rai, Haad Yao | Интерактивный 3D-проект — EASY SCAN, Пханган">
 <meta property="og:description" content="Интерактивное 3D-исследование участка на склоне в 11 рай в Хаад Яо, Пханган: фотограмметрия с дрона, анализ высот и уклонов, горизонтали, путь солнца в течение дня и наложение топографической съёмки.">
-<meta property="og:image" content="https://easyscan.asia/assets/img/11-rai-360.jpg?v=240">
+<meta property="og:image" content="https://easyscan.asia/assets/img/11-rai-360.jpg?v=241">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="838">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="11 Rai, Haad Yao | Интерактивный 3D-проект — EASY SCAN, Пханган">
 <meta name="twitter:description" content="Интерактивное 3D-исследование участка на склоне в 11 рай в Хаад Яо, Пханган: фотограмметрия с дрона, анализ высот и уклонов, горизонтали, путь солнца в течение дня и наложение топографической съёмки.">
-<meta name="twitter:image" content="https://easyscan.asia/assets/img/11-rai-360.jpg?v=240">
+<meta name="twitter:image" content="https://easyscan.asia/assets/img/11-rai-360.jpg?v=241">
 <script>document.documentElement.className+=" js";</script>
-<link rel="stylesheet" href="/design-system/styles.css?v=240">
-<link rel="stylesheet" href="/assets/css/style.css?v=240">
-<link rel="stylesheet" href="/assets/css/viewer.css?v=240">
+<link rel="stylesheet" href="/design-system/styles.css?v=241">
+<link rel="stylesheet" href="/assets/css/style.css?v=241">
+<link rel="stylesheet" href="/assets/css/viewer.css?v=241">
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 </head>
 <body>
@@ -111,7 +111,7 @@
 </nav>
 <main id="main">
   <section class="page-hero">
-    <div class="page-hero__media page-hero__media--pano"><img src="/assets/img/11-rai-360-hero.jpg?v=240" alt="Панорама 360° с участка 11 рай в Хаад Яо, Пханган" width="2400" height="1200"></div>
+    <div class="page-hero__media page-hero__media--pano"><img src="/assets/img/11-rai-360-hero.jpg?v=241" alt="Панорама 360° с участка 11 рай в Хаад Яо, Пханган" width="2400" height="1200"></div>
     <div class="wrap wrap--wide">
       <p class="breadcrumb"><a href="/ru/">Главная</a><span>/</span> <a href="/ru/projects">Проекты</a> <span>/</span> 11 Rai, Haad Yao</p>
       <h1 class="page-hero__title">11 Rai, Haad Yao</h1>
@@ -134,11 +134,11 @@
     <div class="wrap wrap--wide">
   <div class="viewer" data-viewer data-lat="9.773524" data-lng="99.974867" data-tz="7" data-north="95" data-zoom="1.5" data-elev="58" data-pan="-0.25"
        data-drone="/assets/models/11-rai/drone.glb?v=1"
-       data-units="/assets/models/11-rai/units.glb?v=1"
+       data-units="/assets/models/11-rai/units.glb?v=1" data-road="/assets/models/11-rai/road.glb?v=1"
        data-overlay="/assets/models/11-rai/survey.webp?v=3" data-overlay-reg="1685.700,1792.247,11.2538,0.0028107,710,374,2773,2770">
     <canvas class="viewer__canvas" data-el="canvas" role="img" aria-label="Интерактивная 3D-модель участка 11 рай в Хаад Яо"></canvas>
     <div class="viewer__poster" data-el="poster">
-      <img src="/assets/img/11-rai-360.jpg?v=240" alt="" width="1600" height="840">
+      <img src="/assets/img/11-rai-360.jpg?v=241" alt="" width="1600" height="840">
       <div class="viewer__poster-body">
         <button class="btn btn--primary" type="button" data-el="start">Открыть в 3D
           <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -159,6 +159,7 @@
           <button class="vopt vopt--check is-on" type="button" data-el="tBoundary"><span class="vind"></span>Граница участка</button>
           <button class="vopt vopt--check" type="button" data-el="tOverlay"><span class="vind"></span>Топографическая съёмка</button>
           <button class="vopt vopt--check" type="button" data-el="tUnits"><span class="vind"></span>Юниты</button>
+          <button class="vopt vopt--check" type="button" data-el="tRoad"><span class="vind"></span>Дорога</button>
           <button class="vopt vopt--check" type="button" data-el="tContours"><span class="vind"></span>Горизонтали</button>
           <button class="vopt vopt--check is-on" type="button" data-el="tPath"><span class="vind"></span>Путь солнца</button>
         </div>
@@ -211,6 +212,7 @@
       <span data-k="slope4">&gt;35° · очень крутой</span>
       <span data-k="legSlopeNote">Деревья и стены дают ложные крутые участки.</span>
       <span data-k="legSlopeLidar">Съёмка LiDAR даёт более чистую поверхность рельефа.</span>
+      <span data-k="legRoad">Дорога · концепт-планировка</span>
       <span data-k="legUnits">Юниты · концепт-планировка</span>
       <span data-k="legSurvey">Топографическая съёмка · сторонняя</span>
       <span data-k="legContours">Горизонтали</span>
@@ -270,7 +272,7 @@
     </div>
   </div>
 </footer>
-<script src="/assets/js/main.js?v=240"></script>
-<script type="module" src="/assets/js/viewer.js?v=240"></script>
+<script src="/assets/js/main.js?v=241"></script>
+<script type="module" src="/assets/js/viewer.js?v=241"></script>
 </body>
 </html>
